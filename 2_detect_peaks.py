@@ -1,0 +1,196 @@
+import json
+from pathlib import Path
+import numpy as np
+import pandas as pd
+from scipy.signal import find_peaks
+
+# ==========================================
+# 1. PFADE & PARAMETER
+# ==========================================
+BASE_DIR = Path(__file__).resolve().parent
+INPUT_FILE = BASE_DIR / "clean_data.json"
+OUTPUT_FILE = BASE_DIR / "detected_events.json"
+
+MIN_PEAK_DISTANCE_DAYS = 7    # Mindestabstand zwischen zwei Peaks in Tagen
+PROMINENCE_FACTOR = 1.5       # Höher = nur extremere Ausschläge werden erkannt
+CHANGEPOINT_PENALTY = 12.0    # Höher = nur sehr deutliche Trendwenden (z.B. 8.0 - 20.0)
+
+
+# ==========================================
+# 2. REINE NUMPY CHANGE-POINT DETECTION (Binary Segmentation)
+# ==========================================
+def detect_changepoints_binseg(series: np.ndarray, penalty: float = 12.0, min_size: int = 7) -> list[int]:
+    """Findet dauerhafte Niveauwechsel (Trendbrüche) ohne externe C-Bibliotheken."""
+    def sse(arr: np.ndarray) -> float:
+        if len(arr) == 0:
+            return 0.0
+        return float(np.sum((arr - np.mean(arr)) ** 2))
+
+    changepoints = []
+
+    def split_segment(start: int, end: int):
+        if end - start < 2 * min_size:
+            return
+        total_cost = sse(series[start:end])
+        best_gain = 0.0
+        best_idx = None
+
+        for idx in range(start + min_size, end - min_size + 1):
+            gain = total_cost - (sse(series[start:idx]) + sse(series[idx:end]))
+            if gain > best_gain:
+                best_gain = gain
+                best_idx = idx
+
+        if best_idx is not None and best_gain > penalty:
+            changepoints.append(best_idx)
+            split_segment(start, best_idx)
+            split_segment(best_idx, end)
+
+    split_segment(0, len(series))
+    return sorted(changepoints)
+
+
+# ==========================================
+# 3. ZEITREIHEN-ANALYSE PRO PROJEKT
+# ==========================================
+def analyze_project_timeseries(df_proj: pd.DataFrame, project_name: str) -> dict:
+    daily = df_proj.groupby("date").agg(
+        count=("mention_id", "count"),
+        avg_sentiment=("sentiment", "mean")
+    )
+
+    full_idx = pd.date_range(daily.index.min(), daily.index.max(), freq="D")
+    daily = daily.reindex(full_idx)
+    daily["count"] = daily["count"].fillna(0)
+
+    counts = daily["count"].values
+    std_val = np.std(counts)
+
+    if len(counts) < 14 or std_val == 0:
+        return {
+            "project": project_name,
+            "total_posts": int(counts.sum()),
+            "date_range": f"{daily.index.min().strftime('%Y-%m-%d')} bis {daily.index.max().strftime('%Y-%m-%d')}",
+            "peaks": [],
+            "change_points": []
+        }
+
+    # --- A) Kurzfristige Peaks (scipy.signal.find_peaks) ---
+    prominence_threshold = max(2.0, std_val * PROMINENCE_FACTOR)
+    peak_indices, properties = find_peaks(
+        counts,
+        prominence=prominence_threshold,
+        distance=MIN_PEAK_DISTANCE_DAYS
+    )
+
+    peaks = []
+    for i, idx in enumerate(peak_indices):
+        peak_date = daily.index[idx]
+        sample_titles = df_proj[df_proj["date"] == peak_date]["title"].dropna().unique()[:2].tolist()
+
+        peaks.append({
+            "date": peak_date.strftime("%Y-%m-%d"),
+            "post_count": int(counts[idx]),
+            "prominence": round(float(properties["prominences"][i]), 2),
+            "avg_sentiment": round(float(daily["avg_sentiment"].iloc[idx]), 2) if pd.notna(daily["avg_sentiment"].iloc[idx]) else None,
+            "crawler_window": {
+                "start": (peak_date - pd.Timedelta(days=3)).strftime("%Y-%m-%d"),
+                "end": (peak_date + pd.Timedelta(days=2)).strftime("%Y-%m-%d")
+            },
+            "sample_titles": sample_titles
+        })
+
+    # --- B) Dauerhafte Trendwenden ---
+    norm_counts = (counts - np.mean(counts)) / std_val
+    cp_indices = detect_changepoints_binseg(norm_counts, penalty=CHANGEPOINT_PENALTY, min_size=7)
+
+    change_points = []
+    boundaries = [0] + cp_indices + [len(counts)]
+    for pos, idx in enumerate(cp_indices):
+        cp_date = daily.index[idx]
+        prev_start = boundaries[pos]
+        next_end = boundaries[pos + 2]
+
+        mean_before = float(np.mean(counts[prev_start:idx]))
+        mean_after = float(np.mean(counts[idx:next_end]))
+
+        sent_before = daily["avg_sentiment"].iloc[prev_start:idx].mean()
+        sent_after = daily["avg_sentiment"].iloc[idx:next_end].mean()
+
+        change_points.append({
+            "date": cp_date.strftime("%Y-%m-%d"),
+            "avg_posts_before": round(mean_before, 2),
+            "avg_posts_after": round(mean_after, 2),
+            "avg_sentiment_before": round(float(sent_before), 2) if pd.notna(sent_before) else None,
+            "avg_sentiment_after": round(float(sent_after), 2) if pd.notna(sent_after) else None
+        })
+
+    return {
+        "project": project_name,
+        "total_posts": int(counts.sum()),
+        "date_range": f"{daily.index.min().strftime('%Y-%m-%d')} bis {daily.index.max().strftime('%Y-%m-%d')}",
+        "peaks": peaks,
+        "change_points": change_points
+    }
+
+
+# ==========================================
+# 4. HAUPTPROGRAMM & KONSOLEN-AUSGABE
+# ==========================================
+def main():
+    if not INPUT_FILE.exists():
+        print(f"FEHLER: '{INPUT_FILE.name}' nicht gefunden. Bitte zuerst '1_filter_data.py' ausführen!")
+        return
+
+    with open(INPUT_FILE, "r", encoding="utf-8") as f:
+        clean_data = json.load(f)
+
+    if not clean_data:
+        print("Die bereinigte Datei ist leer.")
+        return
+
+    df = pd.DataFrame(clean_data)
+    df["date"] = pd.to_datetime(df["published_at"], utc=True, errors="coerce").dt.tz_localize(None).dt.floor("D")
+    df["sentiment"] = pd.to_numeric(df.get("sentiment"), errors="coerce")
+    df = df.dropna(subset=["date"]).copy()
+
+    df_exploded = df.explode("matched_projects").rename(columns={"matched_projects": "project"})
+
+    all_results = []
+    print("\n" + "=" * 75)
+    print("ERGEBNISSE DER PEAK- & CHANGE-POINT-ANALYSE")
+    print("=" * 75)
+
+    for project, group in df_exploded.groupby("project"):
+        res = analyze_project_timeseries(group, project)
+        all_results.append(res)
+
+        print(f"\nPROJEKT: {res['project']} ({res['total_posts']} Beiträge | {res['date_range']})")
+        print("-" * 75)
+
+        print("  [PEAKS - Kurzfristige Aufregungsspitzen]")
+        if not res["peaks"]:
+            print("    -> Keine signifikanten Peaks gefunden.")
+        for p in res["peaks"]:
+            print(f"    * {p['date']} | {p['post_count']} Posts (Prominenz: {p['prominence']}, Sentiment: {p['avg_sentiment']})")
+            print(f"      Crawler-Fenster: {p['crawler_window']['start']} bis {p['crawler_window']['end']}")
+            for title in p["sample_titles"]:
+                print(f"      Beispiel-Titel: \"{title[:80]}\"")
+
+        print("\n  [CHANGE-POINTS - Dauerhafte Niveau-/Trendwechsel]")
+        if not res["change_points"]:
+            print("    -> Keine dauerhaften Trendbrüche gefunden.")
+        for cp in res["change_points"]:
+            direction = "ANSTIEG" if cp["avg_posts_after"] > cp["avg_posts_before"] else "RÜCKGANG"
+            print(f"    * {cp['date']} ({direction}): Schnitt {cp['avg_posts_before']} -> {cp['avg_posts_after']} Posts/Tag "
+                  f"| Sentiment: {cp['avg_sentiment_before']} -> {cp['avg_sentiment_after']}")
+
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        json.dump(all_results, f, ensure_ascii=False, indent=2)
+
+    print("\n" + "=" * 75)
+    print(f"Fertig! Exportiert nach: {OUTPUT_FILE.name}")
+
+
+if __name__ == "__main__":
+    main()
