@@ -1,0 +1,72 @@
+{
+  "peak": 1,
+  "datum": "2025-05-12",
+  "beitraege_am_tag": 15,
+  "beitraege_im_fenster": 32,
+  "fenster": {
+    "start": "2025-05-09",
+    "ende": "2025-05-14"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "heilbronn",
+      "anzahl": 76
+    },
+    {
+      "begriff": "seilbahn",
+      "anzahl": 58
+    },
+    {
+      "begriff": "land",
+      "anzahl": 34
+    },
+    {
+      "begriff": "millionen",
+      "anzahl": 27
+    },
+    {
+      "begriff": "stadt",
+      "anzahl": 26
+    },
+    {
+      "begriff": "téléphérique",
+      "anzahl": 19
+    },
+    {
+      "begriff": "câble",
+      "anzahl": 19
+    },
+    {
+      "begriff": "france",
+      "anzahl": 17
+    },
+    {
+      "begriff": "sagt",
+      "anzahl": 15
+    },
+    {
+      "begriff": "baden",
+      "anzahl": 13
+    },
+    {
+      "begriff": "geplante",
+      "anzahl": 13
+    },
+    {
+      "begriff": "projekt",
+      "anzahl": 10
+    },
+    {
+      "begriff": "urbane",
+      "anzahl": 10
+    },
+    {
+      "begriff": "heilbronner",
+      "anzahl": 9
+    },
+    {
+      "begriff": "ipai",
+      "anzahl": 9
+    }
+  ]
+}

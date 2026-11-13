@@ -1,0 +1,80 @@
+[
+  {
+    "projekt": "Heilbronn",
+    "schluessel": "Heilbronn_Seilbahn",
+    "beitraege": 276,
+    "topic_terms": [
+      "\\bseilbahn\\w*",
+      "\\burban cable car\\b",
+      "\\bgondelbahn\\w*"
+    ],
+    "context_terms": [
+      "\\bheilbronn\\w*",
+      "\\bipai\\b",
+      "\\bneckarbogen\\b",
+      "\\btheresienwiese\\b",
+      "\\bwohlgelegen\\b",
+      "\\bböckingen\\b",
+      "\\bboeckingen\\b",
+      "\\bstadtbahn\\b"
+    ]
+  },
+  {
+    "projekt": "Bonn",
+    "schluessel": "Bonn_Seilbahn",
+    "beitraege": 221,
+    "topic_terms": [
+      "\\bseilbahn\\w*",
+      "\\bgondelbahn\\w*"
+    ],
+    "context_terms": [
+      "\\bbonn\\w*",
+      "\\bvenusberg\\b",
+      "\\bbeuel\\b",
+      "\\brheinaue\\b",
+      "\\bun-campus\\b",
+      "\\buniklinikum bonn\\b",
+      "\\brheinquerung\\b"
+    ]
+  },
+  {
+    "projekt": "Paris",
+    "schluessel": "Paris_Cable_C1",
+    "beitraege": 713,
+    "topic_terms": [
+      "t[ée]l[ée]ph[ée]rique\\w*",
+      "c[âa]ble\\s*c1\\b",
+      "\\bcable\\s*c1\\b"
+    ],
+    "context_terms": [
+      "\\bparis\\w*",
+      "\\bcr[ée]teil\\b",
+      "\\bval-de-marne\\b",
+      "\\bvilleneuve-saint-georges\\b",
+      "\\blimeil-br[ée]vannes\\b",
+      "\\bvalenton\\b",
+      "[îi]le-de-france\\b",
+      "\\bidfm\\b"
+    ]
+  },
+  {
+    "projekt": "IPAI",
+    "schluessel": "IPAI_Campus",
+    "beitraege": 998,
+    "topic_terms": [
+      "\\bipai\\b",
+      "\\binnovation park artificial intelligence\\b"
+    ],
+    "context_terms": [
+      "\\bheilbronn\\w*",
+      "\\bcampus\\b",
+      "\\bki-park\\b",
+      "\\bki-innovationspark\\b",
+      "\\bstein[äa]cker\\b",
+      "\\bschwarz-gruppe\\b",
+      "\\bdieter schwarz\\b",
+      "\\bkünstliche intelligenz\\b",
+      "\\bstart-?up\\w*"
+    ]
+  }
+]

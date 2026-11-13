@@ -1,0 +1,20 @@
+{
+  "projekt": "Heilbronn",
+  "schluessel": "Heilbronn_Seilbahn",
+  "beitraege": 276,
+  "topic_terms": [
+    "\\bseilbahn\\w*",
+    "\\burban cable car\\b",
+    "\\bgondelbahn\\w*"
+  ],
+  "context_terms": [
+    "\\bheilbronn\\w*",
+    "\\bipai\\b",
+    "\\bneckarbogen\\b",
+    "\\btheresienwiese\\b",
+    "\\bwohlgelegen\\b",
+    "\\bböckingen\\b",
+    "\\bboeckingen\\b",
+    "\\bstadtbahn\\b"
+  ]
+}

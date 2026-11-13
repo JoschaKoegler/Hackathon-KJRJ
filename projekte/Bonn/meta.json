@@ -1,0 +1,18 @@
+{
+  "projekt": "Bonn",
+  "schluessel": "Bonn_Seilbahn",
+  "beitraege": 221,
+  "topic_terms": [
+    "\\bseilbahn\\w*",
+    "\\bgondelbahn\\w*"
+  ],
+  "context_terms": [
+    "\\bbonn\\w*",
+    "\\bvenusberg\\b",
+    "\\bbeuel\\b",
+    "\\brheinaue\\b",
+    "\\bun-campus\\b",
+    "\\buniklinikum bonn\\b",
+    "\\brheinquerung\\b"
+  ]
+}

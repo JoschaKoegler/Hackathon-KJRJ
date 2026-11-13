@@ -1,0 +1,72 @@
+{
+  "peak": 6,
+  "datum": "2026-02-09",
+  "beitraege_am_tag": 12,
+  "beitraege_im_fenster": 23,
+  "fenster": {
+    "start": "2026-02-06",
+    "ende": "2026-02-11"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "ipai",
+      "anzahl": 28
+    },
+    {
+      "begriff": "heilbronn",
+      "anzahl": 23
+    },
+    {
+      "begriff": "prezero",
+      "anzahl": 16
+    },
+    {
+      "begriff": "marc",
+      "anzahl": 13
+    },
+    {
+      "begriff": "intelligenz",
+      "anzahl": 12
+    },
+    {
+      "begriff": "group",
+      "anzahl": 11
+    },
+    {
+      "begriff": "kirchner",
+      "anzahl": 10
+    },
+    {
+      "begriff": "produktion",
+      "anzahl": 9
+    },
+    {
+      "begriff": "apple",
+      "anzahl": 9
+    },
+    {
+      "begriff": "manager",
+      "anzahl": 9
+    },
+    {
+      "begriff": "téléphériques",
+      "anzahl": 8
+    },
+    {
+      "begriff": "europe",
+      "anzahl": 8
+    },
+    {
+      "begriff": "audi",
+      "anzahl": 7
+    },
+    {
+      "begriff": "künstliche",
+      "anzahl": 7
+    },
+    {
+      "begriff": "trajets",
+      "anzahl": 7
+    }
+  ]
+}

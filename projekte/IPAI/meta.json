@@ -1,0 +1,20 @@
+{
+  "projekt": "IPAI",
+  "schluessel": "IPAI_Campus",
+  "beitraege": 998,
+  "topic_terms": [
+    "\\bipai\\b",
+    "\\binnovation park artificial intelligence\\b"
+  ],
+  "context_terms": [
+    "\\bheilbronn\\w*",
+    "\\bcampus\\b",
+    "\\bki-park\\b",
+    "\\bki-innovationspark\\b",
+    "\\bstein[äa]cker\\b",
+    "\\bschwarz-gruppe\\b",
+    "\\bdieter schwarz\\b",
+    "\\bkünstliche intelligenz\\b",
+    "\\bstart-?up\\w*"
+  ]
+}
