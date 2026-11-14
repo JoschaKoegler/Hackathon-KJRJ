@@ -1,7 +1,8 @@
-"""3. Terms for the word cloud.
+"""3. Terms, grouped into themes.
 
-Counts terms in the prepared text. Stop words, project names, and the
-token window sit below. The number of terms on screen sits in ``config.py``.
+Counts tokens in the prepared text, then assigns each token to one theme
+such as Kosten or Nachhaltigkeit. A post counts once per theme it mentions.
+Stop words, project names, and the token window sit below.
 """
 
 from __future__ import annotations
@@ -74,6 +75,193 @@ TOPIC_STEMS = (
 )
 TOPIC_WORDS = {"cable", "câble", "cables"}
 
+# Themes a post can fall into. Order is the order on the page.
+# prefixes: the token starts with this. words: the token is exactly this.
+# Longer prefixes win, so "wirtschaftlichkeit" is Kosten and "wirtschaft" is Wirtschaft.
+# "kostenlos" is excluded below: it means free, not a cost debate.
+CATEGORIES = (
+    {
+        "id": "mobilitaet",
+        "label": "Mobilität",
+        "prefixes": (
+            "urbain", "urban", "öpnv", "oepnv", "nahverkehr", "mobilit", "mobilité",
+            "mobilite", "transport", "verkehrsmittel", "verkehr", "anbindung", "pendler",
+            "fahrgast", "voyageur", "usager", "stadtbahn", "bahnhof", "kapazität",
+            "kapazitaet", "capacité", "capacite", "fréquentation", "frequentation",
+            "radverkehr", "tramway", "ligne", "linie", "entlastung",
+        ),
+        "words": ("métro", "metro", "tram", "trams", "stau", "staus", "bahn"),
+    },
+    {
+        "id": "kosten",
+        "label": "Kosten",
+        "prefixes": (
+            "planungskosten", "kostenschätz", "kostenschaetz", "kosten", "kostet",
+            "teurer", "teuer", "finanz", "haushalt", "budget", "subvention",
+            "fördergeld", "fördermittel", "förderzusage", "förderfähig", "förderprogramm",
+            "fördertopf", "fördersumme", "förderung",
+            "foerdergeld", "foerdermittel", "foerderzusage", "foerderprogramm", "foerderung",
+            "million", "investition", "wirtschaftlichkeit", "rentabilit",
+            "coût", "coute", "coûte", "financement", "gebühr", "gebuehr", "defizit",
+            "zuschuss", "beihilfe",
+        ),
+        "words": (),
+    },
+    {
+        "id": "nachhaltigkeit",
+        "label": "Nachhaltigkeit",
+        "prefixes": (
+            "nachhalt", "klimaneutral", "klimaschutz", "klima", "emission", "émission",
+            "ökolog", "oekolog", "écolog", "ecolog", "umwelt", "energie", "énergie",
+            "erneuerbar", "kohlenstoff", "carbone", "environnement", "biodivers",
+            "treibhaus", "ressourc", "durable",
+        ),
+        "words": (),
+    },
+    {
+        "id": "umfeld",
+        "label": "Umfeld",
+        "prefixes": (
+            "stadtbild", "landschaft", "sichtachse", "verschattung", "grünfläche",
+            "gruenflaeche", "lärm", "laerm", "bruit", "paysage", "nuisance",
+            "artenschutz", "naturschutz", "vogelschutz", "wohnumfeld", "freiraum",
+            "baumfäll", "baumfaell",
+        ),
+        "words": (),
+    },
+    {
+        "id": "akzeptanz",
+        "label": "Akzeptanz",
+        "prefixes": (
+            "bürgerinitiative", "buergerinitiative", "bürgerbeteiligung", "buergerbeteiligung",
+            "bürgerdialog", "buergerdialog", "protest", "widerstand", "petition", "pétition",
+            "anwohner", "bewohner", "beteiligung", "riverain", "manifestation", "contestation",
+            "concertation", "unterschrift", "gegner", "befürworter", "befuerworter",
+            "akzeptanz", "kritik", "ablehnung", "umfrage", "skeptisch", "bedenken",
+            "bürger", "buerger", "citoyen",
+        ),
+        "words": (),
+    },
+    {
+        "id": "sicherheit",
+        "label": "Sicherheit",
+        "prefixes": (
+            "sicherheit", "unfall", "unfälle", "unfaelle", "accident", "sécurité",
+            "securite", "agression", "aggression", "vandal", "belästigung", "belaestigung",
+            "harcèlement", "harcelement", "übergriff", "uebergriff", "évacuation",
+            "evacuation", "evakuierung",
+        ),
+        "words": (),
+    },
+    {
+        "id": "planung",
+        "label": "Planung",
+        "prefixes": (
+            "planfeststellung", "machbarkeit", "faisabilit", "gutachten", "genehmigung",
+            "genehmigt", "variante", "planung", "geplant", "vorhaben", "étude", "etude",
+            "tracé", "trasse",
+        ),
+        "words": ("pläne", "plänen", "plaene", "plaenen"),
+    },
+    {
+        "id": "politik",
+        "label": "Politik",
+        "prefixes": (
+            "bürgerentscheid", "buergerentscheid", "gemeinderat", "stadtrat", "kreistag",
+            "landtag", "oberbürgermeister", "oberbuergermeister", "bürgermeister",
+            "buergermeister", "verkehrsminister", "minister", "beschluss", "beschlossen",
+            "beschließt", "beschliesst", "abstimmung", "koalition", "fraktion", "partei",
+            "délibération", "deliberation", "conseil", "maire", "gewählt", "gewaehlt",
+            "wähler", "waehler", "wahl",
+        ),
+        "words": ("élu", "élus", "élue", "élues", "elu", "elus", "elue", "elues"),
+    },
+    {
+        "id": "bau",
+        "label": "Bau & Betrieb",
+        "prefixes": (
+            "spatenstich", "baustelle", "baustart", "bauarbeit", "baubeginn", "richtfest",
+            "grundstein", "inaugur", "eröffnung", "eroeffnung", "eröffnet", "eroeffnet",
+            "inbetriebnahme", "betriebsstart", "haltestelle", "strecke", "cabine",
+            "kabine", "gondel", "chantier", "travaux", "ouverture", "fermeture", "sperrung",
+            "gesperrt", "störung", "stoerung", "ausfall", "ausfälle", "ausfaelle",
+            "panne", "wartung", "maintenance", "verzöger", "verzoeger", "fertigstellung",
+            "station", "gebaut", "bauen", "baut",
+        ),
+        "words": ("bau", "ouvert", "ouverte", "ouverts", "ouvertes"),
+    },
+    {
+        "id": "wirtschaft",
+        "label": "Wirtschaft",
+        "prefixes": (
+            "unternehmen", "wirtschaft", "standort", "arbeitsplatz", "arbeitsplätz",
+            "arbeitsplaetz", "industrie", "tourismus", "tourisme", "emploi", "entreprise",
+            "investor", "mittelstand", "konzern", "wertschöpfung", "wertschoepfung", "firma",
+        ),
+        "words": (),
+    },
+    {
+        "id": "technologie",
+        "label": "Technologie",
+        "prefixes": (
+            "künstliche", "kuenstliche", "intelligenz", "intelligence", "artificial",
+            "forschung", "innovation", "technologie", "wissenschaft", "ökosystem",
+            "oekosystem", "ecosystem", "écosystème", "startup", "robot", "automatis",
+            "digitalisierung", "algorithm",
+        ),
+        "words": (),
+    },
+)
+
+# A prefix hit that does not mean the theme.
+_EXCLUDED_PREFIXES = ("kostenlos", "kostenfrei")
+
+LABEL_FOR = {entry["id"]: entry["label"] for entry in CATEGORIES}
+
+
+def _matchers() -> list[tuple[str, str, bool]]:
+    rows = []
+    for entry in CATEGORIES:
+        for prefix in entry["prefixes"]:
+            rows.append((len(prefix), prefix, entry["id"], True))
+        for word in entry["words"]:
+            rows.append((len(word), word, entry["id"], False))
+    rows.sort(key=lambda item: (-item[0], item[1]))
+    return [(prefix, category, is_prefix) for _, prefix, category, is_prefix in rows]
+
+
+_MATCHERS = _matchers()
+
+
+def category_of(word: str) -> str | None:
+    """Theme id for one token, or None when the token is not a theme word."""
+    if word.startswith(_EXCLUDED_PREFIXES):
+        return None
+    for prefix, category, is_prefix in _MATCHERS:
+        if is_prefix and word.startswith(prefix):
+            return category
+        if not is_prefix and word == prefix:
+            return category
+    return None
+
+
+def categories_in(words) -> list[str]:
+    """Theme ids mentioned in one post, in page order."""
+    found = []
+    seen = set()
+    for word in words:
+        category = category_of(word)
+        if category and category not in seen:
+            seen.add(category)
+            found.append(category)
+    order = {entry["id"]: index for index, entry in enumerate(CATEGORIES)}
+    found.sort(key=order.get)
+    return found
+
+
+def label_for(category_id: str) -> str:
+    return LABEL_FOR.get(category_id, category_id)
+
 
 def _topic_word(word: str) -> bool:
     if word in TOPIC_WORDS:
@@ -87,9 +275,47 @@ def tokens(text, limit=TOKEN_CHARS) -> list[str]:
 
 
 def attach(frame: pd.DataFrame) -> pd.DataFrame:
-    """Adds the ``terms`` column."""
+    """Adds ``terms`` and ``categories`` (theme ids, one post can have several)."""
     frame["terms"] = frame["text"].map(tokens)
+    frame["categories"] = frame["terms"].map(categories_in)
     return frame
+
+
+def category_profile(frame: pd.DataFrame) -> list[dict]:
+    """One row per theme, in page order.
+
+    ``count`` is posts that mention the theme. ``share`` is that count
+    divided by the posts in the frame. ``terms`` are the words that
+    triggered it, most common first.
+    """
+    counts = {entry["id"]: 0 for entry in CATEGORIES}
+    examples: dict[str, Counter] = {entry["id"]: Counter() for entry in CATEGORIES}
+    total = len(frame)
+    if total and "terms" in frame.columns:
+        for word_list in frame["terms"]:
+            seen_category = set()
+            seen_word = set()
+            for word in word_list:
+                category = category_of(word)
+                if category is None:
+                    continue
+                if word not in seen_word:
+                    seen_word.add(word)
+                    examples[category][word] += 1
+                if category not in seen_category:
+                    seen_category.add(category)
+                    counts[category] += 1
+    rows = []
+    for entry in CATEGORIES:
+        count = counts[entry["id"]]
+        rows.append({
+            "id": entry["id"],
+            "label": entry["label"],
+            "count": count,
+            "share": (count / total) if total else 0.0,
+            "terms": [word for word, _count in examples[entry["id"]].most_common(3)],
+        })
+    return rows
 
 
 def top_terms(frame: pd.DataFrame, n: int = TERM_COUNT) -> list[dict]:

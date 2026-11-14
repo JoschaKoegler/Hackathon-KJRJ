@@ -1,0 +1,15 @@
+{
+  "replaced_projects": {
+    "Heilbronn_Seilbahn": {
+      "brief": "briefs/Heilbronn_Seilbahn.json",
+      "assigned": "assigned/Heilbronn_Seilbahn.json",
+      "posts": 210,
+      "previous_posts_replaced": 210,
+      "moved_from_other_projects": 0
+    }
+  },
+  "moved_from_other_projects": {},
+  "pending_briefs": [],
+  "posts_before": 1654,
+  "posts_after": 1654
+}

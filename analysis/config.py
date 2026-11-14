@@ -74,9 +74,9 @@ TREND_THRESHOLD_POINTS = 2.0
 # Below this many classified posts the window is too thin for an arrow.
 MIN_TREND_BASE = 8
 
-# Word cloud. "posts": a term counts once per post.
+# Raw term list, kept for notebooks. The page draws themes, not this list.
+# "posts": a term counts once per post.
 # "occurrences": every appearance in the text counts.
-# The cloud reads the same prepared text as text stance.
 TERM_COUNT = 10
 TERM_COUNTING = "posts"
 TEXT_CHARS = 2500

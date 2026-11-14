@@ -1,0 +1,550 @@
+{
+  "project_key": "Heilbronn_Seilbahn",
+  "kontext_regex": "heilbronn|(?<![a-zäöüß])ipai|(?<![a-zäöüß])ki[- ]park|(?<![a-zäöüß])ki-innovationspark|innovationspark|mergel|ringle|neckargartach|wohlgelegen|bildungscampus|kurt-schumacher",
+  "themen": [
+    {
+      "id": "kosten",
+      "label": "Kosten",
+      "beschreibung": "Baukosten, Kostenschätzungen, Betriebs- und Folgekosten",
+      "muster": [
+        "kosten(?!los|frei)",
+        "kostet",
+        "teuer",
+        "\\d+(?:[.,]\\d+)?\\s*(?:mio|millionen)",
+        "preis\\b",
+        "kostenschätzung"
+      ]
+    },
+    {
+      "id": "foerderung",
+      "label": "Förderung & Finanzierung",
+      "beschreibung": "Zuschüsse von Land und Bund, Absichtserklärung, Finanzierungsmodell",
+      "muster": [
+        "förder",
+        "zuschuss",
+        "absichtserklärung",
+        "letter of intent",
+        "landesmittel",
+        "hälfte der planungskosten",
+        "finanzier",
+        "gvfg",
+        "übernimmt das land"
+      ]
+    },
+    {
+      "id": "fehlinvestition",
+      "label": "Deplatzierte Investition",
+      "beschreibung": "Geld fehle anderswo (Klinik, Hausärzte, Stadtbahn), falsche Prioritäten",
+      "muster": [
+        "(?:seilbahn|gondel)\\w*.{0,120}(?:krankenhaus|klinik(?!um)|hausärzt|steuergeld|luxusbau|portokasse|kürzungen)",
+        "(?:krankenhaus|klinik(?!um)|hausärzt|steuergeld|luxusbau|portokasse|kürzungen).{0,120}(?:seilbahn|gondel)",
+        "ist geld da",
+        "geld .{0,40}(?:verschwend|verbrenn|aus dem fenster)",
+        "finanzieller spielraum",
+        "priorisierung"
+      ]
+    },
+    {
+      "id": "prestige",
+      "label": "Prestigeprojekt & Sinnfrage",
+      "beschreibung": "Vorwurf Prestige-/Denkmalprojekt, Zweifel am Sinn",
+      "muster": [
+        "prestige",
+        "denkmal setzen",
+        "luftnummer",
+        "satire",
+        "schikane",
+        "unsinnig",
+        "abstrus",
+        "ob so eine seilbahn sinn",
+        "traumtänzerei",
+        "zeppelin",
+        "größenwahn"
+      ]
+    },
+    {
+      "id": "stadtbahn_alternative",
+      "label": "Stadtbahn als Alternative",
+      "beschreibung": "Ausbau von Stadtbahn/Tram statt Seilbahn, Kritik des VCD",
+      "muster": [
+        "stadtbahn statt",
+        "statt seilbahn",
+        "\\bvcd\\b",
+        "verkehrsclub",
+        "ausbau (?:der|des) (?:stadtbahn|tram|straßenbahn)",
+        "erweiterung der stadtbahn",
+        "tram-netz",
+        "straßenbahn"
+      ]
+    },
+    {
+      "id": "ipai_anbindung",
+      "label": "Anbindung IPAI & Standort",
+      "beschreibung": "Erschließung des KI-Parks, Arbeitsplätze, Lage auf der grünen Wiese",
+      "muster": [
+        "(?<![a-zäöüß])ipai",
+        "(?<![a-zäöüß])ki[- ]park",
+        "innovationspark",
+        "(?<![a-zäöüß])ki-campus",
+        "arbeitspl",
+        "grünen wiese",
+        "5\\.?000 (?:menschen|personen|leute|neue)"
+      ]
+    },
+    {
+      "id": "verkehrsentlastung",
+      "label": "Verkehr & ÖPNV-Integration",
+      "beschreibung": "Stau, Entlastung, Pendler, Einbindung in den Nahverkehr",
+      "muster": [
+        "\\bstau",
+        "entlast",
+        "verkehrskollaps",
+        "verkehrschaos",
+        "pendl",
+        "nahverkehrs?(?:netz|plan)",
+        "teil des (?:öffentlichen nahverkehrs|öpnv)",
+        "engpässe",
+        "parkhaus",
+        "parken"
+      ]
+    },
+    {
+      "id": "tarif",
+      "label": "Ticket & Tarif",
+      "beschreibung": "Deutschlandticket, Fahrpreise, Gratisfahrt",
+      "muster": [
+        "deutschlandticket",
+        "\\btarif",
+        "fahrpreis",
+        "gratis",
+        "kostenlos"
+      ]
+    },
+    {
+      "id": "klima_umwelt",
+      "label": "Klima & Umwelt",
+      "beschreibung": "Klimafreundlichkeit, Energieeffizienz, Eingriffe in Natur",
+      "muster": [
+        "klima(?!freundlich mobil rund um)",
+        "umwelt",
+        "nachhaltig",
+        "energieeffizien",
+        "co2",
+        "emission",
+        "elektrisch",
+        "aufgeforstet",
+        "gefällt",
+        "baumwipfel",
+        "grünfläche"
+      ]
+    },
+    {
+      "id": "laerm_anwohner",
+      "label": "Lärm & Anwohner",
+      "beschreibung": "Geräusche, Einblicke in Wohnbereiche, Betroffenheit von Anwohnern",
+      "muster": [
+        "lärm",
+        "\\bleise",
+        "lautlos",
+        "geräusch",
+        "anwohner",
+        "privatsphäre",
+        "einblicke? zu schützen",
+        "über (?:die )?(?:dächer|gärten|häuser)",
+        "bewohnte bereiche"
+      ]
+    },
+    {
+      "id": "trasse_stationen",
+      "label": "Trasse & Haltestellen",
+      "beschreibung": "Streckenverlauf, Lage und Gestaltung der Stationen",
+      "muster": [
+        "trasse",
+        "haltestelle",
+        "station",
+        "haltepunkt",
+        "kurt-schumacher",
+        "streckenverlauf",
+        "4,7 kilometer",
+        "fünf (?:stationen|haltestellen)"
+      ]
+    },
+    {
+      "id": "stadtbild",
+      "label": "Stadtbild & Architektur",
+      "beschreibung": "Optik von Stützen, Stationen und Kabinen, Entwürfe",
+      "muster": [
+        "stadtbild",
+        "stützen",
+        "masten",
+        "architekt",
+        "unstudio",
+        "visualisierung",
+        "so könnte .{0,40}aussehen",
+        "hässlich"
+      ]
+    },
+    {
+      "id": "technik_betrieb",
+      "label": "Technik, Fahrzeit & Kapazität",
+      "beschreibung": "Fahrzeit, Kabinen, Kapazität, Wartezeit, Wind und Sicherheit",
+      "muster": [
+        "14 minuten",
+        "kabinen?\\b",
+        "kapazität",
+        "pro stunde",
+        "wartezeit",
+        "\\btakt",
+        "\\bwind",
+        "sicherheit",
+        "evakuier",
+        "barrierefrei"
+      ]
+    },
+    {
+      "id": "zeitplan",
+      "label": "Zeitplan & Umsetzungsrisiko",
+      "beschreibung": "Eröffnungstermin, Planungsdauer, Verzögerungen",
+      "muster": [
+        "eröffnung",
+        "eröffnungstermin",
+        "acht jahre",
+        "zeitplan",
+        "verzöger",
+        "stuttgart 21",
+        "hängepartie",
+        "bis 20\\d\\d",
+        "20(?:3\\d)\\b",
+        "wer baut schneller",
+        "rennen"
+      ]
+    },
+    {
+      "id": "politik",
+      "label": "Politische Entscheidung",
+      "beschreibung": "Gemeinderatsbeschlüsse, Vorplanung, Ausschreibung",
+      "muster": [
+        "gemeinderat",
+        "beschl",
+        "abstimm",
+        "vorplanung",
+        "ausschreibung",
+        "grünes licht",
+        "stadtrat",
+        "fraktion"
+      ]
+    },
+    {
+      "id": "vorreiter_image",
+      "label": "Vorreiterrolle & Image",
+      "beschreibung": "Erste Stadt in BW/Deutschland, Modellstadt, Zukunftsprojekt",
+      "muster": [
+        "erste (?:stadt|kommune|großstadt)",
+        "vorreiter",
+        "modellstadt",
+        "bundesweit",
+        "leuchtturm",
+        "zukunftsprojekt",
+        "mut, neues",
+        "pionier",
+        "verkehrsmittel der zukunft"
+      ]
+    },
+    {
+      "id": "vergleich_staedte",
+      "label": "Vergleich mit anderen Städten",
+      "beschreibung": "Paris (C1), Toulouse, London, Stuttgart, Koblenz, Bundesgartenschau",
+      "muster": [
+        "paris",
+        "toulouse",
+        "london",
+        "koblenz",
+        "ankara",
+        "barcelona",
+        "bundesgartenschau",
+        "\\bbuga\\b",
+        "\\bc1\\b",
+        "stuttgart.{0,60}seilbahn",
+        "seilbahn.{0,60}stuttgart(?! 21)",
+        "wer baut schneller",
+        "seilbahn-rennen"
+      ]
+    },
+    {
+      "id": "beteiligung_transparenz",
+      "label": "Bürgermeinung & Transparenz",
+      "beschreibung": "Meinungen aus der Bevölkerung, Beteiligung, Informationspolitik",
+      "muster": [
+        "transparen",
+        "bürgerbeteiligung",
+        "bürgerentscheid",
+        "petition",
+        "passanten",
+        "das halten heilbronner",
+        "unterschiedliche meinungen",
+        "eure meinung",
+        "was die zu den plänen",
+        "leserbrief",
+        "bedeckt",
+        "keine kosten"
+      ]
+    },
+    {
+      "id": "schwarz_stiftung",
+      "label": "Rolle der Dieter-Schwarz-Stiftung",
+      "beschreibung": "Einfluss und Geld der Schwarz-Gruppe bzw. Stiftung",
+      "muster": [
+        "dieter schwarz",
+        "schwarz-stiftung",
+        "schwarz stiftung",
+        "schwarz gruppe",
+        "schwarz-gruppe",
+        "was schwarz will",
+        "\\bdieter\\b"
+      ]
+    },
+    {
+      "id": "tourismus",
+      "label": "Attraktion & Erlebnis",
+      "beschreibung": "Seilbahn als Touristenattraktion, Aussicht, Erlebnis",
+      "muster": [
+        "touris(?!.{0,40}skigebiet)",
+        "attraktion",
+        "wahrzeichen",
+        "aussicht",
+        "erlebnis",
+        "den flug über heilbronn"
+      ]
+    }
+  ],
+  "hopes": [
+    {
+      "id": "h_entlastung",
+      "label": "Weniger Stau, Verkehr entlastet",
+      "muster": [
+        "(?:verkehr|straße|stau|nahverkehr)\\w* .{0,40}entlast",
+        "entlast\\w* .{0,40}(?:verkehr|straße|nahverkehr)",
+        "staufrei",
+        "statt im stau",
+        "über den (?:stau|verkehr)",
+        "stau-lösung",
+        "engpässe am boden"
+      ]
+    },
+    {
+      "id": "h_schnell",
+      "label": "Schnelle, zuverlässige Verbindung",
+      "muster": [
+        "in 14 minuten",
+        "14 minuten",
+        "ohne wartezeit",
+        "wartezeiten",
+        "schnell(?:e|er)? verbindung",
+        "zuverlässig",
+        "nahezu ohne wartezeit"
+      ]
+    },
+    {
+      "id": "h_ipai",
+      "label": "IPAI gut erreichbar, Standort gestärkt",
+      "muster": [
+        "(?:anbind|erreichbar|verbind|verknüpf)\\w* .{0,60}(?:(?<![a-zäöüß])ipai|(?<![a-zäöüß])ki[- ]park|innovationspark|campus)",
+        "(?:(?<![a-zäöüß])ipai|(?<![a-zäöüß])ki[- ]park|innovationspark)\\w* .{0,60}(?:anbind|erreichbar|verbind)",
+        "abseitige lage .{0,80}ausgeglichen",
+        "mit der seilbahn in die innenstadt"
+      ]
+    },
+    {
+      "id": "h_klima",
+      "label": "Klimafreundliche Mobilität",
+      "muster": [
+        "klimafreundlich(?! mobil rund um)",
+        "umweltfreundlich",
+        "umweltschonend",
+        "energieeffizient",
+        "nachhaltiges verkehrsmittel",
+        "emissionsfrei",
+        "elektrisch angetrieben",
+        "emissionen senken"
+      ]
+    },
+    {
+      "id": "h_vorreiter",
+      "label": "Heilbronn als Vorreiter & Modellstadt",
+      "muster": [
+        "erste (?:stadt|kommune|großstadt) .{0,50}(?:baden-württemberg|deutschland|land)",
+        "vorreiter",
+        "modellstadt",
+        "mut, neues",
+        "bundesweit .{0,30}aufmerksamkeit",
+        "verkehrsmittel der zukunft",
+        "bereicherung",
+        "visionär"
+      ]
+    },
+    {
+      "id": "h_leise_platz",
+      "label": "Leise und platzsparend",
+      "muster": [
+        "\\bleise",
+        "lautlos",
+        "wenig fläche",
+        "flächenverbrauch",
+        "kaum bewohnte bereiche"
+      ]
+    },
+    {
+      "id": "h_barrierefrei",
+      "label": "Barrierefrei",
+      "muster": [
+        "barrierefrei"
+      ]
+    },
+    {
+      "id": "h_foerderung",
+      "label": "Finanzierung durch Fördergelder gesichert",
+      "muster": [
+        "land (?:sagt|sichert|unterstützt|fördert|übernimmt)",
+        "übernimmt die hälfte",
+        "hohe förderung",
+        "millionen-förderung",
+        "fördert .{0,30}mit millionen",
+        "land .{0,20}millionen .{0,20}zu"
+      ]
+    },
+    {
+      "id": "h_attraktion",
+      "label": "Attraktion & Begeisterung",
+      "muster": [
+        "auf jeden fall cool",
+        "\\bcool\\b",
+        "absolut mega",
+        "\\btoll\\b",
+        "beeindruckend",
+        "beflügelt die phantasie",
+        "spannendes vorhaben",
+        "touristen ?attraktion werden",
+        "freue mich",
+        "kanns kaum erwarten",
+        "inspiration"
+      ]
+    }
+  ],
+  "fears": [
+    {
+      "id": "f_kosten",
+      "label": "Kosten unklar oder steigend",
+      "muster": [
+        "fluch der ersten zahl",
+        "(?:kosten|preis)\\w*.{0,60}(?:bedeckt|nicht festlegen|noch keine|unklar|(?<!über)steig(?:en|t|ende)|explod)",
+        "(?:noch )?keine (?:kosten|angaben)",
+        "nennt .{0,30}keine kosten",
+        "wie teuer",
+        "was kostet",
+        "teurer als",
+        "kostenexplosion",
+        "folgekosten",
+        "langfristigen kosten",
+        "kosten übersteigen"
+      ]
+    },
+    {
+      "id": "f_fehlinvestition",
+      "label": "Geld fehlt anderswo (deplatzierte Investition)",
+      "muster": [
+        "(?:seilbahn|gondel)\\w*.{0,120}(?:krankenhaus|klinik(?!um)|hausärzt|steuergeld|luxusbau|portokasse|kürzungen)",
+        "(?:krankenhaus|klinik(?!um)|hausärzt|steuergeld|luxusbau|portokasse|kürzungen).{0,120}(?:seilbahn|gondel)",
+        "für seilbahn ist geld da",
+        "steuergelder aus dem fenster",
+        "finanzieller spielraum"
+      ]
+    },
+    {
+      "id": "f_prestige",
+      "label": "Prestigeprojekt ohne echten Nutzen",
+      "muster": [
+        "prestige",
+        "denkmal setzen",
+        "luftnummer",
+        "satire",
+        "schikane",
+        "unsinnig",
+        "abstrus",
+        "ob so eine seilbahn sinn",
+        "seilbahn fährt man in den alpen",
+        "zeppelin"
+      ]
+    },
+    {
+      "id": "f_stadtbahn",
+      "label": "Bremst den Ausbau von Stadtbahn/ÖPNV",
+      "muster": [
+        "stadtbahn statt",
+        "befürchtet, dass .{0,80}(?:ausbau|verkehr)",
+        "\\bvcd\\b.{0,80}(?:kritisch|warnt|irritiert|fordert)",
+        "verkehrsclub .{0,60}kritisch",
+        "warnt vor risiken",
+        "kürzungen beim stadtbahn"
+      ]
+    },
+    {
+      "id": "f_verzoegerung",
+      "label": "Verzögerung, zweites Stuttgart 21",
+      "muster": [
+        "(?:zweites|unser|kein zweites) stuttgart 21",
+        "wird .{0,20}stuttgart 21",
+        "hängepartie",
+        "in die hose geht",
+        "noch lange keine seilbahn",
+        "verzöger"
+      ]
+    },
+    {
+      "id": "f_nutzen",
+      "label": "Zu wenig Nutzen oder Fahrgäste",
+      "muster": [
+        "home-office",
+        "am hauptbahnhof vorbeischwebt",
+        "wo sollen dann die autos parken",
+        "nichtmal an den spnv",
+        "wenn überhaupt",
+        "halbwegs annehmbare",
+        "mit dem auto zum",
+        "wie realistisch"
+      ]
+    },
+    {
+      "id": "f_anwohner",
+      "label": "Lärm und Einblicke für Anwohner",
+      "muster": [
+        "anwohner\\w*.{0,60}(?:sorge|angst|befürcht|beschwer|wehren|widerstand)",
+        "wehren sich",
+        "widerstand aus der bevölkerung",
+        "einblick\\w* in (?:gärten|wohnungen|häuser)",
+        "privatsphäre"
+      ]
+    },
+    {
+      "id": "f_natur",
+      "label": "Eingriff in Natur (grüne Wiese, Baumfällungen)",
+      "muster": [
+        "gefällt",
+        "grünen wiese",
+        "hässlich",
+        "verschandel",
+        "landschaftsschutz"
+      ]
+    },
+    {
+      "id": "f_einfluss",
+      "label": "Einfluss der Schwarz-Stiftung, mangelnde Transparenz",
+      "muster": [
+        "was schwarz will",
+        "dieter schwarz stiftung muss",
+        "schwarz-stiftung .{0,60}(?:lös|will|bestimm)",
+        "ohne transparenz",
+        "intransparen"
+      ]
+    }
+  ]
+}

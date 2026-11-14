@@ -295,8 +295,6 @@ def main():
             post["matched_projects"] = projects
             post["also_mentions"] = also_mentions
             clean_posts.append(post)
-            for p in projects:
-                project_counts[p] += 1
         else:
             if sample_counts[reason] < 15:
                 sample_counts[reason] += 1
@@ -307,6 +305,13 @@ def main():
                     "title": post.get("title"),
                     "snippet": normalize_text(post.get("content"))[:180]
                 })
+
+    from assign_projects import overlay_assigned
+
+    clean_posts, assign_report = overlay_assigned(clean_posts)
+    for post in clean_posts:
+        for project_id in post.get("matched_projects") or []:
+            project_counts[project_id] += 1
 
     with open(OUTPUT_CLEAN_FILE, "w", encoding="utf-8") as f:
         json.dump(clean_posts, f, ensure_ascii=False, indent=2)
@@ -336,6 +341,14 @@ def main():
     print("\n--- Treffer pro Projekt ---")
     for proj, count in project_counts.most_common():
         print(f"  - {proj:<32}: {count:>6}")
+
+    if assign_report["replaced_projects"]:
+        print("\n--- Modellergebnis statt Regex ---")
+        for project_id, info in assign_report["replaced_projects"].items():
+            print(
+                f"  - {project_id}: {info['posts']} Beiträge aus {info['assigned']} "
+                f"({info['previous_posts_replaced']} bisherige Beiträge ersetzt)"
+            )
 
     print("\n" + "=" * 65)
     print(f"Gespeichert: {OUTPUT_CLEAN_FILE.name}, {OUTPUT_AUDIT_FILE.name}")

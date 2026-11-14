@@ -1,14 +1,14 @@
 [
   {
     "project": "Bonn_Seilbahn",
-    "total_posts": 149,
+    "total_posts": 148,
     "date_range": "2024-10-28 bis 2026-10-23",
     "peak_selection": {
       "max_major_peaks": 8,
       "min_spacing_days": 45,
       "n_major": 3,
       "n_significant_peaks": 3,
-      "dispersion": 1.222,
+      "dispersion": 1.263,
       "false_alarm_budget": 0.5
     },
     "peaks": [
@@ -16,7 +16,7 @@
         "date": "2025-06-15",
         "post_count": 8,
         "baseline_posts_per_day": 0.1,
-        "relative_to_baseline": 78.0,
+        "relative_to_baseline": 78.5,
         "significance": 7.8,
         "excess_posts": 13.3,
         "prominence": 8.0,
@@ -57,8 +57,8 @@
         "post_count": 4,
         "baseline_posts_per_day": 0.11,
         "relative_to_baseline": 36.0,
-        "significance": 3.9,
-        "excess_posts": 9.3,
+        "significance": 3.8,
+        "excess_posts": 8.3,
         "prominence": 4.0,
         "avg_sentiment": -0.25,
         "crawler_window": {
@@ -77,14 +77,14 @@
   },
   {
     "project": "Heilbronn_Seilbahn",
-    "total_posts": 165,
+    "total_posts": 210,
     "date_range": "2024-12-19 bis 2026-10-15",
     "peak_selection": {
       "max_major_peaks": 7,
       "min_spacing_days": 47,
-      "n_major": 3,
+      "n_major": 2,
       "n_significant_peaks": 5,
-      "dispersion": 0.505,
+      "dispersion": 1.511,
       "false_alarm_budget": 0.5
     },
     "peaks": [
@@ -92,9 +92,9 @@
         "date": "2025-03-28",
         "post_count": 4,
         "baseline_posts_per_day": 0.16,
-        "relative_to_baseline": 25.7,
-        "significance": 3.9,
-        "excess_posts": 4.1,
+        "relative_to_baseline": 25.4,
+        "significance": 3.2,
+        "excess_posts": 4.0,
         "prominence": 4.0,
         "avg_sentiment": 0.75,
         "crawler_window": {
@@ -102,28 +102,28 @@
           "end": "2025-03-30"
         },
         "sample_titles": [
-          "Statt Bus und Stadtbahn: Heilbronn plant Seilbahn zum KI-Park",
-          "Detailansicht - VKZ"
+          "Seilbahn durch Heilbronn: Pläne für spektakuläres Projekt werden konkreter - STIMME.de",
+          "Statt Bus und Stadtbahn: Heilbronn plant Seilbahn zum KI-Park"
         ],
-        "rank": 4,
+        "rank": 5,
         "tier": "minor"
       },
       {
         "date": "2025-04-04",
-        "post_count": 11,
-        "baseline_posts_per_day": 0.12,
-        "relative_to_baseline": 88.8,
-        "significance": 12.5,
-        "excess_posts": 21.2,
-        "prominence": 11.0,
+        "post_count": 15,
+        "baseline_posts_per_day": 0.16,
+        "relative_to_baseline": 95.1,
+        "significance": 11.2,
+        "excess_posts": 25.1,
+        "prominence": 15.0,
         "avg_sentiment": 0.0,
         "crawler_window": {
           "start": "2025-04-01",
           "end": "2025-04-06"
         },
         "sample_titles": [
-          "Gelesen 5. 4. 25",
-          "🚡 In einer Gondel fast lautlos durch die Luft schweben - so könnte der Personenverkehr in Heilbronn aussehen. Die…"
+          "ÖPNV der Zukunft? Heilbronn plant Seilbahn zum KI-Hotspot",
+          "++ Info-Date am Morgen, 4.4.25: US-Zölle drücken Welthandel ++ - SWR Aktuell"
         ],
         "rank": 1,
         "tier": "major"
@@ -131,10 +131,10 @@
       {
         "date": "2025-05-12",
         "post_count": 13,
-        "baseline_posts_per_day": 0.27,
-        "relative_to_baseline": 48.8,
-        "significance": 11.0,
-        "excess_posts": 15.4,
+        "baseline_posts_per_day": 0.33,
+        "relative_to_baseline": 39.0,
+        "significance": 6.6,
+        "excess_posts": 15.0,
         "prominence": 13.0,
         "avg_sentiment": 0.62,
         "crawler_window": {
@@ -142,65 +142,65 @@
           "end": "2025-05-14"
         },
         "sample_titles": [
-          "Nach Kürzungen beim Stadtbahn-Verkehr: Für Prestigeprojekt Heilbronner Seilbahn fließt das Geld",
-          "13.5.02025"
+          "Seilbahn in Heilbronn: Land unterstützt Pläne mit Millionen-Betrag - STIMME.de",
+          "Seilbahn für Heilbronn: Die Chancen steigen - STIMME.de"
         ],
         "rank": 2,
         "tier": "minor"
       },
       {
-        "date": "2025-09-08",
+        "date": "2026-07-04",
         "post_count": 4,
-        "baseline_posts_per_day": 0.12,
-        "relative_to_baseline": 32.3,
-        "significance": 4.3,
-        "excess_posts": 3.3,
+        "baseline_posts_per_day": 0.16,
+        "relative_to_baseline": 25.4,
+        "significance": 3.2,
+        "excess_posts": 7.0,
         "prominence": 4.0,
-        "avg_sentiment": 0.67,
+        "avg_sentiment": 0.75,
         "crawler_window": {
-          "start": "2025-09-05",
-          "end": "2025-09-10"
+          "start": "2026-07-01",
+          "end": "2026-07-06"
         },
         "sample_titles": [
-          "Warum hast du bei den Seilbahnen nicht Heilbronn genannt? Diese Stadt ist am ehesten eine ÖPNV Seilbahn zu errichten",
-          "Heilbronner Seilbahn-Projekt: Verband sieht große Chancen – VCD warnt vor Risiken - STIMME.de"
-        ],
-        "rank": 5,
-        "tier": "major"
-      },
-      {
-        "date": "2026-07-31",
-        "post_count": 4,
-        "baseline_posts_per_day": 0.22,
-        "relative_to_baseline": 18.0,
-        "significance": 3.3,
-        "excess_posts": 4.9,
-        "prominence": 4.0,
-        "avg_sentiment": 0.33,
-        "crawler_window": {
-          "start": "2026-07-28",
-          "end": "2026-08-02"
-        },
-        "sample_titles": [
-          "Wie heißt das tolle Lied und wer singt es?Es ist beschlossen 😢Natürlich geht es nur um Geld. Menschlichkeit und…",
-          "Heilbronn: Seilbahn-Projekt nimmt nächste Hürde - Sinsheim-Kraichgau - Nachrichten und Aktuelles aus der Region - Rhein-Neckar-Zeitung"
+          "Lange war es still um das viel beachtete Heilbronner Seilbahn-Projekt. Jetzt gibt es neue Details.",
+          "Der ökologisch orientierte Verkehrsclub sieht Heilbronns Pläne, eine Seilbahn zu bauen, kritisch."
         ],
         "rank": 3,
         "tier": "major"
+      },
+      {
+        "date": "2026-07-23",
+        "post_count": 4,
+        "baseline_posts_per_day": 0.16,
+        "relative_to_baseline": 25.4,
+        "significance": 3.2,
+        "excess_posts": 4.9,
+        "prominence": 4.0,
+        "avg_sentiment": 0.75,
+        "crawler_window": {
+          "start": "2026-07-20",
+          "end": "2026-07-25"
+        },
+        "sample_titles": [
+          "Stadtbahn für 157 Millionen Euro? Das ist keine Traumtänzerei - STIMME.de",
+          "Neuer Plan für Heilbronner Seilbahn: Hier soll die City-Haltestelle entstehen - STIMME.de"
+        ],
+        "rank": 4,
+        "tier": "minor"
       }
     ],
     "change_points": []
   },
   {
     "project": "IPAI_Campus",
-    "total_posts": 849,
+    "total_posts": 847,
     "date_range": "2024-10-20 bis 2026-10-25",
     "peak_selection": {
       "max_major_peaks": 8,
       "min_spacing_days": 46,
       "n_major": 5,
       "n_significant_peaks": 5,
-      "dispersion": 0.614,
+      "dispersion": 0.612,
       "false_alarm_budget": 0.5
     },
     "peaks": [
@@ -208,7 +208,7 @@
         "date": "2025-02-11",
         "post_count": 7,
         "baseline_posts_per_day": 0.58,
-        "relative_to_baseline": 12.1,
+        "relative_to_baseline": 12.2,
         "significance": 3.5,
         "excess_posts": 6.5,
         "prominence": 7.0,
@@ -227,10 +227,10 @@
       {
         "date": "2025-07-09",
         "post_count": 11,
-        "baseline_posts_per_day": 0.67,
-        "relative_to_baseline": 16.5,
-        "significance": 5.3,
-        "excess_posts": 23.8,
+        "baseline_posts_per_day": 0.64,
+        "relative_to_baseline": 17.1,
+        "significance": 5.4,
+        "excess_posts": 23.9,
         "prominence": 11.0,
         "avg_sentiment": 0.82,
         "crawler_window": {
@@ -267,9 +267,9 @@
       {
         "date": "2026-02-23",
         "post_count": 10,
-        "baseline_posts_per_day": 1.09,
-        "relative_to_baseline": 9.2,
-        "significance": 3.4,
+        "baseline_posts_per_day": 1.07,
+        "relative_to_baseline": 9.4,
+        "significance": 3.5,
         "excess_posts": 5.7,
         "prominence": 10.0,
         "avg_sentiment": 0.11,

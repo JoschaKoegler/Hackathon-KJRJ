@@ -13,12 +13,19 @@ analysis/                            what the page computes
   prepare.py                         text, city, channel
   stance.py                          vendor tone and text stance
   terms.py                           word-cloud terms
+  curated.py                         themes, hopes, and fears from step 05
   summary.py                         timeline, circles, trend, peak markers
 pipeline/                            batch steps, in order
   01_filter_posts.py                 date, near-duplicate, one project
   project_definitions.json           topic terms and context terms
+  briefs/                            project name, place, description
+  assigned/                          model output, same post format
+  assign_projects.py                 uses assigned/ when that file exists
   02_detect_peaks.py                 peaks and change points
   03_attach_events.py                news around each peak
+  05_themen_hopes_fears.py           themes, hopes, and fears around the cable-car mention
+  themen/                            search patterns per project
+  themen_hopes_fears_<project>.json  assignments the page reads for that project
 data/
   01_filtered/posts.json             kept posts. one project each
   01_filtered/audit.json             filter log
@@ -37,30 +44,42 @@ notebooks/
 
 ```bash
 pip install -r requirements.txt
-python pipeline/01_filter_posts.py    # only if posts.json is missing
+python pipeline/01_filter_posts.py    # writes pipeline/clean_data.json, then applies assigned/
 python pipeline/02_detect_peaks.py
-python pipeline/03_attach_events.py   # needs network; writes events.json
+python pipeline/03_attach_events.py   # needs network; writes projects_with_context.json
+python pipeline/05_themen_hopes_fears.py
 python dashboard.py                   # http://127.0.0.1:8765
 ```
 
-The page reads `data/01_filtered/posts.json` on startup. Peak lines come from `data/02_peaks/events.json` when that file exists, otherwise from `peaks.json`. Restart the page after a new pipeline run.
+The page reads `pipeline/clean_data.json` on startup. Peak lines come from `pipeline/projects_with_context.json` when that file exists, otherwise from `pipeline/detected_events.json`. For a project with `pipeline/themen_hopes_fears_<project>.json`, the Themes and Hopes & fears views read that file and keep only the posts in the current city, channel, and date window. Restart the page after a new pipeline run.
+
+Step 05 only needs `clean_data.json` and `themen/<project>.json`. It does not depend on peak detection. Without a rules file it stops and says so. Another project is `python pipeline/05_themen_hopes_fears.py --projekt <project_key>` after adding `themen/<project_key>.json`.
 
 ## Data flow
 
 ```mermaid
 flowchart LR
-  raw["Raw export"] --> filter["01 Filter and assign one project"]
+  form["New project: name, place, description"] --> model["Model, placeholder"]
+  raw["Raw export"] --> model
+  model --> assigned["assigned/project.json"]
+  raw --> filter["01 Filter and assign one project"]
   rules["project_definitions.json"] --> filter
-  filter --> posts["01_filtered/posts.json"]
+  assigned --> merge["Replace that project"]
+  filter --> merge
+  merge --> posts["pipeline/clean_data.json"]
   posts --> prepare["Prepare, stance, terms"]
   prepare --> page["Dashboard"]
+  posts --> themes["05 Themes, hopes, fears"]
+  themes --> page
   posts --> peaks["02 Peaks and change points"]
-  peaks --> peakfile["02_peaks/peaks.json"]
-  peakfile --> crawl["03 Attach events"]
-  crawl --> events["02_peaks/events.json"]
-  peakfile --> page
-  events --> page
+  peaks --> crawl["03 Attach events"]
+  crawl --> page
+  peaks --> page
 ```
+
+`briefs/<id>.json` is the form the UI does not have yet: project name, place, and description. `assign_projects.py` is the model call. It does not call a model yet. If `assigned/<id>.json` exists, those posts replace the regex hits for that id. The file uses the same fields as `clean_data.json`, including `matched_projects` and `also_mentions`. Projects without an assigned file stay on the regex rules.
+
+Heilbronn cable car is the first assigned file: 210 posts in `assigned/Heilbronn_Seilbahn.json`. Bonn, Paris, and IPAI still come from the regex filter. Run `python pipeline/assign_projects.py` to apply the assigned files to an existing `clean_data.json` without reading the raw export again. A full `python pipeline/01_filter_posts.py` applies them at the end. Then rerun peak detection and the event step, because those files still describe the previous Heilbronn set until they are rebuilt.
 
 One kept post has exactly one project. The page then cuts that table by city, channel, and date. Peak markers are counted on every kept post of a project. They do not follow the News / Social switch. A marker can sit on a quiet day in one channel because the spike was in the other.
 
@@ -79,6 +98,7 @@ One kept post has exactly one project. The page then cuts that table by city, ch
 | Peaks | Daily counts, `scipy.signal.find_peaks`, prominence `max(2, 1.5 × std)`, at least 7 days apart. Window is 3 days before and 2 days after | `pipeline/02_detect_peaks.py` |
 | Change points | Binary segmentation on z-scored daily counts, penalty 12, segments of at least 7 days | same file |
 | Events | Google News RSS with `after:` / `before:`, headline must match the project regex, one wider window if the first is empty. Official homepages for page context | `pipeline/03_attach_events.py` |
+| Themes, hopes, fears | Passages within 400 characters of a cable-car mention. A short post is read whole. Hopes and fears need a stated judgement, not a bare mention. One post counts once per item and can match several. Projects without a rules file keep the token themes and phrase claims | `pipeline/05_themen_hopes_fears.py`, `analysis/curated.py` |
 
 The page draws a peak only when that day has at least 4 posts. The crawler uses the same floor. Smaller spikes stay in `peaks.json`.
 
@@ -118,7 +138,7 @@ Peaks and change points, all kept posts:
 
 | Brief | Already here | Still open |
 | --- | --- | --- |
-| 1 Explore topics, arguments, stance | Project assignment, term list, vendor tone, phrase stance for explicit support, opposition, and mixed cases | Most posts still have no clear phrase. IPAI has no text stance. The term list is frequency, with project names removed |
+| 1 Explore topics, arguments, stance | Project assignment, term list, vendor tone, phrase stance. Heilbronn cable car uses 20 themes, 9 hopes, and 9 fears read from the passage around the cable car | Most posts still have no clear phrase. IPAI has no text stance. Bonn, Paris, and IPAI still use the token themes and phrase claims |
 | 2 Compare cities and project stages | Four projects, city buttons, Paris as the system in operation | Heilbronn button adds the cable car and IPAI together. No study layer |
 | 3 Track time and triggering events | Daily timeline, peaks, change points, crawler script | `events.json` is not produced yet. Many peaks are two-post days |
 | 4 Interactive dashboard | Page reads the filtered posts, circles, terms, trend, and peak lines | Headlines appear on a peak only after the crawler has run |

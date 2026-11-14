@@ -1,7 +1,8 @@
 """4. Summary.
 
 Filters the prepared posts by city, channel, and date window, then builds
-the timeline, circles, trend arrow, term list, and peak markers.
+the timeline, circles, trend arrow, theme list, and peak markers.
+Heilbronn reads the curated themes, hopes, and fears when that file exists.
 """
 
 from __future__ import annotations
@@ -28,7 +29,9 @@ from .config import (
     TREND_THRESHOLD_POINTS,
 )
 from .prepare import load_posts
-from .terms import top_terms
+from . import curated
+from .arguments import argument_label, argument_profile
+from .terms import category_profile, label_for
 
 
 def as_day(value) -> pd.Timestamp | None:
@@ -179,22 +182,54 @@ def trend(
     }
 
 
-def list_posts(frame: pd.DataFrame) -> list[dict]:
+def _cell(value) -> str:
+    """JSON numbers cannot be NaN. Missing stance fields stay empty strings."""
+    if value is None or (isinstance(value, float) and value != value):
+        return ""
+    return str(value)
+
+
+def list_posts(frame: pd.DataFrame, curated_project: str | None = None) -> list[dict]:
+    notes = {}
+    if curated_project and len(frame) and "mention_id" in frame.columns:
+        notes = curated.notes_for(curated_project, frame["mention_id"].astype(str).tolist())
     visible = frame.sort_values("date", ascending=False)
     rows = []
     for row in visible.itertuples(index=False):
+        mention = str(getattr(row, "mention_id", "") or "")
+        note = notes.get(mention) if curated_project else None
+        if note is not None:
+            categories = note["themes"]
+            hopes = note["hopes"]
+            fears = note["fears"]
+            evidence = note["evidence"]
+            arguments: list[str] = []
+            is_curated = True
+        else:
+            categories = [label_for(category) for category in list(row.categories or [])]
+            arguments = [argument_label(argument) for argument in list(row.arguments or [])]
+            hopes = []
+            fears = []
+            evidence = {}
+            is_curated = False
         rows.append({
             "date": date_iso(row.date),
             "title": str(row.title or "").strip() or "(no title)",
             "source": str(row.source_name or ""),
             "url": str(row.url or ""),
-            "circle": row.circle,
-            "stance": row.stance,
-            "vendor_tone": row.vendor_tone,
+            "circle": _cell(row.circle),
+            "stance": _cell(row.stance),
+            "vendor_tone": _cell(row.vendor_tone),
             "city": row.city or "",
             "channel": row.channel or "",
             "project": row.project_label or "",
             "snippet": str(row.snippet or "").strip(),
+            "categories": categories,
+            "arguments": arguments,
+            "hopes": hopes,
+            "fears": fears,
+            "evidence": evidence,
+            "curated": is_curated,
         })
     return rows
 
@@ -504,10 +539,27 @@ def summarize(
     previous_from, previous_to = previous_window(window_from, window_to)
     previous = select_posts(base, date_from=previous_from, date_to=previous_to)
     circles = count_circles(window)
+    project = curated.project_for_city(city)
+    mentions = (
+        window["mention_id"].astype(str).tolist()
+        if project and len(window) and "mention_id" in window.columns
+        else []
+    )
+    if project:
+        terms = curated.profile(project, mentions, "thema")
+        arguments = curated.claim_rows(project, mentions)
+        terms_note = curated.CURATED_TERMS_NOTE
+        arguments_note = curated.CURATED_ARGUMENTS_NOTE
+    else:
+        terms = category_profile(window)
+        arguments = argument_profile(window)
+        terms_note = curated.TERMS_NOTE
+        arguments_note = curated.ARGUMENTS_NOTE
     return {
         "city": city,
         "channel": channel,
         "stance_source": STANCE_SOURCE,
+        "curated_project": project,
         "date_from": date_iso(window_from),
         "date_to": date_iso(window_to),
         "start": date_iso(start),
@@ -518,7 +570,10 @@ def summarize(
             window, previous, window_from, window_to, previous_from, previous_to, start, end
         ),
         "post_count": int(len(window)),
-        "terms": top_terms(window),
+        "terms": terms,
+        "arguments": arguments,
+        "terms_note": terms_note,
+        "arguments_note": arguments_note,
         "cities": CITY_BUTTONS,
         "channels": CHANNEL_BUTTONS,
         "peaks": load_peak_markers(city),

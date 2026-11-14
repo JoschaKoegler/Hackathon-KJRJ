@@ -11,7 +11,7 @@ import json
 
 import pandas as pd
 
-from . import stance, terms
+from . import arguments, stance, terms
 from .config import (
     CHANNEL_BY_SOURCE,
     CITY_BY_PROJECT,
@@ -155,6 +155,7 @@ def load_posts(refresh: bool = False) -> pd.DataFrame:
     frame = prepare(pd.DataFrame(raw))
     frame = stance.assign(frame)
     frame = terms.attach(frame)
+    frame = arguments.attach(frame)
     frame = frame.dropna(subset=["date"]).copy()
     _CACHE = frame
     return frame

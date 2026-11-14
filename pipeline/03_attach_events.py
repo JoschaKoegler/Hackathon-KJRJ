@@ -43,8 +43,10 @@ HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Hackathon-Re
 USE_LLM = False
 LLM_MODEL = "claude-sonnet-4-6"
 
-# NEUES PROJEKT HINZUFÜGEN: Regeln in 1_filter_data.py (PROJECT_RULES) ergänzen und hier einen Eintrag
-# anlegen. Die Analyse selbst ist projekt-unabhängig. Optionale Schlüssel pro Projekt:
+# NEUES PROJEKT HINZUFÜGEN: Steckbrief unter briefs/<id>.json. Sobald das Modell
+# gelaufen ist, assigned/<id>.json; sonst gelten die Regeln in 01_filter_posts.py.
+# Hier zusätzlich einen Eintrag anlegen. Die Analyse selbst ist projekt-unabhängig.
+# Optionale Schlüssel pro Projekt:
 #   "topic_regex":           Regex für den Themen-Check (Standard: must_match_regex)
 #   "extra_stopwords":       projektspezifische Füllwörter für die Schlagwort-Extraktion
 #   "extra_event_types":     {"Typname": {"strong": [regex, ...], "weak": [regex, ...]}}
