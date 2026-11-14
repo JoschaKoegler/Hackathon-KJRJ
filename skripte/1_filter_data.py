@@ -1,3 +1,15 @@
+"""Preprocessing only. The dashboard reads the kept file and does not run these checks.
+
+Three checks, in order. The first failing check ends the post.
+
+  1. Valid date
+  2. Duplicate
+  3. Project buzzwords
+
+Change the conditions in the CONDITIONS section below.
+The words themselves live in project_definitions.json.
+"""
+
 import json
 import re
 from collections import Counter
@@ -5,47 +17,69 @@ from datetime import datetime
 from difflib import SequenceMatcher
 from pathlib import Path
 
+
 # ==========================================
-# 1. PFADE
+# PATHS
 # ==========================================
 BASE_DIR = Path(__file__).resolve().parent.parent
-DATEN_ORDNER = BASE_DIR / "daten"
-# Rohdaten liegen eine Ebene über dem Repo. Die Datei ist zu groß für Git.
-ROH_ORDNER = BASE_DIR.parent
-GEFILTERT_ORDNER = DATEN_ORDNER / "01_gefiltert"
-DATEN_NAME = "FSI_Heilbronn_Medienbeiträge (1).json"
-OUTPUT_CLEAN_FILE = GEFILTERT_ORDNER / "clean_data.json"
-OUTPUT_AUDIT_FILE = GEFILTERT_ORDNER / "filter_audit.json"
-INPUT_FILE = ROH_ORDNER / DATEN_NAME
-SKRIPT_ORDNER = Path(__file__).resolve().parent
+DATA_DIR = BASE_DIR / "daten"
+# Raw export sits one level above the repo. The file is too large for Git.
+RAW_DIR = BASE_DIR.parent
+FILTERED_DIR = DATA_DIR / "01_gefiltert"
+RAW_FILE_NAME = "FSI_Heilbronn_Medienbeiträge (1).json"
+KEPT_FILE = FILTERED_DIR / "clean_data.json"
+INPUT_FILE = RAW_DIR / RAW_FILE_NAME
+SCRIPT_DIR = Path(__file__).resolve().parent
+BUZZWORD_FILE = SCRIPT_DIR / "project_definitions.json"
 
-# Duplicate: title >= 90% and the same 150 content characters, or the whole text >= 95%.
-TITEL_SCHWELLE = 0.90
-INHALT_ANFANG = 150
-AEHNLICHKEIT_SCHWELLE = 0.95
-PROJECT_FILE = SKRIPT_ORDNER / "project_definitions.json"
-TOURISM_FILE = SKRIPT_ORDNER / "tourism_terms.json"
-INCIDENT_FILE = SKRIPT_ORDNER / "incident_terms.json"
-ANCHOR_FILE = SKRIPT_ORDNER / "transit_anchors.json"
-
-# One folder per outcome. Duplicates share one folder; the reason stays on the post.
+# One folder per rejection. Both duplicate reasons share one folder.
 OUTPUT_FOLDERS = {
-    "invalid_or_missing_date": DATEN_ORDNER / "rejected" / "invalid-date",
-    "duplicate_title_and_start": DATEN_ORDNER / "rejected" / "duplicates",
-    "similar_over_95": DATEN_ORDNER / "rejected" / "duplicates",
-    "no_target_project_match": DATEN_ORDNER / "rejected" / "no-project-match",
-    "tourism_or_leisure_noise": DATEN_ORDNER / "rejected" / "tourism-leisure",
-    "emergency_or_incident_report": DATEN_ORDNER / "incident-reports",
+    "invalid_or_missing_date": DATA_DIR / "rejected" / "invalid-date",
+    "duplicate_title_and_start": DATA_DIR / "rejected" / "duplicates",
+    "similar_over_95": DATA_DIR / "rejected" / "duplicates",
+    "no_target_project_match": DATA_DIR / "rejected" / "no-project-match",
 }
 
 
+# ==========================================
+# CONDITIONS
+# Edit the numbers and the rules here. Do not put these rules in JSON.
+# ==========================================
+
+# 1. Date
+# published_at must be ISO-8601.
+# A trailing Z is read as +00:00.
+# An offset without a colon, such as +0100, is rewritten to +01:00.
+# Anything else is rejected as invalid_or_missing_date.
+
+# 2. Duplicate, compared only with posts already kept.
+# A post is a duplicate when either side is true:
+#   title similarity >= TITLE_SIMILARITY
+#   AND the first CONTENT_PREFIX_CHARACTERS of the content are equal
+# OR
+#   the whole lowercased title plus content is >= FULL_TEXT_SIMILARITY
+TITLE_SIMILARITY = 0.90
+CONTENT_PREFIX_CHARACTERS = 150
+FULL_TEXT_SIMILARITY = 0.95
+
+# 3. Project
+# Buzzwords are loaded from project_definitions.json.
+# A project matches only when both counts are at least 1:
+#   topic hits >= 1
+#   context hits >= 1
+# Score = topic hits + context hits.
+# If several projects match, the higher score wins.
+# A tie goes to the earlier entry in the JSON.
+# The result is exactly one project id, or none.
+
+
 def load_json(path: Path) -> dict:
-    with path.open(encoding="utf-8") as datei:
-        return json.load(datei)
+    with path.open(encoding="utf-8") as handle:
+        return json.load(handle)
 
 
-def load_project_definitions(path: Path) -> dict:
-    """Order in project_definitions.json is the tie-break."""
+def load_project_buzzwords(path: Path) -> dict:
+    """Keep the order from project_definitions.json. That order breaks ties."""
     raw = load_json(path)
     rules = {}
     for entry in raw["projects"]:
@@ -58,21 +92,11 @@ def load_project_definitions(path: Path) -> dict:
     return rules
 
 
-def load_terms(path: Path, key: str) -> list[str]:
-    return list(load_json(path)[key])
+PROJECT_BUZZWORDS = load_project_buzzwords(BUZZWORD_FILE)
 
 
 # ==========================================
-# 2. BEREINIGTE PROJEKT- & FILTERREGELN
-# ==========================================
-PROJECT_RULES = load_project_definitions(PROJECT_FILE)
-NOISE_PATTERNS = load_terms(TOURISM_FILE, "terms")
-INCIDENT_NOISE_PATTERNS = load_terms(INCIDENT_FILE, "terms")
-URBAN_TRANSIT_ANCHORS = load_terms(ANCHOR_FILE, "anchors")
-
-
-# ==========================================
-# 3. HILFSFUNKTIONEN
+# HELPERS
 # ==========================================
 def normalize_text(text) -> str:
     if not text:
@@ -80,26 +104,30 @@ def normalize_text(text) -> str:
     return re.sub(r"\s+", " ", str(text)).strip()
 
 
-def is_valid_timestamp(ts) -> bool:
-    if not ts:
+def is_valid_timestamp(timestamp) -> bool:
+    if not timestamp:
         return False
     try:
-        clean_ts = re.sub(r"([+-]\d{2})(\d{2})$", r"\1:\2", str(ts).strip().replace("Z", "+00:00"))
-        datetime.fromisoformat(clean_ts)
+        cleaned = re.sub(
+            r"([+-]\d{2})(\d{2})$",
+            r"\1:\2",
+            str(timestamp).strip().replace("Z", "+00:00"),
+        )
+        datetime.fromisoformat(cleaned)
         return True
     except ValueError:
         return False
 
 
-def ein_projekt(text, rules=None) -> list[str]:
-    """Genau ein Projekt: das mit den meisten Muster-Treffern. Bei Gleichstand die frühere Regel."""
-    rules = PROJECT_RULES if rules is None else rules
+def assign_one_project(text, rules=None) -> list[str]:
+    """Return one project id, or an empty list. See the CONDITIONS section."""
+    rules = PROJECT_BUZZWORDS if rules is None else rules
     text_lower = str(text or "").lower()
     scored = []
     for index, (name, rule) in enumerate(rules.items()):
         topic_hits = sum(len(re.findall(pattern, text_lower)) for pattern in rule["topic_terms"])
         context_hits = sum(len(re.findall(pattern, text_lower)) for pattern in rule["context_terms"])
-        if topic_hits and context_hits:
+        if topic_hits >= 1 and context_hits >= 1:
             scored.append((topic_hits + context_hits, -index, name))
     if not scored:
         return []
@@ -108,20 +136,20 @@ def ein_projekt(text, rules=None) -> list[str]:
 
 
 def simhash64(text: str) -> int:
-    """64-Bit-Fingerabdruck über die Wörter. Nur zur Kandidatensuche, nicht als Urteil."""
+    """64-bit fingerprint over the words. Used only to find candidates."""
     counts = [0] * 64
-    leer = True
+    empty = True
     for token in text.split():
-        leer = False
+        empty = False
         value = 2166136261
-        for zeichen in token:
-            value ^= ord(zeichen)
+        for character in token:
+            value ^= ord(character)
             value = (value * 16777619) & 0xFFFFFFFF
-        gedreht = ((value << 16) | (value >> 16)) & 0xFFFFFFFF
+        rotated = ((value << 16) | (value >> 16)) & 0xFFFFFFFF
         for bit in range(32):
             counts[bit] += 1 if value & (1 << bit) else -1
-            counts[bit + 32] += 1 if gedreht & (1 << bit) else -1
-    if leer:
+            counts[bit + 32] += 1 if rotated & (1 << bit) else -1
+    if empty:
         return 0
     out = 0
     for bit, weight in enumerate(counts):
@@ -130,79 +158,79 @@ def simhash64(text: str) -> int:
     return out
 
 
-def laengen_koennen_95_erreichen(links: int, rechts: int) -> bool:
-    """SequenceMatcher-Ratio über 0,95 ist bei stark unterschiedlicher Länge unmöglich."""
-    if links <= 0 or rechts <= 0:
+def lengths_can_reach_similarity(left: int, right: int) -> bool:
+    """A ratio of 0.95 is impossible when the lengths differ too much."""
+    if left <= 0 or right <= 0:
         return False
-    kuerzer = min(links, rechts)
-    laenger = max(links, rechts)
-    return kuerzer / laenger > 0.90
+    shorter = min(left, right)
+    longer = max(left, right)
+    return shorter / longer > 0.90
 
 
-def uebereinstimmung(links: str, rechts: str) -> float:
-    """Anteil gemeinsamer Zeichenfolge, 0 bis 1. Über 0,95 ist eine Dublette."""
-    if not links or not rechts:
+def text_similarity(left: str, right: str) -> float:
+    """Share of the matching character sequence, from 0 to 1."""
+    if not left or not right:
         return 0.0
-    vergleich = SequenceMatcher(None, links, rechts)
-    if vergleich.quick_ratio() <= AEHNLICHKEIT_SCHWELLE:
-        return vergleich.quick_ratio()
-    return vergleich.ratio()
+    matcher = SequenceMatcher(None, left, right)
+    if matcher.quick_ratio() <= FULL_TEXT_SIMILARITY:
+        return matcher.quick_ratio()
+    return matcher.ratio()
 
 
-class GeseheneBeitraege:
-    """Merkmenge der behaltenen Beiträge für die Dublettenprüfung."""
+class SeenPosts:
+    """Posts already kept. Later posts are compared only against this set."""
 
     def __init__(self):
-        self._titel: list[str] = []
-        self._anfaenge: dict[str, list[int]] = {}
-        self._texte: list[str] = []
-        self._laengen: list[int] = []
-        self._baender: list[dict[int, list[int]]] = [dict() for _ in range(4)]
-        self._fenster: dict[str, list[int]] = {}
+        self._titles: list[str] = []
+        self._prefixes: dict[str, list[int]] = {}
+        self._texts: list[str] = []
+        self._lengths: list[int] = []
+        self._bands: list[dict[int, list[int]]] = [dict() for _ in range(4)]
+        self._windows: dict[str, list[int]] = {}
 
-    def titel_und_anfang(self, titel: str, anfang: str) -> bool:
-        """Gleicher Inhaltsanfang und Titel zu mindestens 90 Prozent."""
-        for index in self._anfaenge.get(anfang, ()):
-            if uebereinstimmung(titel, self._titel[index]) >= TITEL_SCHWELLE:
+    def title_and_prefix(self, title: str, prefix: str) -> bool:
+        """Same content prefix and a title at or above TITLE_SIMILARITY."""
+        for index in self._prefixes.get(prefix, ()):
+            if text_similarity(title, self._titles[index]) >= TITLE_SIMILARITY:
                 return True
         return False
 
-    def _fensterschluessel(self, text: str) -> list[str]:
-        laenge = len(text)
-        if laenge <= 80:
+    def _window_keys(self, text: str) -> list[str]:
+        length = len(text)
+        if length <= 80:
             return [text] if text else []
-        return [text[start:start + 80] for start in (0, laenge // 3, (2 * laenge) // 3)]
+        return [text[start:start + 80] for start in (0, length // 3, (2 * length) // 3)]
 
-    def zu_aehnlich(self, text: str) -> bool:
-        if not text or not self._texte:
+    def too_similar(self, text: str) -> bool:
+        if not text or not self._texts:
             return False
-        laenge = len(text)
-        signatur = simhash64(text)
-        kandidaten: set[int] = set()
-        for band, tafel in enumerate(self._baender):
-            kandidaten.update(tafel.get((signatur >> (band * 16)) & 0xFFFF, ()))
-        for schluessel in self._fensterschluessel(text):
-            kandidaten.update(self._fenster.get(schluessel, ()))
-        for index in kandidaten:
-            if not laengen_koennen_95_erreichen(laenge, self._laengen[index]):
+        length = len(text)
+        signature = simhash64(text)
+        candidates: set[int] = set()
+        for band, table in enumerate(self._bands):
+            candidates.update(table.get((signature >> (band * 16)) & 0xFFFF, ()))
+        for key in self._window_keys(text):
+            candidates.update(self._windows.get(key, ()))
+        for index in candidates:
+            if not lengths_can_reach_similarity(length, self._lengths[index]):
                 continue
-            if uebereinstimmung(text, self._texte[index]) >= AEHNLICHKEIT_SCHWELLE:
+            if text_similarity(text, self._texts[index]) >= FULL_TEXT_SIMILARITY:
                 return True
         return False
 
-    def merken(self, titel: str, anfang: str, text: str) -> None:
-        index = len(self._texte)
-        self._titel.append(titel)
-        self._anfaenge.setdefault(anfang, []).append(index)
-        self._texte.append(text)
-        self._laengen.append(len(text))
+    def remember(self, title: str, prefix: str, text: str) -> None:
+        index = len(self._texts)
+        self._titles.append(title)
+        self._prefixes.setdefault(prefix, []).append(index)
+        self._texts.append(text)
+        self._lengths.append(len(text))
         if not text:
             return
-        signatur = simhash64(text)
-        for band, tafel in enumerate(self._baender):
-            tafel.setdefault((signatur >> (band * 16)) & 0xFFFF, []).append(index)
-        for schluessel in self._fensterschluessel(text):
-            self._fenster.setdefault(schluessel, []).append(index)
+        signature = simhash64(text)
+        for band, table in enumerate(self._bands):
+            table.setdefault((signature >> (band * 16)) & 0xFFFF, []).append(index)
+        for key in self._window_keys(text):
+            self._windows.setdefault(key, []).append(index)
 
 
 def extract_records(raw_json) -> list[dict]:
@@ -212,86 +240,73 @@ def extract_records(raw_json) -> list[dict]:
         for key in ("data", "mentions", "items", "records", "articles"):
             if isinstance(raw_json.get(key), list):
                 return raw_json[key]
-    raise ValueError("Unbekannte JSON-Struktur.")
+    raise ValueError(
+        "Unrecognized JSON structure. Expected a list, or a list under "
+        "data, mentions, items, records, or articles."
+    )
 
 
-def evaluate_post(post: dict, gesehen: GeseheneBeitraege) -> tuple[bool, list[str], str]:
-    """Kette bis zum Behalten. Der erste Fehlgrund beendet die Prüfung.
-
-    1 Valides Datum, sonst aussortiert
-    2 Dublette: Titel >= 90 % und gleiche 150 Inhaltszeichen, oder Gesamttext >= 95 %
-    3 Projekt über projekt_definitionen.json, sonst aussortiert
-    4 Tourismusbegriffe ohne ÖPNV-Anker, sonst aussortiert
-    5 Einsatzmeldung ohne Anker: eigener Ordner, nicht der Hauptstrom
-    Beiläufige Erwähnung bleibt im Hauptstrom.
-    """
+def evaluate_post(post: dict, seen: SeenPosts) -> tuple[bool, list[str], str]:
+    """Run the three checks. The first failing reason ends the post."""
     if not is_valid_timestamp(post.get("published_at")):
         return False, [], "invalid_or_missing_date"
 
     title = normalize_text(post.get("title"))
     content = normalize_text(post.get("content"))
     text_lower = f"{title} {content}".strip().lower()
-    titel = title.lower()
-    anfang = content.lower()[:INHALT_ANFANG]
+    title_key = title.lower()
+    prefix = content.lower()[:CONTENT_PREFIX_CHARACTERS]
 
-    if gesehen.titel_und_anfang(titel, anfang):
+    if seen.title_and_prefix(title_key, prefix):
         return False, [], "duplicate_title_and_start"
-    if gesehen.zu_aehnlich(text_lower):
+    if seen.too_similar(text_lower):
         return False, [], "similar_over_95"
 
-    matched_projects = ein_projekt(text_lower)
+    matched_projects = assign_one_project(text_lower)
     if not matched_projects:
         return False, [], "no_target_project_match"
 
-    has_noise = any(re.search(muster, text_lower) for muster in NOISE_PATTERNS)
-    has_transit_anchor = any(re.search(muster, text_lower) for muster in URBAN_TRANSIT_ANCHORS)
-    if has_noise and not has_transit_anchor:
-        return False, [], "tourism_or_leisure_noise"
-
-    if any(re.search(muster, text_lower) for muster in INCIDENT_NOISE_PATTERNS) and not has_transit_anchor:
-        return False, matched_projects, "emergency_or_incident_report"
-
-    gesehen.merken(titel, anfang, text_lower)
+    seen.remember(title_key, prefix, text_lower)
     return True, matched_projects, "kept"
 
 
 # ==========================================
-# 4. HAUPTPROGRAMM
+# MAIN
 # ==========================================
 def main():
     if not INPUT_FILE.exists():
-        print(f"FEHLER: Rohdaten nicht gefunden unter:\n{INPUT_FILE}")
-        print(f"Erwartet im Ordner über dem Repo: {ROH_ORDNER}")
+        print(f"ERROR: raw file not found:\n{INPUT_FILE}")
+        print(f"Expected in the folder above the repo: {RAW_DIR}")
         return
 
-    quelle = Path("..") / INPUT_FILE.relative_to(ROH_ORDNER)
-    print(f"Lade Rohdaten aus '{quelle}'...")
-    with open(INPUT_FILE, "r", encoding="utf-8") as f:
-        raw_posts = extract_records(json.load(f))
+    source = Path("..") / INPUT_FILE.relative_to(RAW_DIR)
+    print(f"Loading raw posts from '{source}'...")
+    with open(INPUT_FILE, "r", encoding="utf-8") as handle:
+        raw_posts = extract_records(json.load(handle))
 
-    gesehen = GeseheneBeitraege()
-    clean_posts = []
+    seen = SeenPosts()
+    kept_posts = []
     buckets = {reason: [] for reason in OUTPUT_FOLDERS}
     stats = Counter()
     project_counts = Counter()
 
     for post in raw_posts:
-        is_valid, projects, reason = evaluate_post(post, gesehen)
+        is_kept, projects, reason = evaluate_post(post, seen)
         stats[reason] += 1
 
         if reason in OUTPUT_FOLDERS:
             post["matched_projects"] = projects
             post["rejection_reason"] = reason
             buckets[reason].append(post)
-        elif is_valid:
+        elif is_kept:
             post["matched_projects"] = projects
-            clean_posts.append(post)
-            for p in projects:
-                project_counts[p] += 1
+            kept_posts.append(post)
+            for project in projects:
+                project_counts[project] += 1
 
-    GEFILTERT_ORDNER.mkdir(parents=True, exist_ok=True)
-    with open(OUTPUT_CLEAN_FILE, "w", encoding="utf-8") as f:
-        json.dump(clean_posts, f, ensure_ascii=False, indent=2)
+    FILTERED_DIR.mkdir(parents=True, exist_ok=True)
+    with open(KEPT_FILE, "w", encoding="utf-8") as handle:
+        json.dump(kept_posts, handle, ensure_ascii=False, indent=2)
 
     written = {}
     for reason, folder in OUTPUT_FOLDERS.items():
@@ -306,7 +321,7 @@ def main():
             json.dump(posts, handle, ensure_ascii=False)
 
     total = len(raw_posts)
-    kept = len(clean_posts)
+    kept = len(kept_posts)
 
     print("\n" + "=" * 65)
     print("FILTER RESULT")
@@ -320,11 +335,11 @@ def main():
         print(f"  {reason:<28} {count:>6}  {folder}")
 
     print("\nProjects in the kept set")
-    for proj, count in project_counts.most_common():
-        print(f"  {proj:<28} {count:>6}")
+    for project, count in project_counts.most_common():
+        print(f"  {project:<28} {count:>6}")
 
     print("\nKept file")
-    print(f"  {OUTPUT_CLEAN_FILE.relative_to(BASE_DIR)}")
+    print(f"  {KEPT_FILE.relative_to(BASE_DIR)}")
 
 
 if __name__ == "__main__":
