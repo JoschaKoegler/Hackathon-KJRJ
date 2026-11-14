@@ -7,7 +7,7 @@ from scipy.signal import find_peaks
 # ==========================================
 # 1. PFADE & PARAMETER
 # ==========================================
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 DATEN_ORDNER = BASE_DIR / "daten"
 INPUT_FILE = DATEN_ORDNER / "01_gefiltert" / "clean_data.json"
 OUTPUT_FILE = DATEN_ORDNER / "02_ereignisse" / "detected_events.json"
@@ -146,7 +146,7 @@ def analyze_project_timeseries(df_proj: pd.DataFrame, project_name: str) -> dict
 # ==========================================
 def main():
     if not INPUT_FILE.exists():
-        print(f"FEHLER: '{INPUT_FILE.relative_to(BASE_DIR)}' nicht gefunden. Bitte zuerst '1_filter_data.py' ausführen!")
+        print(f"FEHLER: '{INPUT_FILE.relative_to(BASE_DIR)}' nicht gefunden. Bitte zuerst 'python skripte/1_filter_data.py' ausführen!")
         return
 
     with open(INPUT_FILE, "r", encoding="utf-8") as f:

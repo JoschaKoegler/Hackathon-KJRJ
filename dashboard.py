@@ -27,8 +27,8 @@ import pandas as pd
 # KONFIGURATION  <- hier die Auswahl ändern
 # ===========================================================================
 
-# Gefilterte Beiträge aus 1_filter_data.py. Fehlt die Datei, zuerst
-# ``python 1_filter_data.py`` ausführen.
+# Gefilterte Beiträge aus skripte/1_filter_data.py. Fehlt die Datei, zuerst
+# ``python skripte/1_filter_data.py`` ausführen.
 DATEN_DATEI = Path("daten") / "01_gefiltert" / "clean_data.json"
 
 HOST = "127.0.0.1"
@@ -294,7 +294,7 @@ def lade_beitraege(neu: bool = False) -> pd.DataFrame:
     pfad = Path(__file__).resolve().parent / DATEN_DATEI
     if not pfad.is_file():
         raise FileNotFoundError(
-            f"{DATEN_DATEI.as_posix()} fehlt. Zuerst im Projektordner ausführen: python 1_filter_data.py"
+            f"{DATEN_DATEI.as_posix()} fehlt. Zuerst im Projektordner ausführen: python skripte/1_filter_data.py"
         )
     with pfad.open(encoding="utf-8") as datei:
         roh = json.load(datei)
@@ -619,7 +619,7 @@ SEITE = r"""<!DOCTYPE html>
     grid-template-areas:
       "kopf kopf kopf"
       "buehne trend zahl"
-      "zeit zeit wahl";
+      "zeit zeit zeit";
     gap: 12px;
     padding: 12px;
     overflow: auto;
@@ -661,7 +661,7 @@ SEITE = r"""<!DOCTYPE html>
     padding: 4px 9px;
     font-size: 13px;
   }
-  .buehne, .trend-karte, .zahl-karte, .zeit-karte, .staedte, .medien {
+  .buehne, .trend-karte, .zahl-karte, .zeit-karte {
     background: var(--karte);
     border: 1px solid var(--linie);
     border-radius: 18px;
@@ -774,8 +774,19 @@ SEITE = r"""<!DOCTYPE html>
   .zeit-kopf, .zeit-fuss {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 10px;
     color: var(--leise);
     font-size: 12px;
+  }
+  .zeit-kopf { flex-wrap: wrap; }
+  .legende {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 4px 8px;
+    margin-left: auto;
   }
   svg.chart { width: 100%; flex: 1 1 auto; height: auto; min-height: 0; display: block; }
   .doppel { position: relative; height: 22px; margin-top: 2px; }
@@ -821,25 +832,20 @@ SEITE = r"""<!DOCTYPE html>
     border: 2px solid #fbf8f2;
     cursor: grab;
   }
-  .wahl {
-    grid-area: wahl;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    gap: 8px;
-    min-width: 0;
-    align-self: end;
-  }
   .staedte, .medien {
-    flex: 0 0 auto;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
+    display: flex;
     flex-wrap: wrap;
+    justify-content: flex-end;
     gap: 4px;
-    padding: 6px;
+    padding: 0;
+    background: none;
+    border: 0;
+    box-shadow: none;
   }
-  .medien { flex-direction: column; }
+  .medien {
+    padding-left: 8px;
+    border-left: 1px solid var(--linie);
+  }
   .overlay[hidden] { display: none; }
   .overlay {
     position: fixed;
@@ -895,12 +901,12 @@ SEITE = r"""<!DOCTYPE html>
   .plakette.offen { background: #f3efe6; color: var(--leise); }
   @media (max-width: 980px) {
     .seite {
-      grid-template-columns: minmax(0, 1fr) 196px;
+      grid-template-columns: 1fr 1fr;
       grid-template-areas:
         "kopf kopf"
         "buehne buehne"
         "trend zahl"
-        "zeit wahl";
+        "zeit zeit";
       align-content: stretch;
       height: 100%;
       grid-template-rows: auto minmax(150px, 1fr) auto minmax(200px, 2fr);
@@ -929,7 +935,14 @@ SEITE = r"""<!DOCTYPE html>
     <span class="zahl-hinweis">Beiträge dieser Auswahl anzeigen</span>
   </button>
   <section class="zeit-karte">
-    <div class="zeit-kopf"><span>Zeitstrahl</span><span id="zeit-spanne"></span></div>
+    <div class="zeit-kopf">
+      <span>Zeitstrahl</span>
+      <div class="legende">
+        <div class="staedte" id="staedte"></div>
+        <div class="medien" id="medien"></div>
+      </div>
+      <span id="zeit-spanne"></span>
+    </div>
     <svg class="chart" id="chart" role="img" aria-label="Beiträge pro Tag"></svg>
     <div class="doppel">
       <div class="spur" id="spur"></div>
@@ -938,10 +951,6 @@ SEITE = r"""<!DOCTYPE html>
     </div>
     <div class="zeit-fuss"><span id="von-label"></span><span id="bis-label"></span></div>
   </section>
-  <div class="wahl">
-    <div class="staedte" id="staedte"></div>
-    <div class="medien" id="medien"></div>
-  </div>
 </div>
 <div class="overlay" id="overlay" hidden>
   <div class="blatt">

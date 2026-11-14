@@ -7,37 +7,15 @@ from pathlib import Path
 # ==========================================
 # 1. PFADE
 # ==========================================
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 DATEN_ORDNER = BASE_DIR / "daten"
-ROH_ORDNER = DATEN_ORDNER / "00_rohdaten"
+# Rohdaten liegen eine Ebene über dem Repo. Die Datei ist zu groß für Git.
+ROH_ORDNER = BASE_DIR.parent
 GEFILTERT_ORDNER = DATEN_ORDNER / "01_gefiltert"
 DATEN_NAME = "FSI_Heilbronn_Medienbeiträge (1).json"
 OUTPUT_CLEAN_FILE = GEFILTERT_ORDNER / "clean_data.json"
 OUTPUT_AUDIT_FILE = GEFILTERT_ORDNER / "filter_audit.json"
-
-
-def suche_datei(dateiname: str) -> Path | None:
-    """Sucht die Datei im Arbeitsordner, im Skriptordner und in darüberliegenden Ordnern."""
-    startpunkte = [Path.cwd().resolve(), BASE_DIR]
-    gesehen = set()
-    for start in startpunkte:
-        aktuell = start
-        for _ in range(6):
-            if aktuell in gesehen:
-                break
-            gesehen.add(aktuell)
-            kandidat = aktuell / dateiname
-            if kandidat.is_file():
-                return kandidat
-            if aktuell.parent == aktuell:
-                break
-            aktuell = aktuell.parent
-    return None
-
-
 INPUT_FILE = ROH_ORDNER / DATEN_NAME
-if not INPUT_FILE.is_file():
-    INPUT_FILE = suche_datei(DATEN_NAME) or INPUT_FILE
 
 ALLOWED_LANGUAGES = {"de", "fr", "en"}
 MIN_CONTENT_LENGTH = 40
@@ -228,10 +206,11 @@ def evaluate_post(post: dict, seen_ids: set, seen_hashes: set) -> tuple[bool, li
 # ==========================================
 def main():
     if not INPUT_FILE.exists():
-        print(f"FEHLER: Datei nicht gefunden unter:\n{INPUT_FILE}")
+        print(f"FEHLER: Rohdaten nicht gefunden unter:\n{INPUT_FILE}")
+        print(f"Erwartet im Ordner über dem Repo: {ROH_ORDNER}")
         return
 
-    quelle = INPUT_FILE.relative_to(BASE_DIR) if INPUT_FILE.is_relative_to(BASE_DIR) else INPUT_FILE
+    quelle = Path("..") / INPUT_FILE.relative_to(ROH_ORDNER)
     print(f"Lade Rohdaten aus '{quelle}'...")
     with open(INPUT_FILE, "r", encoding="utf-8") as f:
         raw_posts = extract_records(json.load(f))
