@@ -893,7 +893,7 @@ SEITE = r"""<!DOCTYPE html>
   .plakette.offen { background: #f3efe6; color: var(--leise); }
   @media (max-width: 980px) {
     .seite {
-      grid-template-columns: minmax(0, 1fr) 168px;
+      grid-template-columns: minmax(0, 1fr) 196px;
       grid-template-areas:
         "kopf kopf"
         "buehne buehne"
