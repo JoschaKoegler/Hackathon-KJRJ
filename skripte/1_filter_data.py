@@ -17,57 +17,58 @@ DATEN_NAME = "FSI_Heilbronn_Medienbeiträge (1).json"
 OUTPUT_CLEAN_FILE = GEFILTERT_ORDNER / "clean_data.json"
 OUTPUT_AUDIT_FILE = GEFILTERT_ORDNER / "filter_audit.json"
 INPUT_FILE = ROH_ORDNER / DATEN_NAME
+SKRIPT_ORDNER = Path(__file__).resolve().parent
 
-ALLOWED_LANGUAGES = {"de", "fr", "en"}
-# Dublette: Beitrag fällt, sobald die Übereinstimmung darüber liegt.
+# Duplicate: title >= 90% and the same 150 content characters, or the whole text >= 95%.
+TITEL_SCHWELLE = 0.90
+INHALT_ANFANG = 150
 AEHNLICHKEIT_SCHWELLE = 0.95
-DEFINITIONEN_DATEI = Path(__file__).resolve().parent / "projekt_definitionen.json"
+PROJECT_FILE = SKRIPT_ORDNER / "project_definitions.json"
+TOURISM_FILE = SKRIPT_ORDNER / "tourism_terms.json"
+INCIDENT_FILE = SKRIPT_ORDNER / "incident_terms.json"
+ANCHOR_FILE = SKRIPT_ORDNER / "transit_anchors.json"
+
+# One folder per outcome. Duplicates share one folder; the reason stays on the post.
+OUTPUT_FOLDERS = {
+    "invalid_or_missing_date": DATEN_ORDNER / "rejected" / "invalid-date",
+    "duplicate_title_and_start": DATEN_ORDNER / "rejected" / "duplicates",
+    "similar_over_95": DATEN_ORDNER / "rejected" / "duplicates",
+    "no_target_project_match": DATEN_ORDNER / "rejected" / "no-project-match",
+    "tourism_or_leisure_noise": DATEN_ORDNER / "rejected" / "tourism-leisure",
+    "emergency_or_incident_report": DATEN_ORDNER / "incident-reports",
+}
 
 
-def lade_projekt_definitionen(pfad: Path) -> dict:
-    """Liest skripte/projekt_definitionen.json. Die Listenreihenfolge ist der Gleichstand."""
-    with pfad.open(encoding="utf-8") as datei:
-        roh = json.load(datei)
-    regeln = {}
-    for eintrag in roh["projekte"]:
-        regeln[eintrag["id"]] = {
-            "topic_terms": list(eintrag["topic_terms"]),
-            "context_terms": list(eintrag["context_terms"]),
+def load_json(path: Path) -> dict:
+    with path.open(encoding="utf-8") as datei:
+        return json.load(datei)
+
+
+def load_project_definitions(path: Path) -> dict:
+    """Order in project_definitions.json is the tie-break."""
+    raw = load_json(path)
+    rules = {}
+    for entry in raw["projects"]:
+        rules[entry["id"]] = {
+            "topic_terms": list(entry["topic_terms"]),
+            "context_terms": list(entry["context_terms"]),
         }
-    if not regeln:
-        raise ValueError(f"Keine Projekte in {pfad}")
-    return regeln
+    if not rules:
+        raise ValueError(f"No projects in {path}")
+    return rules
+
+
+def load_terms(path: Path, key: str) -> list[str]:
+    return list(load_json(path)[key])
 
 
 # ==========================================
 # 2. BEREINIGTE PROJEKT- & FILTERREGELN
 # ==========================================
-PROJECT_RULES = lade_projekt_definitionen(DEFINITIONEN_DATEI)
-
-# Tourismus-, Spielplatz-, Reiseblog- & Kultur-Beifang (DE & FR)
-NOISE_PATTERNS = [
-    r"\bwanderung\b", r"\bwandern\b", r"\bskifahren\b", r"\bskipiste\b", r"\bskigebiet\b",
-    r"\bgipfelkreuz\b", r"\bberner oberland\b", r"\bjungfraujoch\b", r"\bjennerbahn\b",
-    r"\bzugspitze\b", r"\bsommerrodelbahn\b", r"\breiseblog\b", r"\breisebericht\b", r"\burlaub\b",
-    r"\bfoto-wanderung\b", r"\b10 dinge, die ihr\b", r"\bstädte in asien\b",
-    r"\bferienwohnung\b", r"\bplaymobil\b", r"\blego\b", r"\bmodelleisenbahn\b",
-    r"\bwaldspielplatz\b", r"\bflying fox\b", r"\bhochseil\w*", r"\broblox\b",
-    r"\broad\s*trip\b", r"\bqu[ée]bec\b", r"\bjapon\b", r"\bchine\b", r"\bcor[ée]e\b",
-    r"\bsavoie\b", r"\bla plagne\b", r"\bsaint-valentin\b", r"\bpiano [àa] quatre mains\b",
-    r"\brandonn[ée]e\w*", r"\bmontjuic\b"
-]
-
-INCIDENT_NOISE_PATTERNS = [
-    r"\bflächenbrand\b", r"\bgartenhausbrand\b", r"\bpolizeibericht\b",
-    r"\bverkehrsunfall\b", r"\blöscharbeiten\b", r"\bkleineinsätze\b",
-    r"\bhauptversammlung der feuerwehr\b", r"\bflugzeugabsturz\b"
-]
-
-URBAN_TRANSIT_ANCHORS = [
-    r"\böpnv\b", r"\boepnv\b", r"\bnahverkehr\b", r"\bpendler\w*", r"\bstadtverkehr\b",
-    r"\bverkehrsmittel\b", r"\btransport en commun\b", r"\bmobilit[ée] urbaine\b",
-    r"\bgemeinderat\b", r"\bmachbarkeitsstudie\b", r"\bplanfeststellung\b", r"\bnavigo\b"
-]
+PROJECT_RULES = load_project_definitions(PROJECT_FILE)
+NOISE_PATTERNS = load_terms(TOURISM_FILE, "terms")
+INCIDENT_NOISE_PATTERNS = load_terms(INCIDENT_FILE, "terms")
+URBAN_TRANSIT_ANCHORS = load_terms(ANCHOR_FILE, "anchors")
 
 
 # ==========================================
@@ -88,13 +89,6 @@ def is_valid_timestamp(ts) -> bool:
         return True
     except ValueError:
         return False
-
-
-def normalize_url(url) -> str:
-    url = str(url or "").strip().lower()
-    if not url:
-        return ""
-    return url.split("#", 1)[0].rstrip("/")
 
 
 def ein_projekt(text, rules=None) -> list[str]:
@@ -156,24 +150,22 @@ def uebereinstimmung(links: str, rechts: str) -> float:
 
 
 class GeseheneBeitraege:
-    """Merkmenge nur für Beiträge, die am Ende behalten werden.
-
-    Schritt 3 prüft dagegen drei Dinge: Inhaltsanfang, URL und 95-%-Ähnlichkeit.
-    """
+    """Merkmenge der behaltenen Beiträge für die Dublettenprüfung."""
 
     def __init__(self):
-        self.fingerprints: set[str] = set()
-        self.urls: set[str] = set()
+        self._titel: list[str] = []
+        self._anfaenge: dict[str, list[int]] = {}
         self._texte: list[str] = []
         self._laengen: list[int] = []
         self._baender: list[dict[int, list[int]]] = [dict() for _ in range(4)]
         self._fenster: dict[str, list[int]] = {}
 
-    def fingerprint_da(self, fingerprint: str) -> bool:
-        return fingerprint in self.fingerprints
-
-    def url_da(self, url_key: str) -> bool:
-        return bool(url_key) and url_key in self.urls
+    def titel_und_anfang(self, titel: str, anfang: str) -> bool:
+        """Gleicher Inhaltsanfang und Titel zu mindestens 90 Prozent."""
+        for index in self._anfaenge.get(anfang, ()):
+            if uebereinstimmung(titel, self._titel[index]) >= TITEL_SCHWELLE:
+                return True
+        return False
 
     def _fensterschluessel(self, text: str) -> list[str]:
         laenge = len(text)
@@ -194,19 +186,18 @@ class GeseheneBeitraege:
         for index in kandidaten:
             if not laengen_koennen_95_erreichen(laenge, self._laengen[index]):
                 continue
-            if uebereinstimmung(text, self._texte[index]) > AEHNLICHKEIT_SCHWELLE:
+            if uebereinstimmung(text, self._texte[index]) >= AEHNLICHKEIT_SCHWELLE:
                 return True
         return False
 
-    def merken(self, fingerprint: str, url_key: str, text: str) -> None:
-        self.fingerprints.add(fingerprint)
-        if url_key:
-            self.urls.add(url_key)
-        if not text:
-            return
+    def merken(self, titel: str, anfang: str, text: str) -> None:
         index = len(self._texte)
+        self._titel.append(titel)
+        self._anfaenge.setdefault(anfang, []).append(index)
         self._texte.append(text)
         self._laengen.append(len(text))
+        if not text:
+            return
         signatur = simhash64(text)
         for band, tafel in enumerate(self._baender):
             tafel.setdefault((signatur >> (band * 16)) & 0xFFFF, []).append(index)
@@ -225,72 +216,42 @@ def extract_records(raw_json) -> list[dict]:
 
 
 def evaluate_post(post: dict, gesehen: GeseheneBeitraege) -> tuple[bool, list[str], str]:
-    """Acht Schritte. Der erste Fehlgrund beendet die Prüfung.
+    """Kette bis zum Behalten. Der erste Fehlgrund beendet die Prüfung.
 
-    1 Datum
-    2 Sprache de/fr/en
-    3 Dublette: Inhaltsanfang, gleiche URL oder mehr als 95 % Übereinstimmung
-    4 Genau ein Projekt, Definitionen in projekt_definitionen.json
-    5 Tourismus ohne ÖPNV-Anker
-    6 Einsatzmeldung ohne ÖPNV-Anker
-    7 Beiläufig in langem Text
-    8 Behalten
+    1 Valides Datum, sonst aussortiert
+    2 Dublette: Titel >= 90 % und gleiche 150 Inhaltszeichen, oder Gesamttext >= 95 %
+    3 Projekt über projekt_definitionen.json, sonst aussortiert
+    4 Tourismusbegriffe ohne ÖPNV-Anker, sonst aussortiert
+    5 Einsatzmeldung ohne Anker: eigener Ordner, nicht der Hauptstrom
+    Beiläufige Erwähnung bleibt im Hauptstrom.
     """
-    # 1. Datum
     if not is_valid_timestamp(post.get("published_at")):
         return False, [], "invalid_or_missing_date"
 
-    # 2. Sprache. de-DE, fr-FR, en-GB zählen als de, fr, en. Leerer Code bleibt.
-    raw_lang = str(post.get("language_code") or "").lower().strip()
-    base_lang = raw_lang.split("-")[0] if raw_lang else ""
-    if base_lang and base_lang not in ALLOWED_LANGUAGES:
-        return False, [], f"unsupported_language ({raw_lang})"
-
     title = normalize_text(post.get("title"))
     content = normalize_text(post.get("content"))
-    full_text = f"{title} {content}".strip()
-    text_lower = full_text.lower()
-    title_lower = title.lower()
+    text_lower = f"{title} {content}".strip().lower()
+    titel = title.lower()
+    anfang = content.lower()[:INHALT_ANFANG]
 
-    # 3. Dublette gegen schon behaltene Beiträge.
-    #    Fingerprint: Titelanfang 80 Zeichen und Inhaltsanfang 150 Zeichen.
-    content_fingerprint = f"{title.lower()[:80]}|{content.lower()[:150]}"
-    if gesehen.fingerprint_da(content_fingerprint):
-        return False, [], "duplicate_content"
-
-    url_key = normalize_url(post.get("url"))
-    if gesehen.url_da(url_key):
-        return False, [], "duplicate_url"
-
+    if gesehen.titel_und_anfang(titel, anfang):
+        return False, [], "duplicate_title_and_start"
     if gesehen.zu_aehnlich(text_lower):
         return False, [], "similar_over_95"
 
-    # 4. Genau ein Projekt. Die Suchwörter stehen in projekt_definitionen.json.
     matched_projects = ein_projekt(text_lower)
-
     if not matched_projects:
         return False, [], "no_target_project_match"
 
-    has_noise = any(re.search(p, text_lower) for p in NOISE_PATTERNS)
-    has_transit_anchor = any(re.search(p, text_lower) for p in URBAN_TRANSIT_ANCHORS)
-
+    has_noise = any(re.search(muster, text_lower) for muster in NOISE_PATTERNS)
+    has_transit_anchor = any(re.search(muster, text_lower) for muster in URBAN_TRANSIT_ANCHORS)
     if has_noise and not has_transit_anchor:
         return False, [], "tourism_or_leisure_noise"
 
-    if any(re.search(p, text_lower) for p in INCIDENT_NOISE_PATTERNS) and not has_transit_anchor:
-        return False, [], "emergency_or_incident_report"
+    if any(re.search(muster, text_lower) for muster in INCIDENT_NOISE_PATTERNS) and not has_transit_anchor:
+        return False, matched_projects, "emergency_or_incident_report"
 
-    if len(full_text) > 2500:
-        all_topic_patterns = [
-            p for proj in matched_projects for p in PROJECT_RULES[proj]["topic_terms"]
-        ]
-        in_title = any(re.search(p, title_lower) for p in all_topic_patterns)
-        mention_count = sum(len(re.findall(p, text_lower)) for p in all_topic_patterns)
-
-        if not in_title and mention_count < 2:
-            return False, [], "passing_mention_in_long_article"
-
-    gesehen.merken(content_fingerprint, url_key, text_lower)
+    gesehen.merken(titel, anfang, text_lower)
     return True, matched_projects, "kept"
 
 
@@ -310,7 +271,7 @@ def main():
 
     gesehen = GeseheneBeitraege()
     clean_posts = []
-    rejected_samples = []
+    buckets = {reason: [] for reason in OUTPUT_FOLDERS}
     stats = Counter()
     project_counts = Counter()
 
@@ -318,45 +279,52 @@ def main():
         is_valid, projects, reason = evaluate_post(post, gesehen)
         stats[reason] += 1
 
-        if is_valid:
+        if reason in OUTPUT_FOLDERS:
+            post["matched_projects"] = projects
+            post["rejection_reason"] = reason
+            buckets[reason].append(post)
+        elif is_valid:
             post["matched_projects"] = projects
             clean_posts.append(post)
             for p in projects:
                 project_counts[p] += 1
-        else:
-            if sum(1 for r in rejected_samples if r["drop_reason"] == reason) < 15:
-                rejected_samples.append({
-                    "mention_id": post.get("mention_id"),
-                    "drop_reason": reason,
-                    "source_name": post.get("source_name"),
-                    "title": post.get("title"),
-                    "snippet": normalize_text(post.get("content"))[:180]
-                })
 
     GEFILTERT_ORDNER.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_CLEAN_FILE, "w", encoding="utf-8") as f:
         json.dump(clean_posts, f, ensure_ascii=False, indent=2)
 
-    with open(OUTPUT_AUDIT_FILE, "w", encoding="utf-8") as f:
-        json.dump(rejected_samples, f, ensure_ascii=False, indent=2)
+    written = {}
+    for reason, folder in OUTPUT_FOLDERS.items():
+        folder.mkdir(parents=True, exist_ok=True)
+        target = folder / "posts.json"
+        if target in written:
+            written[target].extend(buckets[reason])
+        else:
+            written[target] = list(buckets[reason])
+    for target, posts in written.items():
+        with target.open("w", encoding="utf-8") as handle:
+            json.dump(posts, handle, ensure_ascii=False)
 
     total = len(raw_posts)
     kept = len(clean_posts)
-    dropped = total - kept
 
     print("\n" + "=" * 65)
-    print("BEREINIGTES FILTER-ERGEBNIS")
+    print("FILTER RESULT")
     print("=" * 65)
-    print(f"Gesamt eingelesen:   {total:>6} Beiträge")
-    print(f"Behalten (Clean):    {kept:>6} Beiträge ({(kept / total * 100) if total else 0:.1f}%)")
-    print(f"Ausgesiebt (Noise):  {dropped:>6} Beiträge ({(dropped / total * 100) if total else 0:.1f}%)")
+    print(f"Read:                {total:>6}")
+    print(f"Kept:                {kept:>6} ({(kept / total * 100) if total else 0:.1f}%)")
+    for reason, count in stats.most_common():
+        if reason == "kept":
+            continue
+        folder = OUTPUT_FOLDERS[reason].relative_to(BASE_DIR)
+        print(f"  {reason:<28} {count:>6}  {folder}")
 
-    print("\n--- Treffer pro Projekt ---")
+    print("\nProjects in the kept set")
     for proj, count in project_counts.most_common():
-        print(f"  - {proj:<32}: {count:>6}")
+        print(f"  {proj:<28} {count:>6}")
 
-    print("\n" + "=" * 65)
-    print(f"Gespeichert:\n -> {OUTPUT_CLEAN_FILE.relative_to(BASE_DIR)}\n -> {OUTPUT_AUDIT_FILE.relative_to(BASE_DIR)}")
+    print("\nKept file")
+    print(f"  {OUTPUT_CLEAN_FILE.relative_to(BASE_DIR)}")
 
 
 if __name__ == "__main__":
