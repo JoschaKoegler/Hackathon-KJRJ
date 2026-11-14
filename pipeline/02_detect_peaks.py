@@ -105,7 +105,10 @@ def significance(count: float, base: float, dispersion: float) -> float:
 
 
 def detect_peak_days(counts: np.ndarray, base: np.ndarray, dispersion: float) -> np.ndarray:
-    """Lokale Maxima über der dynamischen Schwelle (inkl. erstem/letztem Tag durch Padding)."""
+    """Lokale Maxima über der dynamischen Schwelle (inkl. erstem/letztem Tag durch Padding).
+
+    Keine feste Postzahl. Die Schwelle folgt Baseline und Streuung der jeweiligen Reihe.
+    """
     n = len(counts)
     q = PEAK_FALSE_ALARMS / n
     thr = peak_thresholds(base, dispersion, q)
@@ -230,6 +233,8 @@ def analyze_project_timeseries(df_proj: pd.DataFrame, project_name: str) -> dict
     for k, idx in enumerate(peak_idx):
         idx = int(idx)
         peak_date = daily.index[idx]
+        if float(counts[idx]) <= float(base[idx]):
+            continue
         ws, we = max(0, idx - 3), min(n_days, idx + 3)  # Peak-Tag -3 ... +2 (wie crawler_window)
         excess = max(0.0, float(counts[ws:we].sum() - base[ws:we].sum()))
         sample_titles = df_proj[df_proj["date"] == peak_date]["title"].dropna().unique()[:2].tolist()

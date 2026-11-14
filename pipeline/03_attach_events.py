@@ -25,7 +25,9 @@ OUTPUT_ENRICHED_FILE = BASE_DIR / "projects_with_context.json"
 #           "title": "...", "type": "Gemeinderatsbeschluss", "source_url": "https://..."}]
 CURATED_EVENTS_FILE = BASE_DIR / "curated_events.json"
 
-MIN_POSTS_FOR_CRAWL = 4     # nur Peaks ab dieser Größe bekommen eine externe RSS-Suche
+# Externe Suche nur für statistische Ausreißer (relativ zur lokalen Baseline, keine feste Postzahl).
+OUTLIER_RELATIVE = 2.0
+OUTLIER_SIGNIFICANCE = 2.0
 REQUEST_DELAY = 0.5         # Pause zwischen Netzwerk-Anfragen (Sekunden)
 BASELINE_DAYS = 35          # Vergleichszeitraum vor dem Peak-Fenster für "was ist neu?"
 TOP_TERMS = 6               # Anzahl Schlagwörter pro Peak
@@ -641,11 +643,66 @@ def llm_summarize(cfg: dict, docs: list[dict], terms: list[str], amounts: list[s
     return None
 
 
+def is_volume_outlier(peak: dict) -> bool:
+    """True if the day is an outlier vs its own baseline. No global post floor."""
+    baseline = float(peak.get("baseline_posts_per_day") or 0.0)
+    count = float(peak.get("post_count") or 0.0)
+    relative = float(peak.get("relative_to_baseline") or 0.0)
+    significance = float(peak.get("significance") or 0.0)
+    if relative >= OUTLIER_RELATIVE or significance >= OUTLIER_SIGNIFICANCE:
+        return True
+    return count > baseline + max(1.0, 2.0 * math.sqrt(max(baseline, 0.25)))
+
+
+def score_confidence(event_type: str, type_scores: dict, profile: dict, external: list,
+                     off_topic: bool, topic_share: float, terms: list, curated: list,
+                     peak: dict | None = None) -> tuple[str, int]:
+    """hoch / mittel / niedrig from independent evidence, not a fixed post count.
+
+    ``hoch`` needs a named event type plus corroboration. A generic media spike
+    cannot be high-confidence even if many outlets copy it.
+    """
+    points = 0
+    typed = event_type != GENERIC_EVENT_TYPE
+    best_score = max(type_scores.values()) if type_scores else 0
+    if typed:
+        points += 2 if best_score >= 8 else 1
+    hits = [item for item in (external or []) if isinstance(item, dict) and item.get("title") and not item.get("error")]
+    match = float(hits[0].get("match_score") or 0) if hits else 0.0
+    if hits:
+        points += 2 if match >= 3 else 1
+    n_posts = int(profile.get("n_posts") or 0)
+    n_sources = int(profile.get("n_sources") or 0)
+    if n_posts:
+        share = n_sources / n_posts
+        if n_sources >= 3 and share >= 0.45:
+            points += 2
+        elif n_sources >= 2:
+            points += 1
+        if profile.get("likely_syndication"):
+            points -= 1
+    if off_topic:
+        points -= 2
+    elif topic_share >= 0.75:
+        points += 1
+    if curated:
+        points += 3
+    strong = bool(curated) or match >= 3 or best_score >= 8
+    if off_topic or points < 2:
+        return "niedrig", points
+    if typed and strong and points >= 5:
+        return "hoch", points
+    if points >= 3:
+        return "mittel", points
+    return "niedrig", points
+
+
 # ==========================================
 # 7. KONTEXT PRO PEAK / CHANGE-POINT
 # ==========================================
 def build_context(proj_key: str, cfg: dict, project_docs: list[dict], start_str: str, end_str: str,
-                  ref_date_str: str, ref_count: int | None, curated: list[dict], do_external: bool) -> dict:
+                  ref_date_str: str, ref_count: int | None, curated: list[dict], do_external: bool,
+                  peak: dict | None = None) -> dict:
     start = datetime.strptime(start_str, "%Y-%m-%d").date()
     end = datetime.strptime(end_str, "%Y-%m-%d").date()
     ref_date = datetime.strptime(ref_date_str, "%Y-%m-%d").date()
@@ -671,21 +728,9 @@ def build_context(proj_key: str, cfg: dict, project_docs: list[dict], start_str:
         external = targeted_external_context(cfg, start_str, end_str, terms, headlines)
         time.sleep(REQUEST_DELAY)
 
-    # Konfidenz über Punkte: klarer Typ, starker externer Beleg, genug verschiedene Quellen; Nachdruck zieht ab.
-    points = 0
-    if event_type != GENERIC_EVENT_TYPE:
-        points += 1
-    if external and external[0].get("match_score", 0) >= 3:
-        points += 1
-    if profile["n_sources"] >= 4 and profile["n_posts"] >= 4:
-        points += 1
-    if profile["likely_syndication"]:
-        points -= 1
-    confidence = "mittel" if points >= 2 else "niedrig"
-    if off_topic:
-        confidence = "niedrig"
-    if curated:
-        confidence = "hoch"
+    confidence, points = score_confidence(
+        event_type, type_scores, profile, external, off_topic, topic_share, terms, curated, peak
+    )
 
     summary = template_summary(event_type, secondary, terms, headlines, profile, amounts, external, off_topic)
     method = "regelbasiert"
@@ -693,7 +738,10 @@ def build_context(proj_key: str, cfg: dict, project_docs: list[dict], start_str:
         llm = llm_summarize(cfg, window_docs, terms, amounts, external)
         if llm:
             summary, method = llm["summary"], "llm"
-            confidence = "niedrig" if off_topic else llm["confidence"]
+            if off_topic:
+                confidence = "niedrig"
+            elif llm.get("confidence") in {"hoch", "mittel", "niedrig"}:
+                confidence = llm["confidence"]
             if llm.get("event_type"):
                 event_type = llm["event_type"]
     if curated:
@@ -766,16 +814,17 @@ def main():
             cfg["rss_query"], cfg["must_match_regex"], cfg["lang"], cfg["country"], max_items=4)
 
         peaks = proj_block.get("peaks", [])
-        print(f"  {len(peaks)} Peaks, davon {sum(1 for p in peaks if p.get('post_count', 0) >= MIN_POSTS_FOR_CRAWL)} "
-              f"mit externer Suche (>= {MIN_POSTS_FOR_CRAWL} Posts)")
+        n_outliers = sum(1 for p in peaks if is_volume_outlier(p))
+        print(f"  {len(peaks)} Peaks, davon {n_outliers} über lokaler Baseline (externe Suche)")
 
         for peak in peaks:
             win = peak["crawler_window"]
             curated = curated_near(curated_events, proj_key, peak["date"], days=3)
-            peak["crawled"] = peak.get("post_count", 0) >= MIN_POSTS_FOR_CRAWL
+            peak["crawled"] = is_volume_outlier(peak)
             peak["context"] = build_context(
                 proj_key, cfg, project_docs, win["start"], win["end"],
-                peak["date"], peak.get("post_count", 0), curated, do_external=peak["crawled"])
+                peak["date"], peak.get("post_count", 0), curated, do_external=peak["crawled"],
+                peak=peak)
 
             ctx = peak["context"]
             flag = "  ⚠ evtl. themenfremd" if ctx["off_topic_suspect"] else ""
@@ -819,7 +868,8 @@ def main():
                 "Optional: manually curated event list (curated_events.json); optional LLM summary (USE_LLM)"
             ],
             "interpretation_note": "context.summary describes the likely occasion based on the posts and external headlines; "
-                                   "confidence 'hoch' only applies to manually curated events.",
+                                   "confidence hoch/mittel/niedrig is scored from event type, independent sources, "
+                                   "external corroboration and topic fit — not from a fixed post count.",
             "compliance_note": "Only publicly accessible pages without login or paywall were queried; no personal user identifiers collected."
         },
         "projects": enriched_projects

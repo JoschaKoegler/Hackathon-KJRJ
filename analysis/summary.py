@@ -15,9 +15,11 @@ from .config import (
     CIRCLES,
     CITY_BUTTONS,
     CITY_BY_PROJECT,
+    CONTEXT_FILE,
     DEFAULT_CHANNEL,
     DEFAULT_CITY,
     EVENTS_FILE,
+    LEGACY_PEAKS_FILE,
     MIN_TREND_BASE,
     PEAKS_FILE,
     PROJECT_LABEL,
@@ -60,7 +62,7 @@ def select_posts(
     selected = frame
     if city and city != "All":
         selected = selected[selected["city"].eq(city)]
-    if channel:
+    if channel and channel != "All":
         selected = selected[selected["channel"].eq(channel)]
     start = as_day(date_from)
     end = as_day(date_to)
@@ -205,17 +207,226 @@ def _clamp(start, end, data_start, data_end):
     return start, end
 
 
-def load_peak_markers(city: str) -> list[dict]:
-    """Peak dates for the selected city.
+def _peak_source_path():
+    for relative in (CONTEXT_FILE, PEAKS_FILE, EVENTS_FILE, LEGACY_PEAKS_FILE):
+        path = ROOT / relative
+        if path.is_file():
+            return path
+    return None
 
-    Markers come from the batch pipeline, counted on every kept post for
-    that project. They are not recomputed for the channel switch.
-    ``events.json`` wins over ``peaks.json`` once the crawler has run.
+
+def _peak_window(peak: dict) -> tuple[str, str]:
+    window = peak.get("crawler_window") if isinstance(peak.get("crawler_window"), dict) else {}
+    day = str(peak.get("date") or "")
+    start = str(window.get("start") or day)
+    end = str(window.get("end") or day)
+    return start, end
+
+
+GENERIC_EVENT_TYPE = "Medienberichterstattung (kein klarer Auslöser)"
+
+
+def score_confidence(context: dict, peak: dict | None = None) -> dict:
+    """How sure we are that the peak context names a real occasion.
+
+    Points come from independent evidence (event type, sources, external
+    corroboration, topic fit), not from a fixed post count. ``hoch`` is
+    reachable without a curated event.
     """
-    events_path = ROOT / EVENTS_FILE
-    peaks_path = ROOT / PEAKS_FILE
-    path = events_path if events_path.is_file() else peaks_path
-    if not path.is_file():
+    context = context if isinstance(context, dict) else {}
+    reasons: list[str] = []
+    points = 0
+
+    event_type = str(context.get("event_type") or "")
+    typed = bool(event_type) and event_type != GENERIC_EVENT_TYPE
+    type_scores = context.get("event_type_scores") if isinstance(context.get("event_type_scores"), dict) else {}
+    numeric_scores = [float(value) for value in type_scores.values() if isinstance(value, (int, float))]
+    best_score = max(numeric_scores) if numeric_scores else 0.0
+    if typed:
+        if best_score >= 8:
+            points += 2
+            reasons.append("clear event type")
+        else:
+            points += 1
+            reasons.append("event type identified")
+    else:
+        reasons.append("no clear trigger")
+
+    externals = [
+        item for item in (context.get("external_candidates") or [])
+        if isinstance(item, dict) and item.get("title") and not item.get("error")
+    ]
+    match = float(externals[0].get("match_score") or 0) if externals else 0.0
+    if externals:
+        if match >= 3:
+            points += 2
+            reasons.append("matching external source")
+        else:
+            points += 1
+            reasons.append("external hint")
+
+    profile = context.get("source_profile") if isinstance(context.get("source_profile"), dict) else {}
+    n_posts = int(profile.get("n_posts") or 0)
+    n_sources = int(profile.get("n_sources") or 0)
+    if n_posts:
+        share = n_sources / n_posts
+        if n_sources >= 3 and share >= 0.45:
+            points += 2
+            reasons.append(f"{n_sources} independent sources")
+        elif n_sources >= 2:
+            points += 1
+            reasons.append("several sources")
+        if profile.get("likely_syndication"):
+            points -= 1
+            reasons.append("likely syndication")
+
+    topic = context.get("topic_share")
+    off_topic = bool(context.get("off_topic_suspect"))
+    if off_topic:
+        points -= 2
+        reasons.append("possibly off-topic")
+    elif isinstance(topic, (int, float)) and topic >= 0.75:
+        points += 1
+        reasons.append("on-topic in the window")
+
+    curated = bool(context.get("curated_events"))
+    if curated:
+        points += 3
+        reasons.append("curated event")
+
+    strong_corroboration = curated or match >= 3 or best_score >= 8
+    if off_topic or points < 2:
+        level = "niedrig"
+    elif typed and strong_corroboration and points >= 5:
+        level = "hoch"
+    elif points >= 3:
+        level = "mittel"
+    else:
+        level = "niedrig"
+    return {
+        "level": level,
+        "points": points,
+        "why": ", ".join(reasons[:4]),
+    }
+
+
+def _peak_headline(peak: dict, context: dict) -> str:
+    for headline in context.get("top_headlines") or []:
+        if headline:
+            return str(headline)
+    for title in peak.get("sample_titles") or []:
+        if title:
+            return str(title)
+    crawled = peak.get("crawled_context") or []
+    if crawled and isinstance(crawled[0], dict):
+        return str(crawled[0].get("title") or "")
+    return ""
+
+
+def _peak_headlines(peak: dict, context: dict) -> list[dict]:
+    items: list[dict] = []
+
+    def add(text, url=None):
+        value = str(text or "").strip()
+        if not value or any(existing["text"] == value for existing in items):
+            return
+        item = {"text": value}
+        if url:
+            item["url"] = str(url)
+        items.append(item)
+
+    for headline in (context.get("top_headlines") or [])[:3]:
+        add(headline)
+    added_external = 0
+    for extra in context.get("external_candidates") or []:
+        if not isinstance(extra, dict) or extra.get("error") or not extra.get("title"):
+            continue
+        source = extra.get("source") or ""
+        add(extra["title"] if not source else f"{extra['title']} ({source})", extra.get("url"))
+        added_external += 1
+        if added_external >= 2:
+            break
+    if not items:
+        for title in (peak.get("sample_titles") or [])[:3]:
+            add(title)
+    return items
+
+
+def _peak_effects(context: dict) -> list[str]:
+    lines = []
+    effects = context.get("effects") if isinstance(context.get("effects"), dict) else {}
+    persistence = effects.get("persistence")
+    if persistence:
+        decay = effects.get("decay_days")
+        extra = f", {decay} days" if decay not in (None, "") else ""
+        follow = {"abgeklungen": "faded", "dauerhaft erhöht": "stayed high"}.get(str(persistence), persistence)
+        lines.append(f"Follow-up: {follow}{extra}")
+    sent_before, sent_after = effects.get("sentiment_14d_before"), effects.get("sentiment_14d_after")
+    if sent_before is not None or sent_after is not None:
+        lines.append(f"Sentiment over 14 days: {sent_before} → {sent_after}")
+    if context.get("off_topic_suspect"):
+        lines.append("Note: peak may be off-topic")
+    return lines
+
+
+def _peak_points(peak: dict, context: dict) -> list[dict]:
+    """Bullet points for the context panel. Pipeline text stays as written."""
+    points: list[dict] = []
+
+    def add(text, url=None):
+        value = str(text or "").strip()
+        if not value:
+            return
+        item = {"text": value}
+        if url:
+            item["url"] = str(url)
+        points.append(item)
+
+    terms = [str(term) for term in (context.get("top_terms") or []) if term]
+    amounts = [str(amount) for amount in (context.get("amounts_mentioned") or []) if amount]
+    profile = context.get("source_profile") if isinstance(context.get("source_profile"), dict) else {}
+    n_posts, n_sources = profile.get("n_posts"), profile.get("n_sources")
+    if n_posts and n_sources:
+        add(f"{n_posts} posts from {n_sources} sources")
+    for headline in (context.get("top_headlines") or [])[:3]:
+        add(headline)
+    added_external = 0
+    for extra in context.get("external_candidates") or []:
+        if not isinstance(extra, dict) or extra.get("error") or not extra.get("title"):
+            continue
+        source = extra.get("source") or ""
+        add(extra["title"] if not source else f"{extra['title']} ({source})", extra.get("url"))
+        added_external += 1
+        if added_external >= 2:
+            break
+    effects = context.get("effects") if isinstance(context.get("effects"), dict) else {}
+    persistence = effects.get("persistence")
+    if persistence:
+        decay = effects.get("decay_days")
+        extra = f", {decay} days" if decay not in (None, "") else ""
+        follow = {"abgeklungen": "faded", "dauerhaft erhöht": "stayed high"}.get(str(persistence), persistence)
+        add(f"Follow-up: {follow}{extra}")
+    sent_before, sent_after = effects.get("sentiment_14d_before"), effects.get("sentiment_14d_after")
+    if sent_before is not None or sent_after is not None:
+        add(f"Sentiment over 14 days: {sent_before} → {sent_after}")
+    if context.get("off_topic_suspect"):
+        add("Note: peak may be off-topic")
+    if not points:
+        for title in (peak.get("sample_titles") or [])[:3]:
+            add(title)
+    return points
+
+
+def load_peak_markers(city: str) -> list[dict]:
+    """Peak windows for the selected city.
+
+    Markers come from the batch pipeline (``projects_with_context.json``),
+    counted on every kept post for that project. They are not recomputed
+    for the channel switch. Each marker carries the few-day crawler window
+    and the context bullets for the panel beside the timeline.
+    """
+    path = _peak_source_path()
+    if path is None:
         return []
     raw = json.loads(path.read_text(encoding="utf-8"))
     blocks = raw["projects"] if isinstance(raw, dict) else raw
@@ -224,22 +435,46 @@ def load_peak_markers(city: str) -> list[dict]:
         project = block.get("project")
         if city != "All" and CITY_BY_PROJECT.get(project) != city:
             continue
-        for peak in block.get("peaks", []):
-            # Same floor as pipeline/03_attach_events.py. Smaller spikes stay in peaks.json.
-            if int(peak.get("post_count") or 0) < 4:
+        for peak in block.get("peaks", []) or []:
+            day = peak.get("date")
+            if not day:
                 continue
-            context = peak.get("crawled_context") or []
-            headline = ""
-            if context and isinstance(context[0], dict):
-                headline = str(context[0].get("title") or "")
+            context = peak.get("context") if isinstance(peak.get("context"), dict) else {}
+            window_from, window_to = _peak_window(peak)
+            headline = _peak_headline(peak, context)
+            scored = score_confidence(context, peak)
+            profile = context.get("source_profile") if isinstance(context.get("source_profile"), dict) else {}
+            secondary = context.get("event_type_secondary")
+            event_type = context.get("event_type") or ""
+            if secondary:
+                event_type = f"{event_type} · {secondary}"
             markers.append({
-                "date": peak.get("date"),
+                "id": f"{project}::{day}",
+                "date": day,
+                "window_from": window_from,
+                "window_to": window_to,
                 "project": project,
                 "label": PROJECT_LABEL.get(project, project),
-                "post_count": peak.get("post_count"),
+                "post_count": int(peak.get("post_count") or 0),
                 "prominence": peak.get("prominence"),
+                "tier": peak.get("tier") or "major",
+                "rank": peak.get("rank"),
+                "event_type": event_type,
                 "headline": headline,
+                "summary": str(context.get("summary") or "").strip(),
+                "confidence": scored["level"],
+                "confidence_why": scored["why"],
+                "terms": [str(term) for term in (context.get("top_terms") or []) if term][:6],
+                "amounts": [str(amount) for amount in (context.get("amounts_mentioned") or []) if amount][:4],
+                "sources": (
+                    f"{profile['n_posts']} posts · {profile['n_sources']} sources"
+                    if profile.get("n_posts") and profile.get("n_sources") else ""
+                ),
+                "headlines": _peak_headlines(peak, context),
+                "effects": _peak_effects(context),
+                "points": _peak_points(peak, context),
             })
+    markers.sort(key=lambda item: (item["date"], item["project"]))
     return markers
 
 

@@ -6,7 +6,8 @@ The numbers come from ``analysis/``:
 1. ``prepare.py`` reads the filtered posts and sets text, city, and channel.
 2. ``stance.py`` sets text stance, vendor tone, and the three circles.
 3. ``terms.py`` supplies the word-cloud terms.
-4. ``summary.py`` filters, counts the timeline, and reads peak markers.
+4. ``summary.py`` filters, counts the timeline, and reads peak windows
+   from ``pipeline/projects_with_context.json``.
 
 City, channel, and stance source live in ``analysis/config.py``.
 
@@ -78,13 +79,13 @@ SEITE = r"""<!DOCTYPE html>
     height: 100%;
     min-height: 0;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 200px 188px;
+    grid-template-columns: minmax(0, 1fr) 190px 170px minmax(280px, 360px);
     grid-template-rows: auto minmax(180px, 1fr) minmax(200px, 2fr);
     align-content: stretch;
     grid-template-areas:
-      "kopf kopf kopf"
-      "buehne trend zahl"
-      "zeit zeit zeit";
+      "kopf kopf kopf kopf"
+      "buehne trend zahl kontext"
+      "zeit zeit zeit kontext";
     gap: 12px;
     padding: 12px;
     overflow: auto;
@@ -92,11 +93,37 @@ SEITE = r"""<!DOCTYPE html>
   header {
     grid-area: kopf;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 16px;
+    background: #fff;
+    border: 1.5px solid var(--tinte);
+    border-radius: 16px;
+    padding: 10px 14px 12px;
+    box-shadow: var(--schatten);
   }
-  .marke { text-align: right; }
+  .filter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 22px;
+    min-width: 0;
+  }
+  .filter-gruppe {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+  }
+  .filter-gruppe > span {
+    color: var(--tinte);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .marke { text-align: right; flex: 0 0 auto; }
   .marke strong {
     display: block;
     font-family: Palatino, "Palatino Linotype", Georgia, serif;
@@ -107,15 +134,18 @@ SEITE = r"""<!DOCTYPE html>
   .marke span { color: var(--leise); font-size: 13px; }
   .segment, .staedte, .medien {
     display: flex;
+    flex-wrap: wrap;
     gap: 6px;
     background: transparent;
   }
   .segment button, .staedte button, .medien button, .zahl-karte {
-    border: 1px solid var(--linie);
-    background: var(--karte);
+    border: 1.5px solid var(--tinte);
+    background: #fff;
+    color: var(--tinte);
     border-radius: 999px;
-    padding: 8px 14px;
+    padding: 7px 13px;
     cursor: pointer;
+    font-weight: 600;
   }
   .segment button.aktiv, .staedte button.aktiv, .medien button.aktiv {
     background: var(--tinte);
@@ -123,10 +153,10 @@ SEITE = r"""<!DOCTYPE html>
     border-color: var(--tinte);
   }
   .staedte button, .medien button {
-    padding: 4px 9px;
+    padding: 7px 12px;
     font-size: 13px;
   }
-  .buehne, .trend-karte, .zahl-karte, .zeit-karte {
+  .buehne, .trend-karte, .zahl-karte, .zeit-karte, .kontext-karte {
     background: var(--karte);
     border: 1px solid var(--linie);
     border-radius: 18px;
@@ -236,6 +266,111 @@ SEITE = r"""<!DOCTYPE html>
     display: flex;
     flex-direction: column;
   }
+  .kontext-karte {
+    grid-area: kontext;
+    min-width: 0;
+    min-height: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 18px 14px;
+    overflow: hidden;
+  }
+  .kontext-kopf {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    color: var(--leise);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .kontext-kopf button {
+    border: 1px solid var(--linie);
+    background: transparent;
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 12px;
+    letter-spacing: 0;
+    text-transform: none;
+    cursor: pointer;
+  }
+  .kontext-kicker {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .kontext-karte h2 {
+    font-family: Palatino, Georgia, serif;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 8px 0 0;
+  }
+  .kontext-meta, .kontext-leer, .konfidenz-why {
+    color: var(--leise);
+    font-size: 13.5px;
+    line-height: 1.45;
+    margin: 8px 0 0;
+  }
+  .kontext-karte .lead {
+    color: var(--tinte);
+    font-size: 15.5px;
+    line-height: 1.5;
+    margin: 12px 0 0;
+  }
+  .konfidenz {
+    display: inline-block;
+    border-radius: 999px;
+    padding: 3px 10px;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+  }
+  .konfidenz.hoch { background: #e5f5ec; color: var(--support); }
+  .konfidenz.mittel { background: #f4ead3; color: #8a5a18; }
+  .konfidenz.niedrig { background: #ece7dc; color: var(--neutral-tinte); }
+  .kontext-scroll {
+    overflow: auto;
+    min-height: 0;
+    flex: 1 1 auto;
+    margin-top: 4px;
+  }
+  .kontext-block { margin-top: 16px; }
+  .kontext-block h3 {
+    margin: 0 0 8px;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--leise);
+    font-weight: 600;
+  }
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .chips span {
+    border: 1px solid var(--linie);
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 13px;
+  }
+  .kontext-karte ul {
+    list-style: disc;
+    margin: 0;
+    padding: 0 0 0 18px;
+  }
+  .kontext-karte li {
+    font-size: 14.5px;
+    line-height: 1.45;
+    margin: 0 0 8px;
+  }
+  .kontext-karte a { color: inherit; }
+  svg.chart .peak-marke { cursor: pointer; }
+  svg.chart text { font-family: "Avenir Next", "Segoe UI", sans-serif; }
   .zeit-kopf, .zeit-fuss {
     display: flex;
     justify-content: space-between;
@@ -254,7 +389,8 @@ SEITE = r"""<!DOCTYPE html>
     margin-left: auto;
   }
   svg.chart { width: 100%; flex: 1 1 auto; height: auto; min-height: 0; display: block; }
-  .doppel { position: relative; height: 22px; margin-top: 2px; }
+  .doppel { position: relative; height: 22px; margin-top: 2px; padding-left: 42px; }
+  .zeit-fuss { padding-left: 42px; }
   .doppel .spur {
     position: absolute;
     left: 0; right: 0; top: 9px;
@@ -297,19 +433,14 @@ SEITE = r"""<!DOCTYPE html>
     border: 2px solid #fbf8f2;
     cursor: grab;
   }
-  .staedte, .medien {
+  .staedte, .medien, .segment {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 4px;
+    gap: 6px;
     padding: 0;
     background: none;
     border: 0;
     box-shadow: none;
-  }
-  .medien {
-    padding-left: 8px;
-    border-left: 1px solid var(--linie);
   }
   .overlay[hidden] { display: none; }
   .overlay {
@@ -364,28 +495,50 @@ SEITE = r"""<!DOCTYPE html>
   .plakette.Neutral { background: #ece7dc; color: var(--neutral-tinte); }
   .plakette.Opposition { background: #fde8e4; color: var(--opposition); }
   .plakette.offen { background: #f3efe6; color: var(--leise); }
-  @media (max-width: 980px) {
+  @media (max-width: 1100px) {
     .seite {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: minmax(0, 1fr) minmax(250px, 320px);
       grid-template-areas:
         "kopf kopf"
         "buehne buehne"
         "trend zahl"
-        "zeit zeit";
-      align-content: stretch;
-      height: 100%;
-      grid-template-rows: auto minmax(150px, 1fr) auto minmax(200px, 2fr);
+        "zeit kontext";
+      grid-template-rows: auto minmax(140px, 1fr) auto minmax(200px, 2fr);
     }
     .buehne { min-height: 0; }
+  }
+  @media (max-width: 720px) {
+    .seite {
+      grid-template-columns: minmax(0, 1fr) minmax(210px, 260px);
+      grid-template-areas:
+        "kopf kopf"
+        "buehne buehne"
+        "trend zahl"
+        "zeit kontext";
+      grid-template-rows: auto minmax(140px, 1fr) auto minmax(180px, 2fr);
+    }
   }
 </style>
 </head>
 <body>
 <div class="seite">
   <header>
-    <div class="segment" id="ansicht">
-      <button type="button" data-ansicht="circles" class="aktiv">Stance</button>
-      <button type="button" data-ansicht="terms">Terms</button>
+    <div class="filter">
+      <div class="filter-gruppe">
+        <span>Project</span>
+        <div class="staedte" id="staedte"></div>
+      </div>
+      <div class="filter-gruppe">
+        <span>Channel</span>
+        <div class="medien" id="medien"></div>
+      </div>
+      <div class="filter-gruppe">
+        <span>View</span>
+        <div class="segment" id="ansicht">
+          <button type="button" data-ansicht="circles" class="aktiv">Stance</button>
+          <button type="button" data-ansicht="terms">Terms</button>
+        </div>
+      </div>
     </div>
     <div class="marke">
       <strong>Public debate</strong>
@@ -402,10 +555,6 @@ SEITE = r"""<!DOCTYPE html>
   <section class="zeit-karte">
     <div class="zeit-kopf">
       <span>Timeline</span>
-      <div class="legende">
-        <div class="staedte" id="staedte"></div>
-        <div class="medien" id="medien"></div>
-      </div>
       <span id="zeit-spanne"></span>
     </div>
     <svg class="chart" id="chart" role="img" aria-label="Posts per day"></svg>
@@ -416,6 +565,25 @@ SEITE = r"""<!DOCTYPE html>
     </div>
     <div class="zeit-fuss"><span id="von-label"></span><span id="bis-label"></span></div>
   </section>
+  <aside class="kontext-karte" id="kontext">
+    <div class="kontext-kopf">
+      <span>Peak context</span>
+      <button type="button" id="kontext-reset" hidden>Show all</button>
+    </div>
+    <p class="kontext-leer" id="kontext-leer">Click a peak on the timeline to set the window and read the context for those days.</p>
+    <div id="kontext-inhalt" hidden>
+      <div class="kontext-kicker">
+        <span class="konfidenz" id="kontext-konfidenz"></span>
+      </div>
+      <h2 id="kontext-titel"></h2>
+      <p class="kontext-meta" id="kontext-meta"></p>
+      <p class="konfidenz-why" id="kontext-why"></p>
+      <div class="kontext-scroll">
+        <p class="lead" id="kontext-summary"></p>
+        <div id="kontext-bloecke"></div>
+      </div>
+    </div>
+  </aside>
 </div>
 <div class="overlay" id="overlay" hidden>
   <div class="blatt">
@@ -442,13 +610,17 @@ const bisInput = document.getElementById("bis");
 const spur = document.getElementById("spur");
 const overlay = document.getElementById("overlay");
 const liste = document.getElementById("liste");
+const kontextLeer = document.getElementById("kontext-leer");
+const kontextInhalt = document.getElementById("kontext-inhalt");
+const kontextReset = document.getElementById("kontext-reset");
 
 const zustand = {
   ansicht: "circles",
   stadt: "All",
-  medium: "News",
+  medium: "All",
   von: null,
   bis: null,
+  peak: null,
   serie: [],
   letzter: null,
   ziehen: null,
@@ -496,6 +668,7 @@ function schalter(eltern, eintraege, schluessel) {
       zustand[schluessel] = eintrag.id;
       zustand.von = null;
       zustand.bis = null;
+      zustand.peak = null;
       laden();
     });
     eltern.appendChild(knopf);
@@ -562,6 +735,16 @@ function indexBei(iso) {
   return stelle < 0 ? 0 : stelle;
 }
 
+const Y_ACHSE = 42;
+
+function achsenMaximum(wert) {
+  if (wert <= 1) return 1;
+  const mag = Math.pow(10, Math.floor(Math.log10(wert)));
+  const n = wert / mag;
+  const schoen = n <= 1 ? 1 : n <= 2 ? 2 : n <= 5 ? 5 : 10;
+  return schoen * mag;
+}
+
 function zeichneChart() {
   const serie = zustand.serie;
   const breite = Math.max(chart.clientWidth, 280);
@@ -571,34 +754,68 @@ function zeichneChart() {
     chart.innerHTML = "";
     return;
   }
-  const maximum = Math.max(...serie.map((punkt) => punkt.count), 1);
-  const schritt = serie.length === 1 ? 0 : breite / (serie.length - 1);
+  const rohMax = Math.max(...serie.map((punkt) => punkt.count), 1);
+  const maximum = achsenMaximum(rohMax);
+  const oben = 8;
+  const unten = 8;
+  const plotHoehe = Math.max(hoehe - oben - unten, 16);
+  const plotBreite = Math.max(breite - Y_ACHSE - 8, 40);
+  const schritt = serie.length === 1 ? 0 : plotBreite / (serie.length - 1);
   const vonIndex = indexBei(zustand.von);
   const bisIndex = indexBei(zustand.bis);
   const links = Math.min(vonIndex, bisIndex);
   const rechts = Math.max(vonIndex, bisIndex);
   const punkte = serie.map((punkt, index) => {
-    const x = index * schritt;
-    const y = hoehe - 8 - (punkt.count / maximum) * (hoehe - 16);
+    const x = Y_ACHSE + index * schritt;
+    const y = hoehe - unten - (punkt.count / maximum) * plotHoehe;
     return [x, y];
   });
   const linie = punkte.map((punkt, index) => `${index ? "L" : "M"}${punkt[0].toFixed(1)},${punkt[1].toFixed(1)}`).join(" ");
-  const flaeche = `${linie} L${breite},${hoehe} L0,${hoehe} Z`;
+  const flaeche = `${linie} L${(Y_ACHSE + plotBreite).toFixed(1)},${hoehe} L${Y_ACHSE},${hoehe} Z`;
   const x0 = punkte[links][0];
   const x1 = punkte[rechts][0];
+  const ticks = [0, maximum / 2, maximum].map((wert, i, alle) => {
+    const gerundet = i === alle.length - 1 ? maximum : Math.round(wert);
+    const y = hoehe - unten - (gerundet / maximum) * plotHoehe;
+    return `<line x1="${Y_ACHSE - 3}" y1="${y.toFixed(1)}" x2="${Y_ACHSE}" y2="${y.toFixed(1)}" stroke="#6f675e" stroke-width="1"></line>
+      <text x="${Y_ACHSE - 6}" y="${(y + 3).toFixed(1)}" text-anchor="end" fill="#6f675e" font-size="10">${gerundet}</text>`;
+  }).join("");
+  const versatz = {};
   const peaks = (zustand.peaks || []).map((peak) => {
     const index = serie.findIndex((punkt) => punkt.date === peak.date);
     if (index < 0) return "";
-    const x = (index * schritt).toFixed(1);
-    const label = `${peak.label} ${peak.date}: ${peak.post_count} posts` + (peak.headline ? `. ${peak.headline}` : "");
-    return `<line x1="${x}" y1="2" x2="${x}" y2="${hoehe}" stroke="#a33b2b" stroke-width="1" opacity="0.55"><title>${esc(label)}</title></line>`;
+    const n = versatz[peak.date] || 0;
+    versatz[peak.date] = n + 1;
+    const x = (Y_ACHSE + index * schritt + (n ? (n % 2 ? 6 : -6) : 0)).toFixed(1);
+    const y = punkte[index][1].toFixed(1);
+    const aktiv = zustand.peak === peak.id;
+    const major = peak.tier !== "minor";
+    const farbe = aktiv ? "#1c7a4d" : "#a33b2b";
+    const radius = aktiv ? 6 : major ? 4.5 : 3;
+    const dicke = aktiv ? 2.4 : major ? 1.6 : 1;
+    const deckkraft = aktiv ? 1 : major ? 0.9 : 0.45;
+    const fenster = (peak.window_from && peak.window_to)
+      ? `${datumKurz(peak.window_from)} – ${datumKurz(peak.window_to)}`
+      : datumKurz(peak.date);
+    const label = `${peak.label} · ${fenster} · ${peak.post_count} posts`
+      + (peak.event_type ? ` · ${peak.event_type}` : "")
+      + (peak.headline ? `. ${peak.headline}` : "");
+    return `<g class="peak-marke" data-peak="${esc(peak.id)}">
+      <title>${esc(label)}</title>
+      <line x1="${x}" y1="0" x2="${x}" y2="${hoehe}" stroke="${farbe}" stroke-width="14" opacity="0"></line>
+      <line x1="${x}" y1="${y}" x2="${x}" y2="${hoehe}" stroke="${farbe}" stroke-width="${dicke}" opacity="${deckkraft}"></line>
+      <circle cx="${x}" cy="${y}" r="${radius}" fill="${farbe}" opacity="${deckkraft}"></circle>
+    </g>`;
   }).join("");
   chart.innerHTML = `
+    <text transform="translate(12, ${(hoehe / 2).toFixed(1)}) rotate(-90)" text-anchor="middle" fill="#1e1a16" font-size="11" font-weight="600">Posts per day</text>
+    <line x1="${Y_ACHSE}" y1="${oben}" x2="${Y_ACHSE}" y2="${hoehe - unten}" stroke="#6f675e" stroke-width="1"></line>
+    ${ticks}
     <path d="${flaeche}" fill="#1e1a16" opacity="0.08"></path>
     <path d="${linie}" fill="none" stroke="#1e1a16" stroke-width="1.4"></path>
+    <rect x="${Y_ACHSE}" y="0" width="${Math.max(x0 - Y_ACHSE, 0)}" height="${hoehe}" fill="#fbf8f2" opacity="0.62" pointer-events="none"></rect>
+    <rect x="${x1}" y="0" width="${Math.max(breite - x1, 0)}" height="${hoehe}" fill="#fbf8f2" opacity="0.62" pointer-events="none"></rect>
     ${peaks}
-    <rect x="0" y="0" width="${x0}" height="${hoehe}" fill="#fbf8f2" opacity="0.62"></rect>
-    <rect x="${x1}" y="0" width="${Math.max(breite - x1, 0)}" height="${hoehe}" fill="#fbf8f2" opacity="0.62"></rect>
   `;
 }
 
@@ -616,13 +833,94 @@ function schieberZeichnen() {
   document.getElementById("von-label").textContent = datumKurz(zustand.von);
   document.getElementById("bis-label").textContent = datumKurz(zustand.bis);
   const gewaehlt = Math.abs(bis - von) + 1;
-  document.getElementById("zeit-spanne").textContent = gewaehlt === 1 ? "1 day selected" : gewaehlt + " days selected";
+  const fenster = gewaehlt === 1 ? "1 day selected" : gewaehlt + " days selected";
+  document.getElementById("zeit-spanne").textContent = zustand.peak ? "Peak window · " + fenster : fenster;
+}
+
+function gewaehlterPeak() {
+  return (zustand.peaks || []).find((peak) => peak.id === zustand.peak) || null;
+}
+
+function zeichneKontext() {
+  const peak = gewaehlterPeak();
+  kontextReset.hidden = !peak;
+  if (!peak) {
+    kontextLeer.hidden = false;
+    kontextInhalt.hidden = true;
+    return;
+  }
+  kontextLeer.hidden = true;
+  kontextInhalt.hidden = false;
+  const level = peak.confidence || "niedrig";
+  const stufen = { hoch: "high", mittel: "medium", niedrig: "low" };
+  const badge = document.getElementById("kontext-konfidenz");
+  badge.className = "konfidenz " + level;
+  badge.textContent = "Confidence " + (stufen[level] || level);
+  document.getElementById("kontext-titel").textContent = peak.event_type || peak.label;
+  document.getElementById("kontext-meta").textContent = [
+    peak.label,
+    datumKurz(peak.window_from || peak.date) + " – " + datumKurz(peak.window_to || peak.date),
+    peak.post_count + " posts at peak",
+    peak.sources || "",
+  ].filter(Boolean).join(" · ");
+  const why = document.getElementById("kontext-why");
+  why.textContent = peak.confidence_why || "";
+  why.hidden = !peak.confidence_why;
+  const summary = document.getElementById("kontext-summary");
+  summary.textContent = peak.summary || "";
+  summary.hidden = !peak.summary;
+  const bloecke = [];
+  if ((peak.terms || []).length) {
+    bloecke.push(`<div class="kontext-block"><h3>Terms</h3><div class="chips">${
+      peak.terms.map((term) => `<span>${esc(term)}</span>`).join("")
+    }</div></div>`);
+  }
+  if ((peak.amounts || []).length) {
+    bloecke.push(`<div class="kontext-block"><h3>Amounts</h3><div class="chips">${
+      peak.amounts.map((amount) => `<span>${esc(amount)}</span>`).join("")
+    }</div></div>`);
+  }
+  if ((peak.headlines || []).length) {
+    bloecke.push(`<div class="kontext-block"><h3>Headlines & sources</h3><ul>${
+      peak.headlines.map((punkt) => {
+        const text = typeof punkt === "string" ? punkt : (punkt.text || "");
+        const url = sichereUrl(punkt && punkt.url);
+        const inhalt = url ? `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(text)}</a>` : esc(text);
+        return `<li>${inhalt}</li>`;
+      }).join("")
+    }</ul></div>`);
+  }
+  if ((peak.effects || []).length) {
+    bloecke.push(`<div class="kontext-block"><h3>Follow-up</h3><ul>${
+      peak.effects.map((zeile) => `<li>${esc(zeile)}</li>`).join("")
+    }</ul></div>`);
+  }
+  document.getElementById("kontext-bloecke").innerHTML = bloecke.join("");
+}
+
+function waehlePeak(id) {
+  if (zustand.peak === id) {
+    zustand.peak = null;
+    zustand.von = null;
+    zustand.bis = null;
+    laden();
+    return;
+  }
+  const peak = (zustand.peaks || []).find((eintrag) => eintrag.id === id);
+  if (!peak) return;
+  zustand.peak = id;
+  zustand.von = peak.window_from || peak.date;
+  zustand.bis = peak.window_to || peak.date;
+  laden();
 }
 
 function zeichne(daten) {
   zustand.letzter = daten;
   zustand.serie = daten.timeline;
   zustand.peaks = daten.peaks || [];
+  if (zustand.peak && !zustand.peaks.some((peak) => peak.id === zustand.peak)) {
+    zustand.peak = null;
+  }
   zustand.von = daten.date_from;
   zustand.bis = daten.date_to;
   schalter(staedteEl, daten.cities, "stadt");
@@ -633,6 +931,7 @@ function zeichne(daten) {
   zahlEl.textContent = String(daten.post_count);
   zeichneChart();
   schieberZeichnen();
+  zeichneKontext();
   requestAnimationFrame(zeichneChart);
 }
 
@@ -656,8 +955,10 @@ function schieberLos() {
   bis = Math.max(0, Math.min(max, bis));
   zustand.von = zustand.serie[von].date;
   zustand.bis = zustand.serie[bis].date;
+  zustand.peak = null;
   schieberZeichnen();
   zeichneChart();
+  zeichneKontext();
   window.clearTimeout(warte);
   warte = window.setTimeout(laden, 90);
 }
@@ -667,12 +968,19 @@ bisInput.addEventListener("input", schieberLos);
 
 function indexAusMaus(ereignis) {
   const kasten = chart.getBoundingClientRect();
-  const x = Math.min(Math.max(ereignis.clientX - kasten.left, 0), kasten.width || 1);
+  const plot = Math.max((kasten.width || 1) - Y_ACHSE, 1);
+  const x = Math.min(Math.max(ereignis.clientX - kasten.left - Y_ACHSE, 0), plot);
   const max = Math.max(zustand.serie.length - 1, 1);
-  return Math.round(x / (kasten.width || 1) * max);
+  return Math.round(x / plot * max);
 }
 chart.style.cursor = "ew-resize";
 chart.addEventListener("pointerdown", (ereignis) => {
+  const marke = ereignis.target.closest("[data-peak]");
+  if (marke) {
+    ereignis.preventDefault();
+    waehlePeak(marke.getAttribute("data-peak"));
+    return;
+  }
   if (!zustand.serie.length) return;
   chart.setPointerCapture(ereignis.pointerId);
   zustand.ziehen = indexAusMaus(ereignis);
@@ -695,6 +1003,12 @@ window.addEventListener("resize", () => {
   if (zustand.ansicht === "terms") zeichneWolke(zustand.letzter.terms);
   else zeichneKreise(zustand.letzter);
   if (zustand.serie.length) zeichneChart();
+});
+kontextReset.addEventListener("click", () => {
+  zustand.peak = null;
+  zustand.von = null;
+  zustand.bis = null;
+  laden();
 });
 
 ansichtEl.addEventListener("click", (ereignis) => {

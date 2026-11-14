@@ -15,6 +15,7 @@ from . import stance, terms
 from .config import (
     CHANNEL_BY_SOURCE,
     CITY_BY_PROJECT,
+    LEGACY_POSTS_FILE,
     POSTS_FILE,
     PROJECT_LABEL,
     ROOT,
@@ -143,8 +144,8 @@ def load_posts(refresh: bool = False) -> pd.DataFrame:
     if _CACHE is not None and not refresh:
         return _CACHE
 
-    path = ROOT / POSTS_FILE
-    if not path.is_file():
+    path = next((ROOT / candidate for candidate in (POSTS_FILE, LEGACY_POSTS_FILE) if (ROOT / candidate).is_file()), None)
+    if path is None:
         raise FileNotFoundError(
             f"{POSTS_FILE.as_posix()} is missing. From the repository root, run: "
             "python pipeline/01_filter_posts.py"

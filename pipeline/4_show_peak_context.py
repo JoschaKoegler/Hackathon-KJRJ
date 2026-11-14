@@ -1,9 +1,9 @@
 """Zeigt den Kontext der Peaks lesbar an und exportiert ihn als CSV (Excel-tauglich).
 
 Aufruf:
-  python 4_show_peak_context.py                      # Top 10 Peaks je Projekt (ab 4 Posts)
+  python 4_show_peak_context.py                      # alle statistischen Peaks je Projekt
   python 4_show_peak_context.py Heilbronn_Seilbahn   # nur ein Projekt
-  python 4_show_peak_context.py Heilbronn_Seilbahn 2 # ... ab 2 Posts
+  python 4_show_peak_context.py Heilbronn_Seilbahn 2 # optional: nur Peaks ab N Posts
 """
 import csv
 import json
@@ -18,7 +18,7 @@ TOP_N_PER_PROJECT = 10
 
 def main():
     only_project = sys.argv[1] if len(sys.argv) > 1 else None
-    min_posts = int(sys.argv[2]) if len(sys.argv) > 2 else 4
+    min_posts = int(sys.argv[2]) if len(sys.argv) > 2 else 0
 
     if not INPUT_FILE.exists():
         print(f"FEHLER: '{INPUT_FILE.name}' nicht gefunden. Bitte zuerst 3_crawl_context.py ausführen.")

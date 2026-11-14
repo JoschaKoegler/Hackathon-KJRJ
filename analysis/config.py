@@ -10,30 +10,32 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 # Filtered posts from pipeline/01_filter_posts.py.
-POSTS_FILE = Path("data") / "01_filtered" / "posts.json"
-# Peaks from pipeline/02_detect_peaks.py. The crawler writes events.json
-# beside it; the dashboard prefers that file when it exists.
-PEAKS_FILE = Path("data") / "02_peaks" / "peaks.json"
+POSTS_FILE = Path("pipeline") / "clean_data.json"
+LEGACY_POSTS_FILE = Path("data") / "01_filtered" / "posts.json"
+# Peaks with context from pipeline/03_attach_events.py.
+# Falls back to 02_detect_peaks.py, then the older data/ copy.
+CONTEXT_FILE = Path("pipeline") / "projects_with_context.json"
+PEAKS_FILE = Path("pipeline") / "detected_events.json"
+LEGACY_PEAKS_FILE = Path("data") / "02_peaks" / "peaks.json"
 EVENTS_FILE = Path("data") / "02_peaks" / "events.json"
 
 HOST = "127.0.0.1"
 PORT = 8765
 
-# Buttons under the timeline, left to right.
+# Buttons in the header, left to right.
 # A new entry appears as a button once a project below points at its id.
 CITY_BUTTONS = [
     {"id": "All", "label": "All", "hint": "Every project"},
-    {"id": "Heilbronn", "label": "Heilbronn", "hint": "Cable car and IPAI campus"},
+    {"id": "Heilbronn", "label": "Heilbronn cable car", "hint": "Urban cable car Heilbronn"},
+    {"id": "IPAI", "label": "IPAI", "hint": "IPAI campus"},
     {"id": "Bonn", "label": "Bonn", "hint": "Bonn cable car"},
     {"id": "Paris", "label": "Paris", "hint": "Câble C1"},
 ]
 
 # Exactly one project per post, as matched_projects in posts.json.
-# IPAI is in Heilbronn. Give it its own button by mapping it to a new id
-# and adding that id to CITY_BUTTONS.
 CITY_BY_PROJECT = {
     "Heilbronn_Seilbahn": "Heilbronn",
-    "IPAI_Campus": "Heilbronn",
+    "IPAI_Campus": "IPAI",
     "Bonn_Seilbahn": "Bonn",
     "Paris_Cable_C1": "Paris",
 }
@@ -45,16 +47,16 @@ PROJECT_LABEL = {
     "Paris_Cable_C1": "Paris Câble C1",
 }
 
-# Right-hand switch. The channel comes from prepare.channel_of,
-# the same rule as notebooks/explore_language_and_channels.ipynb.
+# Channel switch in the header. "All" skips the cut in select_posts.
 CHANNEL_BUTTONS = [
+    {"id": "All", "label": "All", "hint": "News, social, and other web"},
     {"id": "News", "label": "News"},
-    {"id": "Social", "label": "Social"},
+    {"id": "Social", "label": "Social media"},
 ]
 CHANNEL_BY_SOURCE = {
     "News": "News",
     "Social": "Social",
-    # "Other web" has no button and appears in neither view.
+    "Other web": "Other web",
 }
 
 # Three circles. analysis/stance.py does the mapping.
@@ -81,4 +83,4 @@ TEXT_CHARS = 2500
 TOKEN_CHARS = TEXT_CHARS
 
 DEFAULT_CITY = "All"
-DEFAULT_CHANNEL = "News"
+DEFAULT_CHANNEL = "All"
