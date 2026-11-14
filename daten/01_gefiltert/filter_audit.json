@@ -252,11 +252,60 @@
     "snippet": "» Gardasee 2026: Volotea startet Direktflug Verona–Aalborg – was das für deinen Familienurlaub bedeutet Gardasee 2026: Volotea startet Direktflug Verona–Aalborg – was das für deine"
   },
   {
+    "mention_id": "10380004,8459438",
+    "drop_reason": "similar_over_95",
+    "source_name": "www.krone.at",
+    "title": "Krone hatte zuvor von einer Seilbahn berichtet. Es…",
+    "snippet": "Bereits 17 Todesopfer Stadtbahn-Unfall in Lissabon: „Wie im Horrorfilm“ In der portugiesischen Hauptstadt Lissabon ist die berühmte Standseilbahn „Elevador da Glória“ entgleist. Ne"
+  },
+  {
+    "mention_id": "10380004,8459459",
+    "drop_reason": "similar_over_95",
+    "source_name": "www.krone.at",
+    "title": "Seit wann kann eine Seilbahn entgleisen , auf welc…",
+    "snippet": "Bereits 17 Todesopfer Stadtbahn-Unfall in Lissabon: „Wie im Horrorfilm“ In der portugiesischen Hauptstadt Lissabon ist die berühmte Standseilbahn „Elevador da Glória“ entgleist. Ne"
+  },
+  {
+    "mention_id": "10380004,8459891",
+    "drop_reason": "similar_over_95",
+    "source_name": "www.krone.at",
+    "title": "Ein Wahnsinn - Ruhe in Frieden! Da diese Seilbahn …",
+    "snippet": "Bereits 17 Todesopfer Stadtbahn-Unfall in Lissabon: „Wie im Horrorfilm“ In der portugiesischen Hauptstadt Lissabon ist die berühmte Standseilbahn „Elevador da Glória“ entgleist. Ne"
+  },
+  {
+    "mention_id": "10380004,8460844",
+    "drop_reason": "similar_over_95",
+    "source_name": "www.krone.at",
+    "title": "Eine Seilbahn ist nur so sicher wie die Mannschaft…",
+    "snippet": "Bereits 17 Todesopfer Stadtbahn-Unfall in Lissabon: „Wie im Horrorfilm“ In der portugiesischen Hauptstadt Lissabon ist die berühmte Standseilbahn „Elevador da Glória“ entgleist. Ne"
+  },
+  {
+    "mention_id": "10380004,8462036",
+    "drop_reason": "similar_over_95",
+    "source_name": "www.krone.at",
+    "title": "Ich hoffe, sie waren nie Skifahren und haben eine …",
+    "snippet": "Bereits 17 Todesopfer Stadtbahn-Unfall in Lissabon: „Wie im Horrorfilm“ In der portugiesischen Hauptstadt Lissabon ist die berühmte Standseilbahn „Elevador da Glória“ entgleist. Ne"
+  },
+  {
     "mention_id": "10391708,442",
     "drop_reason": "unsupported_language (ru)",
     "source_name": "www.youtube.com",
     "title": "Mountain View from Kampenwand Cable Car: Forests, Lakes and Plains Below #short #alps #mountains",
     "snippet": "Mountain View from Kampenwand Cable Car: Forests, Lakes and Plains Below A peaceful ride on the Kampenwand cable car offers breathtaking views of the forested mountain slopes. From"
+  },
+  {
+    "mention_id": "10394504,13001",
+    "drop_reason": "similar_over_95",
+    "source_name": "www.wa.de",
+    "title": "„Pionierprojekt“: Eine in Deutschland einzigartige Seilbahn soll in NRW entstehen",
+    "snippet": "„Pionierprojekt“: NRW bekommt bundesweit einzigartige Seilbahn Stand: Uns auf Google folgen Bonn wird mit einer Seilbahn ausgestattet – das Projekt markiert aus einem wichtigen Gru"
+  },
+  {
+    "mention_id": "10394504,13013",
+    "drop_reason": "similar_over_95",
+    "source_name": "www.wa.de",
+    "title": "Gilt als „Pionierprojekt“: In NRW entsteht eine bundesweit einzigartige Seilbahn",
+    "snippet": "„Pionierprojekt“: NRW bekommt bundesweit einzigartige Seilbahn Stand: Uns auf Google folgen Bonn wird mit einer Seilbahn ausgestattet – das Projekt markiert aus einem wichtigen Gru"
   },
   {
     "mention_id": "10394504,13615",
@@ -497,6 +546,27 @@
     "snippet": ""
   },
   {
+    "mention_id": "11309869,6224",
+    "drop_reason": "similar_over_95",
+    "source_name": "www.echo24.de",
+    "title": "So soll Ipai Heilbronn später aussehen: Visualisierungen zeigen künftigen KI-Park",
+    "snippet": "So soll Ipai Heilbronn aussehen: Visualisierungen geben erste Einblicke in KI-Park Stand: Auf dem riesigen Gelände des künftigen Ipai-Campus am Standort Steinäcker entsteht Großes!"
+  },
+  {
+    "mention_id": "11309869,6238",
+    "drop_reason": "similar_over_95",
+    "source_name": "www.echo24.de",
+    "title": "So soll Ipai Heilbronn aussehen: Visualisierungen geben erste Einblicke in KI-Park",
+    "snippet": "So soll Ipai Heilbronn aussehen: Visualisierungen geben erste Einblicke in KI-Park Stand: Auf dem riesigen Gelände des künftigen Ipai-Campus am Standort Steinäcker entsteht Großes!"
+  },
+  {
+    "mention_id": "11343561,25873",
+    "drop_reason": "similar_over_95",
+    "source_name": "www.youtube.com",
+    "title": "Köln KVB Linie 1 light rail",
+    "snippet": "Die Kölner Verkehrs-Betriebe Aktiengesellschaft (KVB) betreibt als Verkehrsunternehmen den ÖPNV der Stadt Köln mit der Stadtbahn Köln und den städtischen Buslinien, sowie die Kölne"
+  },
+  {
     "mention_id": "11390938,4504",
     "drop_reason": "tourism_or_leisure_noise",
     "source_name": "www.reisetravel.eu",
@@ -567,6 +637,20 @@
     "snippet": "Der Tilisunasee mit Weißplatte im HintergrundAPA/ORF/Hanno Thurnher Die Tilisuna hat Vorarlberg den Sieg in der ORF-Show „9 Plätze 9 Schätze“ beschert. von APA - bearbeitet von Eil"
   },
   {
+    "mention_id": "11999881,5287",
+    "drop_reason": "similar_over_95",
+    "source_name": "www.echo24.de",
+    "title": "Bundeskanzler Friedrich Merz in Heilbronn – das plant die Polizei",
+    "snippet": "Bundeskanzler Friedrich Merz in Heilbronn – Polizei plant Maßnahmen Stand: Uns auf Google folgen Bundeskanzler Friedrich Merz wird in Heilbronn zu Gast sein, wenn der Spatenstich f"
+  },
+  {
+    "mention_id": "11999882,150591",
+    "drop_reason": "similar_over_95",
+    "source_name": "www.echo24.de",
+    "title": "Preisexplosion auf Heilbronner Wohnungsmarkt droht – „die Frage ist wann“",
+    "snippet": "„Die Frage ist wann“: Preisexplosion auf Heilbronner Wohnungsmarkt droht Stand: Uns auf Google folgen Heilbronn wird immer attraktiver – nicht nur das Stadtbild, sondern auch für U"
+  },
+  {
     "mention_id": "12560841,6671",
     "drop_reason": "duplicate_content",
     "source_name": "www.soester-anzeiger.de",
@@ -586,6 +670,13 @@
     "source_name": "fr.euronews.com",
     "title": "Les téléphériques les plus insolites d'Europe : vue urbaine à Paris, cabines ouvertes en Suisse",
     "snippet": "Voyage Moments Les téléphériques les plus insolites d'Europe : vue urbaine à Paris, cabines ouvertes en Suisse La Suisse compte certains des trajets en téléphérique les plus specta"
+  },
+  {
+    "mention_id": "12851538,1225143",
+    "drop_reason": "similar_over_95",
+    "source_name": "www.estrepublicain.fr",
+    "title": "Hautes-Alpes. Le gypaète barbu, nouvel obstacle au chantier du téléphérique de La Grave",
+    "snippet": "Adresse e-mail Mot de passe Je souhaite recevoir les offres et les exclusivités du Groupe EBRA et j'accepte qu'EBRA analyse l'ouverture et les clics effectués dans ses courriels af"
   },
   {
     "mention_id": "14095065,12120",
@@ -609,6 +700,13 @@
     "snippet": "In der Stadt Bonn wird eine Seilbahn…"
   },
   {
+    "mention_id": "14104,91451",
+    "drop_reason": "similar_over_95",
+    "source_name": "www.gamestar.de",
+    "title": "News: Mobilität - Wissenschaftler finden heraus, welches Verkehrsmittel Busse und Bahnen in Sachen Klimaverträglichkeit…",
+    "snippet": "Megakonstruktionen Von Skiliften zur Stadtmobilität: Seilbahnen könnten in 20 Jahren deutsche Metropolen erobern – günstiger, sicherer und nachhaltiger als Tram oder U-Bahn Unser S"
+  },
+  {
     "mention_id": "14447904,179",
     "drop_reason": "unsupported_language (sk)",
     "source_name": "www.youtube.com",
@@ -628,6 +726,13 @@
     "source_name": "www.youtube.com",
     "title": "🌎World 🇨🇭famous rope car/ switzerland 🇨🇭 #shorts #travel #switzerland",
     "snippet": "🌎World 🇨🇭famous rope car/ switzerland 🇨🇭 #shorts #travel #switzerland eiger express,switzerland,eiger express cable car,eiger express switzerland,grindelwald switzerland,switzerlan"
+  },
+  {
+    "mention_id": "15441950,581",
+    "drop_reason": "similar_over_95",
+    "source_name": "fromyukon.fr",
+    "title": "Commentaires sur Les Coches, ça Plagne pour moi. par Michel",
+    "snippet": "Randonner autour des Coches en hiver Avant de débuter Dans cet article, vous allez voyager sans voiture jusqu’à Bourg Saint Maurice puis aux Coches. Prendre des téléphériques, des "
   },
   {
     "mention_id": "1673656,10652",

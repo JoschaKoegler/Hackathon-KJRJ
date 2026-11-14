@@ -2,6 +2,7 @@ import json
 import re
 from collections import Counter
 from datetime import datetime
+from difflib import SequenceMatcher
 from pathlib import Path
 
 # ==========================================
@@ -18,42 +19,30 @@ OUTPUT_AUDIT_FILE = GEFILTERT_ORDNER / "filter_audit.json"
 INPUT_FILE = ROH_ORDNER / DATEN_NAME
 
 ALLOWED_LANGUAGES = {"de", "fr", "en"}
-MIN_CONTENT_LENGTH = 40
+# Dublette: Beitrag fällt, sobald die Übereinstimmung darüber liegt.
+AEHNLICHKEIT_SCHWELLE = 0.95
+DEFINITIONEN_DATEI = Path(__file__).resolve().parent / "projekt_definitionen.json"
+
+
+def lade_projekt_definitionen(pfad: Path) -> dict:
+    """Liest skripte/projekt_definitionen.json. Die Listenreihenfolge ist der Gleichstand."""
+    with pfad.open(encoding="utf-8") as datei:
+        roh = json.load(datei)
+    regeln = {}
+    for eintrag in roh["projekte"]:
+        regeln[eintrag["id"]] = {
+            "topic_terms": list(eintrag["topic_terms"]),
+            "context_terms": list(eintrag["context_terms"]),
+        }
+    if not regeln:
+        raise ValueError(f"Keine Projekte in {pfad}")
+    return regeln
+
 
 # ==========================================
 # 2. PROJEKT- & FILTERREGELN
 # ==========================================
-PROJECT_RULES = {
-    "Heilbronn_Seilbahn": {
-        "topic_terms": [r"\bseilbahn\w*", r"\burban cable car\b", r"\bgondelbahn\w*"],
-        "context_terms": [
-            r"\bheilbronn\w*", r"\bipai\b", r"\bneckarbogen\b", r"\btheresienwiese\b",
-            r"\bwohlgelegen\b", r"\bböckingen\b", r"\bboeckingen\b", r"\bstadtbahn\b"
-        ]
-    },
-    "Bonn_Seilbahn": {
-        "topic_terms": [r"\bseilbahn\w*", r"\bgondelbahn\w*"],
-        "context_terms": [
-            r"\bbonn\w*", r"\bvenusberg\b", r"\bbeuel\b", r"\brheinaue\b",
-            r"\bun-campus\b", r"\buniklinikum bonn\b", r"\brheinquerung\b"
-        ]
-    },
-    "Paris_Cable_C1": {
-        "topic_terms": [r"t[ée]l[ée]ph[ée]rique\w*", r"c[âa]ble\s*c1\b", r"\bcable\s*c1\b"],
-        "context_terms": [
-            r"\bparis\w*", r"\bcr[ée]teil\b", r"\bval-de-marne\b", r"\bvilleneuve-saint-georges\b",
-            r"\blimeil-br[ée]vannes\b", r"\bvalenton\b", r"[îi]le-de-france\b", r"\bidfm\b"
-        ]
-    },
-    "IPAI_Campus": {
-        "topic_terms": [r"\bipai\b", r"\binnovation park artificial intelligence\b"],
-        "context_terms": [
-            r"\bheilbronn\w*", r"\bcampus\b", r"\bki-park\b", r"\bki-innovationspark\b",
-            r"\bstein[äa]cker\b", r"\bschwarz-gruppe\b", r"\bdieter schwarz\b",
-            r"\bkünstliche intelligenz\b", r"\bstart-?up\w*"
-        ]
-    }
-}
+PROJECT_RULES = lade_projekt_definitionen(DEFINITIONEN_DATEI)
 
 # Tourismus-, Freizeit- & Spielzeug-Beifang
 TOURISM_NOISE_PATTERNS = [
@@ -122,6 +111,107 @@ def ein_projekt(text, rules=None) -> list[str]:
     return [scored[0][2]]
 
 
+def simhash64(text: str) -> int:
+    """64-Bit-Fingerabdruck über die Wörter. Nur zur Kandidatensuche, nicht als Urteil."""
+    counts = [0] * 64
+    leer = True
+    for token in text.split():
+        leer = False
+        value = 2166136261
+        for zeichen in token:
+            value ^= ord(zeichen)
+            value = (value * 16777619) & 0xFFFFFFFF
+        gedreht = ((value << 16) | (value >> 16)) & 0xFFFFFFFF
+        for bit in range(32):
+            counts[bit] += 1 if value & (1 << bit) else -1
+            counts[bit + 32] += 1 if gedreht & (1 << bit) else -1
+    if leer:
+        return 0
+    out = 0
+    for bit, weight in enumerate(counts):
+        if weight > 0:
+            out |= 1 << bit
+    return out
+
+
+def laengen_koennen_95_erreichen(links: int, rechts: int) -> bool:
+    """SequenceMatcher-Ratio über 0,95 ist bei stark unterschiedlicher Länge unmöglich."""
+    if links <= 0 or rechts <= 0:
+        return False
+    kuerzer = min(links, rechts)
+    laenger = max(links, rechts)
+    return kuerzer / laenger > 0.90
+
+
+def uebereinstimmung(links: str, rechts: str) -> float:
+    """Anteil gemeinsamer Zeichenfolge, 0 bis 1. Über 0,95 ist eine Dublette."""
+    if not links or not rechts:
+        return 0.0
+    vergleich = SequenceMatcher(None, links, rechts)
+    if vergleich.quick_ratio() <= AEHNLICHKEIT_SCHWELLE:
+        return vergleich.quick_ratio()
+    return vergleich.ratio()
+
+
+class GeseheneBeitraege:
+    """Merkmenge nur für Beiträge, die am Ende behalten werden.
+
+    Schritt 3 prüft dagegen drei Dinge: Inhaltsanfang, URL und 95-%-Ähnlichkeit.
+    """
+
+    def __init__(self):
+        self.fingerprints: set[str] = set()
+        self.urls: set[str] = set()
+        self._texte: list[str] = []
+        self._laengen: list[int] = []
+        self._baender: list[dict[int, list[int]]] = [dict() for _ in range(4)]
+        self._fenster: dict[str, list[int]] = {}
+
+    def fingerprint_da(self, fingerprint: str) -> bool:
+        return fingerprint in self.fingerprints
+
+    def url_da(self, url_key: str) -> bool:
+        return bool(url_key) and url_key in self.urls
+
+    def _fensterschluessel(self, text: str) -> list[str]:
+        laenge = len(text)
+        if laenge <= 80:
+            return [text] if text else []
+        return [text[start:start + 80] for start in (0, laenge // 3, (2 * laenge) // 3)]
+
+    def zu_aehnlich(self, text: str) -> bool:
+        if not text or not self._texte:
+            return False
+        laenge = len(text)
+        signatur = simhash64(text)
+        kandidaten: set[int] = set()
+        for band, tafel in enumerate(self._baender):
+            kandidaten.update(tafel.get((signatur >> (band * 16)) & 0xFFFF, ()))
+        for schluessel in self._fensterschluessel(text):
+            kandidaten.update(self._fenster.get(schluessel, ()))
+        for index in kandidaten:
+            if not laengen_koennen_95_erreichen(laenge, self._laengen[index]):
+                continue
+            if uebereinstimmung(text, self._texte[index]) > AEHNLICHKEIT_SCHWELLE:
+                return True
+        return False
+
+    def merken(self, fingerprint: str, url_key: str, text: str) -> None:
+        self.fingerprints.add(fingerprint)
+        if url_key:
+            self.urls.add(url_key)
+        if not text:
+            return
+        index = len(self._texte)
+        self._texte.append(text)
+        self._laengen.append(len(text))
+        signatur = simhash64(text)
+        for band, tafel in enumerate(self._baender):
+            tafel.setdefault((signatur >> (band * 16)) & 0xFFFF, []).append(index)
+        for schluessel in self._fensterschluessel(text):
+            self._fenster.setdefault(schluessel, []).append(index)
+
+
 def extract_records(raw_json) -> list[dict]:
     if isinstance(raw_json, list):
         return raw_json
@@ -132,15 +222,23 @@ def extract_records(raw_json) -> list[dict]:
     raise ValueError("Unbekannte JSON-Struktur: Erwartet wurde eine Liste von Beiträgen.")
 
 
-def evaluate_post(post: dict, seen_ids: set, seen_hashes: set) -> tuple[bool, list[str], str]:
-    mention_id = str(post.get("mention_id") or "").strip()
-    if mention_id and mention_id in seen_ids:
-        return False, [], "duplicate_mention_id"
+def evaluate_post(post: dict, gesehen: GeseheneBeitraege) -> tuple[bool, list[str], str]:
+    """Acht Schritte. Der erste Fehlgrund beendet die Prüfung.
 
+    1 Datum
+    2 Sprache de/fr/en
+    3 Dublette: Inhaltsanfang, gleiche URL oder mehr als 95 % Übereinstimmung
+    4 Genau ein Projekt, Definitionen in projekt_definitionen.json
+    5 Tourismus ohne ÖPNV-Anker
+    6 Einsatzmeldung ohne ÖPNV-Anker
+    7 Beiläufig in langem Text
+    8 Behalten
+    """
+    # 1. Datum
     if not is_valid_timestamp(post.get("published_at")):
         return False, [], "invalid_or_missing_date"
 
-    # FIX: Regional-Codes wie "de-de", "fr-fr", "en-gb" auf Hauptsprache normieren
+    # 2. Sprache. de-DE, fr-FR, en-GB zählen als de, fr, en. Leerer Code bleibt.
     raw_lang = str(post.get("language_code") or "").lower().strip()
     base_lang = raw_lang.split("-")[0] if raw_lang else ""
     if base_lang and base_lang not in ALLOWED_LANGUAGES:
@@ -149,23 +247,23 @@ def evaluate_post(post: dict, seen_ids: set, seen_hashes: set) -> tuple[bool, li
     title = normalize_text(post.get("title"))
     content = normalize_text(post.get("content"))
     full_text = f"{title} {content}".strip()
-
-    if len(full_text) < MIN_CONTENT_LENGTH:
-        return False, [], "text_too_short"
-
-    content_fingerprint = f"{title.lower()[:80]}|{content.lower()[:150]}"
-    if content_fingerprint in seen_hashes:
-        return False, [], "duplicate_content"
-
     text_lower = full_text.lower()
     title_lower = title.lower()
 
-    url_key = normalize_url(post.get("url"))
-    if url_key and f"url:{url_key}" in seen_hashes:
-        return False, [], "duplicate_url"
-    if text_lower and f"text:{text_lower}" in seen_hashes:
-        return False, [], "duplicate_text"
+    # 3. Dublette gegen schon behaltene Beiträge.
+    #    Fingerprint: Titelanfang 80 Zeichen und Inhaltsanfang 150 Zeichen.
+    content_fingerprint = f"{title.lower()[:80]}|{content.lower()[:150]}"
+    if gesehen.fingerprint_da(content_fingerprint):
+        return False, [], "duplicate_content"
 
+    url_key = normalize_url(post.get("url"))
+    if gesehen.url_da(url_key):
+        return False, [], "duplicate_url"
+
+    if gesehen.zu_aehnlich(text_lower):
+        return False, [], "similar_over_95"
+
+    # 4. Genau ein Projekt. Die Suchwörter stehen in projekt_definitionen.json.
     matched_projects = ein_projekt(text_lower)
 
     if not matched_projects:
@@ -190,14 +288,7 @@ def evaluate_post(post: dict, seen_ids: set, seen_hashes: set) -> tuple[bool, li
         if not in_title and mention_count < 2:
             return False, [], "passing_mention_in_long_article"
 
-    if mention_id:
-        seen_ids.add(mention_id)
-    seen_hashes.add(content_fingerprint)
-    if url_key:
-        seen_hashes.add(f"url:{url_key}")
-    if text_lower:
-        seen_hashes.add(f"text:{text_lower}")
-
+    gesehen.merken(content_fingerprint, url_key, text_lower)
     return True, matched_projects, "kept"
 
 
@@ -215,15 +306,14 @@ def main():
     with open(INPUT_FILE, "r", encoding="utf-8") as f:
         raw_posts = extract_records(json.load(f))
 
-    seen_ids = set()
-    seen_hashes = set()
+    gesehen = GeseheneBeitraege()
     clean_posts = []
     rejected_samples = []
     stats = Counter()
     project_counts = Counter()
 
     for post in raw_posts:
-        is_valid, projects, reason = evaluate_post(post, seen_ids, seen_hashes)
+        is_valid, projects, reason = evaluate_post(post, gesehen)
         stats[reason] += 1
 
         if is_valid:

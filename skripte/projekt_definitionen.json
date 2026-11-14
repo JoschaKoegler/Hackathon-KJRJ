@@ -1,0 +1,81 @@
+{
+  "datei": "projekt_definitionen.json",
+  "verwendet_von": "skripte/1_filter_data.py",
+  "regel": "Ein Beitrag gehört zu einem Projekt, wenn im Text aus Titel und Inhalt mindestens ein topic_term und mindestens ein context_term vorkommt. Die Muster sind Python-Regexe und werden kleingeschrieben gesucht. Treffer werden gezählt. Bei mehreren Projekten gewinnt die höhere Summe aus Themen- und Kontexttreffern. Bei Gleichstand gewinnt der frühere Eintrag in projekte.",
+  "projekte": [
+    {
+      "id": "Heilbronn_Seilbahn",
+      "name": "Heilbronn Seilbahn",
+      "topic_terms": [
+        "\\bseilbahn\\w*",
+        "\\burban cable car\\b",
+        "\\bgondelbahn\\w*"
+      ],
+      "context_terms": [
+        "\\bheilbronn\\w*",
+        "\\bipai\\b",
+        "\\bneckarbogen\\b",
+        "\\btheresienwiese\\b",
+        "\\bwohlgelegen\\b",
+        "\\bböckingen\\b",
+        "\\bboeckingen\\b",
+        "\\bstadtbahn\\b"
+      ]
+    },
+    {
+      "id": "Bonn_Seilbahn",
+      "name": "Bonn Seilbahn",
+      "topic_terms": [
+        "\\bseilbahn\\w*",
+        "\\bgondelbahn\\w*"
+      ],
+      "context_terms": [
+        "\\bbonn\\w*",
+        "\\bvenusberg\\b",
+        "\\bbeuel\\b",
+        "\\brheinaue\\b",
+        "\\bun-campus\\b",
+        "\\buniklinikum bonn\\b",
+        "\\brheinquerung\\b"
+      ]
+    },
+    {
+      "id": "Paris_Cable_C1",
+      "name": "Paris Câble C1",
+      "topic_terms": [
+        "t[ée]l[ée]ph[ée]rique\\w*",
+        "c[âa]ble\\s*c1\\b",
+        "\\bcable\\s*c1\\b"
+      ],
+      "context_terms": [
+        "\\bparis\\w*",
+        "\\bcr[ée]teil\\b",
+        "\\bval-de-marne\\b",
+        "\\bvilleneuve-saint-georges\\b",
+        "\\blimeil-br[ée]vannes\\b",
+        "\\bvalenton\\b",
+        "[îi]le-de-france\\b",
+        "\\bidfm\\b"
+      ]
+    },
+    {
+      "id": "IPAI_Campus",
+      "name": "IPAI Campus",
+      "topic_terms": [
+        "\\bipai\\b",
+        "\\binnovation park artificial intelligence\\b"
+      ],
+      "context_terms": [
+        "\\bheilbronn\\w*",
+        "\\bcampus\\b",
+        "\\bki-park\\b",
+        "\\bki-innovationspark\\b",
+        "\\bstein[äa]cker\\b",
+        "\\bschwarz-gruppe\\b",
+        "\\bdieter schwarz\\b",
+        "\\bkünstliche intelligenz\\b",
+        "\\bstart-?up\\w*"
+      ]
+    }
+  ]
+}
