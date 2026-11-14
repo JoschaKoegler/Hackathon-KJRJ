@@ -57,7 +57,7 @@ def merge(spans):
     return out
 
 
-def passages(post: dict, kontext_regex: str) -> list[str]:
+def passages(post: dict, kontext_regex: str, topic_regex: str = TOPIC_REGEX) -> list[str]:
     """Textstellen, in denen nach Themen gesucht wird."""
     title = clean(post.get("title"))
     text = f"{title} . {clean(post.get('content'))}"
@@ -65,7 +65,9 @@ def passages(post: dict, kontext_regex: str) -> list[str]:
     if len(low) <= SHORT_POST:
         return [low]
 
-    windows = merge((max(0, m.start() - WINDOW), m.end() + WINDOW) for m in re.finditer(TOPIC_REGEX, low))
+    windows = merge(
+        (max(0, m.start() - WINDOW), m.end() + WINDOW) for m in re.finditer(topic_regex, low)
+    )
     if not windows:
         return []
     # Heilbronn ist Hauptthema, wenn im Titel genannt oder mindestens HAUPTTHEMA_MIN-mal im Text -> alle
@@ -104,7 +106,7 @@ def analysiere(posts: list[dict], regeln: dict) -> list[dict]:
         ts = parse_ts(post.get("published_at"))
         if ts is None:
             continue
-        stellen = passages(post, regeln["kontext_regex"])
+        stellen = passages(post, regeln["kontext_regex"], regeln.get("topic_regex") or TOPIC_REGEX)
         if not stellen:
             continue
         for kat, eintrag in kategorien:
@@ -194,6 +196,8 @@ def main():
             "beitraege_gesamt": len(posts),
             "beitraege_mit_zuordnung": len(mit_treffer),
             "zeitraum": {"von": daten[0] if daten else None, "bis": daten[-1] if daten else None},
+            "topic_regex": regeln.get("topic_regex") or TOPIC_REGEX,
+            "kontext_regex": regeln.get("kontext_regex"),
             "zaehlweise": "Anzahl Beiträge; ein Beitrag zählt pro Thema/Hope/Fear höchstens einmal, kann aber mehreren zugeordnet sein",
             "filterhinweis": "Für einen Zeitraum 'zuordnungen' nach 'datum' (YYYY-MM-DD) filtern und je 'kategorie' + 'id' zählen",
         },

@@ -1,0 +1,115 @@
+{
+  "project_key": "IPAI_Campus",
+  "topic_regex": "(?<![a-zäöüß])ipai|innovationspark künstliche|ki-innovationspark",
+  "kontext_regex": "heilbronn|ipai|wohlgelegen|schwarz",
+  "themen": [
+    {
+      "id": "mitglied",
+      "label": "Unternehmen werden Mitglied",
+      "beschreibung": "Beitritt eines Unternehmens zur Plattform",
+      "muster": ["wird mitglied", "mitglied der", "wird teil", "corporate member", "neues mitglied"]
+    },
+    {
+      "id": "bau",
+      "label": "Bau und Campus",
+      "beschreibung": "Gebäude, Spatenstich, der entstehende Campus",
+      "muster": ["gebaut", "entsteht", "campus", "spatenstich", "rohbau", "besucherzentrum"]
+    },
+    {
+      "id": "geld",
+      "label": "Investition und Förderung",
+      "beschreibung": "Landesgeld, Stiftungskapital, Fördersummen",
+      "muster": ["millionen", "investiert", "förder", "kapital"]
+    },
+    {
+      "id": "wohnung",
+      "label": "Wohnungsmarkt",
+      "beschreibung": "Wohnen, Mieten, Druck auf den Markt",
+      "muster": ["wohnungsmarkt", "wohnraum", "\\bmieten\\b", "miete"]
+    },
+    {
+      "id": "stiftung",
+      "label": "Dieter-Schwarz-Stiftung",
+      "beschreibung": "Rolle der Stiftung beim Campus",
+      "muster": ["schwarz-stiftung", "dieter-schwarz", "dieter schwarz"]
+    },
+    {
+      "id": "arbeit",
+      "label": "Arbeit und Standort",
+      "beschreibung": "Arbeitsplätze oder der Standort Heilbronn",
+      "muster": ["arbeitspl", "standort"]
+    },
+    {
+      "id": "forschung",
+      "label": "Forschung und Partner",
+      "beschreibung": "Hochschulen, Fraunhofer und andere Partner",
+      "muster": ["fraunhofer", "eth zürich", "eth zurich", "tu münchen", "kooperation"]
+    }
+  ],
+  "hopes": [
+    {
+      "id": "h_oekosystem",
+      "label": "Zugang zum KI-Ökosystem",
+      "beschreibung": "Mitgliedschaft wird als Zugang zu Forschung und Anwendung beschrieben",
+      "muster": [
+        "zugang zu einem",
+        "ökosystem",
+        "oekosystem",
+        "vernetzung bringt"
+      ]
+    },
+    {
+      "id": "h_invest",
+      "label": "Öffentliches Geld für den Standort",
+      "beschreibung": "Das Land oder die Stiftung investiert, als positive Meldung",
+      "muster": [
+        "land investiert",
+        "stärkt .{0,40}standort",
+        "staerkt .{0,40}standort"
+      ]
+    },
+    {
+      "id": "h_partner",
+      "label": "Partner aus Forschung und Industrie",
+      "beschreibung": "Benannte Kooperationen als Stärkung",
+      "muster": [
+        "kooperationen mit",
+        "partner an bord",
+        "fraunhofer ipa eröffnet"
+      ]
+    }
+  ],
+  "fears": [
+    {
+      "id": "f_wohnung",
+      "label": "Druck auf den Wohnungsmarkt",
+      "beschreibung": "Der Campus verschärft Wohnungsknappheit oder Mieten",
+      "muster": [
+        "druck auf den wohnungsmarkt",
+        "verschärft .{0,50}wohnung",
+        "wohnraum .{0,30}knapp"
+      ]
+    },
+    {
+      "id": "f_stiftung",
+      "label": "Zu viel in einer Hand",
+      "beschreibung": "Kritik an Stiftung, Image oder gebündelter Steuerung",
+      "muster": [
+        "in einer hand",
+        "kritiker",
+        "imageaufbau",
+        "nahezu vollständig"
+      ]
+    },
+    {
+      "id": "f_offen",
+      "label": "Es fehlt noch etwas",
+      "beschreibung": "Der Text sagt, trotz Investition fehle ein Stück",
+      "muster": [
+        "trotzdem fehlt",
+        "fehlt etwas",
+        "schmale linie"
+      ]
+    }
+  ]
+}

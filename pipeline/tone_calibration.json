@@ -1,0 +1,625 @@
+{
+  "labeled": 68,
+  "vendor_counts": {
+    "negative": 44,
+    "positive": 12,
+    "neutral": 12
+  },
+  "note": "Every vendor -1 post is included. Vendor 0 and 1 are a sample of three posts per project. Recall of negative is therefore too high if read as a corpus rate. Precision of vendor -1 is a census.",
+  "passage_tone": {
+    "positive": {
+      "precision": 0.583,
+      "precision_n": [
+        7,
+        12
+      ],
+      "recall": 0.28,
+      "recall_n": [
+        7,
+        25
+      ]
+    },
+    "neutral": {
+      "precision": 0.25,
+      "precision_n": [
+        3,
+        12
+      ],
+      "recall": 0.273,
+      "recall_n": [
+        3,
+        11
+      ]
+    },
+    "negative": {
+      "precision": 0.182,
+      "precision_n": [
+        8,
+        44
+      ],
+      "recall": 0.533,
+      "recall_n": [
+        8,
+        15
+      ]
+    }
+  },
+  "vendor_negative_that_are_opposition": {
+    "all_projects": [
+      0,
+      44
+    ],
+    "heilbronn": [
+      0,
+      4
+    ]
+  },
+  "heilbronn_vendor_negative": [
+    {
+      "title": "++ Info-Date am Morgen, 4.4.25: US-Zölle drücken Welthandel ++ - SWR Aktuell",
+      "passage_tone": "side",
+      "opposition": false
+    },
+    {
+      "title": "Öffentlicher Nahverkehr: Heilbronn sagt Ja zur Seilbahn-Idee",
+      "passage_tone": "positive",
+      "opposition": false
+    },
+    {
+      "title": "Heilbronn sagt Ja zur Seilbahn-Idee",
+      "passage_tone": "positive",
+      "opposition": false
+    },
+    {
+      "title": "Kommentar zu Verlängerung der Seilbahn Heilbronn bis nach Bad Friedrichshall von Geomaus007",
+      "passage_tone": "neutral",
+      "opposition": false
+    }
+  ],
+  "rows": [
+    {
+      "mention_id": "10002661,8177",
+      "project": "Bonn_Seilbahn",
+      "vendor": "negative",
+      "passage_tone": "side",
+      "opposition": false,
+      "title": "Stadt Bonn stoppt vorläufig Stadthaus-Sanierung"
+    },
+    {
+      "mention_id": "10057582,389",
+      "project": "Bonn_Seilbahn",
+      "vendor": "negative",
+      "passage_tone": "side",
+      "opposition": false,
+      "title": "Die Seilbahn kann mehr"
+    },
+    {
+      "mention_id": "10446419,1580",
+      "project": "IPAI_Campus",
+      "vendor": "negative",
+      "passage_tone": "side",
+      "opposition": false,
+      "title": "Großprojekt Nordumfahrung und Ausbau der Neckartalstraße starten"
+    },
+    {
+      "mention_id": "11342743,809097",
+      "project": "Bonn_Seilbahn",
+      "vendor": "negative",
+      "passage_tone": "positive",
+      "opposition": false,
+      "title": "Planung für das Projekt Seilbahn in #Bonn schreitet voran: 📅 Die Stadtverwaltung hält an ihrem Ziel fest, den Antrag…"
+    },
+    {
+      "mention_id": "11765059,433494",
+      "project": "Paris_Cable_C1",
+      "vendor": "negative",
+      "passage_tone": "side",
+      "opposition": false,
+      "title": "Doppelmayr steigert Umsatz auf 1,3 Milliarden Euro"
+    },
+    {
+      "mention_id": "12471214,1591",
+      "project": "Paris_Cable_C1",
+      "vendor": "negative",
+      "passage_tone": "side",
+      "opposition": false,
+      "title": "Mobilité urbaine : le téléphérique d'Antananarivo ouvre ses portes au grand public"
+    },
+    {
+      "mention_id": "12569394,577",
+      "project": "Bonn_Seilbahn",
+      "vendor": "negative",
+      "passage_tone": "positive",
+      "opposition": false,
+      "title": "Planung für das Projekt Seilbahn schreitet voran"
+    },
+    {
+      "mention_id": "12802933,29080",
+      "project": "Paris_Cable_C1",
+      "vendor": "negative",
+      "passage_tone": "neutral",
+      "opposition": false,
+      "title": "\"Téléphériques urbains : la techno au-dessus des villes\" sur RMC Découverte mardi 19 mai 2026 (vidéo)"
+    },
+    {
+      "mention_id": "12851209,111310",
+      "project": "Paris_Cable_C1",
+      "vendor": "negative",
+      "passage_tone": "side",
+      "opposition": false,
+      "title": "Lancement du téléphérique C1, corruption dans les forces de l'ordre... Les infos du week-end en Île-de-France"
+    },
+    {
+      "mention_id": "15729122,543",
+      "project": "Bonn_Seilbahn",
+      "vendor": "negative",
+      "passage_tone": "positive",
+      "opposition": false,
+      "title": "Pionierprojekt Seilbahn: Bonn plant deutschlandweite Premiere im ÖPNV"
+    },
+    {
+      "mention_id": "17290166,1218",
+      "project": "Paris_Cable_C1",
+      "vendor": "negative",
+      "passage_tone": "positive",
+      "opposition": false,
+      "title": "Ile-de-France : premier téléphérique urbain inauguré le 13 décembre"
+    },
+    {
+      "mention_id": "19135019,114554",
+      "project": "Paris_Cable_C1",
+      "vendor": "negative",
+      "passage_tone": "positive",
+      "opposition": false,
+      "title": "VIDÉO - Découvrez l'intérieur du futur Câble 1, le premier téléphérique francilien"
+    },
+    {
+      "mention_id": "22236729,4593",
+      "project": "Paris_Cable_C1",
+      "vendor": "negative",
+      "passage_tone": "positive",
+      "opposition": false,
+      "title": "Téléphérique urbain Câble C1 : le Val-de-Marne inaugure une première en Île-de-France"
+    },
+    {
+      "mention_id": "22319433,98907",
+      "project": "Paris_Cable_C1",
+      "vendor": "negative",
+      "passage_tone": "neutral",
+      "opposition": false,
+      "title": "Île-de-France : ce qu'il faut savoir sur le premier téléphérique urbain qui ouvre ce samedi"
+    },
+    {
+      "mention_id": "22681797,402495",
+      "project": "Paris_Cable_C1",
+      "vendor": "negative",
+      "passage_tone": "side",
+      "opposition": false,
+      "title": "Une panne générale des serveurs de distribution du pass Navigo impacte des millions de voyageurs - ICI"
+    },
+    {
+      "mention_id": "23395896,563",
+      "project": "Paris_Cable_C1",
+      "vendor": "negative",
+      "passage_tone": "positive",
+      "opposition": false,
+      "title": "Survoler la ville pour mieux la relier : le premier téléphérique urbain d’Île-de-France"
+    },
+    {
+      "mention_id": "23395896,566",
+      "project": "Paris_Cable_C1",
+      "vendor": "negative",
+      "passage_tone": "positive",
+      "opposition": false,
+      "title": "Survoler la ville pour mieux la relier"
+    },
+    {
+      "mention_id": "25258353,402",
+      "project": "Bonn_Seilbahn",
+      "vendor": "negative",
+      "passage_tone": "negative",
+      "opposition": false,
+      "title": "Bonn: Wird die Seilbahn verlängert?"
+    },
+    {
+      "mention_id": "25258364,81",
+      "project": "Bonn_Seilbahn",
+      "vendor": "negative",
+      "passage_tone": "negative",
+      "opposition": false,
+      "title": "Bonn: Kritik an geplanten Seilbahn-Stützen"
+    },
+    {
+      "mention_id": "25457264,1050",
+      "project": "Paris_Cable_C1",
+      "vendor": "negative",
+      "passage_tone": "positive",
+      "opposition": false,
+      "title": "Ile-de-France : le premier téléphérique urbain inauguré le 13 décembre"
+    },
+    {
+      "mention_id": "25524346,27678",
+      "project": "Paris_Cable_C1",
+      "vendor": "negative",
+      "passage_tone": "side",
+      "opposition": false,
+      "title": "Le Grand Matin"
+    },
+    {
+      "mention_id": "27963376,165074",
+      "project": "Bonn_Seilbahn",
+      "vendor": "negative",
+      "passage_tone": "negative",
+      "opposition": false,
+      "title": "Bonn: Keine Überschwebung - neue Endstation für geplante Seilbahn"
+    },
+    {
+      "mention_id": "27963376,185185",
+      "project": "Bonn_Seilbahn",
+      "vendor": "negative",
+      "passage_tone": "positive",
+      "opposition": false,
+      "title": "Seilbahn für Bonn geplant: Ab 2032 könnte sie fahren"
+    },
+    {
+      "mention_id": "28294713,39618",
+      "project": "Bonn_Seilbahn",
+      "vendor": "negative",
+      "passage_tone": "negative",
+      "opposition": false,
+      "title": "Rückschlag bei Bonner Seilbahn: DHL lehnt Pfeiler ab - Radio Bonn / Rhein-Sieg"
+    },
+    {
+      "mention_id": "28294713,54211",
+      "project": "Bonn_Seilbahn",
+      "vendor": "negative",
+      "passage_tone": "neutral",
+      "opposition": false,
+      "title": "Eine Seilbahn über den Rhein als Nordbrücken-Ersatz? - Radio Bonn / Rhein-Sieg"
+    },
+    {
+      "mention_id": "28295106,859943",
+      "project": "Paris_Cable_C1",
+      "vendor": "negative",
+      "passage_tone": "side",
+      "opposition": false,
+      "title": "Alsace. Téléphérique, erreur d’émoji et tags litigieux : les chuchotements politiques de la semaine"
+    },
+    {
+      "mention_id": "28697418,12354",
+      "project": "Bonn_Seilbahn",
+      "vendor": "negative",
+      "passage_tone": "negative",
+      "opposition": false,
+      "title": "„Ein völlig falscher Schritt“: Verkehrsprojekt Bonner Seilbahn verzögert sich um mehrere Jahre"
+    },
+    {
+      "mention_id": "28878857,108843",
+      "project": "Paris_Cable_C1",
+      "vendor": "negative",
+      "passage_tone": "positive",
+      "opposition": false,
+      "title": "Premier téléphérique d’Île-de-France : on a visité la future station du Câble 1 à Limeil-Brévannes"
+    },
+    {
+      "mention_id": "29188508,11483",
+      "project": "IPAI_Campus",
+      "vendor": "negative",
+      "passage_tone": "side",
+      "opposition": false,
+      "title": "Prezero und BMW wollen Geschäftsmodell zur ganzheitlichen Altautoverwertung entwickeln"
+    },
+    {
+      "mention_id": "29200025,10482",
+      "project": "IPAI_Campus",
+      "vendor": "negative",
+      "passage_tone": "side",
+      "opposition": false,
+      "title": "Vetter begrüßt Innovationsplattform NXTGN in Ravensburg"
+    },
+    {
+      "mention_id": "29200025,13893",
+      "project": "IPAI_Campus",
+      "vendor": "negative",
+      "passage_tone": "neutral",
+      "opposition": false,
+      "title": "KI-Boom in Heilbronn verschärft den Druck auf den Wohnungsmarkt"
+    },
+    {
+      "mention_id": "29200849,17912",
+      "project": "IPAI_Campus",
+      "vendor": "negative",
+      "passage_tone": "neutral",
+      "opposition": false,
+      "title": "SWR STORY - Mission KI - der große Wettlauf um unsere Zukunft - hier anschauen"
+    },
+    {
+      "mention_id": "29316251,23662754",
+      "project": "Bonn_Seilbahn",
+      "vendor": "negative",
+      "passage_tone": "positive",
+      "opposition": false,
+      "title": "Das Projekt # Seilbahn schreitet voran. Die Stadtverwaltung # Bonn hält an ihrem Ziel fest, den Antrag auf…"
+    },
+    {
+      "mention_id": "29316251,31417335",
+      "project": "Paris_Cable_C1",
+      "vendor": "negative",
+      "passage_tone": "neutral",
+      "opposition": false,
+      "title": "Premier téléphérique d'Île-de-France : les réponses aux questions que vous vous posez"
+    },
+    {
+      "mention_id": "29316254,32892457",
+      "project": "Paris_Cable_C1",
+      "vendor": "negative",
+      "passage_tone": "positive",
+      "opposition": false,
+      "title": "Câble C1 Île-de-France: trajet au tarif métro-bus, inclus dans Navigo"
+    },
+    {
+      "mention_id": "29714639,427320",
+      "project": "IPAI_Campus",
+      "vendor": "negative",
+      "passage_tone": "neutral",
+      "opposition": false,
+      "title": "Mission KI: Der große Wettlauf um unsere Zukunft - Report / Dokumentation"
+    },
+    {
+      "mention_id": "30108913,961608",
+      "project": "Paris_Cable_C1",
+      "vendor": "negative",
+      "passage_tone": "negative",
+      "opposition": false,
+      "title": "Câble C1 : le téléphérique francilien totalement à l'arrêt pendant 11 jours cet été"
+    },
+    {
+      "mention_id": "4203683,65976",
+      "project": "Bonn_Seilbahn",
+      "vendor": "negative",
+      "passage_tone": "negative",
+      "opposition": false,
+      "title": "Die Stadt Bonn plant den Endpunkt der Seilbahn neu. Grund sind die Sicherheitsbedenken einer benachbarten…"
+    },
+    {
+      "mention_id": "9672814,1186128",
+      "project": "Paris_Cable_C1",
+      "vendor": "negative",
+      "passage_tone": "side",
+      "opposition": false,
+      "title": "Orages à Paris et en Île-de-France : Météo-France réactive la vigilance ce lundi, voici où et quand ça va frapper"
+    },
+    {
+      "mention_id": "9776584,4976",
+      "project": "Bonn_Seilbahn",
+      "vendor": "negative",
+      "passage_tone": "negative",
+      "opposition": false,
+      "title": "Bonner Seilbahn darf nicht auf DHL-Gelände"
+    },
+    {
+      "mention_id": "29128977,13722",
+      "project": "Heilbronn_Seilbahn",
+      "vendor": "negative",
+      "passage_tone": "side",
+      "opposition": false,
+      "title": "++ Info-Date am Morgen, 4.4.25: US-Zölle drücken Welthandel ++ - SWR Aktuell"
+    },
+    {
+      "mention_id": "26446012,11038",
+      "project": "Heilbronn_Seilbahn",
+      "vendor": "negative",
+      "passage_tone": "positive",
+      "opposition": false,
+      "title": "Öffentlicher Nahverkehr: Heilbronn sagt Ja zur Seilbahn-Idee"
+    },
+    {
+      "mention_id": "25725533,229957",
+      "project": "Heilbronn_Seilbahn",
+      "vendor": "negative",
+      "passage_tone": "positive",
+      "opposition": false,
+      "title": "Heilbronn sagt Ja zur Seilbahn-Idee"
+    },
+    {
+      "mention_id": "24930177,22752",
+      "project": "Heilbronn_Seilbahn",
+      "vendor": "negative",
+      "passage_tone": "neutral",
+      "opposition": false,
+      "title": "Kommentar zu Verlängerung der Seilbahn Heilbronn bis nach Bad Friedrichshall von Geomaus007"
+    },
+    {
+      "mention_id": "27963376,192420",
+      "project": "Bonn_Seilbahn",
+      "vendor": "positive",
+      "passage_tone": "side",
+      "opposition": false,
+      "title": "Bonn-Dransdorf: Neue Stadtbahn wirbt für Karriere bei SWB"
+    },
+    {
+      "mention_id": "12977600,409",
+      "project": "Bonn_Seilbahn",
+      "vendor": "positive",
+      "passage_tone": "positive",
+      "opposition": false,
+      "title": "Seilbahn-Projekt in Bonn bricht zur nächsten Etappe auf"
+    },
+    {
+      "mention_id": "28697418,9194",
+      "project": "Bonn_Seilbahn",
+      "vendor": "positive",
+      "passage_tone": "negative",
+      "opposition": false,
+      "title": "Großprojekt über den Rhein: Verwirrung um neuen Endhaltepunkt für Seilbahn in Bonn"
+    },
+    {
+      "mention_id": "11412242,3191",
+      "project": "IPAI_Campus",
+      "vendor": "positive",
+      "passage_tone": "positive",
+      "opposition": false,
+      "title": "Festival für KI-Fans: Beats, Bytes & Neckar-Vibes am IPAI (25. & 26.7.26)"
+    },
+    {
+      "mention_id": "11903632,559",
+      "project": "IPAI_Campus",
+      "vendor": "positive",
+      "passage_tone": "positive",
+      "opposition": false,
+      "title": "STRABAG-Tochter ZÜBLIN realisiert Großauftrag beim Innovationspark für Künstliche Intelligenz"
+    },
+    {
+      "mention_id": "12577603,1313",
+      "project": "IPAI_Campus",
+      "vendor": "positive",
+      "passage_tone": "side",
+      "opposition": false,
+      "title": "Künstliche Intelligenz: Audi steigert Effizienz in der Fertigung"
+    },
+    {
+      "mention_id": "24894377,1546",
+      "project": "IPAI_Campus",
+      "vendor": "neutral",
+      "passage_tone": "neutral",
+      "opposition": false,
+      "title": "Spatenstich für den KI-Campus in Heilbronn "
+    },
+    {
+      "mention_id": "29174404,185152",
+      "project": "IPAI_Campus",
+      "vendor": "neutral",
+      "passage_tone": "side",
+      "opposition": false,
+      "title": "Nach Ausgrabungen auf dem Ipai-Gelände: Römischer Gott kehrt nach Heilbronn zurück - STIMME.de"
+    },
+    {
+      "mention_id": "11542449,188421",
+      "project": "IPAI_Campus",
+      "vendor": "neutral",
+      "passage_tone": "side",
+      "opposition": false,
+      "title": "🌍 KI selbstbestimmt gestalten Im Panel 1 der #MTSW2026 richten wir den Blick auf Deutschland und Europa: Wie gelingt…"
+    },
+    {
+      "mention_id": "9672814,1072634",
+      "project": "Paris_Cable_C1",
+      "vendor": "positive",
+      "passage_tone": "positive",
+      "opposition": false,
+      "title": "Câble C1 : on connaît enfin la date d'inauguration du premier téléphérique d'Île-de-France"
+    },
+    {
+      "mention_id": "28294950,457084",
+      "project": "Paris_Cable_C1",
+      "vendor": "positive",
+      "passage_tone": "positive",
+      "opposition": false,
+      "title": "«Plus agréable que le bus et la voiture» : le téléphérique C1 du Val-de-Marne devient une véritable attraction pour les curieux cet été | Gossip…"
+    },
+    {
+      "mention_id": "17669656,579",
+      "project": "Paris_Cable_C1",
+      "vendor": "positive",
+      "passage_tone": "negative",
+      "opposition": false,
+      "title": "Téléphérique d’Île-de-France : Nadège Abomangoli propose « des cabines en non-mixité » face à l’insécurité"
+    },
+    {
+      "mention_id": "12434641,1820",
+      "project": "Paris_Cable_C1",
+      "vendor": "neutral",
+      "passage_tone": "neutral",
+      "opposition": false,
+      "title": "Les images vertigineuses de la mission « évacuation d'un passager » du métro volant de Limeil-Brévannes"
+    },
+    {
+      "mention_id": "13906786,3339",
+      "project": "Paris_Cable_C1",
+      "vendor": "neutral",
+      "passage_tone": "negative",
+      "opposition": false,
+      "title": "Fermeture du Câble C1 en août : comment faire pour se déplacer durant les travaux dans le Val-de-Marne ?"
+    },
+    {
+      "mention_id": "29344551,2619",
+      "project": "Paris_Cable_C1",
+      "vendor": "neutral",
+      "passage_tone": "neutral",
+      "opposition": false,
+      "title": "Limiter les nuisances, un enjeu majeur pour le futur téléphérique francilien"
+    },
+    {
+      "mention_id": "28697418,10151",
+      "project": "Bonn_Seilbahn",
+      "vendor": "neutral",
+      "passage_tone": "negative",
+      "opposition": false,
+      "title": "„Erinnert an WCCB“: Zukunft der Bonner Seilbahn ungewiss – Schwere Vorwürfe an OB Dörner"
+    },
+    {
+      "mention_id": "14202555,1292",
+      "project": "Bonn_Seilbahn",
+      "vendor": "neutral",
+      "passage_tone": "negative",
+      "opposition": false,
+      "title": "[GA+] Rückschlag für Verkehrsprojekt in Bonn?: DHL will Stützen für Seilbahn nicht auf ihrem Gelände"
+    },
+    {
+      "mention_id": "27963376,169201",
+      "project": "Bonn_Seilbahn",
+      "vendor": "neutral",
+      "passage_tone": "positive",
+      "opposition": false,
+      "title": "Umfrage: Bonner gespalten über Verkehrspolitik"
+    },
+    {
+      "mention_id": "4101569,18733",
+      "project": "Heilbronn_Seilbahn",
+      "vendor": "neutral",
+      "passage_tone": "positive",
+      "opposition": false,
+      "title": "In der Stadt wird sie viel diskutiert: die Seilbahn vom Zentrum Richtung Ipai. Der Gemeinderat hat heute grünes Licht…"
+    },
+    {
+      "mention_id": "12703082,601",
+      "project": "Heilbronn_Seilbahn",
+      "vendor": "neutral",
+      "passage_tone": "negative",
+      "opposition": true,
+      "title": "Stadtbahn statt Seilbahn!"
+    },
+    {
+      "mention_id": "29316253,16719468",
+      "project": "Heilbronn_Seilbahn",
+      "vendor": "neutral",
+      "passage_tone": "positive",
+      "opposition": false,
+      "title": "Eure Meinung? https://www. t-online.de/region/stuttgart/i d_100718706/land-sagt-millionen-fuer-geplante-seilbahn-in-heil…"
+    },
+    {
+      "mention_id": "10575219,1427",
+      "project": "Heilbronn_Seilbahn",
+      "vendor": "positive",
+      "passage_tone": "positive",
+      "opposition": false,
+      "title": "Eine Seilbahn durch die Stadt: Grünes Licht für konkrete Vorplanung"
+    },
+    {
+      "mention_id": "29174404,246205",
+      "project": "Heilbronn_Seilbahn",
+      "vendor": "positive",
+      "passage_tone": "negative",
+      "opposition": true,
+      "title": "Kritik an Seilbahn-Plänen: Verkehrsclub ist für eine Erweiterung der Stadtbahn - STIMME.de"
+    },
+    {
+      "mention_id": "29174404,167729",
+      "project": "Heilbronn_Seilbahn",
+      "vendor": "positive",
+      "passage_tone": "positive",
+      "opposition": false,
+      "title": "„Mut, Neues anzupacken“: Verband sieht Heilbronn als Modellstadt für Seilbahnprojekt - STIMME.de"
+    }
+  ]
+}

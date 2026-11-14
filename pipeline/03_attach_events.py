@@ -3,6 +3,7 @@ import json
 import math
 import os
 import re
+import sys
 import time
 import urllib.error
 import urllib.parse
@@ -11,6 +12,11 @@ import xml.etree.ElementTree as ET
 from collections import Counter
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+
+_ROOT = Path(__file__).resolve().parent.parent
+if str(_ROOT) not in sys.path:
+    sys.path.insert(0, str(_ROOT))
+from analysis.tone import describe, passage_score, story_key
 
 # ==========================================
 # 1. PFADE, PARAMETER & PROJEKT-KONFIGURATION
@@ -304,21 +310,20 @@ def load_docs(path: Path) -> dict[str, list[dict]]:
         projects = p.get("matched_projects") or []
         if d is None or not projects:
             continue
-        sent = p.get("sentiment")
-        try:
-            sent = float(sent)
-            if sent == -99:
-                sent = None
-        except (TypeError, ValueError):
-            sent = None
+        title = re.sub(r"\s+", " ", str(p.get("title") or "")).strip()
+        content = re.sub(r"\s+", " ", str(p.get("content") or "")).strip()
+        tone, _cue = passage_score(title, content, projects[0])
         doc = {
             "mention_id": p.get("mention_id"),
             "date": d,
-            "title": re.sub(r"\s+", " ", str(p.get("title") or "")).strip(),
-            "content": re.sub(r"\s+", " ", str(p.get("content") or "")).strip(),
+            "title": title,
+            "content": content,
             "source": p.get("source_name") or "unbekannt",
             "media_type": p.get("media_type_name") or "unbekannt",
-            "sentiment": sent,
+            "story_key": story_key(title, p.get("mention_id")),
+            "tone_score": tone,
+            # 2 positive, 1 neutral, 0 negative. Missing stays out of every mean.
+            "sentiment": tone,
         }
         by_project.setdefault(projects[0], []).append(doc)
     return by_project
@@ -513,8 +518,16 @@ def daily_counts(docs: list[dict]) -> Counter:
 
 
 def mean_sentiment(docs: list[dict], start, end):
-    vals = [d["sentiment"] for d in docs if d["sentiment"] is not None and start <= d["date"] <= end]
-    return (round(sum(vals) / len(vals), 2), len(vals)) if len(vals) >= 3 else (None, len(vals))
+    """Tone mean on 0–2. ``-99`` is already dropped. Copies of one title count once.
+
+    The result carries ``n`` and ``n_missing`` next to the mean. A window with
+    no scored story has mean ``None`` and still reports how many are missing.
+    """
+    window = [
+        d for d in docs
+        if d.get("date") is not None and start <= d["date"] <= end
+    ]
+    return describe(window)
 
 
 def effect_analysis(project_docs: list[dict], peak_date, peak_count: int) -> dict:
@@ -543,8 +556,8 @@ def effect_analysis(project_docs: list[dict], peak_date, peak_count: int) -> dic
     else:
         persistence = "abgeklungen"
 
-    sent_before, n_before = mean_sentiment(project_docs, peak_date - timedelta(days=14), peak_date - timedelta(days=4))
-    sent_after, n_after = mean_sentiment(project_docs, peak_date + timedelta(days=3), peak_date + timedelta(days=16))
+    before = mean_sentiment(project_docs, peak_date - timedelta(days=14), peak_date - timedelta(days=4))
+    after = mean_sentiment(project_docs, peak_date + timedelta(days=3), peak_date + timedelta(days=16))
 
     return {
         "baseline_posts_per_day": round(base_mean, 2),
@@ -552,9 +565,12 @@ def effect_analysis(project_docs: list[dict], peak_date, peak_count: int) -> dic
         "decay_note": None if decay_days is not None else "kein Rückgang auf Baseline innerhalb von 28 Tagen (oder Datenende)",
         "persistence": persistence,
         "avg_posts_per_day_days_7_to_21": round(after_mean, 2),
-        "sentiment_14d_before": sent_before,
-        "sentiment_14d_after": sent_after,
-        "sentiment_n_before_after": [n_before, n_after],
+        "sentiment_14d_before": before["mean"],
+        "sentiment_14d_after": after["mean"],
+        "sentiment_n_before_after": [before["n"], after["n"]],
+        "sentiment_missing_before_after": [before["n_missing"], after["n_missing"]],
+        "tone_before": before,
+        "tone_after": after,
     }
 
 
@@ -599,23 +615,14 @@ def targeted_external_context(cfg: dict, start_str: str, end_str: str,
 # ==========================================
 # 6. ZUSAMMENFASSUNG (Vorlage oder optional LLM)
 # ==========================================
-def template_summary(event_type: str, secondary: str | None, terms: list[str], headlines: list[str],
-                     profile: dict, amounts: list[str], external: list[dict], off_topic: bool) -> str:
-    label = f"{event_type} (auch: {secondary})" if secondary else event_type
-    parts = [f"{label}: {profile['n_posts']} Beiträge aus {profile['n_sources']} Quellen"]
-    if terms:
-        parts.append("auffällige Begriffe: " + ", ".join(terms[:5]))
-    if amounts:
-        parts.append("genannte Beträge: " + ", ".join(amounts))
-    if headlines:
-        parts.append(f"häufigste Schlagzeile: „{headlines[0][:110]}“")
-    if external:
-        parts.append(f"möglicher externer Beleg: „{external[0]['title'][:110]}“ ({external[0]['source']})")
-    if profile["likely_syndication"]:
+def template_notes(profile: dict, off_topic: bool) -> str:
+    """Only warnings — terms, amounts, and headlines live in structured peak fields."""
+    parts = []
+    if profile.get("likely_syndication"):
         parts.append("Achtung: viele Posts wirken wie Nachdrucke derselben Meldung")
     if off_topic:
         parts.append("PRÜFEN: Beiträge nennen das Projekt kaum im Titel/Textanfang (evtl. thematisch fremd)")
-    return "; ".join(parts) + "."
+    return " ".join(parts)
 
 
 def llm_summarize(cfg: dict, docs: list[dict], terms: list[str], amounts: list[str], external: list[dict]) -> dict | None:
@@ -734,7 +741,7 @@ def build_context(proj_key: str, cfg: dict, project_docs: list[dict], start_str:
         event_type, type_scores, profile, external, off_topic, topic_share, terms, curated, peak
     )
 
-    summary = template_summary(event_type, secondary, terms, headlines, profile, amounts, external, off_topic)
+    summary = template_notes(profile, off_topic)
     method = "regelbasiert"
     if USE_LLM and window_docs and not curated:
         llm = llm_summarize(cfg, window_docs, terms, amounts, external)
@@ -749,7 +756,9 @@ def build_context(proj_key: str, cfg: dict, project_docs: list[dict], start_str:
     if curated:
         c = curated[0]
         event_type = c.get("type") or event_type
-        summary = f"Kuratiert: {c.get('title')}. " + summary
+        curated_line = f"Kuratiert: {c.get('title')}." if c.get("title") else ""
+        notes = template_notes(profile, off_topic)
+        summary = " ".join(part for part in (curated_line, notes) if part).strip()
         method = "kuratiert+regelbasiert"
 
     ctx = {

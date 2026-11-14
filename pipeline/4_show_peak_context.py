@@ -62,6 +62,8 @@ def main():
                 "abklingzeit_tage": eff.get("decay_days", ""),
                 "sentiment_vorher": eff.get("sentiment_14d_before", ""),
                 "sentiment_nachher": eff.get("sentiment_14d_after", ""),
+                "ton_n_vorher_nachher": eff.get("sentiment_n_before_after", ""),
+                "ton_fehlend_vorher_nachher": eff.get("sentiment_missing_before_after", ""),
             })
 
             if i < TOP_N_PER_PROJECT:
@@ -69,8 +71,11 @@ def main():
                 print(f"\n{p['date']} | {p['post_count']} Posts | {ctx['event_type']} | Konfidenz: {ctx['confidence']}{warn}")
                 print(f"  {ctx['summary']}")
                 if eff:
+                    n_pair = eff.get("sentiment_n_before_after") or ["", ""]
+                    missing_pair = eff.get("sentiment_missing_before_after") or ["", ""]
                     print(f"  Nachwirkung: {eff.get('persistence')} | Abklingzeit: {eff.get('decay_days')} Tage | "
-                          f"Sentiment {eff.get('sentiment_14d_before')} -> {eff.get('sentiment_14d_after')}")
+                          f"Ton-Mittel {eff.get('sentiment_14d_before')} -> {eff.get('sentiment_14d_after')} "
+                          f"(n={n_pair[0]}→{n_pair[1]}, fehlend={missing_pair[0]}→{missing_pair[1]}, Skala 0–2)")
 
     if rows:
         with open(OUTPUT_CSV, "w", encoding="utf-8-sig", newline="") as f:

@@ -1,0 +1,122 @@
+{
+  "project_key": "Bonn_Seilbahn",
+  "topic_regex": "seilbahn|gondel",
+  "kontext_regex": "bonn|venusberg|uniklinik|nordbrück|rheinbrück",
+  "themen": [
+    {
+      "id": "venusberg",
+      "label": "Venusberg und Uniklinik",
+      "beschreibung": "Anbindung von Venusberg oder Uniklinik",
+      "muster": ["venusberg", "uniklinik", "universitätsklinik"]
+    },
+    {
+      "id": "rhein",
+      "label": "Rheinquerung und Verkehrschaos",
+      "beschreibung": "Brücke, Sperrung, Stau in Bonn",
+      "muster": ["verkehrschaos", "nordbrück", "rheinbrück", "über den rhein", "rheinquerung"]
+    },
+    {
+      "id": "provisorium",
+      "label": "Provisorium während der Sperrung",
+      "beschreibung": "Zeitweise Seilbahn als Zwischenlösung",
+      "muster": ["provisorisch"]
+    },
+    {
+      "id": "kosten",
+      "label": "Kosten",
+      "beschreibung": "Baukosten, Betriebskosten, Vergleich mit einem Tunnel",
+      "muster": ["kosten", "teuer", "mio\\.?\\s*eur", "millionen"]
+    },
+    {
+      "id": "oepnv",
+      "label": "ÖPNV und Stadtbahn",
+      "beschreibung": "Einbindung in Bus, Tram oder Stadtbahn",
+      "muster": ["stadtbahn", "öpnv", "nahverkehr", "haltestellen"]
+    },
+    {
+      "id": "kapazitaet",
+      "label": "Kapazität",
+      "beschreibung": "Fahrgäste pro Tag oder Engpass zur Hauptverkehrszeit",
+      "muster": ["rush hour", "ausgeschöpft", "menschen pro tag", "fahrgäste"]
+    },
+    {
+      "id": "paket",
+      "label": "Andere Seilbahn (Paket, Koblenz)",
+      "beschreibung": "Treffer, die oft eine andere Bahn meinen, nicht die Bonner Linie",
+      "muster": ["pakettransport", "\\bdhl\\b", "seilbahn koblenz"]
+    }
+  ],
+  "hopes": [
+    {
+      "id": "h_entlastung",
+      "label": "Verkehrschaos überbrücken",
+      "beschreibung": "Die Bahn wird als Entlastung oder Lösung des Staus genannt",
+      "muster": [
+        "verkehrschaos lösen",
+        "gegen das verkehrschaos",
+        "lösungsvorschlag",
+        "provisorische seilbahn",
+        "zwischenlösung"
+      ]
+    },
+    {
+      "id": "h_guenstiger",
+      "label": "Günstiger als Tunnel oder Brücke",
+      "beschreibung": "Geringe Kosten oder ein teurerer Tunnel im Vergleich",
+      "muster": [
+        "geringen kosten",
+        "günstige baukosten",
+        "kostengünst",
+        "teuerer als die seilbahn",
+        "teurer als die seilbahn"
+      ]
+    },
+    {
+      "id": "h_schnell",
+      "label": "Schnell baubar",
+      "beschreibung": "Kurze Bauzeit oder schnelle Umsetzung",
+      "muster": [
+        "schnellen umsetzbarkeit",
+        "schnell umsetz",
+        "wenigen jahren fertig",
+        "in wenigen jahren"
+      ]
+    },
+    {
+      "id": "h_umfrage",
+      "label": "Umfrage sieht eine Mehrheit",
+      "beschreibung": "Eine zitierte Befragung, kein eigener Messwert",
+      "muster": ["aber für die seilbahn", "mehrheit .{0,40}seilbahn"]
+    }
+  ],
+  "fears": [
+    {
+      "id": "f_kosten",
+      "label": "Zu teuer oder zu wenig Nutzen",
+      "beschreibung": "Urteil, die Kosten seien zu hoch oder der Nutzen zu gering",
+      "muster": [
+        "(?:bonn|venusberg).{0,120}(?:zu hohe kosten|zu teuer|lohnt sich nicht)",
+        "(?:zu hohe kosten|zu teuer|lohnt sich nicht).{0,120}(?:bonn|venusberg)",
+        "geringer verkehrlicher nutzen"
+      ]
+    },
+    {
+      "id": "f_kapazitaet",
+      "label": "Zu wenig Platz zur Stoßzeit",
+      "beschreibung": "Kabinen seien in der Hauptverkehrszeit schnell voll",
+      "muster": ["rush hour", "ausgeschöpft", "zu klein"]
+    },
+    {
+      "id": "f_zweifel",
+      "label": "Zweifel, ob sie kommt",
+      "beschreibung": "Skepsis, ob das Projekt wirklich gebaut wird",
+      "muster": [
+        "erst dran wenn ich es sehe",
+        "glaube da erst",
+        "bonner staus ist leider unsinn",
+        "\\bunsinn\\b.{0,40}seilbahn",
+        "seilbahn.{0,40}\\bunsinn\\b"
+      ]
+    }
+  ]
+}

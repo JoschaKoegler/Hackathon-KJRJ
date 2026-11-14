@@ -59,20 +59,19 @@ CHANNEL_BY_SOURCE = {
     "Other web": "Other web",
 }
 
-# Three circles. analysis/stance.py does the mapping.
-# "sentiment": vendor field sentiment. 1 support, 0 neutral, -1 opposition.
-#              -99 and empty values stay outside the circles.
-# "text":      phrase patterns in stance.py. support / mixed / oppose.
-#              "no clear stance" stays outside the circles.
-STANCE_SOURCE = "sentiment"
-CIRCLES = ["Support", "Neutral", "Opposition"]
+# Tone circles. Not stance. analysis/tone.py reads the passage about the
+# project: 2 positive, 1 neutral, 0 negative. A post whose text does not
+# carry the project stays outside. The vendor sentiment field does not
+# enter. Text stance stays in its own column.
+# STANCE_SOURCE is recorded for the notebook. It does not fill the circles.
+STANCE_SOURCE = "tone"
+CIRCLES = ["Positive", "Neutral", "Negative"]
 
-# Trend arrow: balance (support - opposition) / classified posts,
-# current window minus the immediately previous window of the same length.
-# Below this threshold, in percentage points, the arrow stays flat.
-TREND_THRESHOLD_POINTS = 2.0
-# Below this many classified posts the window is too thin for an arrow.
-MIN_TREND_BASE = 8
+# Trend arrow: balance (positive share minus negative share) against the
+# previous window of the same length. The arrow moves only when the
+# interval of that difference lies entirely outside this band, in points,
+# and the standard error of the difference is smaller than the same band.
+TREND_THRESHOLD_POINTS = 10.0
 
 # Raw term list, kept for notebooks. The page draws themes, not this list.
 # "posts": a term counts once per post.
@@ -84,3 +83,18 @@ TOKEN_CHARS = TEXT_CHARS
 
 DEFAULT_CITY = "All"
 DEFAULT_CHANNEL = "All"
+
+# One colour per cause on the timeline. The id is what the page reads.
+EVENT_FAMILIES = [
+    {"id": "decision", "label": "Political decision", "color": "#0c4a8a"},
+    {"id": "planning", "label": "Planning", "color": "#6b4c9a"},
+    {"id": "construction", "label": "Construction", "color": "#b86e00"},
+    {"id": "opening", "label": "Opening", "color": "#1b6b45"},
+    {"id": "disruption", "label": "Disruption", "color": "#9a3b38"},
+    {"id": "media", "label": "Coverage only", "color": "#8a7560"},
+    {"id": "other", "label": "Other", "color": "#5c6570"},
+]
+
+# A line on the month chart needs at least this many posts in the selection.
+MONTHLY_MIN = 5
+

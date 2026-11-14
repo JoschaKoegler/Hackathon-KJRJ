@@ -1,5 +1,6 @@
 import json
 import math
+import sys
 from pathlib import Path
 
 import numpy as np
@@ -7,14 +8,17 @@ import pandas as pd
 from scipy.signal import find_peaks, peak_prominences
 from scipy.stats import nbinom, poisson
 
+_ROOT = Path(__file__).resolve().parent.parent
+if str(_ROOT) not in sys.path:
+    sys.path.insert(0, str(_ROOT))
+from analysis.tone import collapse_rows, describe, passage_score, story_key
+
 # ==========================================
 # 1. PFADE & PARAMETER
 # ==========================================
 BASE_DIR = Path(__file__).resolve().parent
 INPUT_FILE = BASE_DIR / "clean_data.json"
 OUTPUT_FILE = BASE_DIR / "detected_events.json"
-
-SENTIMENT_FEHLWERT = -99      # keine Angabe, geht in keinen Mittelwert ein
 
 # ---- Peak-Erkennung: keine festen Post-Zahlen, alles leitet sich aus der Zeitreihe ab ----
 # Ein Tag ist ein Peak, wenn seine Postzahl bei der lokalen Normalität (Baseline) und der
@@ -187,18 +191,39 @@ def prepare_changepoint_series(counts: np.ndarray) -> np.ndarray | None:
 # ==========================================
 # 4. ZEITREIHEN-ANALYSE PRO PROJEKT
 # ==========================================
+def _tone_stories(df_proj: pd.DataFrame, project_name: str) -> pd.DataFrame:
+    """One story per title. Score is 2, 1, 0, or missing. -99 never enters."""
+    rows = []
+    for record in df_proj.to_dict("records"):
+        score, _cue = passage_score(record.get("title"), record.get("content"), project_name)
+        rows.append({
+            "date": record.get("date"),
+            "mention_id": record.get("mention_id"),
+            "story_key": story_key(record.get("title"), record.get("mention_id")),
+            "tone_score": score,
+        })
+    stories = pd.DataFrame(collapse_rows(rows))
+    if stories.empty:
+        return stories
+    stories["tone_score"] = pd.to_numeric(stories["tone_score"], errors="coerce")
+    stories["date"] = pd.to_datetime(stories["date"])
+    return stories
+
+
 def analyze_project_timeseries(df_proj: pd.DataFrame, project_name: str) -> dict:
     df_proj = df_proj.copy()
-    if "sentiment" in df_proj.columns:
-        df_proj["sentiment"] = pd.to_numeric(df_proj["sentiment"], errors="coerce")
-        df_proj.loc[df_proj["sentiment"].eq(SENTIMENT_FEHLWERT), "sentiment"] = np.nan
-    else:
-        df_proj["sentiment"] = np.nan
+    stories = _tone_stories(df_proj, project_name)
 
-    daily = df_proj.groupby("date").agg(
-        count=("published_at", "size"),
-        avg_sentiment=("sentiment", "mean")
-    )
+    daily = df_proj.groupby("date").agg(count=("published_at", "size"))
+    if not stories.empty:
+        tone_daily = stories.groupby("date")["tone_score"].agg(avg_sentiment="mean", tone_n="count")
+        tone_daily["tone_stories"] = stories.groupby("date").size()
+        tone_daily["tone_missing"] = tone_daily["tone_stories"] - tone_daily["tone_n"]
+        daily = daily.join(tone_daily[["avg_sentiment", "tone_n", "tone_missing"]], how="left")
+    else:
+        daily["avg_sentiment"] = np.nan
+        daily["tone_n"] = 0
+        daily["tone_missing"] = 0
 
     full_idx = pd.date_range(daily.index.min(), daily.index.max(), freq="D")
     daily = daily.reindex(full_idx)
@@ -239,6 +264,8 @@ def analyze_project_timeseries(df_proj: pd.DataFrame, project_name: str) -> dict
         excess = max(0.0, float(counts[ws:we].sum() - base[ws:we].sum()))
         sample_titles = df_proj[df_proj["date"] == peak_date]["title"].dropna().unique()[:2].tolist()
         sent = daily["avg_sentiment"].iloc[idx]
+        tone_n = daily["tone_n"].iloc[idx] if "tone_n" in daily.columns else 0
+        tone_missing = daily["tone_missing"].iloc[idx] if "tone_missing" in daily.columns else 0
 
         peaks.append({
             "_idx": idx,
@@ -250,6 +277,8 @@ def analyze_project_timeseries(df_proj: pd.DataFrame, project_name: str) -> dict
             "excess_posts": round(excess, 1),
             "prominence": round(float(prominences[k]), 2),
             "avg_sentiment": round(float(sent), 2) if pd.notna(sent) else None,
+            "tone_n": int(tone_n) if pd.notna(tone_n) else 0,
+            "tone_missing": int(tone_missing) if pd.notna(tone_missing) else 0,
             "crawler_window": {
                 "start": (peak_date - pd.Timedelta(days=3)).strftime("%Y-%m-%d"),
                 "end": (peak_date + pd.Timedelta(days=2)).strftime("%Y-%m-%d")
@@ -281,15 +310,29 @@ def analyze_project_timeseries(df_proj: pd.DataFrame, project_name: str) -> dict
             prev_start, next_end = boundaries[pos], boundaries[pos + 2]
             mean_before = float(np.mean(counts[prev_start:idx]))
             mean_after = float(np.mean(counts[idx:next_end]))
-            sent_before = daily["avg_sentiment"].iloc[prev_start:idx].mean()
-            sent_after = daily["avg_sentiment"].iloc[idx:next_end].mean()
+            def _segment(start_i, end_i):
+                if stories.empty or start_i >= end_i:
+                    return {"mean": None, "n": 0, "n_missing": 0}
+                start_day = daily.index[start_i]
+                end_day = daily.index[end_i - 1]
+                part = stories[(stories["date"] >= start_day) & (stories["date"] <= end_day)]
+                return describe(part.assign(tone_score=part["tone_score"].where(part["tone_score"].notna(), None)).to_dict("records"))
+
+            before_tone = _segment(prev_start, idx)
+            after_tone = _segment(idx, next_end)
+            sent_before = before_tone["mean"]
+            sent_after = after_tone["mean"]
 
             change_points.append({
                 "date": cp_date.strftime("%Y-%m-%d"),
                 "avg_posts_before": round(mean_before, 2),
                 "avg_posts_after": round(mean_after, 2),
-                "avg_sentiment_before": round(float(sent_before), 2) if pd.notna(sent_before) else None,
-                "avg_sentiment_after": round(float(sent_after), 2) if pd.notna(sent_after) else None
+                "avg_sentiment_before": None if sent_before is None else round(float(sent_before), 2),
+                "avg_sentiment_after": None if sent_after is None else round(float(sent_after), 2),
+                "tone_n_before": before_tone["n"],
+                "tone_n_after": after_tone["n"],
+                "tone_missing_before": before_tone["n_missing"],
+                "tone_missing_after": after_tone["n_missing"],
             })
 
     return {
@@ -319,11 +362,6 @@ def main():
 
     df = pd.DataFrame(clean_data)
     df["date"] = pd.to_datetime(df["published_at"], utc=True, errors="coerce").dt.tz_localize(None).dt.floor("D")
-    if "sentiment" in df.columns:
-        df["sentiment"] = pd.to_numeric(df["sentiment"], errors="coerce")
-        df.loc[df["sentiment"].eq(SENTIMENT_FEHLWERT), "sentiment"] = np.nan
-    else:
-        df["sentiment"] = np.nan
     df = df.dropna(subset=["date"]).copy()
 
     df_exploded = df.explode("matched_projects").rename(columns={"matched_projects": "project"})
@@ -351,7 +389,8 @@ def main():
         for p in majors:
             print(f"    * {p['date']} | {p['post_count']} Posts (Baseline {p['baseline_posts_per_day']}/Tag, "
                   f"{p['relative_to_baseline']}x, Signifikanz {p['significance']}, Überschuss {p['excess_posts']} Posts, "
-                  f"Rang {p['rank']}, Sentiment: {p['avg_sentiment']})")
+                  f"Rang {p['rank']}, Ton-Mittel {p['avg_sentiment']} "
+                  f"(n={p['tone_n']}, fehlend={p['tone_missing']}, Skala 0–2)")
             for title in p["sample_titles"]:
                 print(f"      Beispiel-Titel: \"{title[:80]}\"")
 
@@ -361,7 +400,9 @@ def main():
         for cp in res["change_points"]:
             direction = "ANSTIEG" if cp["avg_posts_after"] > cp["avg_posts_before"] else "RÜCKGANG"
             print(f"    * {cp['date']} ({direction}): Schnitt {cp['avg_posts_before']} -> {cp['avg_posts_after']} Posts/Tag "
-                  f"| Sentiment: {cp['avg_sentiment_before']} -> {cp['avg_sentiment_after']}")
+                  f"| Ton-Mittel {cp['avg_sentiment_before']} -> {cp['avg_sentiment_after']} "
+                  f"(n={cp['tone_n_before']}→{cp['tone_n_after']}, "
+                  f"fehlend={cp['tone_missing_before']}→{cp['tone_missing_after']})")
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(all_results, f, ensure_ascii=False, indent=2)

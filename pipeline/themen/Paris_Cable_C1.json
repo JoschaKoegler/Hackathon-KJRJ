@@ -1,0 +1,105 @@
+{
+  "project_key": "Paris_Cable_C1",
+  "topic_regex": "t[ée]l[ée]ph[ée]rique|c[âa]ble\\s*c\\s*1|cable\\s*c\\s*1",
+  "kontext_regex": "cr[ée]teil|valenton|limeil|villeneuve|île-de-france|ile-de-france|\\bc\\s*1\\b|câble",
+  "themen": [
+    {
+      "id": "eroeffnung",
+      "label": "Eröffnung und Betriebsstart",
+      "beschreibung": "Inauguration, Ouverture, Inbetriebnahme",
+      "muster": ["inaugur", "ouverture", "mis en service", "eröffnet", "eröffnung", "ouvrira"]
+    },
+    {
+      "id": "strecke",
+      "label": "Strecke Créteil und Villeneuve",
+      "beschreibung": "Die angebundenen Orte der Linie",
+      "muster": ["cr[ée]teil", "villeneuve", "limeil", "valenton"]
+    },
+    {
+      "id": "sicherheit",
+      "label": "Sicherheit",
+      "beschreibung": "Sicherheit, Videoüberwachung, Evakuierung",
+      "muster": ["s[ée]curit", "vidéosurveillance", "videosurveillance", "[ée]vacu"]
+    },
+    {
+      "id": "wohnen",
+      "label": "Wohnen und Preise",
+      "beschreibung": "Mieten oder Kaufpreise entlang der Linie",
+      "muster": ["loyer", "prix de vente", "immobilier"]
+    },
+    {
+      "id": "anwohner",
+      "label": "Anwohner und Kritik",
+      "beschreibung": "Vorbehalte von Anwohnern oder öffentliche Kritik",
+      "muster": ["pas que des heureux", "loin de chez nous", "critiqu", "habitants"]
+    },
+    {
+      "id": "betrieb",
+      "label": "Betrieb und Störung",
+      "beschreibung": "Panne, Unterbrechung, Evakuierung im Betrieb",
+      "muster": ["panne", "interrompu", "hors service", "[ée]vacuation"]
+    },
+    {
+      "id": "zweite",
+      "label": "Weitere Linie",
+      "beschreibung": "Gespräch über eine zweite urbane Seilbahn",
+      "muster": ["deuxi[èe]me", "zweite seilbahn", "seconde ligne"]
+    }
+  ],
+  "hopes": [
+    {
+      "id": "h_verbindung",
+      "label": "Verbindung, die vorher fehlte",
+      "beschreibung": "Die Linie soll Wege verkürzen oder Orte anbinden, die schlecht erreichbar waren",
+      "muster": [
+        "difficile de se d[ée]placer",
+        "relie cr[ée]teil",
+        "gain de temps",
+        "anbindung der"
+      ]
+    },
+    {
+      "id": "h_sicher",
+      "label": "Sicherheit ist eingebaut",
+      "beschreibung": "Videoüberwachung oder Sicherheit als zugesagte Eigenschaft",
+      "muster": [
+        "vidéosurveillance",
+        "videosurveillance",
+        "tout est fait pour la s[ée]curit",
+        "s[ée]curit[ée] des passagers"
+      ]
+    },
+    {
+      "id": "h_espoir",
+      "label": "Erwartung an die neue Linie",
+      "beschreibung": "Der Text nennt Hoffnungen auf das Verkehrsmittel",
+      "muster": ["espoirs", "\\bespoir\\b", "fait naître"]
+    }
+  ],
+  "fears": [
+    {
+      "id": "f_agression",
+      "label": "Angst vor Übergriffen",
+      "beschreibung": "Vorwurf, die Kabinen würden Übergriffe begünstigen",
+      "muster": ["nid à agress", "cabines en non-mixit", "pr[ée]venir les agressions"]
+    },
+    {
+      "id": "f_loyer",
+      "label": "Mieten und Preise steigen",
+      "beschreibung": "Befürchtung steigender Mieten oder Kaufpreise",
+      "muster": ["loyers .{0,40}grimp", "prix .{0,30}grimp", "vont grimper", "mieten"]
+    },
+    {
+      "id": "f_anwohner",
+      "label": "Nicht alle Anwohner wollen sie",
+      "beschreibung": "Vorbehalte: nicht vor der eigenen Tür, nicht nur Zustimmung",
+      "muster": ["pas que des heureux", "loin de chez nous", "r[ée]serves chez les habitants"]
+    },
+    {
+      "id": "f_stoerung",
+      "label": "Evakuierung oder Panne",
+      "beschreibung": "Ein Vorfall oder eine Übung zur Evakuierung, oder eine Panne",
+      "muster": ["[ée]vacuation d'un passager", "\\bpanne\\b", "hors service"]
+    }
+  ]
+}

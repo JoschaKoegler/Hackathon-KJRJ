@@ -1,13 +1,10 @@
-"""2. Stance.
+"""2. Stance, kept apart from page tone.
 
-Two sources, kept apart:
-
-* Vendor tone reads the supplied ``sentiment`` field.
-  ``1`` positive, ``0`` neutral, ``-1`` negative. ``-99`` means missing.
-* Text stance reads only the text, through the patterns below. The vendor
-  number does not enter that decision.
-
-``STANCE_SOURCE`` in ``config.py`` chooses which source fills the circles.
+* Page tone lives in ``tone.py``. It reads the passage about the project.
+  The vendor code does not enter. Empty bodies and side mentions are dropped.
+  The circles use that tone. They are not support or opposition.
+* Text stance reads only the phrase patterns below. The tone score does
+  not enter that decision, and stance does not fill the circles.
 """
 
 from __future__ import annotations
@@ -16,10 +13,7 @@ import re
 
 import pandas as pd
 
-from .config import STANCE_SOURCE
-
-MISSING = -99
-VENDOR_TONE_LABEL = {1.0: "positive", 0.0: "neutral", -1.0: "negative"}
+from .tone import circle_label, passage_score, story_key, tone_label
 
 OBJECT = r"(?:seilbahn\w*|t[ée]l[ée]ph[ée]rique\w*|c[âa]ble\s*c\s*1|gondelbahn\w*|stadtseilbahn\w*)"
 
@@ -80,7 +74,7 @@ _MIXED = [re.compile(entry) for entry in STANCE_MIXED]
 
 
 def stance_from_text(text) -> str:
-    """Stance toward the project from the phrase patterns. Vendor tone stays out."""
+    """Stance toward the project from the phrase patterns. Page tone stays out."""
     text = str(text or "").lower()
     support = any(entry.search(text) for entry in _SUPPORT)
     oppose = any(entry.search(text) for entry in _OPPOSE)
@@ -94,30 +88,32 @@ def stance_from_text(text) -> str:
     return "no clear stance"
 
 
-def vendor_tone(value) -> str:
-    number = pd.to_numeric(value, errors="coerce")
-    if pd.isna(number) or float(number) == MISSING:
-        return "missing"
-    return VENDOR_TONE_LABEL.get(float(number), "missing")
-
-
-def circle_from_sentiment(value):
-    number = pd.to_numeric(value, errors="coerce")
-    if pd.isna(number) or float(number) == MISSING:
-        return None
-    return {1.0: "Support", 0.0: "Neutral", -1.0: "Opposition"}.get(float(number))
-
-
-def circle_from_stance(stance):
-    return {"support": "Support", "mixed": "Neutral", "oppose": "Opposition"}.get(stance)
-
-
 def assign(frame: pd.DataFrame) -> pd.DataFrame:
-    """Adds stance, vendor tone, and the circle column."""
+    """Adds text stance, and a tone circle that does not read the stance."""
     frame["stance"] = frame["text"].map(stance_from_text)
-    frame["vendor_tone"] = frame["sentiment"].map(vendor_tone)
-    if STANCE_SOURCE == "text":
-        frame["circle"] = frame["stance"].map(circle_from_stance)
-    else:
-        frame["circle"] = frame["sentiment"].map(circle_from_sentiment)
+    scores = []
+    gaps = []
+    cues = []
+    keys = []
+    for record in frame.itertuples(index=False):
+        score, cue = passage_score(
+            getattr(record, "title", ""),
+            getattr(record, "content", ""),
+            getattr(record, "project", ""),
+        )
+        if score is None:
+            scores.append(pd.NA)
+            gaps.append(cue or "side")
+            cues.append("")
+        else:
+            scores.append(score)
+            gaps.append("")
+            cues.append(cue)
+        keys.append(story_key(getattr(record, "title", ""), getattr(record, "mention_id", "")))
+    frame["tone_score"] = scores
+    frame["tone_gap"] = gaps
+    frame["tone_cue"] = cues
+    frame["story_key"] = keys
+    frame["vendor_tone"] = frame["tone_score"].map(tone_label)
+    frame["circle"] = frame["tone_score"].map(circle_label)
     return frame

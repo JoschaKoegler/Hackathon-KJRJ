@@ -26,6 +26,7 @@ pipeline/                            batch steps, in order
   05_themen_hopes_fears.py           themes, hopes, and fears around the cable-car mention
   themen/                            search patterns per project
   themen_hopes_fears_<project>.json  assignments the page reads for that project
+  annahmen_und_fakten_<project>.json official costs, and assumption next to fact
 data/
   01_filtered/posts.json             kept posts. one project each
   01_filtered/audit.json             filter log
@@ -98,7 +99,10 @@ One kept post has exactly one project. The page then cuts that table by city, ch
 | Peaks | Daily counts, `scipy.signal.find_peaks`, prominence `max(2, 1.5 × std)`, at least 7 days apart. Window is 3 days before and 2 days after | `pipeline/02_detect_peaks.py` |
 | Change points | Binary segmentation on z-scored daily counts, penalty 12, segments of at least 7 days | same file |
 | Events | Google News RSS with `after:` / `before:`, headline must match the project regex, one wider window if the first is empty. Official homepages for page context | `pipeline/03_attach_events.py` |
-| Themes, hopes, fears | Passages within 400 characters of a cable-car mention. A short post is read whole. Hopes and fears need a stated judgement, not a bare mention. One post counts once per item and can match several. Projects without a rules file keep the token themes and phrase claims | `pipeline/05_themen_hopes_fears.py`, `analysis/curated.py` |
+| Themes, hopes, fears | Passages within 400 characters of the project mention (`topic_regex` in the rules file). A short post is read whole. Hopes and fears need a stated judgement, not a bare mention. One post counts once per item and can match several. Heilbronn, Bonn, Paris, and IPAI each have a rules file | `pipeline/05_themen_hopes_fears.py`, `analysis/curated.py` |
+| Stance on the page | Phrase patterns, counted per post, with a Wilson interval. Separate from the tone circles | `analysis/reading.py`, `analysis/stance.py` |
+| Compare | Same date window and channel for four projects. Phase is a project fact in `config.py`. A probe pattern is searched in every project before a concern is called specific | `analysis/reading.py` |
+| Month lines | Counts per month for the two leading hopes, two leading fears, and stance phrases. A content line needs at least 5 posts. The lines cover the whole project and channel | `analysis/reading.py` |
 
 The page draws a peak only when that day has at least 4 posts. The crawler uses the same floor. Smaller spikes stay in `peaks.json`.
 
@@ -138,10 +142,10 @@ Peaks and change points, all kept posts:
 
 | Brief | Already here | Still open |
 | --- | --- | --- |
-| 1 Explore topics, arguments, stance | Project assignment, term list, vendor tone, phrase stance. Heilbronn cable car uses 20 themes, 9 hopes, and 9 fears read from the passage around the cable car | Most posts still have no clear phrase. IPAI has no text stance. Bonn, Paris, and IPAI still use the token themes and phrase claims |
-| 2 Compare cities and project stages | Four projects, city buttons, Paris as the system in operation | Heilbronn button adds the cable car and IPAI together. No study layer |
-| 3 Track time and triggering events | Daily timeline, peaks, change points, crawler script | `events.json` is not produced yet. Many peaks are two-post days |
-| 4 Interactive dashboard | Page reads the filtered posts, circles, terms, trend, and peak lines | Headlines appear on a peak only after the crawler has run |
+| 1 Explore topics, arguments, stance | Curated themes, hopes, and fears for all four projects. Tone circles and a separate stance bar. Channel counts on each bar. Spott is a marker on Luftnummer and Schikane | Most posts still have no stance phrase. That is shown as Undecided, not filled in |
+| 2 Compare cities and project stages | Same data for Bonn, Paris, and IPAI in the project filter and peak file | Compare view removed from the dashboard; no resident survey of Heilbronn in the export |
+| 3 Track time and triggering events | Daily timeline, peak colour by cause, open ring when volume fell back, € when a sum is named, month lines for hopes, fears, and stance | The month lines are the whole selection, not only the shaded window |
+| 4 Interactive dashboard | Tone, Hopes & fears, Misunderstandings. Timeline, peak context, and the post list | Restart the page after a pipeline run |
 
 ## Who does what
 

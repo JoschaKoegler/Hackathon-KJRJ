@@ -8,28 +8,38 @@ Heilbronn reads the curated themes, hopes, and fears when that file exists.
 from __future__ import annotations
 
 import json
+import math
+import re
 
 import pandas as pd
 
 from .config import (
     CHANNEL_BUTTONS,
-    CIRCLES,
     CITY_BUTTONS,
     CITY_BY_PROJECT,
     CONTEXT_FILE,
     DEFAULT_CHANNEL,
     DEFAULT_CITY,
+    EVENT_FAMILIES,
     EVENTS_FILE,
     LEGACY_PEAKS_FILE,
-    MIN_TREND_BASE,
     PEAKS_FILE,
     PROJECT_LABEL,
     ROOT,
     STANCE_SOURCE,
     TREND_THRESHOLD_POINTS,
 )
+from .tone import describe, format_window, rows_from_frame
 from .prepare import load_posts
 from . import curated
+from .facts import sheet_for_city
+from .reading import (
+    event_family,
+    follow_of,
+    mockery_block,
+    mockery_label,
+    stance_block,
+)
 from .arguments import argument_label, argument_profile
 from .terms import category_profile, label_for
 
@@ -94,25 +104,11 @@ def daily_counts(frame: pd.DataFrame, start, end) -> list[dict]:
 
 
 def count_circles(frame: pd.DataFrame) -> dict:
-    counts = {name: int(frame["circle"].eq(name).sum()) for name in CIRCLES}
-    classified = sum(counts.values())
-    shares = {
-        name: (round(counts[name] / classified, 4) if classified else 0.0)
-        for name in CIRCLES
-    }
-    return {
-        "counts": counts,
-        "shares": shares,
-        "classified": classified,
-        "unclassified": int(frame["circle"].isna().sum()),
-    }
-
-
-def _balance(circles: dict) -> float | None:
-    classified = circles["classified"]
-    if not classified:
-        return None
-    return (circles["counts"]["Support"] - circles["counts"]["Opposition"]) / classified
+    """Tone shares on one row per story, with Wilson intervals and the balance beside."""
+    stats = describe(rows_from_frame(frame))
+    stats["posts"] = int(len(frame))
+    stats["collapsed"] = int(len(frame) - stats["stories"])
+    return stats
 
 
 def trend(
@@ -125,11 +121,9 @@ def trend(
     data_start,
     data_end,
 ) -> dict:
-    """Arrow from the balance against the previous window of the same length."""
+    """Arrow only when the difference interval clears the threshold and its error is smaller."""
     now = count_circles(current)
     before = count_circles(previous)
-    balance_now = _balance(now)
-    balance_before = _balance(before)
     base = {
         "date_from": date_iso(start),
         "date_to": date_iso(end),
@@ -137,9 +131,16 @@ def trend(
         "previous_to": date_iso(previous_end),
         "base_now": now["classified"],
         "base_previous": before["classified"],
-        "balance_now": None if balance_now is None else round(balance_now, 4),
-        "balance_previous": None if balance_before is None else round(balance_before, 4),
+        "balance_now": now["balance"],
+        "balance_previous": before["balance"],
+        "se_points": None,
+        "interval_low": None,
+        "interval_high": None,
     }
+    span = (
+        f"{pd.Timestamp(previous_start).strftime('%Y-%m-%d')} "
+        f"to {pd.Timestamp(previous_end).strftime('%Y-%m-%d')}"
+    )
     if previous_end < data_start or previous_start < data_start or previous_start > data_end:
         return {
             **base,
@@ -147,38 +148,59 @@ def trend(
             "delta_points": None,
             "sentence": "The previous window of the same length starts before the first post in this selection.",
         }
-    if (
-        balance_now is None
-        or balance_before is None
-        or now["classified"] < MIN_TREND_BASE
-        or before["classified"] < MIN_TREND_BASE
-    ):
+    if now["balance"] is None or before["balance"] is None:
         return {
             **base,
             "direction": "unknown",
             "delta_points": None,
-            "sentence": "Too few classified posts to compare with the previous window.",
+            "sentence": "One of the two windows has no scored stories, so the tone balance is not compared.",
         }
-    delta = (balance_now - balance_before) * 100
-    if delta > TREND_THRESHOLD_POINTS:
-        direction = "up"
-        movement = "up"
-    elif delta < -TREND_THRESHOLD_POINTS:
-        direction = "down"
-        movement = "down"
-    else:
-        direction = "flat"
-        movement = "nearly unchanged"
-    points = f"{delta:+.1f}"
-    return {
+    delta = now["balance"] - before["balance"]
+    error = math.sqrt(now["balance_se"] ** 2 + before["balance_se"] ** 2)
+    z = 1.96
+    low = max(-2.0, delta - z * error)
+    high = min(2.0, delta + z * error)
+    se_points = error * 100
+    low_points = low * 100
+    high_points = high * 100
+    delta_points = round(delta * 100, 1)
+    band = TREND_THRESHOLD_POINTS
+    detail = (
+        f"Positive-minus-negative balance moved {delta_points:+.1f} points "
+        f"(interval {low_points:+.1f} to {high_points:+.1f}, standard error {se_points:.1f}) "
+        f"against {span}."
+    )
+    numbers = {
         **base,
+        "delta_points": delta_points,
+        "se_points": round(se_points, 1),
+        "interval_low": round(low_points, 1),
+        "interval_high": round(high_points, 1),
+    }
+    if se_points >= band:
+        return {
+            **numbers,
+            "direction": "flat",
+            "sentence": (
+                f"{detail} The standard error is at least {band:.0f} points, so no arrow is drawn."
+            ),
+        }
+    if low_points > band:
+        direction, movement = "up", "up"
+    elif high_points < -band:
+        direction, movement = "down", "down"
+    else:
+        return {
+            **numbers,
+            "direction": "flat",
+            "sentence": (
+                f"{detail} The interval still covers a move smaller than {band:.0f} points, so no arrow is drawn."
+            ),
+        }
+    return {
+        **numbers,
         "direction": direction,
-        "delta_points": round(delta, 1),
-        "sentence": (
-            f"Support-minus-opposition balance is {movement} ({points} points) "
-            f"against {pd.Timestamp(previous_start).strftime('%Y-%m-%d')} "
-            f"to {pd.Timestamp(previous_end).strftime('%Y-%m-%d')}."
-        ),
+        "sentence": f"Positive-minus-negative balance is {movement}. {detail}",
     }
 
 
@@ -218,12 +240,14 @@ def list_posts(frame: pd.DataFrame, curated_project: str | None = None) -> list[
             "source": str(row.source_name or ""),
             "url": str(row.url or ""),
             "circle": _cell(row.circle),
+            "tone_cue": _cell(getattr(row, "tone_cue", "")),
             "stance": _cell(row.stance),
             "vendor_tone": _cell(row.vendor_tone),
             "city": row.city or "",
             "channel": row.channel or "",
             "project": row.project_label or "",
             "snippet": str(row.snippet or "").strip(),
+            "mockery": mockery_label(getattr(row, "text", "")),
             "categories": categories,
             "arguments": arguments,
             "hopes": hopes,
@@ -345,6 +369,52 @@ def score_confidence(context: dict, peak: dict | None = None) -> dict:
     }
 
 
+def _norm_title(text: str) -> str:
+    value = re.sub(r"\s+", " ", str(text or "").lower().strip())
+    return value[:96]
+
+
+def _titles_overlap(a: str, b: str) -> bool:
+    left, right = _norm_title(a), _norm_title(b)
+    if not left or not right:
+        return False
+    return left == right or left in right or right in left
+
+
+def _is_template_summary(text: str) -> bool:
+    lowered = str(text or "").lower()
+    return any(
+        marker in lowered
+        for marker in (
+            "auffällige begriffe:",
+            "genannte beträge:",
+            "häufigste schlagzeile:",
+            "möglicher externer beleg:",
+            " beiträge aus ",
+        )
+    )
+
+
+def _peak_lead(context: dict) -> str:
+    summary = str(context.get("summary") or "").strip()
+    method = str(context.get("method") or "")
+    if not summary:
+        return ""
+    if summary.startswith("Kuratiert:"):
+        return summary
+    if method == "llm" and not _is_template_summary(summary):
+        return summary
+    if _is_template_summary(summary):
+        parts = []
+        profile = context.get("source_profile") if isinstance(context.get("source_profile"), dict) else {}
+        if profile.get("likely_syndication"):
+            parts.append("Many posts look like syndicated copies of the same story.")
+        if context.get("off_topic_suspect"):
+            parts.append("Check: posts may be off-topic for this project.")
+        return " ".join(parts)
+    return summary
+
+
 def _peak_headline(peak: dict, context: dict) -> str:
     for headline in context.get("top_headlines") or []:
         if headline:
@@ -358,36 +428,76 @@ def _peak_headline(peak: dict, context: dict) -> str:
     return ""
 
 
-def _peak_headlines(peak: dict, context: dict) -> list[dict]:
+def _peak_headlines(
+    peak: dict,
+    context: dict,
+    frame: pd.DataFrame | None = None,
+    project: str | None = None,
+) -> list[dict]:
     items: list[dict] = []
+    title_rows: dict[str, object] = {}
+    if frame is not None and len(frame) and project and "project" in frame.columns:
+        subset = frame[frame["project"].eq(project)]
+        for row in subset.itertuples(index=False):
+            title = str(getattr(row, "title", "") or "").strip()
+            if not title:
+                continue
+            title_rows[_norm_title(title)] = row
+            title_rows[_norm_title(title[:60])] = row
 
-    def add(text, url=None):
+    def add(text, url=None, source=None):
         value = str(text or "").strip()
-        if not value or any(existing["text"] == value for existing in items):
+        if not value:
+            return
+        if any(_titles_overlap(value, existing["text"]) for existing in items):
             return
         item = {"text": value}
         if url:
             item["url"] = str(url)
+        if source:
+            item["source"] = str(source)
         items.append(item)
 
-    for headline in (context.get("top_headlines") or [])[:3]:
-        add(headline)
+    for headline in (context.get("top_headlines") or [])[:5]:
+        row = title_rows.get(_norm_title(headline)) or title_rows.get(_norm_title(headline[:60]))
+        url = str(getattr(row, "url", "") or "") if row is not None else ""
+        source = str(getattr(row, "source_name", "") or "") if row is not None else ""
+        add(headline, url or None, source or None)
+
     added_external = 0
     for extra in context.get("external_candidates") or []:
         if not isinstance(extra, dict) or extra.get("error") or not extra.get("title"):
             continue
-        source = extra.get("source") or ""
-        add(extra["title"] if not source else f"{extra['title']} ({source})", extra.get("url"))
+        title = str(extra["title"]).strip()
+        if any(_titles_overlap(title, existing["text"]) for existing in items):
+            continue
+        add(title, extra.get("url"), extra.get("source") or None)
         added_external += 1
         if added_external >= 2:
             break
     if not items:
         for title in (peak.get("sample_titles") or [])[:3]:
             add(title)
-    return items
+    return items[:6]
 
 
-def _peak_effects(context: dict) -> list[str]:
+def _tone_around(frame: pd.DataFrame, project: str, day: str) -> str:
+    """Tone in the 14-day windows the peak file uses, recomputed from the posts."""
+    peak = as_day(day)
+    if peak is None or frame is None or frame.empty or "project" not in frame.columns:
+        return ""
+    subset = frame[frame["project"].eq(project)]
+
+    def one(start, end) -> str:
+        part = subset[(subset["date"] >= start) & (subset["date"] <= end)]
+        return format_window(describe(rows_from_frame(part)))
+
+    before = one(peak - pd.Timedelta(days=14), peak - pd.Timedelta(days=4))
+    after = one(peak + pd.Timedelta(days=3), peak + pd.Timedelta(days=16))
+    return f"Tone 14 days before: {before}. After: {after}."
+
+
+def _peak_effects(context: dict, tone_line: str = "") -> list[str]:
     lines = []
     effects = context.get("effects") if isinstance(context.get("effects"), dict) else {}
     persistence = effects.get("persistence")
@@ -396,15 +506,14 @@ def _peak_effects(context: dict) -> list[str]:
         extra = f", {decay} days" if decay not in (None, "") else ""
         follow = {"abgeklungen": "faded", "dauerhaft erhöht": "stayed high"}.get(str(persistence), persistence)
         lines.append(f"Follow-up: {follow}{extra}")
-    sent_before, sent_after = effects.get("sentiment_14d_before"), effects.get("sentiment_14d_after")
-    if sent_before is not None or sent_after is not None:
-        lines.append(f"Sentiment over 14 days: {sent_before} → {sent_after}")
+    if tone_line:
+        lines.append(tone_line)
     if context.get("off_topic_suspect"):
         lines.append("Note: peak may be off-topic")
     return lines
 
 
-def _peak_points(peak: dict, context: dict) -> list[dict]:
+def _peak_points(peak: dict, context: dict, tone_line: str = "") -> list[dict]:
     """Bullet points for the context panel. Pipeline text stays as written."""
     points: list[dict] = []
 
@@ -417,8 +526,6 @@ def _peak_points(peak: dict, context: dict) -> list[dict]:
             item["url"] = str(url)
         points.append(item)
 
-    terms = [str(term) for term in (context.get("top_terms") or []) if term]
-    amounts = [str(amount) for amount in (context.get("amounts_mentioned") or []) if amount]
     profile = context.get("source_profile") if isinstance(context.get("source_profile"), dict) else {}
     n_posts, n_sources = profile.get("n_posts"), profile.get("n_sources")
     if n_posts and n_sources:
@@ -441,9 +548,8 @@ def _peak_points(peak: dict, context: dict) -> list[dict]:
         extra = f", {decay} days" if decay not in (None, "") else ""
         follow = {"abgeklungen": "faded", "dauerhaft erhöht": "stayed high"}.get(str(persistence), persistence)
         add(f"Follow-up: {follow}{extra}")
-    sent_before, sent_after = effects.get("sentiment_14d_before"), effects.get("sentiment_14d_after")
-    if sent_before is not None or sent_after is not None:
-        add(f"Sentiment over 14 days: {sent_before} → {sent_after}")
+    if tone_line:
+        add(tone_line)
     if context.get("off_topic_suspect"):
         add("Note: peak may be off-topic")
     if not points:
@@ -452,7 +558,7 @@ def _peak_points(peak: dict, context: dict) -> list[dict]:
     return points
 
 
-def load_peak_markers(city: str) -> list[dict]:
+def load_peak_markers(city: str, frame: pd.DataFrame | None = None) -> list[dict]:
     """Peak windows for the selected city.
 
     Markers come from the batch pipeline (``projects_with_context.json``),
@@ -478,11 +584,14 @@ def load_peak_markers(city: str) -> list[dict]:
             window_from, window_to = _peak_window(peak)
             headline = _peak_headline(peak, context)
             scored = score_confidence(context, peak)
+            tone_line = _tone_around(frame, project, day) if frame is not None else ""
             profile = context.get("source_profile") if isinstance(context.get("source_profile"), dict) else {}
             secondary = context.get("event_type_secondary")
-            event_type = context.get("event_type") or ""
+            raw_type = context.get("event_type") or ""
+            event_type = raw_type
             if secondary:
                 event_type = f"{event_type} · {secondary}"
+            effects = context.get("effects") if isinstance(context.get("effects"), dict) else {}
             markers.append({
                 "id": f"{project}::{day}",
                 "date": day,
@@ -495,19 +604,21 @@ def load_peak_markers(city: str) -> list[dict]:
                 "tier": peak.get("tier") or "major",
                 "rank": peak.get("rank"),
                 "event_type": event_type,
+                "family": event_family(raw_type),
+                "follow": follow_of(str(effects.get("persistence") or "")),
+                "has_amount": False,
                 "headline": headline,
-                "summary": str(context.get("summary") or "").strip(),
+                "summary": _peak_lead(context),
                 "confidence": scored["level"],
                 "confidence_why": scored["why"],
                 "terms": [str(term) for term in (context.get("top_terms") or []) if term][:6],
-                "amounts": [str(amount) for amount in (context.get("amounts_mentioned") or []) if amount][:4],
                 "sources": (
                     f"{profile['n_posts']} posts · {profile['n_sources']} sources"
                     if profile.get("n_posts") and profile.get("n_sources") else ""
                 ),
-                "headlines": _peak_headlines(peak, context),
-                "effects": _peak_effects(context),
-                "points": _peak_points(peak, context),
+                "headlines": _peak_headlines(peak, context, frame, project),
+                "effects": _peak_effects(context, tone_line),
+                "points": _peak_points(peak, context, tone_line),
             })
     markers.sort(key=lambda item: (item["date"], item["project"]))
     return markers
@@ -545,9 +656,14 @@ def summarize(
         if project and len(window) and "mention_id" in window.columns
         else []
     )
+    channels = (
+        {str(mention): str(channel_name or "") for mention, channel_name in zip(window["mention_id"], window["channel"])}
+        if len(window) and "mention_id" in window.columns
+        else {}
+    )
     if project:
-        terms = curated.profile(project, mentions, "thema")
-        arguments = curated.claim_rows(project, mentions)
+        terms = curated.profile(project, mentions, "thema", channels)
+        arguments = curated.claim_rows(project, mentions, channels)
         terms_note = curated.CURATED_TERMS_NOTE
         arguments_note = curated.CURATED_ARGUMENTS_NOTE
     else:
@@ -555,6 +671,11 @@ def summarize(
         arguments = argument_profile(window)
         terms_note = curated.TERMS_NOTE
         arguments_note = curated.ARGUMENTS_NOTE
+    all_peaks = load_peak_markers("All", frame)
+    peaks = [
+        peak for peak in all_peaks
+        if city == "All" or CITY_BY_PROJECT.get(peak["project"]) == city
+    ]
     return {
         "city": city,
         "channel": channel,
@@ -576,7 +697,11 @@ def summarize(
         "arguments_note": arguments_note,
         "cities": CITY_BUTTONS,
         "channels": CHANNEL_BUTTONS,
-        "peaks": load_peak_markers(city),
+        "peaks": peaks,
+        "families": EVENT_FAMILIES,
+        "stance": stance_block(window),
+        "mockery": mockery_block(window),
+        "facts": sheet_for_city(city),
     }
 
 

@@ -290,9 +290,11 @@ def category_profile(frame: pd.DataFrame) -> list[dict]:
     """
     counts = {entry["id"]: 0 for entry in CATEGORIES}
     examples: dict[str, Counter] = {entry["id"]: Counter() for entry in CATEGORIES}
+    channel_counts: dict[str, Counter] = {entry["id"]: Counter() for entry in CATEGORIES}
     total = len(frame)
     if total and "terms" in frame.columns:
-        for word_list in frame["terms"]:
+        channels = frame["channel"] if "channel" in frame.columns else [""] * total
+        for word_list, channel in zip(frame["terms"], channels):
             seen_category = set()
             seen_word = set()
             for word in word_list:
@@ -305,6 +307,8 @@ def category_profile(frame: pd.DataFrame) -> list[dict]:
                 if category not in seen_category:
                     seen_category.add(category)
                     counts[category] += 1
+                    if channel:
+                        channel_counts[category][channel] += 1
     rows = []
     for entry in CATEGORIES:
         count = counts[entry["id"]]
@@ -314,6 +318,10 @@ def category_profile(frame: pd.DataFrame) -> list[dict]:
             "count": count,
             "share": (count / total) if total else 0.0,
             "terms": [word for word, _count in examples[entry["id"]].most_common(3)],
+            "by_channel": {
+                name: int(channel_counts[entry["id"]].get(name, 0))
+                for name in ("News", "Social", "Other web")
+            },
         })
     return rows
 

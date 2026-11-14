@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "titel": "Annahmen und Fakten – Seilbahn Heilbronn",
+    "projekt": "Seilbahn Heilbronn",
+    "stand": "2026-11-14",
+    "quelle_offizielle_angaben": null,
+    "hinweis": "Die Gegenüberstellung bewertet nicht die Meinung der Kommentierenden. Sie zeigt, was offiziell bekannt ist und was offen bleibt."
+  },
+  "kosten": {
+    "investition": {
+      "beschreibung": "Bau der Infrastruktur",
+      "wert_mio_euro": 157,
+      "foerderung_bis_prozent": 90,
+      "foerderung_max_mio_euro": 141.3,
+      "eigenanteil_stadt_min_mio_euro": 15.7,
+      "preisstand": 2026,
+      "status": "Erste Schätzung aus der Machbarkeitsstudie; wird in der Vor- und Detailplanung geprüft.",
+      "foerdergeber": [
+        "Land Baden-Württemberg",
+        "Bund"
+      ]
+    },
+    "betrieb": {
+      "wert_mio_euro_pro_jahr": null,
+      "kostenarten": [
+        "Personal",
+        "Energie",
+        "Pflege und Wartung"
+      ],
+      "einnahmen": [
+        "Fahrgeldeinnahmen HNV-Gemeinschaftstarif",
+        "anteilige Einnahmen Deutschlandticket"
+      ],
+      "verteilung_einnahmen": "Wie bei Bussen, Stadtbahnen und Zügen nach einem festgelegten Schlüssel, der die bereitgestellten Wegekilometer und die Ticketerlöse berücksichtigt.",
+      "status": "Noch nicht beziffert."
+    }
+  },
+  "gegenueberstellungen": [
+    {
+      "id": "a1",
+      "kommentar": "Seilbahn bauen und gleichzeitig ein Krankenhaus schließen sei „pure Schikane“.",
+      "quelle": "Kommentar, soziale Medien",
+      "datum": null,
+      "haltung": "dagegen",
+      "thema": "Prioritäten / Geld",
+      "annahme": "Das Geld für die Seilbahn fehlt an anderer Stelle, etwa beim Krankenhaus.",
+      "fakt": "Die Investition von rund 157 Millionen Euro soll zu bis zu 90 Prozent von Land und Bund gefördert werden. Die Stadt trägt also nur einen kleinen Teil der Baukosten selbst.",
+      "offen": "Ob Fördermittel und Klinikfinanzierung aus denselben Töpfen stammen, beantwortet die offizielle Information nicht. Ein städtischer Eigenanteil bleibt."
+    },
+    {
+      "id": "a2",
+      "kommentar": "Seilbahn und „begehbarer Kaufhof“ seien „unsinnige Projekte“, die Politiker fördern, um sich ein Denkmal zu setzen. Dazu „Schwarz Klinik“ und „Schwarzbronn“.",
+      "quelle": "YouTube",
+      "datum": "2026-07-31",
+      "haltung": "dagegen",
+      "thema": "Prestige / Finanzierung",
+      "annahme": "Die Seilbahn ist ein Prestigeprojekt, hinter dem ein privater Geldgeber steht.",
+      "fakt": "Die Seilbahn wird öffentlich finanziert: bis zu 90 Prozent der Investition über Land und Bund. Im Betrieb erhält sie wie Busse, Stadtbahnen und Züge Fahrgeldeinnahmen aus dem HNV-Tarif und anteilig aus dem Deutschlandticket.",
+      "offen": "Wie hoch die Betriebskosten sind und ob die Einnahmen sie decken, ist noch nicht beziffert. Ob das Projekt sinnvoll ist, ist eine Bewertung, die Zahlen allein nicht klären."
+    }
+  ]
+}

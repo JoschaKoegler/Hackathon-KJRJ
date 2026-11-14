@@ -122,7 +122,25 @@ def notes_for(project: str, mention_ids) -> dict[str, dict]:
     return result
 
 
-def profile(project: str, mention_ids, polarity: str) -> list[dict]:
+def has_project(project: str | None) -> bool:
+    return bool(project) and project in _load()
+
+
+def assigned_rows(project: str, mention_ids) -> list[dict]:
+    """Assignment rows for the mentions in the current selection."""
+    catalog = _load().get(project)
+    if catalog is None:
+        return []
+    wanted = {str(mention) for mention in mention_ids}
+    rows = []
+    for mention, group in catalog["by_mention"].items():
+        if mention not in wanted:
+            continue
+        rows.extend(group)
+    return rows
+
+
+def profile(project: str, mention_ids, polarity: str, channels: dict | None = None) -> list[dict]:
     """One row per theme, hope, or fear that appears in the selected posts.
 
     ``mention_ids`` is one id per post in the window. ``share`` divides the
@@ -134,6 +152,7 @@ def profile(project: str, mention_ids, polarity: str) -> list[dict]:
     selected = [str(mention) for mention in mention_ids]
     wanted = set(selected)
     total = len(selected)
+    channels = channels or {}
     buckets: dict[str, dict] = {}
     for entry in catalog["sections"].get(polarity, []):
         buckets[str(entry.get("id"))] = {
@@ -142,6 +161,7 @@ def profile(project: str, mention_ids, polarity: str) -> list[dict]:
             "description": entry.get("beschreibung") or "",
             "posts": set(),
             "evidence": [],
+            "channels": defaultdict(int),
         }
     for mention in wanted:
         for row in catalog["by_mention"].get(mention, []):
@@ -151,6 +171,9 @@ def profile(project: str, mention_ids, polarity: str) -> list[dict]:
             if bucket is None or mention in bucket["posts"]:
                 continue
             bucket["posts"].add(mention)
+            channel = channels.get(mention) or ""
+            if channel:
+                bucket["channels"][channel] += 1
             beleg = str(row.get("beleg") or "").strip()
             if beleg and len(bucket["evidence"]) < 2 and beleg not in bucket["evidence"]:
                 bucket["evidence"].append(beleg)
@@ -168,11 +191,15 @@ def profile(project: str, mention_ids, polarity: str) -> list[dict]:
             "terms": bucket["evidence"],
             "description": bucket["description"],
             "polarity": kind,
+            "by_channel": {
+                name: int(bucket["channels"].get(name, 0))
+                for name in ("News", "Social", "Other web")
+            },
         })
     rows.sort(key=lambda row: (-row["count"], str(row["label"])))
     return rows
 
 
-def claim_rows(project: str, mention_ids) -> list[dict]:
+def claim_rows(project: str, mention_ids, channels: dict | None = None) -> list[dict]:
     """Hopes first, then fears. Both use the same bar list on the page."""
-    return profile(project, mention_ids, "hope") + profile(project, mention_ids, "fear")
+    return profile(project, mention_ids, "hope", channels) + profile(project, mention_ids, "fear", channels)

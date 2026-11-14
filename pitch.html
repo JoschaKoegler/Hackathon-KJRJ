@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HuNgover · Elevator Pitch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #042a55;
+    --navy-2: #0c4a8a;
+    --papier: #f3f0ea;
+    --karte: #ffffff;
+    --tinte: #16181d;
+    --leise: #5c6570;
+    --linie: rgba(22, 24, 29, 0.12);
+    --lachs: #e8a090;
+    --hoffnung: #1b6b45;
+    --furcht: #9a3b38;
+    --folie-w: 1600px;
+    --folie-h: 900px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: #021428; color: var(--tinte); font-family: "Source Sans 3", "Segoe UI", sans-serif; }
+  button, kbd { font: inherit; }
+  .buehne {
+    height: 100%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+  .mass {
+    width: min(100vw, calc(100vh * 16 / 9));
+    height: min(100vh, calc(100vw * 9 / 16));
+    position: relative;
+  }
+  .folie {
+    position: absolute;
+    inset: 0;
+    display: none;
+    grid-template-columns: minmax(168px, 16%) 1fr;
+    background: var(--papier);
+    color: var(--tinte);
+    overflow: hidden;
+  }
+  .folie.aktiv { display: grid; }
+  .folie.dunkel {
+    background: var(--navy);
+    color: #e8eef5;
+  }
+  .phasen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 22px;
+    padding: 48px 28px;
+    border-right: 1px solid var(--linie);
+  }
+  .folie.dunkel .phasen { border-right-color: rgba(232, 238, 245, 0.14); }
+  .phase {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 10px;
+    align-items: baseline;
+    color: var(--leise);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  .folie.dunkel .phase { color: rgba(232, 238, 245, 0.38); }
+  .phase b {
+    font-size: 22px;
+    font-weight: 800;
+  }
+  .folie[data-aida="aufmerksamkeit"] .phase-a,
+  .folie[data-aida="interesse"] .phase-i,
+  .folie[data-aida="verlangen"] .phase-d,
+  .folie[data-aida="aktion"] .phase-k {
+    color: var(--navy);
+  }
+  .folie.dunkel[data-aida="aufmerksamkeit"] .phase-a,
+  .folie.dunkel[data-aida="aktion"] .phase-k {
+    color: var(--lachs);
+  }
+  .inhalt {
+    min-width: 0;
+    min-height: 0;
+    padding: clamp(28px, 3.2vh, 52px) clamp(28px, 3vw, 64px) clamp(20px, 2.4vh, 40px);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(14px, 2vh, 26px);
+  }
+  .kopfzeile {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 24px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--navy-2);
+  }
+  .folie.dunkel .kopfzeile { color: var(--lachs); }
+  .marke { letter-spacing: 0; text-transform: none; font-size: 22px; color: inherit; }
+  .marke i { font-style: normal; }
+  h1 {
+    margin: 0;
+    font-size: clamp(40px, 4.8vw, 76px);
+    line-height: 0.98;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+  h2 {
+    margin: 0;
+    font-size: clamp(30px, 3vw, 46px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+  .lead {
+    margin: 0;
+    max-width: 920px;
+    font-size: clamp(20px, 1.9vw, 30px);
+    line-height: 1.35;
+    font-weight: 400;
+  }
+  .folie.dunkel .lead { color: rgba(232, 238, 245, 0.82); }
+  .fuss {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 24px;
+    font-size: 16px;
+    color: var(--leise);
+  }
+  .folie.dunkel .fuss { color: rgba(232, 238, 245, 0.55); }
+  kbd {
+    border: 1px solid currentColor;
+    border-radius: 4px;
+    padding: 0 6px;
+    font-size: 14px;
+  }
+
+  .zahlen {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.15fr;
+    gap: 22px;
+    align-items: stretch;
+  }
+  .zahl {
+    background: var(--karte);
+    border: 1px solid var(--linie);
+    padding: 28px 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-height: 280px;
+  }
+  .zahl.fokus {
+    background: var(--navy);
+    color: #e8eef5;
+    border-color: var(--navy);
+  }
+  .zahl strong {
+    font-size: 72px;
+    line-height: 0.9;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+  }
+  .zahl.fokus strong { color: var(--lachs); }
+  .zahl span { font-size: 24px; line-height: 1.3; }
+  .zahl em {
+    margin-top: auto;
+    font-style: normal;
+    font-size: 16px;
+    color: var(--leise);
+  }
+  .zahl.fokus em { color: rgba(232, 238, 245, 0.62); }
+
+  .fragen {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 36px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .fragen li {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 8px 16px;
+    align-items: start;
+  }
+  .fragen b {
+    font-size: 28px;
+    color: var(--navy-2);
+    font-weight: 800;
+  }
+  .fragen p { margin: 0; font-size: 26px; line-height: 1.25; font-weight: 600; }
+  .satz {
+    background: var(--karte);
+    border-left: 6px solid var(--navy-2);
+    padding: 18px 22px;
+    font-size: 24px;
+    line-height: 1.35;
+  }
+  .satz b { color: var(--navy-2); }
+
+  .fluss {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 18px 28px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .fluss li {
+    display: contents;
+  }
+  .schritt, .ergebnis {
+    background: var(--karte);
+    border: 1px solid var(--linie);
+    padding: 14px 18px;
+  }
+  .schritt { display: flex; gap: 16px; align-items: baseline; }
+  .schritt b {
+    flex: 0 0 28px;
+    font-size: 22px;
+    color: var(--navy-2);
+  }
+  .schritt strong { display: block; font-size: 22px; }
+  .schritt span, .ergebnis { font-size: 18px; color: var(--leise); line-height: 1.3; }
+  .ergebnis {
+    display: flex;
+    align-items: center;
+    color: var(--tinte);
+    font-weight: 700;
+    font-size: 18px;
+  }
+  .fluss li.ziel .schritt,
+  .fluss li.ziel .ergebnis {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: #e8eef5;
+  }
+  .fluss li.ziel .schritt b,
+  .fluss li.ziel .schritt span { color: var(--lachs); }
+  .fluss li.ziel .ergebnis { color: #e8eef5; }
+
+  .zwei {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    min-height: 0;
+  }
+  .spalte h3 {
+    margin: 0 0 12px;
+    font-size: 16px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .spalte.hoffnung h3 { color: var(--hoffnung); }
+  .spalte.furcht h3 { color: var(--furcht); }
+  .spalte ol { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .spalte li {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    background: var(--karte);
+    border: 1px solid var(--linie);
+    padding: 12px 16px;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .spalte li span {
+    font-variant-numeric: tabular-nums;
+    color: var(--leise);
+    font-weight: 700;
+  }
+  .vergleich {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+  }
+  .vergleich div {
+    border-top: 3px solid var(--navy-2);
+    padding-top: 10px;
+  }
+  .vergleich strong { display: block; font-size: 18px; }
+  .vergleich p { margin: 4px 0 0; font-size: 18px; line-height: 1.3; color: var(--leise); }
+
+  .demo {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 28px;
+    min-height: 0;
+    flex: 1;
+  }
+  .pfad { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .pfad li {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 10px;
+    align-items: start;
+    font-size: 20px;
+    line-height: 1.25;
+  }
+  .pfad b {
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    background: var(--navy);
+    color: #fff;
+    font-size: 16px;
+  }
+  .pfad em { font-style: normal; font-weight: 800; }
+  .mock {
+    background: var(--navy);
+    color: #e8eef5;
+    padding: 16px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 12px;
+    min-height: 460px;
+  }
+  .mock-kopf, .mock-zeile { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .chip {
+    border: 1px solid rgba(232, 238, 245, 0.28);
+    padding: 4px 10px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .chip.an { background: #fff; color: var(--navy); border-color: #fff; }
+  .mock-mitte {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 10px;
+  }
+  .kreise, .kontext { background: #fff; color: var(--tinte); padding: 14px; }
+  .kreise { display: flex; align-items: center; gap: 12px; justify-content: center; min-height: 160px; }
+  .kreis {
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.15;
+  }
+  .kreis small { display: block; font-weight: 600; }
+  .k-pos { width: 92px; height: 92px; background: #d9efe4; color: var(--hoffnung); }
+  .k-neu { width: 112px; height: 112px; background: #eceae6; color: #3a3d44; }
+  .k-neg { width: 64px; height: 64px; background: #f3d6d4; color: var(--furcht); }
+  .kontext h3 { margin: 0 0 6px; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy-2); }
+  .kontext strong { display: block; font-size: 18px; line-height: 1.25; }
+  .kontext p { margin: 8px 0 0; font-size: 14px; line-height: 1.35; color: var(--leise); }
+  .zeit {
+    height: 72px;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .zeit svg { width: 100%; height: 100%; display: block; }
+  .pin {
+    position: absolute;
+    top: 8px;
+    left: 38%;
+    background: var(--lachs);
+    color: var(--navy);
+    font-size: 12px;
+    font-weight: 800;
+    padding: 2px 6px;
+  }
+
+  .aktionen { display: flex; flex-direction: column; gap: 16px; }
+  .aktionen article {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 16px;
+    align-items: center;
+  }
+  .aktionen b {
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--lachs);
+    line-height: 1;
+  }
+  .aktionen strong { display: block; font-size: 28px; font-weight: 800; }
+  .aktionen span { display: block; margin-top: 2px; font-size: 20px; color: rgba(232, 238, 245, 0.78); }
+
+  .notizen {
+    display: none;
+    position: fixed;
+    left: 24px;
+    right: 24px;
+    bottom: 18px;
+    z-index: 5;
+    background: #fff;
+    color: var(--tinte);
+    border-left: 6px solid var(--lachs);
+    padding: 12px 16px;
+    font-size: 16px;
+    line-height: 1.35;
+    max-width: 980px;
+    max-height: 4.4em;
+    overflow: auto;
+  }
+  body.mit-notizen .notizen { display: block; }
+  .nav {
+    position: fixed;
+    left: 18px;
+    bottom: 16px;
+    z-index: 6;
+    display: flex;
+    gap: 8px;
+  }
+  .nav button {
+    background: transparent;
+    color: #e8eef5;
+    border: 1px solid rgba(232, 238, 245, 0.4);
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+  }
+  .nav button:hover { background: rgba(255, 255, 255, 0.08); }
+</style>
+</head>
+<body>
+<div class="buehne">
+  <div class="mass" id="mass">
+
+    <section class="folie dunkel aktiv" data-aida="aufmerksamkeit" data-note="Heilbronn hat am 4. April 2025 Ja zur Seilbahn gesagt. In den Beiträgen ist dieser Tag ein klarer Peak. Vier Tage später ist die Kurve wieder unten. Wir machen aus diesem Lärm eine lesbare Haltung.">
+      <nav class="phasen" aria-label="AIDA">
+        <div class="phase phase-a"><b>A</b><span>Aufmerksamkeit</span></div>
+        <div class="phase phase-i"><b>I</b><span>Interesse</span></div>
+        <div class="phase phase-d"><b>D</b><span>Verlangen</span></div>
+        <div class="phase phase-k"><b>A</b><span>Aktion</span></div>
+      </nav>
+      <div class="inhalt">
+        <div class="kopfzeile">
+          <span>Elevator Pitch · Stadt Heilbronn</span>
+          <span class="marke"><i>H</i>u<i>N</i>gover</span>
+        </div>
+        <h1>4. April 2025.<br>Heilbronn sagt Ja.</h1>
+        <p class="lead">Vier Tage später ist die Kurve wieder flach. Die Haltung zur Seilbahn steht in den Sätzen, nicht in der Lautstärke.</p>
+        <div class="fuss">
+          <span>Riding the Sentiment</span>
+          <span><kbd>→</kbd> weiter · <kbd>N</kbd> Sprechtext · <kbd>F</kbd> Vollbild</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="folie" data-aida="aufmerksamkeit" data-note="Im Export liegen 39.361 Beiträge. 36.831 treffen kein Projekt, 304 sind Fast-Duplikate. Übrig bleiben 2.226. Davon gehören 217 zur Seilbahn Heilbronn. Der Rest verteilt sich auf IPAI, Paris und Bonn.">
+      <nav class="phasen" aria-label="AIDA">
+        <div class="phase phase-a"><b>A</b><span>Aufmerksamkeit</span></div>
+        <div class="phase phase-i"><b>I</b><span>Interesse</span></div>
+        <div class="phase phase-d"><b>D</b><span>Verlangen</span></div>
+        <div class="phase phase-k"><b>A</b><span>Aktion</span></div>
+      </nav>
+      <div class="inhalt">
+        <div class="kopfzeile"><span>Aufmerksamkeit · das Rauschen</span><span>1 / Filter</span></div>
+        <h2>Erst zuordnen. Dann zuhören.</h2>
+        <div class="zahlen">
+          <div class="zahl">
+            <strong>39.361</strong>
+            <span>Beiträge im Export</span>
+            <em>Schlagworte allein reichen nicht</em>
+          </div>
+          <div class="zahl">
+            <strong>2.226</strong>
+            <span>gehören zu einem Projekt</span>
+            <em>ein Beitrag, genau ein Projekt</em>
+          </div>
+          <div class="zahl fokus">
+            <strong>217</strong>
+            <span>Seilbahn Heilbronn</span>
+            <em>IPAI 1.188 · Paris 514 · Bonn 307</em>
+          </div>
+        </div>
+        <div class="fuss"><span>Stand der Pipeline, 14. November 2026 · 20. Okt 2024 bis 26. Okt 2026</span><span>2 / 7</span></div>
+      </div>
+    </section>
+
+    <section class="folie" data-aida="interesse" data-note="Vier Fragen der Challenge: Thema, Reaktion, Auslöser, Vergleich. Der wichtige Schnitt: Ton ist der Klang des Absatzes über das Projekt. Haltung ist, ob der Text das Projekt will. Beides bleibt im Dashboard getrennt.">
+      <nav class="phasen" aria-label="AIDA">
+        <div class="phase phase-a"><b>A</b><span>Aufmerksamkeit</span></div>
+        <div class="phase phase-i"><b>I</b><span>Interesse</span></div>
+        <div class="phase phase-d"><b>D</b><span>Verlangen</span></div>
+        <div class="phase phase-k"><b>A</b><span>Aktion</span></div>
+      </nav>
+      <div class="inhalt">
+        <div class="kopfzeile"><span>Interesse · die Frage der Stadt</span><span>Explore · Compare · Track</span></div>
+        <h2>Was die Kurve nicht zeigt.</h2>
+        <ol class="fragen">
+          <li><b>01</b><p>Worüber wird bei der Seilbahn gesprochen?</p></li>
+          <li><b>02</b><p>Will der Text das Projekt, oder klingt er nur so?</p></li>
+          <li><b>03</b><p>Welches Ereignis hebt den Tag, und bleibt die Debatte dort?</p></li>
+          <li><b>04</b><p>Was ist Seilbahn, was ist Heilbronn?</p></li>
+        </ol>
+        <p class="satz"><b>Ton</b> liest den Klang des Absatzes über das Projekt. <b>Haltung</b> liest, ob das Projekt gewollt ist. Die Kreise zeigen den Ton. Die Haltung bleibt daneben sichtbar.</p>
+        <div class="fuss"><span>Vergleich: Bonn in Planung · Paris Câble C1 in Betrieb · IPAI als anderes Großprojekt</span><span>3 / 7</span></div>
+      </div>
+    </section>
+
+    <section class="folie" data-aida="verlangen" data-note="Der Weg ist eine Datei. Filtern, einem Projekt zuordnen, dann parallel Ton, Themen, Peaks und den Faktencheck. Das Dashboard liest nur das Ergebnis. Nach einem neuen Lauf die Seite neu starten.">
+      <nav class="phasen" aria-label="AIDA">
+        <div class="phase phase-a"><b>A</b><span>Aufmerksamkeit</span></div>
+        <div class="phase phase-i"><b>I</b><span>Interesse</span></div>
+        <div class="phase phase-d"><b>D</b><span>Verlangen</span></div>
+        <div class="phase phase-k"><b>A</b><span>Aktion</span></div>
+      </nav>
+      <div class="inhalt">
+        <div class="kopfzeile"><span>Verlangen · Datenfluss</span><span>pipeline/ → dashboard.py</span></div>
+        <h2>Vom Export zur Aussage.</h2>
+        <ol class="fluss">
+          <li>
+            <div class="schritt"><b>1</b><div><strong>Filtern</strong><span>Gültiges Datum, Fast-Duplikat per Simhash, genau ein Projekt aus Thema und Ort.</span></div></div>
+            <div class="ergebnis">2.226 Beiträge in clean_data</div>
+          </li>
+          <li>
+            <div class="schritt"><b>2</b><div><strong>Lesen</strong><span>Ton am Projektabsatz. Haltung über Formulierungen. Themen, Hoffnungen und Ängste im Umfeld der Erwähnung.</span></div></div>
+            <div class="ergebnis">Kreise, Hopes &amp; fears</div>
+          </li>
+          <li>
+            <div class="schritt"><b>3</b><div><strong>Zeit</strong><span>Tageszählung, Peaks, dann öffentliche Meldungen im Fenster davor und danach.</span></div></div>
+            <div class="ergebnis">Timeline und Peak-Kontext</div>
+          </li>
+          <li>
+            <div class="schritt"><b>4</b><div><strong>Prüfen</strong><span>Die Annahme im Kommentar neben der offiziellen Zahl. Offen bleibt, was die Zahl nicht deckt.</span></div></div>
+            <div class="ergebnis">Misunderstandings</div>
+          </li>
+          <li class="ziel">
+            <div class="schritt"><b>5</b><div><strong>Zeigen</strong><span>Dieselbe Auswahl nach Projekt, Kanal und Zeitraum. Vom Peak zum einzelnen Beitrag.</span></div></div>
+            <div class="ergebnis">HuNgover · Port 8765</div>
+          </li>
+        </ol>
+        <div class="fuss"><span>Heilbronn liegt als zugeordnete Menge bei. Bonn, Paris und IPAI folgen den Begriffslisten.</span><span>4 / 7</span></div>
+      </div>
+    </section>
+
+    <section class="folie" data-aida="verlangen" data-note="Bei der Heilbronner Seilbahn dominieren Anbindung, Verkehr und Kosten. Ausgesprochene Hoffnung: schnelle Verbindung, Vorreiterrolle, weniger Stau. Ausgesprochene Furcht: steigende Kosten, Prestige, Geld fehlt woanders. Paris redet über Sicherheit in der Kabine. IPAI redet über den Zugang zum Standort. Der Ja-Beschluss klingt nach vier Tagen ab.">
+      <nav class="phasen" aria-label="AIDA">
+        <div class="phase phase-a"><b>A</b><span>Aufmerksamkeit</span></div>
+        <div class="phase phase-i"><b>I</b><span>Interesse</span></div>
+        <div class="phase phase-d"><b>D</b><span>Verlangen</span></div>
+        <div class="phase phase-k"><b>A</b><span>Aktion</span></div>
+      </nav>
+      <div class="inhalt">
+        <div class="kopfzeile"><span>Verlangen · was Heilbronn hört</span><span>210 zugeordnete Beiträge</span></div>
+        <h2>Erreichbarkeit ja. Die Rechnung offen.</h2>
+        <div class="zwei">
+          <div class="spalte hoffnung">
+            <h3>Hoffnung · Urteil im Text</h3>
+            <ol>
+              <li>Schnelle, zuverlässige Verbindung <span>36</span></li>
+              <li>Vorreiter und Modellstadt <span>35</span></li>
+              <li>Weniger Stau <span>30</span></li>
+              <li>Klimafreundliche Mobilität <span>28</span></li>
+            </ol>
+          </div>
+          <div class="spalte furcht">
+            <h3>Furcht · Urteil im Text</h3>
+            <ol>
+              <li>Kosten unklar oder steigend <span>15</span></li>
+              <li>Prestige ohne Nutzen <span>9</span></li>
+              <li>Geld fehlt anderswo <span>8</span></li>
+              <li>Bremst Stadtbahn und ÖPNV <span>6</span></li>
+            </ol>
+          </div>
+        </div>
+        <div class="vergleich">
+          <div>
+            <strong>Thema Kosten</strong>
+            <p>69 Beiträge nennen Kosten. Als Furcht ausgesprochen sind es 15.</p>
+          </div>
+          <div>
+            <strong>Paris, in Betrieb</strong>
+            <p>Hoffnung auf die fehlende Verbindung. Furcht vor Übergriffen und Evakuierung.</p>
+          </div>
+          <div>
+            <strong>IPAI, gleiche Stadt</strong>
+            <p>181 Beiträge hoffen auf den Zugang zum KI-Ökosystem. Die Bahn ist dort kein Thema.</p>
+          </div>
+        </div>
+        <div class="fuss"><span>Ein Beitrag zählt pro Hoffnung und Furcht einmal. 4. April 2025: politischer Peak, nach 4 Tagen abgeklungen.</span><span>5 / 7</span></div>
+      </div>
+    </section>
+
+    <section class="folie" data-aida="verlangen" data-note="Demo, etwa neunzig Sekunden. Heilbronn cable car. Tone, dann den Peak am 4. April anklicken: Heilbronn sagt Ja. Danach Hopes and fears. Dann Misunderstandings: der Satz über Schikane neben 157 Millionen und bis zu 90 Prozent Förderung. Zum Schluss Paris. Die Posts-Zahl öffnet die Belege.">
+      <nav class="phasen" aria-label="AIDA">
+        <div class="phase phase-a"><b>A</b><span>Aufmerksamkeit</span></div>
+        <div class="phase phase-i"><b>I</b><span>Interesse</span></div>
+        <div class="phase phase-d"><b>D</b><span>Verlangen</span></div>
+        <div class="phase phase-k"><b>A</b><span>Aktion</span></div>
+      </nav>
+      <div class="inhalt">
+        <div class="kopfzeile"><span>Verlangen · die Demo</span><span>127.0.0.1:8765</span></div>
+        <h2>Neunzig Sekunden, sechs Klicks.</h2>
+        <div class="demo">
+          <ol class="pfad">
+            <li><b>1</b><div><em>Heilbronn cable car.</em> Die anderen Projekte bleiben einen Klick entfernt.</div></li>
+            <li><b>2</b><div><em>Tone.</em> Kreise für den Klang, Timeline für die Tage.</div></li>
+            <li><b>3</b><div><em>Peak 4. April 2025.</em> Kontext: „Heilbronn sagt Ja zur Seilbahn-Idee.“</div></li>
+            <li><b>4</b><div><em>Hopes &amp; fears.</em> Verbindung und Vorreiterrolle neben den Kosten.</div></li>
+            <li><b>5</b><div><em>Misunderstandings.</em> „Schikane“ neben 157&nbsp;Mio, bis zu 90&nbsp;% Förderung.</div></li>
+            <li><b>6</b><div><em>Paris.</em> Dieselbe Ansicht. Die Furcht wechselt zu Übergriff und Evakuierung.</div></li>
+          </ol>
+          <div class="mock" aria-hidden="true">
+            <div class="mock-kopf">
+              <span class="chip an">Heilbronn cable car</span>
+              <span class="chip">IPAI</span>
+              <span class="chip">Bonn</span>
+              <span class="chip">Paris</span>
+              <span class="chip an">Tone</span>
+            </div>
+            <div class="mock-mitte">
+              <div class="kreise">
+                <div class="kreis k-pos">positiv<small>Ton</small></div>
+                <div class="kreis k-neu">neutral<small>Ton</small></div>
+                <div class="kreis k-neg">negativ</div>
+              </div>
+              <div class="kontext">
+                <h3>Peak context</h3>
+                <strong>Öffentlicher Nahverkehr: Heilbronn sagt Ja zur Seilbahn-Idee</strong>
+                <p>4. April 2025 · politische Entscheidung · 11 Beiträge am Tag · nach 4 Tagen abgeklungen.</p>
+              </div>
+            </div>
+            <div class="zeit">
+              <svg viewBox="0 0 520 72" preserveAspectRatio="none">
+                <polyline fill="none" stroke="#0c4a8a" stroke-width="2.5" points="0,58 40,56 80,54 120,50 160,46 190,18 210,40 250,48 300,52 340,44 380,50 430,46 480,42 520,40"/>
+              </svg>
+              <span class="pin">4. Apr</span>
+            </div>
+          </div>
+        </div>
+        <div class="fuss"><span>Die Posts-Zahl öffnet die Belege hinter Kreis, Hoffnung und Peak.</span><span>6 / 7</span></div>
+      </div>
+    </section>
+
+    <section class="folie dunkel" data-aida="aktion" data-note="Drei Sätze für die Vorplanung. Erstens den Eigenanteil nennen: mindestens 15,7 Millionen von 157, erste Schätzung, Betrieb noch offen. Zweitens auf Erreichbarkeit antworten, weil das die ausgesprochene Hoffnung ist. Drittens Paris und Bonn in derselben Ansicht lesen, bevor die nächste Meldung den Peak setzt. Dashboard starten mit python dashboard.py.">
+      <nav class="phasen" aria-label="AIDA">
+        <div class="phase phase-a"><b>A</b><span>Aufmerksamkeit</span></div>
+        <div class="phase phase-i"><b>I</b><span>Interesse</span></div>
+        <div class="phase phase-d"><b>D</b><span>Verlangen</span></div>
+        <div class="phase phase-k"><b>A</b><span>Aktion</span></div>
+      </nav>
+      <div class="inhalt">
+        <div class="kopfzeile">
+          <span>Aktion · vor der Vorplanung</span>
+          <span class="marke"><i>H</i>u<i>N</i>gover</span>
+        </div>
+        <h2>Drei Sätze. Dann die Live-Demo.</h2>
+        <div class="aktionen">
+          <article>
+            <b>1</b>
+            <div>
+              <strong>Den Eigenanteil nennen.</strong>
+              <span>157&nbsp;Mio, erste Schätzung. Bis zu 90&nbsp;% Förderung. Mindestens 15,7&nbsp;Mio bei der Stadt. Betriebskosten noch offen.</span>
+            </div>
+          </article>
+          <article>
+            <b>2</b>
+            <div>
+              <strong>Auf Erreichbarkeit antworten.</strong>
+              <span>Die ausgesprochene Hoffnung ist die schnelle Verbindung zum IPAI. Die ausgesprochene Furcht ist die offene Rechnung.</span>
+            </div>
+          </article>
+          <article>
+            <b>3</b>
+            <div>
+              <strong>Paris und Bonn in derselben Ansicht öffnen.</strong>
+              <span>Betrieb gegen Planung, bevor die nächste Meldung den Peak setzt.</span>
+            </div>
+          </article>
+        </div>
+        <div class="fuss">
+          <span>python dashboard.py · http://127.0.0.1:8765</span>
+          <span>7 / 7</span>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+<aside class="notizen" id="notizen"></aside>
+<div class="nav">
+  <button type="button" id="zurueck" aria-label="Vorherige Folie">←</button>
+  <button type="button" id="weiter" aria-label="Nächste Folie">→</button>
+</div>
+<script>
+const folien = Array.from(document.querySelectorAll(".folie"));
+const notizen = document.getElementById("notizen");
+let index = 0;
+
+function zeigen(neu) {
+  index = (neu + folien.length) % folien.length;
+  folien.forEach((folie, i) => folie.classList.toggle("aktiv", i === index));
+  notizen.textContent = folien[index].dataset.note || "";
+}
+
+document.getElementById("weiter").addEventListener("click", () => zeigen(index + 1));
+document.getElementById("zurueck").addEventListener("click", () => zeigen(index - 1));
+
+window.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowRight" || event.key === " " || event.key === "PageDown") {
+    event.preventDefault();
+    zeigen(index + 1);
+  } else if (event.key === "ArrowLeft" || event.key === "PageUp") {
+    event.preventDefault();
+    zeigen(index - 1);
+  } else if (event.key === "Home") {
+    zeigen(0);
+  } else if (event.key === "End") {
+    zeigen(folien.length - 1);
+  } else if (event.key === "n" || event.key === "N") {
+    document.body.classList.toggle("mit-notizen");
+  } else if (event.key === "f" || event.key === "F") {
+    if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+    else document.exitFullscreen();
+  }
+});
+
+zeigen(0);
+</script>
+</body>
+</html>
