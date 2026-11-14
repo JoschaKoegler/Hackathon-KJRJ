@@ -8,9 +8,12 @@ from pathlib import Path
 # 1. PFADE
 # ==========================================
 BASE_DIR = Path(__file__).resolve().parent
+DATEN_ORDNER = BASE_DIR / "daten"
+ROH_ORDNER = DATEN_ORDNER / "00_rohdaten"
+GEFILTERT_ORDNER = DATEN_ORDNER / "01_gefiltert"
 DATEN_NAME = "FSI_Heilbronn_Medienbeiträge (1).json"
-OUTPUT_CLEAN_FILE = BASE_DIR / "clean_data.json"
-OUTPUT_AUDIT_FILE = BASE_DIR / "filter_audit.json"
+OUTPUT_CLEAN_FILE = GEFILTERT_ORDNER / "clean_data.json"
+OUTPUT_AUDIT_FILE = GEFILTERT_ORDNER / "filter_audit.json"
 
 
 def suche_datei(dateiname: str) -> Path | None:
@@ -32,7 +35,9 @@ def suche_datei(dateiname: str) -> Path | None:
     return None
 
 
-INPUT_FILE = suche_datei(DATEN_NAME) or (BASE_DIR / DATEN_NAME)
+INPUT_FILE = ROH_ORDNER / DATEN_NAME
+if not INPUT_FILE.is_file():
+    INPUT_FILE = suche_datei(DATEN_NAME) or INPUT_FILE
 
 ALLOWED_LANGUAGES = {"de", "fr", "en"}
 MIN_CONTENT_LENGTH = 40
@@ -226,7 +231,8 @@ def main():
         print(f"FEHLER: Datei nicht gefunden unter:\n{INPUT_FILE}")
         return
 
-    print(f"Lade Rohdaten aus '{INPUT_FILE.name}'...")
+    quelle = INPUT_FILE.relative_to(BASE_DIR) if INPUT_FILE.is_relative_to(BASE_DIR) else INPUT_FILE
+    print(f"Lade Rohdaten aus '{quelle}'...")
     with open(INPUT_FILE, "r", encoding="utf-8") as f:
         raw_posts = extract_records(json.load(f))
 
@@ -256,6 +262,7 @@ def main():
                     "snippet": normalize_text(post.get("content"))[:180]
                 })
 
+    GEFILTERT_ORDNER.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_CLEAN_FILE, "w", encoding="utf-8") as f:
         json.dump(clean_posts, f, ensure_ascii=False, indent=2)
 
@@ -283,7 +290,7 @@ def main():
         print(f"  - {proj:<32}: {count:>6}")
 
     print("\n" + "=" * 65)
-    print(f"Gespeichert:\n -> {OUTPUT_CLEAN_FILE.name}\n -> {OUTPUT_AUDIT_FILE.name}")
+    print(f"Gespeichert:\n -> {OUTPUT_CLEAN_FILE.relative_to(BASE_DIR)}\n -> {OUTPUT_AUDIT_FILE.relative_to(BASE_DIR)}")
 
 
 if __name__ == "__main__":

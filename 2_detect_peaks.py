@@ -8,8 +8,9 @@ from scipy.signal import find_peaks
 # 1. PFADE & PARAMETER
 # ==========================================
 BASE_DIR = Path(__file__).resolve().parent
-INPUT_FILE = BASE_DIR / "clean_data.json"
-OUTPUT_FILE = BASE_DIR / "detected_events.json"
+DATEN_ORDNER = BASE_DIR / "daten"
+INPUT_FILE = DATEN_ORDNER / "01_gefiltert" / "clean_data.json"
+OUTPUT_FILE = DATEN_ORDNER / "02_ereignisse" / "detected_events.json"
 
 MIN_PEAK_DISTANCE_DAYS = 7    # Mindestabstand zwischen zwei Peaks in Tagen
 PROMINENCE_FACTOR = 1.5       # Höher = nur extremere Ausschläge werden erkannt
@@ -145,7 +146,7 @@ def analyze_project_timeseries(df_proj: pd.DataFrame, project_name: str) -> dict
 # ==========================================
 def main():
     if not INPUT_FILE.exists():
-        print(f"FEHLER: '{INPUT_FILE.name}' nicht gefunden. Bitte zuerst '1_filter_data.py' ausführen!")
+        print(f"FEHLER: '{INPUT_FILE.relative_to(BASE_DIR)}' nicht gefunden. Bitte zuerst '1_filter_data.py' ausführen!")
         return
 
     with open(INPUT_FILE, "r", encoding="utf-8") as f:
@@ -192,11 +193,12 @@ def main():
             print(f"    * {cp['date']} ({direction}): Schnitt {cp['avg_posts_before']} -> {cp['avg_posts_after']} Posts/Tag "
                   f"| Sentiment: {cp['avg_sentiment_before']} -> {cp['avg_sentiment_after']}")
 
+    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(all_results, f, ensure_ascii=False, indent=2)
 
     print("\n" + "=" * 75)
-    print(f"Fertig! Exportiert nach: {OUTPUT_FILE.name}")
+    print(f"Fertig! Exportiert nach: {OUTPUT_FILE.relative_to(BASE_DIR)}")
 
 
 if __name__ == "__main__":
