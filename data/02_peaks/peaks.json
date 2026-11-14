@@ -1,0 +1,1381 @@
+[
+  {
+    "project": "Bonn_Seilbahn",
+    "total_posts": 307,
+    "date_range": "2024-10-26 to 2026-10-24",
+    "peaks": [
+      {
+        "date": "2024-11-02",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": null,
+        "crawler_window": {
+          "start": "2024-10-30",
+          "end": "2024-11-04"
+        },
+        "sample_titles": [
+          "01.11.24: Ein Tag im Ahrtal, Flutkatastrophe",
+          "01.11.24: Ein Tag im Ahrtal,  Update Ahr Flutkatastrophe"
+        ]
+      },
+      {
+        "date": "2024-11-19",
+        "post_count": 3,
+        "prominence": 3.0,
+        "avg_sentiment": 1.0,
+        "crawler_window": {
+          "start": "2024-11-16",
+          "end": "2024-11-21"
+        },
+        "sample_titles": [
+          "'Taskforce Verkehr' will Verkehrslage verbessern",
+          "Verkehrswende im Fokus"
+        ]
+      },
+      {
+        "date": "2024-12-05",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 1.0,
+        "crawler_window": {
+          "start": "2024-12-02",
+          "end": "2024-12-07"
+        },
+        "sample_titles": [
+          "Flussreisen auf der Lady Diletta – Unvergessliche Themen-Kreuzfahrten 2025",
+          "Re: Frankfurt -> Amsterdam"
+        ]
+      },
+      {
+        "date": "2024-12-17",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 1.0,
+        "crawler_window": {
+          "start": "2024-12-14",
+          "end": "2024-12-19"
+        },
+        "sample_titles": [
+          "Bonner Mobilitätswende: Wichtige Fortschritte 2024",
+          "Kommentar zu Was soll das? Kommentar zum neuen Stadtbahnangebot von Beate Faßbender"
+        ]
+      },
+      {
+        "date": "2025-01-16",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 1.0,
+        "crawler_window": {
+          "start": "2025-01-13",
+          "end": "2025-01-18"
+        },
+        "sample_titles": [
+          "Bonns OB Dörner: Sanierung statt Neubau der Bonner Oper",
+          "Verlängerung der 63 nach Bonn-Buschdorf nimmt wichtige Hürde - Radio Bonn / Rhein-Sieg"
+        ]
+      },
+      {
+        "date": "2025-03-06",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 0.5,
+        "crawler_window": {
+          "start": "2025-03-03",
+          "end": "2025-03-08"
+        },
+        "sample_titles": [
+          "Ausflüge für Familien: 7 Tipps für ein sonniges Wochenende in NRW",
+          "Kommentar zu Verkehrsprojekten: Planungen für den Bonner Nahverkehr ziehen sich in die Länge wie Kaugummi"
+        ]
+      },
+      {
+        "date": "2025-04-08",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 0.0,
+        "crawler_window": {
+          "start": "2025-04-05",
+          "end": "2025-04-10"
+        },
+        "sample_titles": [
+          "[GA+] Schwierige Suche beim Großprojekt: Stadt findet bislang keinen Projektsteuerer für die Bonner Seilbahn",
+          "Seilbahn in Bonn: Stadt findet keinen Projektsteuerer"
+        ]
+      },
+      {
+        "date": "2025-04-16",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 1.0,
+        "crawler_window": {
+          "start": "2025-04-13",
+          "end": "2025-04-18"
+        },
+        "sample_titles": [
+          "Re: Deutschland kreuz und quer",
+          "GA gelistet: Diese Ausflüge bieten sich Ostern in Bonn und der Region an"
+        ]
+      },
+      {
+        "date": "2025-05-09",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 1.0,
+        "crawler_window": {
+          "start": "2025-05-06",
+          "end": "2025-05-11"
+        },
+        "sample_titles": [
+          "Wie teuer ist ein Urlaub in Bosnien und Herzegowina wirklich?",
+          "Seilbahn: Minister sieht Zweikampf Hernes mit anderer Stadt"
+        ]
+      },
+      {
+        "date": "2025-06-02",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 0.5,
+        "crawler_window": {
+          "start": "2025-05-30",
+          "end": "2025-06-04"
+        },
+        "sample_titles": [
+          "Koblenz setzt auf Seilbahn für nachhaltigen Pakettransport",
+          "Pakettransport in Seilbahnen: Hochschule Darmstadt, DHL und Seilbahn Koblenz starten Feldversuch"
+        ]
+      },
+      {
+        "date": "2025-06-15",
+        "post_count": 5,
+        "prominence": 5.0,
+        "avg_sentiment": 1.0,
+        "crawler_window": {
+          "start": "2025-06-12",
+          "end": "2025-06-17"
+        },
+        "sample_titles": [
+          "„Pionierprojekt“: NRW bekommt bundesweit einzigartige Seilbahn",
+          "„Pionierprojekt“: Eine in Deutschland einzigartige Seilbahn soll in NRW entstehen"
+        ]
+      },
+      {
+        "date": "2025-06-25",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 1.0,
+        "crawler_window": {
+          "start": "2025-06-22",
+          "end": "2025-06-27"
+        },
+        "sample_titles": [
+          "S13: Bonns OB fordert durchgängige Verbindung zwischen Beuel und Köln",
+          "Seilbahn-Projekt in Bonn: Neue Etappe"
+        ]
+      },
+      {
+        "date": "2025-07-28",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 1.0,
+        "crawler_window": {
+          "start": "2025-07-25",
+          "end": "2025-07-30"
+        },
+        "sample_titles": [
+          "Zwei Jugend-Teams aus South Carolina sind zu Gast in Montabaur",
+          "Fußball verbindet: Zwei Jugend-Teams aus South Carolina sind zu Gast in Montabaur"
+        ]
+      },
+      {
+        "date": "2025-08-04",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 0.5,
+        "crawler_window": {
+          "start": "2025-08-01",
+          "end": "2025-08-06"
+        },
+        "sample_titles": [
+          "Vulkan-Spielplatz eröffnet",
+          "Spielplatz Medinghoven: Klettergerüst, Sandkasten, Lava-Boden"
+        ]
+      },
+      {
+        "date": "2025-08-16",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 0.5,
+        "crawler_window": {
+          "start": "2025-08-13",
+          "end": "2025-08-18"
+        },
+        "sample_titles": [
+          "Die Fragen des bonn-o-mat diskutiert. Zu Frage 11: Der Ratsbeschluss zum Bau einer Seilbahn von Ramersdorf über das…",
+          "bonn-o-mat für die Kommunalwahl Bonn 2025 ist online"
+        ]
+      },
+      {
+        "date": "2025-08-29",
+        "post_count": 7,
+        "prominence": 7.0,
+        "avg_sentiment": -0.5,
+        "crawler_window": {
+          "start": "2025-08-26",
+          "end": "2025-08-31"
+        },
+        "sample_titles": [
+          "Planung für das Projekt Seilbahn in #Bonn schreitet voran: 📅 Die Stadtverwaltung hält an ihrem Ziel fest, den Antrag…",
+          "Planung für das Projekt Seilbahn schreitet voran"
+        ]
+      },
+      {
+        "date": "2025-09-07",
+        "post_count": 5,
+        "prominence": 5.0,
+        "avg_sentiment": 0.4,
+        "crawler_window": {
+          "start": "2025-09-04",
+          "end": "2025-09-09"
+        },
+        "sample_titles": [
+          "[GA+] GA-Wahlumfrage zur Bonner Verkehrspolitik: Mehrheit für zwei Autospuren auf der Adenauerallee",
+          "Kommentar zu Bonn-Rhein-Sieg S-Bahn Kurve Siegburg express von Jan_Lukas"
+        ]
+      },
+      {
+        "date": "2025-09-22",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 1.0,
+        "crawler_window": {
+          "start": "2025-09-19",
+          "end": "2025-09-24"
+        },
+        "sample_titles": [
+          "Seilbahn Bonn in a Nutshell: &quot;Schock für Autofahrer, Rheinbrücke-Nord muss ab sofort für mehrere Wochen gesperrt…",
+          "MS Lady Diletta: 3 Nächte Flusskreuzfahrt auf dem Rhein von Köln ab 290€ p.P. (Außenkabine)"
+        ]
+      },
+      {
+        "date": "2025-11-12",
+        "post_count": 4,
+        "prominence": 4.0,
+        "avg_sentiment": 0.75,
+        "crawler_window": {
+          "start": "2025-11-09",
+          "end": "2025-11-14"
+        },
+        "sample_titles": [
+          "„Weg frei für sechs ÖPNV-Projekte“",
+          "NRW-Koalition genehmigt sechs Nahverkehrsprojekte"
+        ]
+      },
+      {
+        "date": "2025-12-08",
+        "post_count": 3,
+        "prominence": 3.0,
+        "avg_sentiment": 0.67,
+        "crawler_window": {
+          "start": "2025-12-05",
+          "end": "2025-12-10"
+        },
+        "sample_titles": [
+          "Liberale Erfolge 2025: FDP / MfM setzte Akzente bei Mobilität, Infrastruktur und Bildung",
+          "Mannheim / Ludwigshafen – FDP-Fraktionen fordern mehr Unterstützung der Bundesländer bei Brückensanierung"
+        ]
+      },
+      {
+        "date": "2025-12-16",
+        "post_count": 4,
+        "prominence": 4.0,
+        "avg_sentiment": 0.67,
+        "crawler_window": {
+          "start": "2025-12-13",
+          "end": "2025-12-18"
+        },
+        "sample_titles": [
+          "WDR 5 Westblick Ganze Sendung (16.12.2025)",
+          "Seilbahnen sind jedoch kleine Kabinen und sind in der Rush hour schnell ausgeschöpft. Gibt sicherlich Verbindungen wo…"
+        ]
+      },
+      {
+        "date": "2025-12-30",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 0.5,
+        "crawler_window": {
+          "start": "2025-12-27",
+          "end": "2026-01-01"
+        },
+        "sample_titles": [
+          "Spontane Ausflugs-Tipps für den Neujahrstag in NRW",
+          "Beuel – die DDR ist zurück"
+        ]
+      },
+      {
+        "date": "2026-03-09",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 1.0,
+        "crawler_window": {
+          "start": "2026-03-06",
+          "end": "2026-03-11"
+        },
+        "sample_titles": [
+          "Deutschland: Wo werden urbane Seilbahnen geplant?",
+          "Über den Rhein in der Gondel? Seilbahn-Idee seit Jahren diskutiert - Ludwigshafen"
+        ]
+      },
+      {
+        "date": "2026-03-25",
+        "post_count": 5,
+        "prominence": 5.0,
+        "avg_sentiment": 0.25,
+        "crawler_window": {
+          "start": "2026-03-22",
+          "end": "2026-03-27"
+        },
+        "sample_titles": [
+          "Briefwahl erledigt! ✅ Mein „Ja“ für Olympia ist raus – und hier ist der Grund, warum ich überzeugt bin: Ich stehe jeden…",
+          "Planung für Bonner Seilbahn geht voran"
+        ]
+      },
+      {
+        "date": "2026-04-05",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": null,
+        "crawler_window": {
+          "start": "2026-04-02",
+          "end": "2026-04-07"
+        },
+        "sample_titles": [
+          "Anschlussverbindungen sind nahezu perfekt, da 3 Stadtbahn/Tram Haltestellen direkt mit einander verbunden werden sowie…",
+          "Ein Tunnel zum Venusberg wäre sehr viel teuerer als die Seilbahn und hätte wahrscheinlich keinen Anschluss zu den…"
+        ]
+      },
+      {
+        "date": "2026-05-14",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 1.0,
+        "crawler_window": {
+          "start": "2026-05-11",
+          "end": "2026-05-16"
+        },
+        "sample_titles": [
+          "Bonn: Das ist der aktuelle Sachstand zur Seilbahn",
+          "Die Planungen für die Bonner Seilbahn nehmen Gestalt an. Doch die Kosten sind deutlich gestiegen. Ob das Projekt im…"
+        ]
+      },
+      {
+        "date": "2026-06-16",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 0.5,
+        "crawler_window": {
+          "start": "2026-06-13",
+          "end": "2026-06-18"
+        },
+        "sample_titles": [
+          "Raum Frick–Stein–Laufenburg: Verkehrsplaner beschliessen 25 Massnahmen",
+          "Gesamtverkehrskonzept (GVK) Raum Frick-Stein-Laufenburg: Seilbahn und Autobahn-Halbanschluss verworfen"
+        ]
+      },
+      {
+        "date": "2026-07-15",
+        "post_count": 5,
+        "prominence": 5.0,
+        "avg_sentiment": 0.2,
+        "crawler_window": {
+          "start": "2026-07-12",
+          "end": "2026-07-17"
+        },
+        "sample_titles": [
+          "Stadt Bonn stoppt vorläufig Stadthaus-Sanierung",
+          "https://www.facebook.com/share/p/1c29EfB4Ms/?mibextid=wwXIfr #Berlin galt als arm und sexy. #Bonn ist nur noch arm…"
+        ]
+      },
+      {
+        "date": "2026-08-09",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": null,
+        "crawler_window": {
+          "start": "2026-08-06",
+          "end": "2026-08-11"
+        },
+        "sample_titles": [
+          "Gibt's da nicht was von …? Wie es Anna Fleischhauer aus der Werbung ins Fernsehen schaffte",
+          "Ihr Sport: Passiv Fußball gucken – Anna Fleischhauer ist Journalistin und moderiert auch Sport"
+        ]
+      },
+      {
+        "date": "2026-08-29",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 0.0,
+        "crawler_window": {
+          "start": "2026-08-26",
+          "end": "2026-08-31"
+        },
+        "sample_titles": [
+          "Verdorbenes Blut Quest Guide! | El Tiburon töten! | Assassins Creed IV Black Flag Resynced",
+          "Sarajevo: Sehenswürdigkeiten & Geheimtipps"
+        ]
+      },
+      {
+        "date": "2026-09-11",
+        "post_count": 4,
+        "prominence": 4.0,
+        "avg_sentiment": 0.0,
+        "crawler_window": {
+          "start": "2026-09-08",
+          "end": "2026-09-13"
+        },
+        "sample_titles": [
+          "9/11: Touristiker erinnern sich an die Anschläge vor 25 Jahren – Part 1",
+          "Die Woche in Bonn: Tempo nur noch auf Pützchens Markt"
+        ]
+      },
+      {
+        "date": "2026-10-02",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 0.5,
+        "crawler_window": {
+          "start": "2026-09-29",
+          "end": "2026-10-04"
+        },
+        "sample_titles": [
+          "Bucht eine Kabine und gewinnt ein Upgrade auf eine Suite! - Radio Bonn / Rhein-Sieg",
+          "Umfrage belegt: Nordbrückensperrung hat massive Folgen"
+        ]
+      }
+    ],
+    "change_points": []
+  },
+  {
+    "project": "Heilbronn_Seilbahn",
+    "total_posts": 217,
+    "date_range": "2024-10-22 to 2026-10-15",
+    "peaks": [
+      {
+        "date": "2025-03-28",
+        "post_count": 4,
+        "prominence": 4.0,
+        "avg_sentiment": 0.75,
+        "crawler_window": {
+          "start": "2025-03-25",
+          "end": "2025-03-30"
+        },
+        "sample_titles": [
+          "Statt Bus und Stadtbahn: Heilbronn plant Seilbahn zum KI-Park",
+          "Detailansicht - VKZ"
+        ]
+      },
+      {
+        "date": "2025-04-04",
+        "post_count": 11,
+        "prominence": 11.0,
+        "avg_sentiment": -0.09,
+        "crawler_window": {
+          "start": "2025-04-01",
+          "end": "2025-04-06"
+        },
+        "sample_titles": [
+          "Gelesen 5. 4. 25",
+          "🚡 In einer Gondel fast lautlos durch die Luft schweben - so könnte der Personenverkehr in Heilbronn aussehen. Die…"
+        ]
+      },
+      {
+        "date": "2025-05-12",
+        "post_count": 13,
+        "prominence": 13.0,
+        "avg_sentiment": 0.62,
+        "crawler_window": {
+          "start": "2025-05-09",
+          "end": "2025-05-14"
+        },
+        "sample_titles": [
+          "Nach Kürzungen beim Stadtbahn-Verkehr: Für Prestigeprojekt Heilbronner Seilbahn fließt das Geld",
+          "13.5.02025"
+        ]
+      },
+      {
+        "date": "2025-06-07",
+        "post_count": 3,
+        "prominence": 3.0,
+        "avg_sentiment": 1.0,
+        "crawler_window": {
+          "start": "2025-06-04",
+          "end": "2025-06-09"
+        },
+        "sample_titles": [
+          "Lokalpatriotismus",
+          "Per Seilbahn durch Fulda? Laut Untersuchung grundsätzlich möglich"
+        ]
+      },
+      {
+        "date": "2025-06-23",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 1.0,
+        "crawler_window": {
+          "start": "2025-06-20",
+          "end": "2025-06-25"
+        },
+        "sample_titles": [
+          "Heilbronn soll komplett umgekrempelt werden. Die Schwarz Gruppe hat gefühlt die halbe Stadt aufgekauft. Am Europa Platz…",
+          "Ein Bett über den Wolken: Das sind die fünf höchstgelegenen Berghütten in Bayern"
+        ]
+      },
+      {
+        "date": "2025-06-30",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 0.5,
+        "crawler_window": {
+          "start": "2025-06-27",
+          "end": "2025-07-02"
+        },
+        "sample_titles": [
+          "Heilbronn plant Seilbahn: Was die Stadt vom Beispiel Toulouse lernen kann - STIMME.de",
+          "Rad, Busse, Auto und vielleicht Seilbahn? So erreicht man den Ipai-Campus Heilbronn - STIMME.de"
+        ]
+      },
+      {
+        "date": "2025-07-16",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 1.0,
+        "crawler_window": {
+          "start": "2025-07-13",
+          "end": "2025-07-18"
+        },
+        "sample_titles": [
+          "Road to 1K: 40.000 Meilen und 4 Kontinente [semi-live]",
+          "Gesamtprojektleitung (m/w/d) für das Projekt Urbane Seilbahn Heilbronn @ Stadt Heilbronn"
+        ]
+      },
+      {
+        "date": "2025-08-04",
+        "post_count": 3,
+        "prominence": 3.0,
+        "avg_sentiment": 0.67,
+        "crawler_window": {
+          "start": "2025-08-01",
+          "end": "2025-08-06"
+        },
+        "sample_titles": [
+          "Neuer Spielplatz an der Theresienwiese eröffnet - muenchen.de - Das offizielle Stadtportal muenchen.de",
+          "Die Stadt München hat einen Spielplatz an der Theresienwiese eröffnet. Neu sind auch Fitnessparcours und eine…"
+        ]
+      },
+      {
+        "date": "2025-09-08",
+        "post_count": 4,
+        "prominence": 4.0,
+        "avg_sentiment": 0.67,
+        "crawler_window": {
+          "start": "2025-09-05",
+          "end": "2025-09-10"
+        },
+        "sample_titles": [
+          "Warum hast du bei den Seilbahnen nicht Heilbronn genannt? Diese Stadt ist am ehesten eine ÖPNV Seilbahn zu errichten",
+          "Heilbronner Seilbahn-Projekt: Verband sieht große Chancen – VCD warnt vor Risiken - STIMME.de"
+        ]
+      },
+      {
+        "date": "2025-11-21",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 0.5,
+        "crawler_window": {
+          "start": "2025-11-18",
+          "end": "2025-11-23"
+        },
+        "sample_titles": [
+          "Seilbahn in Paris vor Eröffnung: So steht es um die Gondel-Pläne in Heilbronn - STIMME.de",
+          "Die bevorstehende urbane Seilbahn in Heilbronn könnte wichtige Impulse für den Nahverkehr setzen."
+        ]
+      },
+      {
+        "date": "2025-12-16",
+        "post_count": 3,
+        "prominence": 3.0,
+        "avg_sentiment": 0.67,
+        "crawler_window": {
+          "start": "2025-12-13",
+          "end": "2025-12-18"
+        },
+        "sample_titles": [
+          "Planung und Bau einer urbanen Seilbahn",
+          "Öffentliche Ausschreibung 2025 Deutschland – Bauarbeiten für Eisenbahnlinien und Seilbahnsysteme – Stadt Heilbronn: Planung und Bau einer urbanen…"
+        ]
+      },
+      {
+        "date": "2026-02-02",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 0.0,
+        "crawler_window": {
+          "start": "2026-01-30",
+          "end": "2026-02-04"
+        },
+        "sample_titles": [
+          "Warnstreik in Esslingen: Esslinger Busse bleiben stehen – aber Fahrgäste sind gut vorbereitet",
+          "Warnstreiks bei Bus und Bahn: So ist die Lage in den betroffenen Städten"
+        ]
+      },
+      {
+        "date": "2026-02-25",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 0.5,
+        "crawler_window": {
+          "start": "2026-02-22",
+          "end": "2026-02-27"
+        },
+        "sample_titles": [
+          "Seilbahn als Stau-Lösung: Innovatives Projekt in Heilbronn nimmt Fahrt auf",
+          "25.2.02026"
+        ]
+      },
+      {
+        "date": "2026-05-21",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 0.5,
+        "crawler_window": {
+          "start": "2026-05-18",
+          "end": "2026-05-23"
+        },
+        "sample_titles": [
+          "Schnell und sicher mit dem Rad zum IPAI",
+          "🎉 Seefest 2026 steht an – und wir haben eine Bitte: Lasst das Auto einfach stehen. 🙏 🚲 Rad oder neue Laufschuhe –…"
+        ]
+      },
+      {
+        "date": "2026-07-04",
+        "post_count": 4,
+        "prominence": 4.0,
+        "avg_sentiment": 0.75,
+        "crawler_window": {
+          "start": "2026-07-01",
+          "end": "2026-07-06"
+        },
+        "sample_titles": [
+          "Seilbahn für Heilbronn: Stadt nennt erstmals möglichen Eröffnungstermin - STIMME.de",
+          "Kritik an Seilbahn-Plänen: Verkehrsclub ist für eine Erweiterung der Stadtbahn - STIMME.de"
+        ]
+      },
+      {
+        "date": "2026-07-23",
+        "post_count": 4,
+        "prominence": 4.0,
+        "avg_sentiment": 0.75,
+        "crawler_window": {
+          "start": "2026-07-20",
+          "end": "2026-07-25"
+        },
+        "sample_titles": [
+          "Stadtbahn für 157 Millionen Euro? Das ist keine Traumtänzerei - STIMME.de",
+          "Neuer Plan für Heilbronner Seilbahn: Hier soll die City-Haltestelle entstehen - STIMME.de"
+        ]
+      },
+      {
+        "date": "2026-07-31",
+        "post_count": 4,
+        "prominence": 4.0,
+        "avg_sentiment": 0.33,
+        "crawler_window": {
+          "start": "2026-07-28",
+          "end": "2026-08-02"
+        },
+        "sample_titles": [
+          "Wie heißt das tolle Lied und wer singt es?Es ist beschlossen 😢Natürlich geht es nur um Geld. Menschlichkeit und…",
+          "Heilbronn: Seilbahn-Projekt nimmt nächste Hürde - Sinsheim-Kraichgau - Nachrichten und Aktuelles aus der Region - Rhein-Neckar-Zeitung"
+        ]
+      },
+      {
+        "date": "2026-08-14",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 1.0,
+        "crawler_window": {
+          "start": "2026-08-11",
+          "end": "2026-08-16"
+        },
+        "sample_titles": [
+          "14 Minuten zum IPAI: Heilbronn bringt eine urbane Seilbahn in die Detailplanung",
+          "Explortal Logistics: Pressemitteilung: Heilbronn plant urbane Seilbahn"
+        ]
+      },
+      {
+        "date": "2026-08-21",
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 1.0,
+        "crawler_window": {
+          "start": "2026-08-18",
+          "end": "2026-08-23"
+        },
+        "sample_titles": [
+          "\"UND WO SOLLEN DANN DIE AUTOS PARKEN??? AM KI PARK UND DANN MIT DER SEILBAHN REIN ODER WAS? DU HAST DOCH KEINE AHNUNG…",
+          "20.8.02026"
+        ]
+      }
+    ],
+    "change_points": [
+      {
+        "date": "2025-03-27",
+        "avg_posts_before": 0.04,
+        "avg_posts_after": 1.0,
+        "avg_sentiment_before": 0.0,
+        "avg_sentiment_after": 0.42
+      },
+      {
+        "date": "2025-04-03",
+        "avg_posts_before": 1.0,
+        "avg_posts_after": 3.38,
+        "avg_sentiment_before": 0.42,
+        "avg_sentiment_after": 0.58
+      },
+      {
+        "date": "2025-04-11",
+        "avg_posts_before": 3.38,
+        "avg_posts_after": 0.32,
+        "avg_sentiment_before": 0.58,
+        "avg_sentiment_after": 0.73
+      }
+    ]
+  },
+  {
+    "project": "IPAI_Campus",
+    "total_posts": 1188,
+    "date_range": "2024-10-20 to 2026-10-26",
+    "peaks": [
+      {
+        "date": "2024-11-20",
+        "post_count": 9,
+        "prominence": 9.0,
+        "avg_sentiment": 0.67,
+        "crawler_window": {
+          "start": "2024-11-17",
+          "end": "2024-11-22"
+        },
+        "sample_titles": [
+          "Deutsche Bank steigt bei KI-Start-up Aleph Alpha ein",
+          "Das Heidelberger Start-up Aleph Alpha ist ein Hoffnungsträger in der deutschen KI- Szene."
+        ]
+      },
+      {
+        "date": "2024-12-17",
+        "post_count": 5,
+        "prominence": 5.0,
+        "avg_sentiment": 1.0,
+        "crawler_window": {
+          "start": "2024-12-14",
+          "end": "2024-12-19"
+        },
+        "sample_titles": [
+          "Gründung des Monats: Next Step HR",
+          "IPAI in HEILBRONN"
+        ]
+      },
+      {
+        "date": "2025-01-07",
+        "post_count": 5,
+        "prominence": 5.0,
+        "avg_sentiment": 0.8,
+        "crawler_window": {
+          "start": "2025-01-04",
+          "end": "2025-01-09"
+        },
+        "sample_titles": [
+          "Dieffenbacher wird Teil der IPAI-Community",
+          "Römische Funde auf Ipai-Baustelle in Heilbronn - STIMME.de"
+        ]
+      },
+      {
+        "date": "2025-01-24",
+        "post_count": 5,
+        "prominence": 5.0,
+        "avg_sentiment": 0.6,
+        "crawler_window": {
+          "start": "2025-01-21",
+          "end": "2025-01-26"
+        },
+        "sample_titles": [
+          "Detailansicht - VKZ",
+          "Campus Founders treiben Gründungsgeschehen voran: Die Slush’D kommt wieder nach Heilbronn - STIMME.de"
+        ]
+      },
+      {
+        "date": "2025-02-11",
+        "post_count": 10,
+        "prominence": 10.0,
+        "avg_sentiment": 0.8,
+        "crawler_window": {
+          "start": "2025-02-08",
+          "end": "2025-02-13"
+        },
+        "sample_titles": [
+          "Bechtle setzt auf Künstliche Intelligenz als Schlüsseltechnologie",
+          "Strategie für KI-Ausbau: Bechtle veröffentlicht KI-Positionierung"
+        ]
+      },
+      {
+        "date": "2025-03-31",
+        "post_count": 7,
+        "prominence": 7.0,
+        "avg_sentiment": 0.86,
+        "crawler_window": {
+          "start": "2025-03-28",
+          "end": "2025-04-02"
+        },
+        "sample_titles": [
+          "Vom Discounter zum Technologieriesen: Wie die Schwarz-Gruppe Lidl neu erfindet",
+          "Baden-Württemberg gewinnt Forschungseinrichtung imec für die Entwicklung chiplet-basierter Technologie für…"
+        ]
+      },
+      {
+        "date": "2025-06-16",
+        "post_count": 6,
+        "prominence": 6.0,
+        "avg_sentiment": 0.67,
+        "crawler_window": {
+          "start": "2025-06-13",
+          "end": "2025-06-18"
+        },
+        "sample_titles": [
+          "Im Innovation Park Artificial Intelligence arbeiten Vodafone-Expert:innen ab sofort an sicheren und praxisnahen…",
+          "Wer sagt, dass Roboter keine Ballons mögen? 🟡🤖🎈 Was hier verspielt wirkt, ist in Wahrheit Hightech pur:…"
+        ]
+      },
+      {
+        "date": "2025-07-02",
+        "post_count": 5,
+        "prominence": 5.0,
+        "avg_sentiment": 0.6,
+        "crawler_window": {
+          "start": "2025-06-29",
+          "end": "2025-07-04"
+        },
+        "sample_titles": [
+          "So viel steht fest: Auf leerem Magen lässt sich schlecht über die Zukunft nachdenken. 😋 Beim #KIFestival2025 könnt ihr…",
+          "Firma aus Mulfingen: EBM-Papst investiert kräftig im Ausland"
+        ]
+      },
+      {
+        "date": "2025-07-09",
+        "post_count": 9,
+        "prominence": 9.0,
+        "avg_sentiment": 0.78,
+        "crawler_window": {
+          "start": "2025-07-06",
+          "end": "2025-07-11"
+        },
+        "sample_titles": [
+          "So soll Ipai Heilbronn mal aussehen: Illustrationen zeigen künftigen KI-Park",
+          "🚀 Alpensped zu Besuch im @ipai_hn Künstliche Intelligenz zum Anfassen – im Innovation Park Artificial Intelligence…"
+        ]
+      },
+      {
+        "date": "2025-10-21",
+        "post_count": 57,
+        "prominence": 57.0,
+        "avg_sentiment": 0.59,
+        "crawler_window": {
+          "start": "2025-10-18",
+          "end": "2025-10-23"
+        },
+        "sample_titles": [
+          "IPAI: Spatenstich in Heilbronn für größtes KI-Zentrum",
+          "Mit dem IPAI-Campus in Heilbronn sind enorme Hoffnungen verbunden. Beim Spatenstich spricht Kanzler Friedrich Merz von…"
+        ]
+      },
+      {
+        "date": "2025-10-29",
+        "post_count": 8,
+        "prominence": 8.0,
+        "avg_sentiment": 0.5,
+        "crawler_window": {
+          "start": "2025-10-26",
+          "end": "2025-10-31"
+        },
+        "sample_titles": [
+          "Talkbox: Wie sieht die oder der typische Heilbronner*in aus?",
+          "STRABAG-Tochter ZÜBLIN realisiert Großauftrag beim Innovationspark für Künstliche Intelligenz"
+        ]
+      },
+      {
+        "date": "2025-11-06",
+        "post_count": 6,
+        "prominence": 5.0,
+        "avg_sentiment": 0.67,
+        "crawler_window": {
+          "start": "2025-11-03",
+          "end": "2025-11-08"
+        },
+        "sample_titles": [
+          "Ein Nachmittag im IPAI Spaces – ohne Buzzwords, aber voller ehrlicher Einblicke und spannender Gespräche. 🙌 In einer…",
+          "Fraunhofer IPA stärkt KI-Robotik in Heilbronn mit neuer Außenstelle • Automatisierung, Bildverarbeitung und Licht- und Lasertechnik im Industrieumfeld"
+        ]
+      },
+      {
+        "date": "2025-11-13",
+        "post_count": 6,
+        "prominence": 6.0,
+        "avg_sentiment": 0.5,
+        "crawler_window": {
+          "start": "2025-11-10",
+          "end": "2025-11-15"
+        },
+        "sample_titles": [
+          "Fraunhofer IPA eröffnet Robotik-Außenstelle in den IPAI Spaces in Heilbronn",
+          "STRABAG knackt 30‑Mrd.-Auftragsbestand: Analyse 2025"
+        ]
+      },
+      {
+        "date": "2026-01-29",
+        "post_count": 7,
+        "prominence": 7.0,
+        "avg_sentiment": 0.67,
+        "crawler_window": {
+          "start": "2026-01-26",
+          "end": "2026-01-31"
+        },
+        "sample_titles": [
+          "🚀 Starkes Signal für den Tourismus von morgen Die neue Nationale Tourismusstrategie kommt zur richtigen Zeit. Warum?…",
+          "Connaix: Baden-Württemberg bündelt KI-Nachwuchsforschung in Heilbronn"
+        ]
+      },
+      {
+        "date": "2026-02-09",
+        "post_count": 6,
+        "prominence": 6.0,
+        "avg_sentiment": 0.67,
+        "crawler_window": {
+          "start": "2026-02-06",
+          "end": "2026-02-11"
+        },
+        "sample_titles": [
+          "IPAI beruft Dr. Marc Kirchner zum Chief Technology Officer",
+          "Künstliche Intelligenz: Apple-Manager wechselt in die IPAI-Führung nach Heilbronn"
+        ]
+      },
+      {
+        "date": "2026-02-16",
+        "post_count": 5,
+        "prominence": 5.0,
+        "avg_sentiment": 0.4,
+        "crawler_window": {
+          "start": "2026-02-13",
+          "end": "2026-02-18"
+        },
+        "sample_titles": [
+          "Mit diesen Baustellen ist 2026 zu rechnen",
+          "SPIE stärkt KI-Kompetenz und wird Mitglied der Innovationsplattform IPAI"
+        ]
+      },
+      {
+        "date": "2026-02-23",
+        "post_count": 12,
+        "prominence": 12.0,
+        "avg_sentiment": 0.09,
+        "crawler_window": {
+          "start": "2026-02-20",
+          "end": "2026-02-25"
+        },
+        "sample_titles": [
+          "🌱💡 Zukunft gestalten: Wirtschaft. Innovation. Klimaschutz. – Mit Franziska Brantner! 🌍✨ Am 1.März lade ich Dich…",
+          "Contact Software wird Mitglied im IPAI - IT&Production"
+        ]
+      },
+      {
+        "date": "2026-03-06",
+        "post_count": 6,
+        "prominence": 6.0,
+        "avg_sentiment": 0.67,
+        "crawler_window": {
+          "start": "2026-03-03",
+          "end": "2026-03-08"
+        },
+        "sample_titles": [
+          "Heilbronn erhält eine Nordumfahrung und Anschluss an KI-Park IPAI",
+          "Steuerbescheid da? Und der Puls geht auch gleich schneller? 😅 Erst läuft das Jahr richtig gut: Umsatz, Verantwortung,…"
+        ]
+      },
+      {
+        "date": "2026-03-26",
+        "post_count": 7,
+        "prominence": 7.0,
+        "avg_sentiment": 0.86,
+        "crawler_window": {
+          "start": "2026-03-23",
+          "end": "2026-03-28"
+        },
+        "sample_titles": [
+          "Kundenzentrierung neu gedacht: Wie Kaufland Daten, Technologien und Emotionen verbindet",
+          "Interview mit Carola Browa, Projektleiterin von Chip Connect BW"
+        ]
+      },
+      {
+        "date": "2026-05-12",
+        "post_count": 8,
+        "prominence": 8.0,
+        "avg_sentiment": 0.88,
+        "crawler_window": {
+          "start": "2026-05-09",
+          "end": "2026-05-14"
+        },
+        "sample_titles": [
+          "about automation in Heilbronn 2026: Großes Interes...",
+          "Tragischer Flugzeugabsturz: Familie Lohmiller aus Heilbronn gestorben"
+        ]
+      },
+      {
+        "date": "2026-05-28",
+        "post_count": 12,
+        "prominence": 12.0,
+        "avg_sentiment": 0.33,
+        "crawler_window": {
+          "start": "2026-05-25",
+          "end": "2026-05-30"
+        },
+        "sample_titles": [
+          "TUM Campus Heilbronn: Gemeinsam die Digitale Zukunft gestalten",
+          "Der Facebook-Kommentar „Pinocchio kommt nach Heilbronn“ hat für Schlagzeilen gesorgt. Gemeint war damit Bundeskanzler…"
+        ]
+      },
+      {
+        "date": "2026-06-11",
+        "post_count": 6,
+        "prominence": 6.0,
+        "avg_sentiment": 0.6,
+        "crawler_window": {
+          "start": "2026-06-08",
+          "end": "2026-06-13"
+        },
+        "sample_titles": [
+          "360 Grad | Milliardenprojekt – Exklusiver Blick in den IPAI",
+          "Heilbronn im Zukunftsmodus? Gestern Abend hatte ich die tolle Gelegenheit mit dem Mittelstandsvereinigung Kreisverband…"
+        ]
+      },
+      {
+        "date": "2026-07-09",
+        "post_count": 6,
+        "prominence": 6.0,
+        "avg_sentiment": 0.33,
+        "crawler_window": {
+          "start": "2026-07-06",
+          "end": "2026-07-11"
+        },
+        "sample_titles": [
+          "Özdemir warnt VW: Audi-Werk Neckarsulm vor möglichen Schließungen",
+          "Audi-Aus in Neckarsulm? Özdemir warnt vor „fatalem Signal“ für die Region"
+        ]
+      },
+      {
+        "date": "2026-07-22",
+        "post_count": 8,
+        "prominence": 8.0,
+        "avg_sentiment": 0.75,
+        "crawler_window": {
+          "start": "2026-07-19",
+          "end": "2026-07-24"
+        },
+        "sample_titles": [
+          "LinkedIn-Ranking #CitiesOnTheRise: Warum Deutschlands neue Karriere-Hotspots nicht mehr in den Metropolen entstehen",
+          "KI Festival Highlight: Schauspielerin & Moderatorin Collien Monica Fernandes auf der Bühne zu KI und Deepfakes.…"
+        ]
+      },
+      {
+        "date": "2026-09-29",
+        "post_count": 6,
+        "prominence": 6.0,
+        "avg_sentiment": 0.6,
+        "crawler_window": {
+          "start": "2026-09-26",
+          "end": "2026-10-01"
+        },
+        "sample_titles": [
+          "Endrich tritt IPAI bei",
+          "Warum baut Lidl ein Rechenzentrum für 11 Milliarden Euro?"
+        ]
+      },
+      {
+        "date": "2026-10-12",
+        "post_count": 6,
+        "prominence": 6.0,
+        "avg_sentiment": 0.6,
+        "crawler_window": {
+          "start": "2026-10-09",
+          "end": "2026-10-14"
+        },
+        "sample_titles": [
+          "Regelmäßiger IHK-Zukunftssprechtag im IPAI",
+          "Roboter so flexibel und sicher einsetzen wie Zeitarbeitnehmende"
+        ]
+      }
+    ],
+    "change_points": [
+      {
+        "date": "2025-10-08",
+        "avg_posts_before": 1.17,
+        "avg_posts_after": 2.6,
+        "avg_sentiment_before": 0.73,
+        "avg_sentiment_after": 0.57
+      },
+      {
+        "date": "2025-10-18",
+        "avg_posts_before": 2.6,
+        "avg_posts_after": 16.14,
+        "avg_sentiment_before": 0.57,
+        "avg_sentiment_after": 0.68
+      },
+      {
+        "date": "2025-10-25",
+        "avg_posts_before": 16.14,
+        "avg_posts_after": 1.73,
+        "avg_sentiment_before": 0.68,
+        "avg_sentiment_after": 0.75
+      }
+    ]
+  },
+  {
+    "project": "Paris_Cable_C1",
+    "total_posts": 514,
+    "date_range": "2024-11-07 to 2026-10-26",
+    "peaks": [
+      {
+        "date": "2025-02-13",
+        "post_count": 4,
+        "prominence": 4.0,
+        "avg_sentiment": 1.0,
+        "crawler_window": {
+          "start": "2025-02-10",
+          "end": "2025-02-15"
+        },
+        "sample_titles": [
+          "« Le téléphérique, c’est bien, mais loin de chez nous » : à Créteil, l’arrivée du Câble 1 ne fait pas que des heureux",
+          "« C’est moche » : le premier téléphérique d'IDF passe devant leurs fenêtres"
+        ]
+      },
+      {
+        "date": "2025-02-25",
+        "post_count": 4,
+        "prominence": 4.0,
+        "avg_sentiment": -0.25,
+        "crawler_window": {
+          "start": "2025-02-22",
+          "end": "2025-02-27"
+        },
+        "sample_titles": [
+          "\"Le but de l’opération d’aujourd’hui, c’est de fermer la boucle de câble\", opération technique sur Câble 1, le premier…",
+          "VIDÉO - Découvrez l'intérieur du futur Câble 1, le premier téléphérique francilien"
+        ]
+      },
+      {
+        "date": "2025-05-13",
+        "post_count": 5,
+        "prominence": 5.0,
+        "avg_sentiment": 1.0,
+        "crawler_window": {
+          "start": "2025-05-10",
+          "end": "2025-05-15"
+        },
+        "sample_titles": [
+          "Téléphérique francilien : les premières cabines du Câble 1 en phase de test",
+          "Du Street Art au pied du Téléphérique francilien"
+        ]
+      },
+      {
+        "date": "2025-08-14",
+        "post_count": 4,
+        "prominence": 4.0,
+        "avg_sentiment": 0.33,
+        "crawler_window": {
+          "start": "2025-08-11",
+          "end": "2025-08-16"
+        },
+        "sample_titles": [
+          "L'ANGLE ÉCO - Le téléphérique entre Créteil et Villeneuve-Saint-Georges bientôt mis en service - RTL Matin",
+          "L'ANGLE ÉCO - Le téléphérique entre Créteil et Villeneuve-Saint-Georges bientôt mis en service"
+        ]
+      },
+      {
+        "date": "2025-09-24",
+        "post_count": 8,
+        "prominence": 8.0,
+        "avg_sentiment": 0.5,
+        "crawler_window": {
+          "start": "2025-09-21",
+          "end": "2025-09-26"
+        },
+        "sample_titles": [
+          "Le plus grand téléphérique urbain d'Europe bientôt en Île-de-France !",
+          "C’est officiel : Câble C1, le premier téléphérique d’Île-de-France ouvrira le 13 décembre"
+        ]
+      },
+      {
+        "date": "2025-10-01",
+        "post_count": 13,
+        "prominence": 13.0,
+        "avg_sentiment": 0.64,
+        "crawler_window": {
+          "start": "2025-09-28",
+          "end": "2025-10-03"
+        },
+        "sample_titles": [
+          "\"Je préfère croiser un ours en forêt qu'un homme\": vers un téléphérique réservé aux femmes à Créteil?",
+          "Val-de-Marne : Des cabines non mixtes envisagées pour le nouveau téléphérique"
+        ]
+      },
+      {
+        "date": "2025-10-20",
+        "post_count": 6,
+        "prominence": 6.0,
+        "avg_sentiment": 0.83,
+        "crawler_window": {
+          "start": "2025-10-17",
+          "end": "2025-10-22"
+        },
+        "sample_titles": [
+          "À seulement 3H30 de Paris, cette ville sculptée dans la roche est LE trésor de l’Europe",
+          "Quand un téléphérique vous emmène ailleurs que sur des pistes de ski"
+        ]
+      },
+      {
+        "date": "2025-11-12",
+        "post_count": 7,
+        "prominence": 7.0,
+        "avg_sentiment": 0.43,
+        "crawler_window": {
+          "start": "2025-11-09",
+          "end": "2025-11-14"
+        },
+        "sample_titles": [
+          "Vidéo. Le premier téléphérique urbainen Île-de-France va ouvrir",
+          "Premier téléphérique urbain en Île-de-France sur le point d’ouvrir : Actualités - Orange"
+        ]
+      },
+      {
+        "date": "2025-11-22",
+        "post_count": 4,
+        "prominence": 4.0,
+        "avg_sentiment": 0.5,
+        "crawler_window": {
+          "start": "2025-11-19",
+          "end": "2025-11-24"
+        },
+        "sample_titles": [
+          "Exercice d'évacuation grandeur nature sur le premier téléphérique d'Île-de-France",
+          "Le téléphérique sur la ligne de départ dans le Val-de-Marne"
+        ]
+      },
+      {
+        "date": "2025-12-13",
+        "post_count": 42,
+        "prominence": 42.0,
+        "avg_sentiment": 0.47,
+        "crawler_window": {
+          "start": "2025-12-10",
+          "end": "2025-12-15"
+        },
+        "sample_titles": [
+          "Ouverture du câble C1 entre Créteil et Villeneuve-Saint-Georges",
+          "Essayons de rattraper le coup en commentaire, comme ça ils comprendront peut-être pourquoi on passe plus de temps sur…"
+        ]
+      },
+      {
+        "date": "2026-01-08",
+        "post_count": 6,
+        "prominence": 6.0,
+        "avg_sentiment": 0.83,
+        "crawler_window": {
+          "start": "2026-01-05",
+          "end": "2026-01-10"
+        },
+        "sample_titles": [
+          "Hitachi Rail et EASIER équipent le premier téléphérique urbain francilien",
+          "RATP et SNCF. RER, Transilien... Plusieurs tronçons totalement à l'arrêt en prévision de la tempête Goretti"
+        ]
+      },
+      {
+        "date": "2026-05-04",
+        "post_count": 4,
+        "prominence": 4.0,
+        "avg_sentiment": -0.25,
+        "crawler_window": {
+          "start": "2026-05-01",
+          "end": "2026-05-06"
+        },
+        "sample_titles": [
+          "Val-de-Marne : le téléphérique C1 sera fermé pendant 11 jours au milieu de l’été - Le Parisien",
+          "Câble C1 : le téléphérique francilien totalement à l'arrêt pendant 11 jours cet été"
+        ]
+      },
+      {
+        "date": "2026-06-08",
+        "post_count": 6,
+        "prominence": 6.0,
+        "avg_sentiment": 0.5,
+        "crawler_window": {
+          "start": "2026-06-05",
+          "end": "2026-06-10"
+        },
+        "sample_titles": [
+          "Métro et RER en Île-de-France : ces fermetures massives qui vont perturber votre été",
+          "Le téléphérique Câble C1 va fermer plusieurs heures ce mardi, voici les stations concernées"
+        ]
+      },
+      {
+        "date": "2026-08-03",
+        "post_count": 5,
+        "prominence": 5.0,
+        "avg_sentiment": 0.0,
+        "crawler_window": {
+          "start": "2026-07-31",
+          "end": "2026-08-05"
+        },
+        "sample_titles": [
+          "Transports : le premier téléphérique d'Île-de-France ferme pour maintenance - 03/08/2026 à 15:36 - Boursorama",
+          "Transports franciliens : pourquoi le téléphérique C1 est-il actuellement fermé et jusqu'à quand ? | Gossip-Addict"
+        ]
+      }
+    ],
+    "change_points": [
+      {
+        "date": "2025-09-23",
+        "avg_posts_before": 0.27,
+        "avg_posts_after": 5.11,
+        "avg_sentiment_before": 0.7,
+        "avg_sentiment_after": 0.54
+      },
+      {
+        "date": "2025-10-02",
+        "avg_posts_before": 5.11,
+        "avg_posts_after": 1.37,
+        "avg_sentiment_before": 0.54,
+        "avg_sentiment_after": 0.51
+      },
+      {
+        "date": "2025-12-12",
+        "avg_posts_before": 1.37,
+        "avg_posts_after": 14.12,
+        "avg_sentiment_before": 0.51,
+        "avg_sentiment_after": 0.52
+      },
+      {
+        "date": "2025-12-20",
+        "avg_posts_before": 14.12,
+        "avg_posts_after": 0.56,
+        "avg_sentiment_before": 0.52,
+        "avg_sentiment_after": 0.67
+      }
+    ]
+  }
+]

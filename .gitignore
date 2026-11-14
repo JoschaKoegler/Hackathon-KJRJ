@@ -1,3 +1,5 @@
 
 __pycache__/
 FSI_Heilbronn_Medienbeiträge (1).json
+# Rejected posts without a project match (~190 MB); regenerate via pipeline/01_filter_posts.py
+data/rejected/no-project-match/
