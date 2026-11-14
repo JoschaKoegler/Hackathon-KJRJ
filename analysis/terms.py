@@ -1,7 +1,7 @@
 """3. Terms for the word cloud.
 
-Counts terms in the prepared text. Stop words and the token window sit
-below. The number of terms on screen sits in ``config.py``.
+Counts terms in the prepared text. Stop words, project names, and the
+token window sit below. The number of terms on screen sits in ``config.py``.
 """
 
 from __future__ import annotations
@@ -29,12 +29,61 @@ STOP_WORDS = {
     # Leftover Stimme paywall words, if the cut leaves a fragment.
     "stimme", "testabo", "freischalten", "zugang", "sichern", "merken",
     "abonnement", "anmeldung", "konto", "geräten", "geraeten",
+    # Place and calendar words that otherwise fill the cloud.
+    "heilbronn", "heilbronner", "bonn", "bonner", "paris", "france", "frankreich",
+    "marne", "baden", "württemberg", "wuerttemberg", "deutschland", "deutschen",
+    "deutsche", "deutscher", "deutsches", "créteil", "creteil", "villeneuve",
+    "valenton", "stadt", "städte", "januar", "februar", "märz", "maerz", "april",
+    "juni", "juli", "august", "september", "oktober", "november", "dezember",
+    "décembre", "janvier", "février", "fevrier", "mars", "avril", "juin",
+    "juillet", "août", "aout", "septembre", "octobre", "novembre",
+    # Media and function words left after the short stop list.
+    "google", "foto", "photo", "photos", "video", "vidéo", "publié", "publie",
+    "heute", "gestern", "newsletter", "redaktion", "radio", "neue", "neuer",
+    "neues", "neuen", "nouveau", "nouvelle", "nouvelles", "premier", "première",
+    "premiere", "soll", "sollte", "sollten", "können", "könnte", "könnten",
+    "bereits", "immer", "wieder", "etwa", "sowie", "land", "euro", "euros",
+    "saint", "georges", "limeil", "brévannes", "brevannes",
+    # Function words that filled the cloud once names were gone.
+    "gibt", "geben", "erste", "erster", "ersten", "erstes", "rund", "damit",
+    "alle", "allem", "aller", "dabei", "zwei", "drei", "vier", "fünf", "seit",
+    "jahren", "jahre", "jahr", "viele", "vielen", "viel", "aussi", "mais",
+    "entre", "comme", "dont", "tout", "tous", "toute", "toutes", "très", "tres",
+    "bien", "après", "apres", "avant", "selon", "lors", "vers", "chez", "sans",
+    "sous", "donc", "alors", "encore", "depuis", "pendant", "elle", "elles",
+    "fait", "être", "etre", "keine", "kein", "keinen", "keiner", "keinem",
+    "muss", "müssen", "muessen", "sondern", "richtung", "während", "waehrend",
+    "anzeige", "blick", "ohne", "weiter", "unsere", "unser", "gemeinsam",
+    "jour", "même", "meme", "mêmes", "memes", "projekt", "projets", "service",
+    "worden", "sagte", "sagt", "kommen", "kommt", "gehen", "geht", "andere",
+    "anderen", "anderer", "anderes", "davon", "darauf", "macht", "machen",
+    "personen", "leben", "welt", "zeit", "ganz", "große", "grosse", "großen",
+    "grossen", "teil", "teile", "sieht", "sehen", "menschen", "direkt",
+    "stehen", "steht", "mise", "sommer", "besonders", "neben",
 }
+
+# Project names the filter already required. They crowd out arguments.
+TOPIC_STEMS = (
+    "seilbahn",
+    "gondelbahn",
+    "téléphéri",
+    "telepheri",
+    "télécabin",
+    "telecabin",
+    "ipai",
+)
+TOPIC_WORDS = {"cable", "câble", "cables"}
+
+
+def _topic_word(word: str) -> bool:
+    if word in TOPIC_WORDS:
+        return True
+    return any(word.startswith(stem) for stem in TOPIC_STEMS)
 
 
 def tokens(text, limit=TOKEN_CHARS) -> list[str]:
     words = re.findall(r"[a-zäöüßàâéèêëîïôùûç]{4,}", str(text or "").lower()[:limit])
-    return [word for word in words if word not in STOP_WORDS]
+    return [word for word in words if word not in STOP_WORDS and not _topic_word(word)]
 
 
 def attach(frame: pd.DataFrame) -> pd.DataFrame:

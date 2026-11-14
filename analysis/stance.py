@@ -31,20 +31,37 @@ def _pattern(template: str) -> str:
 STANCE_SUPPORT = [
     _pattern(r"ja zur {object}"),
     _pattern(r"gr[üu]nes licht f[üu]r (?:die |eine |konkrete )?(?:vorplanung|{object})"),
+    _pattern(r"gr[üu]nes licht{near}{object}|{object}{near}gr[üu]nes licht"),
     _pattern(r"bef[üu]rwort\w*(?:\s+\w+){0,4}\s+{object}"),
+    # Verb only. The noun "Befürworter" just names a side.
+    _pattern(r"bef[üu]rwortet\w*{near}{object}|{object}{near}bef[üu]rwortet\w*"),
     _pattern(r"begr[üu][sß]\w*(?:\s+\w+){0,3}\s+(?:die |das )?{object}"),
     _pattern(r"(?:sieht|sehen)\s+gro[sß]e chancen{near}{object}|{object}{near}(?:sieht|sehen)\s+gro[sß]e chancen"),
+    _pattern(r"gro[sß]e chance\b{near}{object}|{object}{near}gro[sß]e chance\b"),
+    _pattern(r"chancen f[üu]r (?:eine |die )?{object}"),
     _pattern(r"chancen steigen{near}{object}|{object}{near}chancen steigen"),
+    _pattern(r"favorable\w*{near}{object}|{object}{near}favorable"),
+    _pattern(r"grand succ[eè]s{near}{object}|{object}{near}grand succ[eè]s"),
+    _pattern(r"plus agr[ée]able que le (?:bus|voiture|m[ée]tro)"),
     r"positiv\w*\s+machbarkeitsstudie",
 ]
 STANCE_OPPOSE = [
     r"luftnummer",
+    r"nid [àa] agressions",
     _pattern(r"prestigeprojekt\w*{near}(?:geld|k[üu]rzung)|k[üu]rzung{near}prestigeprojekt"),
     _pattern(r"\bnein\b.{0,30}zur {object}|sagen\s+[\"“„]?nein.{0,40}{object}"),
     _pattern(r"\bkeine {object} (?:über|ueber|in|nach|durch|für|fuer)\b"),
     _pattern(r"gegen die (?:geplante )?{object}"),
     _pattern(r"{object}{near}abgelehnt|abgelehnt{near}{object}"),
     _pattern(r"{object}{near}kritisch|kritisch{near}{object}"),
+    _pattern(r"nicht sinnvoll{near}{object}|{object}{near}nicht sinnvoll"),
+    _pattern(r"unwirtschaftlich\w*{near}{object}|{object}{near}unwirtschaftlich"),
+    _pattern(r"\bwiderstand\b{near}{object}|{object}{near}\bwiderstand\b"),
+    _pattern(r"r[üu]ckschlag\w*{near}{object}|{object}{near}r[üu]ckschlag"),
+    _pattern(r"lehnt\w*.{0,50}ab{near}{object}|{object}{near}lehnt\w*.{0,40}ab"),
+    _pattern(r"skeptisch\w*{near}{object}|{object}{near}skeptisch"),
+    _pattern(r"(?:stoppt|gestoppt).{0,40}{object}|{object}.{0,40}(?:stoppt|gestoppt)"),
+    _pattern(r"critiques?\s+sur.{0,50}{object}|{object}.{0,60}critiques"),
     _pattern(r"unsinnig\w*{near}{object}|{object}{near}unsinn"),
     _pattern(r"geldverschwend\w*{near}{object}|{object}{near}geldverschwend"),
     _pattern(r"s'oppose\w*{near}{object}|{object}{near}s'oppose\w*"),
@@ -54,6 +71,8 @@ STANCE_MIXED = [
     _pattern(r"vor- und nachteile{near}{object}|{object}{near}vor- und nachteile"),
     _pattern(r"chancen und risiken{near}{object}|{object}{near}chancen und risiken"),
     _pattern(r"gro[sß]e chancen{near}risiken|warnt vor risiken{near}{object}"),
+    _pattern(r"{object}{near}daf[üu]r.{0,40}dagegen|daf[üu]r.{0,40}dagegen{near}{object}"),
+    _pattern(r"pol[ée]mique\w*{near}{object}|{object}{near}pol[ée]mique"),
 ]
 _SUPPORT = [re.compile(entry) for entry in STANCE_SUPPORT]
 _OPPOSE = [re.compile(entry) for entry in STANCE_OPPOSE]

@@ -74,7 +74,7 @@ One kept post has exactly one project. The page then cuts that table by city, ch
 | Channel | Domain and media type. News, Social, or Other web | `analysis/prepare.py` |
 | Circles | Vendor `sentiment`: 1 support, 0 neutral, -1 opposition. `-99` stays outside | `analysis/stance.py`, switch in `config.py` |
 | Text stance | German and French phrase patterns. Support, oppose, mixed, or no clear stance. The vendor number does not enter | `analysis/stance.py` |
-| Terms | Tokens of four letters or more, stop words removed, once per post | `analysis/terms.py` |
+| Terms | Tokens of four letters or more from the full prepared text, stop words and project names removed, once per post | `analysis/terms.py` |
 | Trend | Support minus opposition, divided by classified posts, against the previous window of the same length. Flat under 2 points. Hidden under 8 classified posts | `analysis/summary.py` |
 | Peaks | Daily counts, `scipy.signal.find_peaks`, prominence `max(2, 1.5 × std)`, at least 7 days apart. Window is 3 days before and 2 days after | `pipeline/02_detect_peaks.py` |
 | Change points | Binary segmentation on z-scored daily counts, penalty 12, segments of at least 7 days | same file |
@@ -103,7 +103,7 @@ Kept posts run from 2024-10-20 to 2026-10-26. Projects: IPAI campus 1188, Paris 
 
 Vendor tone on the kept posts: positive 1390, neutral 570, negative 55, missing 211. The circles use this field today.
 
-Text stance on the same posts: no clear stance 2194, support 17, oppose 12, mixed 3. Set `STANCE_SOURCE = "text"` in `analysis/config.py` to put that classification into the circles. Until the patterns cover more posts, the circles would be almost empty.
+Text stance on the same posts: no clear stance 2157, support 27, oppose 32, mixed 10. Set `STANCE_SOURCE = "text"` in `analysis/config.py` to put that classification into the circles. Most posts still have no clear phrase, and IPAI has none, so the circles would stay thin.
 
 Peaks and change points, all kept posts:
 
@@ -118,26 +118,26 @@ Peaks and change points, all kept posts:
 
 | Brief | Already here | Still open |
 | --- | --- | --- |
-| 1 Explore topics, arguments, stance | Project assignment, term list, vendor tone, a first text-stance lexicon | Stance patterns barely fire. Term list is frequency, not arguments |
+| 1 Explore topics, arguments, stance | Project assignment, term list, vendor tone, phrase stance for explicit support, opposition, and mixed cases | Most posts still have no clear phrase. IPAI has no text stance. The term list is frequency, with project names removed |
 | 2 Compare cities and project stages | Four projects, city buttons, Paris as the system in operation | Heilbronn button adds the cable car and IPAI together. No study layer |
 | 3 Track time and triggering events | Daily timeline, peaks, change points, crawler script | `events.json` is not produced yet. Many peaks are two-post days |
 | 4 Interactive dashboard | Page reads the filtered posts, circles, terms, trend, and peak lines | Headlines appear on a peak only after the crawler has run |
 
 ## Who does what
 
-The 12:30 prototype is a page that reads the filtered posts through one path, with peak markers from the same posts. That path is in place. The rows below are what turns it into the brief.
+The data path is in place: `posts.json`, then `analysis/`, then `peaks.json` or `events.json`. **Dashboard and UI are a separate track** (Jürgen and Katrin): layout, wiring, and how the page tells the story. The table below is everything else that turns the brief into a prototype.
 
 | Who | Piece | Leads to |
 | --- | --- | --- |
-| Katrin | Page layout, without filling new views | A shell people can explore instead of a static chart |
 | Katrin | Studies on acceptance, next to similar projects | The comparison the city asked for, beyond our own posts |
 | Jürgen | Peak detection | The days the timeline should explain |
 | Jürgen | Crawler: attach a public event to each peak | Why a spike happened, and whether the debate stayed there |
-| Shared | Page reads `posts.json` and `peaks.json` / `events.json` | The prototype goal: one picture, fed by the pipeline |
 | Joscha | Model for a variable buzzword search | Project assignment that is not stuck to the four regex lists |
 | Joscha | Model keywords inside a selection | Arguments in the evaluation, not only the ten most frequent tokens |
 | Rafael | This flow, and examples where a step is wrong | A path the others can extend without a second copy of the posts |
-| Rafael | Text stance: support / mixed / oppose, separate from vendor tone | Circles that mean attitude toward the project |
+| Rafael | Text stance: support / mixed / oppose, separate from vendor tone | Stance that means attitude toward the project, not vendor tone alone |
+
+**For the dashboard track:** `analysis/summary.py` exposes `summarize()`, peak markers from `peaks.json` / `events.json`, and config in `analysis/config.py`. No duplicate data prep in the UI layer.
 
 ## Decisions worth taking before the next layer
 

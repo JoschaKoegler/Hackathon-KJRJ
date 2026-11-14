@@ -74,10 +74,11 @@ MIN_TREND_BASE = 8
 
 # Word cloud. "posts": a term counts once per post.
 # "occurrences": every appearance in the text counts.
+# The cloud reads the same prepared text as text stance.
 TERM_COUNT = 10
 TERM_COUNTING = "posts"
-TOKEN_CHARS = 400
 TEXT_CHARS = 2500
+TOKEN_CHARS = TEXT_CHARS
 
 DEFAULT_CITY = "All"
 DEFAULT_CHANNEL = "News"
