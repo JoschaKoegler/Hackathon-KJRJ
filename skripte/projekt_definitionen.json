@@ -19,7 +19,7 @@
         "\\bwohlgelegen\\b",
         "\\bböckingen\\b",
         "\\bboeckingen\\b",
-        "\\bstadtbahn\\b"
+        "\\bneckargartach\\b"
       ]
     },
     {
@@ -45,17 +45,18 @@
       "topic_terms": [
         "t[ée]l[ée]ph[ée]rique\\w*",
         "c[âa]ble\\s*c1\\b",
-        "\\bcable\\s*c1\\b"
+        "\\bcable\\s*c1\\b",
+        "t[ée]l[ée]cabine\\w*"
       ],
       "context_terms": [
-        "\\bparis\\w*",
         "\\bcr[ée]teil\\b",
         "\\bval-de-marne\\b",
         "\\bvilleneuve-saint-georges\\b",
         "\\blimeil-br[ée]vannes\\b",
         "\\bvalenton\\b",
         "[îi]le-de-france\\b",
-        "\\bidfm\\b"
+        "\\bidfm\\b",
+        "t[ée]l[ée]ph[ée]rique\\s+(?:de\\s+paris|francilien)"
       ]
     },
     {

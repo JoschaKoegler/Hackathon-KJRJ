@@ -40,31 +40,33 @@ def lade_projekt_definitionen(pfad: Path) -> dict:
 
 
 # ==========================================
-# 2. PROJEKT- & FILTERREGELN
+# 2. BEREINIGTE PROJEKT- & FILTERREGELN
 # ==========================================
 PROJECT_RULES = lade_projekt_definitionen(DEFINITIONEN_DATEI)
 
-# Tourismus-, Freizeit- & Spielzeug-Beifang
-TOURISM_NOISE_PATTERNS = [
+# Tourismus-, Spielplatz-, Reiseblog- & Kultur-Beifang (DE & FR)
+NOISE_PATTERNS = [
     r"\bwanderung\b", r"\bwandern\b", r"\bskifahren\b", r"\bskipiste\b", r"\bskigebiet\b",
     r"\bgipfelkreuz\b", r"\bberner oberland\b", r"\bjungfraujoch\b", r"\bjennerbahn\b",
-    r"\bzugspitze\b", r"\bsommerrodelbahn\b", r"\breiseblog\b", r"\burlaub\b",
+    r"\bzugspitze\b", r"\bsommerrodelbahn\b", r"\breiseblog\b", r"\breisebericht\b", r"\burlaub\b",
+    r"\bfoto-wanderung\b", r"\b10 dinge, die ihr\b", r"\bstädte in asien\b",
     r"\bferienwohnung\b", r"\bplaymobil\b", r"\blego\b", r"\bmodelleisenbahn\b",
-    r"\bfoto-wanderung\b", r"\b10 dinge, die ihr\b", r"\bstädte in asien\b"
+    r"\bwaldspielplatz\b", r"\bflying fox\b", r"\bhochseil\w*", r"\broblox\b",
+    r"\broad\s*trip\b", r"\bqu[ée]bec\b", r"\bjapon\b", r"\bchine\b", r"\bcor[ée]e\b",
+    r"\bsavoie\b", r"\bla plagne\b", r"\bsaint-valentin\b", r"\bpiano [àa] quatre mains\b",
+    r"\brandonn[ée]e\w*", r"\bmontjuic\b"
 ]
 
-# Reine Polizei-/Feuerwehr-Einsatzmeldungen (wo IPAI nur als Ortsangabe dient)
 INCIDENT_NOISE_PATTERNS = [
     r"\bflächenbrand\b", r"\bgartenhausbrand\b", r"\bpolizeibericht\b",
     r"\bverkehrsunfall\b", r"\blöscharbeiten\b", r"\bkleineinsätze\b",
-    r"\bhauptversammlung der feuerwehr\b"
+    r"\bhauptversammlung der feuerwehr\b", r"\bflugzeugabsturz\b"
 ]
 
-# Rettungs-Anker für echte ÖPNV-/Stadtentwicklungs-Debatten
 URBAN_TRANSIT_ANCHORS = [
     r"\böpnv\b", r"\boepnv\b", r"\bnahverkehr\b", r"\bpendler\w*", r"\bstadtverkehr\b",
     r"\bverkehrsmittel\b", r"\btransport en commun\b", r"\bmobilit[ée] urbaine\b",
-    r"\bgemeinderat\b", r"\bmachbarkeitsstudie\b", r"\bplanfeststellung\b"
+    r"\bgemeinderat\b", r"\bmachbarkeitsstudie\b", r"\bplanfeststellung\b", r"\bnavigo\b"
 ]
 
 
@@ -219,7 +221,7 @@ def extract_records(raw_json) -> list[dict]:
         for key in ("data", "mentions", "items", "records", "articles"):
             if isinstance(raw_json.get(key), list):
                 return raw_json[key]
-    raise ValueError("Unbekannte JSON-Struktur: Erwartet wurde eine Liste von Beiträgen.")
+    raise ValueError("Unbekannte JSON-Struktur.")
 
 
 def evaluate_post(post: dict, gesehen: GeseheneBeitraege) -> tuple[bool, list[str], str]:
@@ -269,10 +271,10 @@ def evaluate_post(post: dict, gesehen: GeseheneBeitraege) -> tuple[bool, list[st
     if not matched_projects:
         return False, [], "no_target_project_match"
 
-    has_tourism_noise = any(re.search(p, text_lower) for p in TOURISM_NOISE_PATTERNS)
+    has_noise = any(re.search(p, text_lower) for p in NOISE_PATTERNS)
     has_transit_anchor = any(re.search(p, text_lower) for p in URBAN_TRANSIT_ANCHORS)
 
-    if has_tourism_noise and not has_transit_anchor:
+    if has_noise and not has_transit_anchor:
         return False, [], "tourism_or_leisure_noise"
 
     if any(re.search(p, text_lower) for p in INCIDENT_NOISE_PATTERNS) and not has_transit_anchor:
@@ -343,18 +345,13 @@ def main():
     dropped = total - kept
 
     print("\n" + "=" * 65)
-    print("FILTER-ERGEBNIS (DATENBEREINIGUNG)")
+    print("BEREINIGTES FILTER-ERGEBNIS")
     print("=" * 65)
     print(f"Gesamt eingelesen:   {total:>6} Beiträge")
     print(f"Behalten (Clean):    {kept:>6} Beiträge ({(kept / total * 100) if total else 0:.1f}%)")
     print(f"Ausgesiebt (Noise):  {dropped:>6} Beiträge ({(dropped / total * 100) if total else 0:.1f}%)")
 
-    print("\n--- Aufschlüsselung nach Ausschlussgrund ---")
-    for reason, count in stats.most_common():
-        if reason != "kept":
-            print(f"  - {reason:<32}: {count:>6}")
-
-    print("\n--- Treffer pro Projekt (genau ein Projekt je Beitrag) ---")
+    print("\n--- Treffer pro Projekt ---")
     for proj, count in project_counts.most_common():
         print(f"  - {proj:<32}: {count:>6}")
 
