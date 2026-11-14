@@ -1,0 +1,75 @@
+{
+  "projekt": "Paris",
+  "peak": 4,
+  "datum": "2025-08-14",
+  "beitraege_am_tag": 4,
+  "prominenz": 4.0,
+  "vendor_tonlage": 0.33,
+  "beitraege_im_fenster": 5,
+  "fenster": {
+    "start": "2025-08-11",
+    "ende": "2025-08-16"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "téléphérique",
+      "anzahl": 18
+    },
+    {
+      "begriff": "service",
+      "anzahl": 12
+    },
+    {
+      "begriff": "bientôt",
+      "anzahl": 11
+    },
+    {
+      "begriff": "angle",
+      "anzahl": 8
+    },
+    {
+      "begriff": "créteil",
+      "anzahl": 8
+    },
+    {
+      "begriff": "villeneuve",
+      "anzahl": 8
+    },
+    {
+      "begriff": "saint",
+      "anzahl": 8
+    },
+    {
+      "begriff": "georges",
+      "anzahl": 8
+    },
+    {
+      "begriff": "entre",
+      "anzahl": 7
+    },
+    {
+      "begriff": "août",
+      "anzahl": 5
+    },
+    {
+      "begriff": "marne",
+      "anzahl": 5
+    },
+    {
+      "begriff": "france",
+      "anzahl": 5
+    },
+    {
+      "begriff": "urbain",
+      "anzahl": 4
+    },
+    {
+      "begriff": "comme",
+      "anzahl": 3
+    },
+    {
+      "begriff": "métro",
+      "anzahl": 3
+    }
+  ]
+}

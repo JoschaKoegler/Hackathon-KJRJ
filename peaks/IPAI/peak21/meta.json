@@ -1,0 +1,75 @@
+{
+  "projekt": "IPAI",
+  "peak": 21,
+  "datum": "2026-05-13",
+  "beitraege_am_tag": 4,
+  "prominenz": 4.0,
+  "vendor_tonlage": 0.5,
+  "beitraege_im_fenster": 9,
+  "fenster": {
+    "start": "2026-05-10",
+    "ende": "2026-05-15"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "robotik",
+      "anzahl": 20
+    },
+    {
+      "begriff": "heilbronn",
+      "anzahl": 15
+    },
+    {
+      "begriff": "deutschland",
+      "anzahl": 11
+    },
+    {
+      "begriff": "flugzeugabsturz",
+      "anzahl": 6
+    },
+    {
+      "begriff": "lohmiller",
+      "anzahl": 6
+    },
+    {
+      "begriff": "milliarden",
+      "anzahl": 6
+    },
+    {
+      "begriff": "digitalisierung",
+      "anzahl": 6
+    },
+    {
+      "begriff": "automation",
+      "anzahl": 6
+    },
+    {
+      "begriff": "ipai",
+      "anzahl": 6
+    },
+    {
+      "begriff": "familie",
+      "anzahl": 5
+    },
+    {
+      "begriff": "fokus",
+      "anzahl": 5
+    },
+    {
+      "begriff": "about",
+      "anzahl": 5
+    },
+    {
+      "begriff": "intelligente",
+      "anzahl": 5
+    },
+    {
+      "begriff": "seine",
+      "anzahl": 5
+    },
+    {
+      "begriff": "droht",
+      "anzahl": 4
+    }
+  ]
+}

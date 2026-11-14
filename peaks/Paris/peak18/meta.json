@@ -1,0 +1,75 @@
+{
+  "projekt": "Paris",
+  "peak": 18,
+  "datum": "2026-06-22",
+  "beitraege_am_tag": 4,
+  "prominenz": 4.0,
+  "vendor_tonlage": 1.0,
+  "beitraege_im_fenster": 11,
+  "fenster": {
+    "start": "2026-06-19",
+    "ende": "2026-06-24"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "france",
+      "anzahl": 9
+    },
+    {
+      "begriff": "câble",
+      "anzahl": 9
+    },
+    {
+      "begriff": "randonnées",
+      "anzahl": 8
+    },
+    {
+      "begriff": "téléphérique",
+      "anzahl": 7
+    },
+    {
+      "begriff": "mobilités",
+      "anzahl": 6
+    },
+    {
+      "begriff": "millions",
+      "anzahl": 6
+    },
+    {
+      "begriff": "marne",
+      "anzahl": 6
+    },
+    {
+      "begriff": "belles",
+      "anzahl": 6
+    },
+    {
+      "begriff": "appenzell",
+      "anzahl": 6
+    },
+    {
+      "begriff": "engadine",
+      "anzahl": 6
+    },
+    {
+      "begriff": "haute",
+      "anzahl": 5
+    },
+    {
+      "begriff": "publics",
+      "anzahl": 4
+    },
+    {
+      "begriff": "provence",
+      "anzahl": 4
+    },
+    {
+      "begriff": "entre",
+      "anzahl": 4
+    },
+    {
+      "begriff": "suisse",
+      "anzahl": 4
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "projekt": "IPAI",
+  "peak": 17,
+  "datum": "2026-02-09",
+  "beitraege_am_tag": 6,
+  "prominenz": 6.0,
+  "vendor_tonlage": 0.67,
+  "beitraege_im_fenster": 13,
+  "fenster": {
+    "start": "2026-02-06",
+    "ende": "2026-02-11"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "ipai",
+      "anzahl": 27
+    },
+    {
+      "begriff": "heilbronn",
+      "anzahl": 19
+    },
+    {
+      "begriff": "prezero",
+      "anzahl": 16
+    },
+    {
+      "begriff": "marc",
+      "anzahl": 13
+    },
+    {
+      "begriff": "intelligenz",
+      "anzahl": 12
+    },
+    {
+      "begriff": "group",
+      "anzahl": 11
+    },
+    {
+      "begriff": "kirchner",
+      "anzahl": 10
+    },
+    {
+      "begriff": "produktion",
+      "anzahl": 9
+    },
+    {
+      "begriff": "apple",
+      "anzahl": 9
+    },
+    {
+      "begriff": "manager",
+      "anzahl": 9
+    },
+    {
+      "begriff": "audi",
+      "anzahl": 7
+    },
+    {
+      "begriff": "künstliche",
+      "anzahl": 7
+    },
+    {
+      "begriff": "recycling",
+      "anzahl": 6
+    },
+    {
+      "begriff": "kreislaufwirtschaft",
+      "anzahl": 6
+    },
+    {
+      "begriff": "einsatz",
+      "anzahl": 5
+    }
+  ]
+}

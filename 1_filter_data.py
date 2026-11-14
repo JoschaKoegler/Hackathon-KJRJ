@@ -5,12 +5,34 @@ from datetime import datetime
 from pathlib import Path
 
 # ==========================================
-# 1. PFADE (Automatisch im selben Ordner)
+# 1. PFADE
 # ==========================================
 BASE_DIR = Path(__file__).resolve().parent
-INPUT_FILE = BASE_DIR / "FSI_Heilbronn_Medienbeiträge (1).json"
+DATEN_NAME = "FSI_Heilbronn_Medienbeiträge (1).json"
 OUTPUT_CLEAN_FILE = BASE_DIR / "clean_data.json"
 OUTPUT_AUDIT_FILE = BASE_DIR / "filter_audit.json"
+
+
+def suche_datei(dateiname: str) -> Path | None:
+    """Sucht die Datei im Arbeitsordner, im Skriptordner und in darüberliegenden Ordnern."""
+    startpunkte = [Path.cwd().resolve(), BASE_DIR]
+    gesehen = set()
+    for start in startpunkte:
+        aktuell = start
+        for _ in range(6):
+            if aktuell in gesehen:
+                break
+            gesehen.add(aktuell)
+            kandidat = aktuell / dateiname
+            if kandidat.is_file():
+                return kandidat
+            if aktuell.parent == aktuell:
+                break
+            aktuell = aktuell.parent
+    return None
+
+
+INPUT_FILE = suche_datei(DATEN_NAME) or (BASE_DIR / DATEN_NAME)
 
 ALLOWED_LANGUAGES = {"de", "fr", "en"}
 MIN_CONTENT_LENGTH = 40
@@ -94,6 +116,29 @@ def is_valid_timestamp(ts) -> bool:
         return False
 
 
+def normalize_url(url) -> str:
+    url = str(url or "").strip().lower()
+    if not url:
+        return ""
+    return url.split("#", 1)[0].rstrip("/")
+
+
+def ein_projekt(text, rules=None) -> list[str]:
+    """Genau ein Projekt: das mit den meisten Muster-Treffern. Bei Gleichstand die frühere Regel."""
+    rules = PROJECT_RULES if rules is None else rules
+    text_lower = str(text or "").lower()
+    scored = []
+    for index, (name, rule) in enumerate(rules.items()):
+        topic_hits = sum(len(re.findall(pattern, text_lower)) for pattern in rule["topic_terms"])
+        context_hits = sum(len(re.findall(pattern, text_lower)) for pattern in rule["context_terms"])
+        if topic_hits and context_hits:
+            scored.append((topic_hits + context_hits, -index, name))
+    if not scored:
+        return []
+    scored.sort(reverse=True)
+    return [scored[0][2]]
+
+
 def extract_records(raw_json) -> list[dict]:
     if isinstance(raw_json, list):
         return raw_json
@@ -132,12 +177,13 @@ def evaluate_post(post: dict, seen_ids: set, seen_hashes: set) -> tuple[bool, li
     text_lower = full_text.lower()
     title_lower = title.lower()
 
-    matched_projects = []
-    for proj_name, rules in PROJECT_RULES.items():
-        has_topic = any(re.search(p, text_lower) for p in rules["topic_terms"])
-        has_context = any(re.search(p, text_lower) for p in rules["context_terms"])
-        if has_topic and has_context:
-            matched_projects.append(proj_name)
+    url_key = normalize_url(post.get("url"))
+    if url_key and f"url:{url_key}" in seen_hashes:
+        return False, [], "duplicate_url"
+    if text_lower and f"text:{text_lower}" in seen_hashes:
+        return False, [], "duplicate_text"
+
+    matched_projects = ein_projekt(text_lower)
 
     if not matched_projects:
         return False, [], "no_target_project_match"
@@ -164,6 +210,10 @@ def evaluate_post(post: dict, seen_ids: set, seen_hashes: set) -> tuple[bool, li
     if mention_id:
         seen_ids.add(mention_id)
     seen_hashes.add(content_fingerprint)
+    if url_key:
+        seen_hashes.add(f"url:{url_key}")
+    if text_lower:
+        seen_hashes.add(f"text:{text_lower}")
 
     return True, matched_projects, "kept"
 
@@ -228,7 +278,7 @@ def main():
         if reason != "kept":
             print(f"  - {reason:<32}: {count:>6}")
 
-    print("\n--- Treffer pro Projekt (Mehrfachzuordnung möglich) ---")
+    print("\n--- Treffer pro Projekt (genau ein Projekt je Beitrag) ---")
     for proj, count in project_counts.most_common():
         print(f"  - {proj:<32}: {count:>6}")
 

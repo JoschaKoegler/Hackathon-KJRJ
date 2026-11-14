@@ -1,0 +1,75 @@
+{
+  "projekt": "Heilbronn",
+  "peak": 6,
+  "datum": "2025-06-07",
+  "beitraege_am_tag": 3,
+  "prominenz": 3.0,
+  "vendor_tonlage": 1.0,
+  "beitraege_im_fenster": 4,
+  "fenster": {
+    "start": "2025-06-04",
+    "ende": "2025-06-09"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "fulda",
+      "anzahl": 10
+    },
+    {
+      "begriff": "frühstück",
+      "anzahl": 7
+    },
+    {
+      "begriff": "seilbahn",
+      "anzahl": 7
+    },
+    {
+      "begriff": "köln",
+      "anzahl": 5
+    },
+    {
+      "begriff": "möglich",
+      "anzahl": 4
+    },
+    {
+      "begriff": "hochschule",
+      "anzahl": 4
+    },
+    {
+      "begriff": "stadt",
+      "anzahl": 4
+    },
+    {
+      "begriff": "grundsätzlich",
+      "anzahl": 3
+    },
+    {
+      "begriff": "monatlichen",
+      "anzahl": 2
+    },
+    {
+      "begriff": "bereits",
+      "anzahl": 2
+    },
+    {
+      "begriff": "unser",
+      "anzahl": 2
+    },
+    {
+      "begriff": "laut",
+      "anzahl": 2
+    },
+    {
+      "begriff": "google",
+      "anzahl": 2
+    },
+    {
+      "begriff": "folgen",
+      "anzahl": 2
+    },
+    {
+      "begriff": "zukunftsmusik",
+      "anzahl": 2
+    }
+  ]
+}

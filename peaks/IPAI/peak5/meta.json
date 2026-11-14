@@ -1,0 +1,75 @@
+{
+  "projekt": "IPAI",
+  "peak": 5,
+  "datum": "2025-02-11",
+  "beitraege_am_tag": 9,
+  "prominenz": 9.0,
+  "vendor_tonlage": 0.78,
+  "beitraege_im_fenster": 12,
+  "fenster": {
+    "start": "2025-02-08",
+    "ende": "2025-02-13"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "bechtle",
+      "anzahl": 43
+    },
+    {
+      "begriff": "intelligenz",
+      "anzahl": 21
+    },
+    {
+      "begriff": "setzt",
+      "anzahl": 16
+    },
+    {
+      "begriff": "positionierung",
+      "anzahl": 14
+    },
+    {
+      "begriff": "ipai",
+      "anzahl": 14
+    },
+    {
+      "begriff": "künstliche",
+      "anzahl": 13
+    },
+    {
+      "begriff": "schlüsseltechnologie",
+      "anzahl": 12
+    },
+    {
+      "begriff": "veröffentlicht",
+      "anzahl": 11
+    },
+    {
+      "begriff": "entwicklung",
+      "anzahl": 10
+    },
+    {
+      "begriff": "strategische",
+      "anzahl": 7
+    },
+    {
+      "begriff": "künstlicher",
+      "anzahl": 7
+    },
+    {
+      "begriff": "europa",
+      "anzahl": 7
+    },
+    {
+      "begriff": "aktiv",
+      "anzahl": 7
+    },
+    {
+      "begriff": "zukunft",
+      "anzahl": 6
+    },
+    {
+      "begriff": "dabei",
+      "anzahl": 6
+    }
+  ]
+}

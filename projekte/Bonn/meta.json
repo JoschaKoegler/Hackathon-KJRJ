@@ -1,7 +1,7 @@
 {
   "projekt": "Bonn",
   "schluessel": "Bonn_Seilbahn",
-  "beitraege": 221,
+  "beitraege": 196,
   "topic_terms": [
     "\\bseilbahn\\w*",
     "\\bgondelbahn\\w*"

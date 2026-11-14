@@ -1,0 +1,75 @@
+{
+  "projekt": "IPAI",
+  "peak": 14,
+  "datum": "2025-11-06",
+  "beitraege_am_tag": 5,
+  "prominenz": 4.0,
+  "vendor_tonlage": 0.8,
+  "beitraege_im_fenster": 17,
+  "fenster": {
+    "start": "2025-11-03",
+    "ende": "2025-11-08"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "ipai",
+      "anzahl": 43
+    },
+    {
+      "begriff": "heilbronn",
+      "anzahl": 37
+    },
+    {
+      "begriff": "spaces",
+      "anzahl": 16
+    },
+    {
+      "begriff": "fraunhofer",
+      "anzahl": 14
+    },
+    {
+      "begriff": "robotik",
+      "anzahl": 13
+    },
+    {
+      "begriff": "marketing",
+      "anzahl": 13
+    },
+    {
+      "begriff": "campus",
+      "anzahl": 11
+    },
+    {
+      "begriff": "intelligenz",
+      "anzahl": 8
+    },
+    {
+      "begriff": "papst",
+      "anzahl": 8
+    },
+    {
+      "begriff": "vertrieb",
+      "anzahl": 8
+    },
+    {
+      "begriff": "ökosystem",
+      "anzahl": 7
+    },
+    {
+      "begriff": "bild",
+      "anzahl": 6
+    },
+    {
+      "begriff": "außenstelle",
+      "anzahl": 6
+    },
+    {
+      "begriff": "automatisierung",
+      "anzahl": 6
+    },
+    {
+      "begriff": "standort",
+      "anzahl": 6
+    }
+  ]
+}

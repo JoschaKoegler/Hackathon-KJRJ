@@ -1,0 +1,75 @@
+{
+  "projekt": "IPAI",
+  "peak": 13,
+  "datum": "2025-10-29",
+  "beitraege_am_tag": 7,
+  "prominenz": 7.0,
+  "vendor_tonlage": 0.6,
+  "beitraege_im_fenster": 12,
+  "fenster": {
+    "start": "2025-10-26",
+    "ende": "2025-10-31"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "heilbronn",
+      "anzahl": 29
+    },
+    {
+      "begriff": "ipai",
+      "anzahl": 28
+    },
+    {
+      "begriff": "campus",
+      "anzahl": 12
+    },
+    {
+      "begriff": "europas",
+      "anzahl": 11
+    },
+    {
+      "begriff": "spatenstich",
+      "anzahl": 9
+    },
+    {
+      "begriff": "soll",
+      "anzahl": 7
+    },
+    {
+      "begriff": "unsere",
+      "anzahl": 6
+    },
+    {
+      "begriff": "merz",
+      "anzahl": 6
+    },
+    {
+      "begriff": "start",
+      "anzahl": 6
+    },
+    {
+      "begriff": "heilbronner",
+      "anzahl": 5
+    },
+    {
+      "begriff": "oktober",
+      "anzahl": 5
+    },
+    {
+      "begriff": "innovation",
+      "anzahl": 5
+    },
+    {
+      "begriff": "gemeinsam",
+      "anzahl": 5
+    },
+    {
+      "begriff": "züblin",
+      "anzahl": 5
+    },
+    {
+      "begriff": "innovationspark",
+      "anzahl": 5
+    }
+  ]
+}

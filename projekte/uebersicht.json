@@ -2,7 +2,7 @@
   {
     "projekt": "Heilbronn",
     "schluessel": "Heilbronn_Seilbahn",
-    "beitraege": 276,
+    "beitraege": 241,
     "topic_terms": [
       "\\bseilbahn\\w*",
       "\\burban cable car\\b",
@@ -22,7 +22,7 @@
   {
     "projekt": "Bonn",
     "schluessel": "Bonn_Seilbahn",
-    "beitraege": 221,
+    "beitraege": 196,
     "topic_terms": [
       "\\bseilbahn\\w*",
       "\\bgondelbahn\\w*"
@@ -40,7 +40,7 @@
   {
     "projekt": "Paris",
     "schluessel": "Paris_Cable_C1",
-    "beitraege": 713,
+    "beitraege": 708,
     "topic_terms": [
       "t[ée]l[ée]ph[ée]rique\\w*",
       "c[âa]ble\\s*c1\\b",
@@ -60,7 +60,7 @@
   {
     "projekt": "IPAI",
     "schluessel": "IPAI_Campus",
-    "beitraege": 998,
+    "beitraege": 948,
     "topic_terms": [
       "\\bipai\\b",
       "\\binnovation park artificial intelligence\\b"

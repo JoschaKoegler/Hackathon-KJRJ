@@ -1,7 +1,7 @@
 [
   {
     "project": "Bonn_Seilbahn",
-    "total_posts": 221,
+    "total_posts": 196,
     "date_range": "2024-10-28 bis 2026-10-23",
     "peaks": [
       {
@@ -30,20 +30,6 @@
         "sample_titles": [
           "Bonns OB Dörner: Sanierung statt Neubau der Bonner Oper",
           "Verlängerung der 63 nach Bonn-Buschdorf nimmt wichtige Hürde - Radio Bonn / Rhein-Sieg"
-        ]
-      },
-      {
-        "date": "2025-01-28",
-        "post_count": 3,
-        "prominence": 3.0,
-        "avg_sentiment": 0.33,
-        "crawler_window": {
-          "start": "2025-01-25",
-          "end": "2025-01-30"
-        },
-        "sample_titles": [
-          "Kommentar zu Dormagen-Monheim: Mit Seilbahn verbinden. von Baum",
-          "Kommentar zu Dormagen-Monheim: Mit Seilbahn verbinden. von Jan_Lukas"
         ]
       },
       {
@@ -132,9 +118,9 @@
       },
       {
         "date": "2025-08-29",
-        "post_count": 7,
-        "prominence": 7.0,
-        "avg_sentiment": -14.57,
+        "post_count": 6,
+        "prominence": 6.0,
+        "avg_sentiment": -0.5,
         "crawler_window": {
           "start": "2025-08-26",
           "end": "2025-08-31"
@@ -146,29 +132,28 @@
       },
       {
         "date": "2025-09-07",
-        "post_count": 6,
-        "prominence": 6.0,
-        "avg_sentiment": 0.5,
+        "post_count": 4,
+        "prominence": 4.0,
+        "avg_sentiment": 0.25,
         "crawler_window": {
           "start": "2025-09-04",
           "end": "2025-09-09"
         },
         "sample_titles": [
           "[GA+] GA-Wahlumfrage zur Bonner Verkehrspolitik: Mehrheit für zwei Autospuren auf der Adenauerallee",
-          "Kommentar zu Bonn-Rhein-Sieg S-Bahn Kurve Siegburg express von Jan_Lukas"
+          "Umfrage: Bonner gespalten über Verkehrspolitik"
         ]
       },
       {
         "date": "2025-11-12",
-        "post_count": 3,
-        "prominence": 3.0,
-        "avg_sentiment": 0.67,
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 0.5,
         "crawler_window": {
           "start": "2025-11-09",
           "end": "2025-11-14"
         },
         "sample_titles": [
-          "„Weg frei für sechs ÖPNV-Projekte“",
           "NRW-Koalition genehmigt sechs Nahverkehrsprojekte"
         ]
       },
@@ -188,9 +173,9 @@
       },
       {
         "date": "2025-12-16",
-        "post_count": 3,
-        "prominence": 3.0,
-        "avg_sentiment": -33.0,
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": 0.0,
         "crawler_window": {
           "start": "2025-12-13",
           "end": "2025-12-18"
@@ -198,20 +183,6 @@
         "sample_titles": [
           "WDR 5 Westblick Ganze Sendung (16.12.2025)",
           "Seilbahnen sind jedoch kleine Kabinen und sind in der Rush hour schnell ausgeschöpft. Gibt sicherlich Verbindungen wo…"
-        ]
-      },
-      {
-        "date": "2026-01-01",
-        "post_count": 2,
-        "prominence": 2.0,
-        "avg_sentiment": 0.5,
-        "crawler_window": {
-          "start": "2025-12-29",
-          "end": "2026-01-03"
-        },
-        "sample_titles": [
-          "News: Forschung - Eine wissenschaftliche Vision der Zukunft des grünen städtischen Verkehrs rollt weder auf Straßen…",
-          "Das Jahr des Reisens in 2025 – Teil 2"
         ]
       },
       {
@@ -240,20 +211,6 @@
         "sample_titles": [
           "Seilbahn über Bonn – Millionenprojekt soll Verkehr entlasten",
           "Seilbahn für Bonn geplant: Ab 2032 könnte sie fahren"
-        ]
-      },
-      {
-        "date": "2026-04-05",
-        "post_count": 2,
-        "prominence": 2.0,
-        "avg_sentiment": -99.0,
-        "crawler_window": {
-          "start": "2026-04-02",
-          "end": "2026-04-07"
-        },
-        "sample_titles": [
-          "Anschlussverbindungen sind nahezu perfekt, da 3 Stadtbahn/Tram Haltestellen direkt mit einander verbunden werden sowie…",
-          "Ein Tunnel zum Venusberg wäre sehr viel teuerer als die Seilbahn und hätte wahrscheinlich keinen Anschluss zu den…"
         ]
       },
       {
@@ -299,24 +256,24 @@
         ]
       },
       {
-        "date": "2026-08-03",
+        "date": "2026-08-09",
         "post_count": 2,
         "prominence": 2.0,
-        "avg_sentiment": 1.0,
+        "avg_sentiment": null,
         "crawler_window": {
-          "start": "2026-07-31",
-          "end": "2026-08-05"
+          "start": "2026-08-06",
+          "end": "2026-08-11"
         },
         "sample_titles": [
-          "Rhein so niedrig wie nie - Krisen-Konferenz geplant - Radio Köln",
-          "Rheinland-Pfalz mit Kindern: beste Ferien und Orte"
+          "Gibt's da nicht was von …? Wie es Anna Fleischhauer aus der Werbung ins Fernsehen schaffte",
+          "Ihr Sport: Passiv Fußball gucken – Anna Fleischhauer ist Journalistin und moderiert auch Sport"
         ]
       },
       {
         "date": "2026-09-06",
         "post_count": 2,
         "prominence": 2.0,
-        "avg_sentiment": -99.0,
+        "avg_sentiment": null,
         "crawler_window": {
           "start": "2026-09-03",
           "end": "2026-09-08"
@@ -345,14 +302,14 @@
   },
   {
     "project": "Heilbronn_Seilbahn",
-    "total_posts": 276,
+    "total_posts": 241,
     "date_range": "2024-11-09 bis 2026-10-15",
     "peaks": [
       {
         "date": "2025-03-28",
         "post_count": 5,
         "prominence": 5.0,
-        "avg_sentiment": -19.2,
+        "avg_sentiment": 0.75,
         "crawler_window": {
           "start": "2025-03-25",
           "end": "2025-03-30"
@@ -378,8 +335,8 @@
       },
       {
         "date": "2025-04-25",
-        "post_count": 4,
-        "prominence": 4.0,
+        "post_count": 2,
+        "prominence": 2.0,
         "avg_sentiment": 0.5,
         "crawler_window": {
           "start": "2025-04-22",
@@ -387,7 +344,7 @@
         },
         "sample_titles": [
           "Kommentar zu Wiesbaden: Seilbahn Hbf – Bierstadt von Geomaus007",
-          "Kommentar zu Wiesbaden: Seilbahn Hbf – Bierstadt von ebanol"
+          "Ipai, Seilbahn, Bildungscampus – das halten Heilbronner von den Plänen - STIMME.de"
         ]
       },
       {
@@ -422,7 +379,7 @@
         "date": "2025-06-07",
         "post_count": 3,
         "prominence": 3.0,
-        "avg_sentiment": -32.33,
+        "avg_sentiment": 1.0,
         "crawler_window": {
           "start": "2025-06-04",
           "end": "2025-06-09"
@@ -433,38 +390,24 @@
         ]
       },
       {
-        "date": "2025-06-22",
+        "date": "2025-06-30",
         "post_count": 2,
         "prominence": 2.0,
         "avg_sentiment": 0.5,
-        "crawler_window": {
-          "start": "2025-06-19",
-          "end": "2025-06-24"
-        },
-        "sample_titles": [
-          "Kommentar zu Düsseldorf: Seilbahn vom Burgplatz nach Niederkassel von Baum",
-          "Kommentar zu Düsseldorf: Seilbahn vom Burgplatz nach Niederkassel von cs"
-        ]
-      },
-      {
-        "date": "2025-06-30",
-        "post_count": 3,
-        "prominence": 3.0,
-        "avg_sentiment": 0.33,
         "crawler_window": {
           "start": "2025-06-27",
           "end": "2025-07-02"
         },
         "sample_titles": [
-          "Kommentar zu Düsseldorf: Seilbahn vom Burgplatz nach Niederkassel von Spixi",
-          "Heilbronn plant Seilbahn: Was die Stadt vom Beispiel Toulouse lernen kann - STIMME.de"
+          "Heilbronn plant Seilbahn: Was die Stadt vom Beispiel Toulouse lernen kann - STIMME.de",
+          "Rad, Busse, Auto und vielleicht Seilbahn? So erreicht man den Ipai-Campus Heilbronn - STIMME.de"
         ]
       },
       {
         "date": "2025-08-04",
         "post_count": 3,
         "prominence": 3.0,
-        "avg_sentiment": -32.67,
+        "avg_sentiment": 0.5,
         "crawler_window": {
           "start": "2025-08-01",
           "end": "2025-08-06"
@@ -489,24 +432,10 @@
         ]
       },
       {
-        "date": "2025-08-31",
-        "post_count": 3,
-        "prominence": 3.0,
-        "avg_sentiment": 0.67,
-        "crawler_window": {
-          "start": "2025-08-28",
-          "end": "2025-09-02"
-        },
-        "sample_titles": [
-          "Kommentar zu Regensburg: Seilbahn zum Campus/Stadion/P+R von Geomaus007",
-          "Kommentar zu Regensburg: Seilbahn zum Campus/Stadion/P+R von Bueffel59"
-        ]
-      },
-      {
         "date": "2025-09-08",
         "post_count": 5,
         "prominence": 5.0,
-        "avg_sentiment": -39.2,
+        "avg_sentiment": 0.67,
         "crawler_window": {
           "start": "2025-09-05",
           "end": "2025-09-10"
@@ -518,9 +447,9 @@
       },
       {
         "date": "2025-09-19",
-        "post_count": 3,
-        "prominence": 3.0,
-        "avg_sentiment": -99.0,
+        "post_count": 2,
+        "prominence": 2.0,
+        "avg_sentiment": null,
         "crawler_window": {
           "start": "2025-09-16",
           "end": "2025-09-21"
@@ -587,59 +516,17 @@
         ]
       },
       {
-        "date": "2026-04-25",
-        "post_count": 2,
-        "prominence": 2.0,
-        "avg_sentiment": -49.0,
+        "date": "2026-07-04",
+        "post_count": 4,
+        "prominence": 4.0,
+        "avg_sentiment": 0.75,
         "crawler_window": {
-          "start": "2026-04-22",
-          "end": "2026-04-27"
+          "start": "2026-07-01",
+          "end": "2026-07-06"
         },
         "sample_titles": [
-          "Super Dokumentation der verschiedenen Verkehrssysteme.Vielen Dank dafür. Vielleicht schaffst du es dochmal nach…",
-          "Wohin geht die Reise?"
-        ]
-      },
-      {
-        "date": "2026-05-21",
-        "post_count": 2,
-        "prominence": 2.0,
-        "avg_sentiment": 0.5,
-        "crawler_window": {
-          "start": "2026-05-18",
-          "end": "2026-05-23"
-        },
-        "sample_titles": [
-          "Schnell und sicher mit dem Rad zum IPAI",
-          "🎉 Seefest 2026 steht an – und wir haben eine Bitte: Lasst das Auto einfach stehen. 🙏 🚲 Rad oder neue Laufschuhe –…"
-        ]
-      },
-      {
-        "date": "2026-06-13",
-        "post_count": 2,
-        "prominence": 2.0,
-        "avg_sentiment": 1.0,
-        "crawler_window": {
-          "start": "2026-06-10",
-          "end": "2026-06-15"
-        },
-        "sample_titles": [
-          "Erster Tag der offenen Baustelle am IPAI Campus Heilbronn",
-          "Dank KI Student @maddin Tickets für den Tag der offenen Baustelle auf dem @ipai_hn bekommen. 30 Hektar = 42…"
-        ]
-      },
-      {
-        "date": "2026-07-06",
-        "post_count": 5,
-        "prominence": 5.0,
-        "avg_sentiment": -19.0,
-        "crawler_window": {
-          "start": "2026-07-03",
-          "end": "2026-07-08"
-        },
-        "sample_titles": [
-          "Also ich habe in Heilbronn am von der Schwarz Gruppe gesponserten Campus studiert und ich kann dir sagen, wir ALLE…",
-          "Kommentar zu Duisburg: Linie 902 mit Anbindung des NBG \\\"Dünen\\\" von axp"
+          "Seilbahn für Heilbronn: Stadt nennt erstmals möglichen Eröffnungstermin - STIMME.de",
+          "Kritik an Seilbahn-Plänen: Verkehrsclub ist für eine Erweiterung der Stadtbahn - STIMME.de"
         ]
       },
       {
@@ -660,7 +547,7 @@
         "date": "2026-07-31",
         "post_count": 5,
         "prominence": 5.0,
-        "avg_sentiment": -19.6,
+        "avg_sentiment": 0.25,
         "crawler_window": {
           "start": "2026-07-28",
           "end": "2026-08-02"
@@ -697,56 +584,56 @@
           "\"UND WO SOLLEN DANN DIE AUTOS PARKEN??? AM KI PARK UND DANN MIT DER SEILBAHN REIN ODER WAS? DU HAST DOCH KEINE AHNUNG…",
           "20.8.02026"
         ]
-      },
-      {
-        "date": "2026-10-12",
-        "post_count": 2,
-        "prominence": 2.0,
-        "avg_sentiment": 0.0,
-        "crawler_window": {
-          "start": "2026-10-09",
-          "end": "2026-10-14"
-        },
-        "sample_titles": [
-          "Kommentar zu Kurznachrichten aus dem Rushhour-Newsletter von Christian Schmidt",
-          "Kurznachrichten aus dem Rushhour-Newsletter"
-        ]
       }
     ],
     "change_points": [
       {
         "date": "2025-03-27",
-        "avg_posts_before": 0.09,
+        "avg_posts_before": 0.06,
         "avg_posts_after": 1.43,
-        "avg_sentiment_before": -24.17,
-        "avg_sentiment_after": -29.38
+        "avg_sentiment_before": 0.8,
+        "avg_sentiment_after": 0.47
       },
       {
         "date": "2025-04-03",
         "avg_posts_before": 1.43,
         "avg_posts_after": 3.38,
-        "avg_sentiment_before": -29.38,
-        "avg_sentiment_after": -3.02
+        "avg_sentiment_before": 0.47,
+        "avg_sentiment_after": 0.52
       },
       {
         "date": "2025-04-11",
         "avg_posts_before": 3.38,
-        "avg_posts_after": 0.67,
-        "avg_sentiment_before": -3.02,
-        "avg_sentiment_after": -20.13
+        "avg_posts_after": 0.35,
+        "avg_sentiment_before": 0.52,
+        "avg_sentiment_after": 0.23
       },
       {
-        "date": "2025-09-23",
-        "avg_posts_before": 0.67,
-        "avg_posts_after": 0.3,
-        "avg_sentiment_before": -20.13,
-        "avg_sentiment_after": -19.93
+        "date": "2025-05-12",
+        "avg_posts_before": 0.35,
+        "avg_posts_after": 2.86,
+        "avg_sentiment_before": 0.23,
+        "avg_sentiment_after": 0.82
+      },
+      {
+        "date": "2025-05-19",
+        "avg_posts_before": 2.86,
+        "avg_posts_after": 1.0,
+        "avg_sentiment_before": 0.82,
+        "avg_sentiment_after": 0.5
+      },
+      {
+        "date": "2025-05-29",
+        "avg_posts_before": 1.0,
+        "avg_posts_after": 0.31,
+        "avg_sentiment_before": 0.5,
+        "avg_sentiment_after": 0.71
       }
     ]
   },
   {
     "project": "IPAI_Campus",
-    "total_posts": 998,
+    "total_posts": 948,
     "date_range": "2024-10-20 bis 2026-10-25",
     "peaks": [
       {
@@ -820,59 +707,31 @@
         ]
       },
       {
-        "date": "2025-04-02",
+        "date": "2025-03-31",
         "post_count": 5,
         "prominence": 5.0,
         "avg_sentiment": 0.8,
         "crawler_window": {
-          "start": "2025-03-30",
-          "end": "2025-04-04"
+          "start": "2025-03-28",
+          "end": "2025-04-02"
         },
         "sample_titles": [
-          "Chip-Kompetenzzentrum entsteht in Baden-Württemberg",
-          "Neue Pläne im Heilbronner Ipai: Foundation will mehr Vertrauen in KI schaffen - STIMME.de"
+          "Vom Discounter zum Technologieriesen: Wie die Schwarz-Gruppe Lidl neu erfindet",
+          "Detailansicht - VKZ"
         ]
       },
       {
-        "date": "2025-04-10",
-        "post_count": 4,
-        "prominence": 4.0,
-        "avg_sentiment": -24.25,
-        "crawler_window": {
-          "start": "2025-04-07",
-          "end": "2025-04-12"
-        },
-        "sample_titles": [
-          "📸 Exkursion zu IPai Spaces in Heilbronn 🚀 Gestern hatten wir die Gelegenheit, IPai Spaces in Heilbronn zu besuchen!…",
-          "Videoflug über künftige Seilbahnstrecke auf Ipai-Baustelle in Heilbronn - STIMME.de"
-        ]
-      },
-      {
-        "date": "2025-04-30",
+        "date": "2025-05-16",
         "post_count": 4,
         "prominence": 4.0,
         "avg_sentiment": 0.75,
         "crawler_window": {
-          "start": "2025-04-27",
-          "end": "2025-05-02"
+          "start": "2025-05-13",
+          "end": "2025-05-18"
         },
         "sample_titles": [
-          "Heilbronner Luftnummer: Künftig über Dächer schweben statt Bahnfahren?",
-          "Kaum zu glauben, alle reden in Heilbronn über Ipai und nun bin ich ein kleiner Teil davon! Es gibt einen von mir…"
-        ]
-      },
-      {
-        "date": "2025-05-12",
-        "post_count": 7,
-        "prominence": 7.0,
-        "avg_sentiment": 0.57,
-        "crawler_window": {
-          "start": "2025-05-09",
-          "end": "2025-05-14"
-        },
-        "sample_titles": [
-          "Nach Kürzungen beim Stadtbahn-Verkehr: Für Prestigeprojekt Heilbronner Seilbahn fließt das Geld",
-          "Wirtschaftsregion Heilbronn-Franken | meet & eat @ IPAI"
+          "📍 Heilbronn – Zukunft erleben! Am vergangenen Montag tauchten unsere Lehrkräfte Frau Majstorovic und Herr Stumpp in…",
+          "\"Einsatz bei der Beichte nicht vorstellbar\" / Bischof Krämer warnt bei KI vor \"falschen Illusionen\""
         ]
       },
       {
@@ -921,7 +780,7 @@
         "date": "2025-10-10",
         "post_count": 4,
         "prominence": 4.0,
-        "avg_sentiment": -24.75,
+        "avg_sentiment": 0.0,
         "crawler_window": {
           "start": "2025-10-07",
           "end": "2025-10-12"
@@ -933,9 +792,9 @@
       },
       {
         "date": "2025-10-21",
-        "post_count": 53,
-        "prominence": 53.0,
-        "avg_sentiment": -5.06,
+        "post_count": 52,
+        "prominence": 52.0,
+        "avg_sentiment": 0.59,
         "crawler_window": {
           "start": "2025-10-18",
           "end": "2025-10-23"
@@ -949,7 +808,7 @@
         "date": "2025-10-29",
         "post_count": 7,
         "prominence": 7.0,
-        "avg_sentiment": -27.86,
+        "avg_sentiment": 0.6,
         "crawler_window": {
           "start": "2025-10-26",
           "end": "2025-10-31"
@@ -971,20 +830,6 @@
         "sample_titles": [
           "Ein Nachmittag im IPAI Spaces – ohne Buzzwords, aber voller ehrlicher Einblicke und spannender Gespräche. 🙌 In einer…",
           "Fraunhofer IPA stärkt KI-Robotik in Heilbronn mit neuer Außenstelle • Automatisierung, Bildverarbeitung und Licht- und Lasertechnik im Industrieumfeld"
-        ]
-      },
-      {
-        "date": "2025-12-18",
-        "post_count": 4,
-        "prominence": 4.0,
-        "avg_sentiment": -24.0,
-        "crawler_window": {
-          "start": "2025-12-15",
-          "end": "2025-12-20"
-        },
-        "sample_titles": [
-          "LEONHARD WEISS ist Mitglied im IPAI Heilbronn: Gemeinsam Verantwortung für die KI-Zukunft übernehmen",
-          "Neuer Nahverkehrsplan soll Fahrtenangebot in Bus und Bahn verbessern"
         ]
       },
       {
@@ -1017,9 +862,9 @@
       },
       {
         "date": "2026-02-09",
-        "post_count": 8,
-        "prominence": 8.0,
-        "avg_sentiment": 0.75,
+        "post_count": 6,
+        "prominence": 6.0,
+        "avg_sentiment": 0.67,
         "crawler_window": {
           "start": "2026-02-06",
           "end": "2026-02-11"
@@ -1033,7 +878,7 @@
         "date": "2026-02-23",
         "post_count": 11,
         "prominence": 11.0,
-        "avg_sentiment": -8.91,
+        "avg_sentiment": 0.1,
         "crawler_window": {
           "start": "2026-02-20",
           "end": "2026-02-25"
@@ -1059,16 +904,16 @@
       },
       {
         "date": "2026-03-26",
-        "post_count": 6,
-        "prominence": 6.0,
-        "avg_sentiment": 0.83,
+        "post_count": 5,
+        "prominence": 5.0,
+        "avg_sentiment": 0.8,
         "crawler_window": {
           "start": "2026-03-23",
           "end": "2026-03-28"
         },
         "sample_titles": [
-          "Spatenstich für eines der wichtigsten Infrastrukturprojekte der Stadt",
-          "Interview mit Carola Browa, Projektleiterin von Chip Connect BW"
+          "Interview mit Carola Browa, Projektleiterin von Chip Connect BW",
+          "Fraunhofer baut KI-Chipdesign-Zentrum in Heilbronn auf"
         ]
       },
       {
@@ -1103,7 +948,7 @@
         "date": "2026-06-11",
         "post_count": 6,
         "prominence": 6.0,
-        "avg_sentiment": -16.0,
+        "avg_sentiment": 0.6,
         "crawler_window": {
           "start": "2026-06-08",
           "end": "2026-06-13"
@@ -1114,38 +959,38 @@
         ]
       },
       {
-        "date": "2026-07-15",
+        "date": "2026-07-09",
         "post_count": 5,
         "prominence": 5.0,
-        "avg_sentiment": 0.8,
+        "avg_sentiment": 0.4,
         "crawler_window": {
-          "start": "2026-07-12",
-          "end": "2026-07-17"
+          "start": "2026-07-06",
+          "end": "2026-07-11"
         },
         "sample_titles": [
-          "Warum haben wir bei KI so wenig Daten zu Frauengesundheit? Über die Hälfte der Menschheit menstruiert – in Forschung,…",
-          "Theorie trifft Praxis – und Software bewegt Logistik. 🚛🤖 VALYUE war bei der Veranstaltung „Stay Future Ready“ der IHK…"
+          "Özdemir warnt VW: Audi-Werk Neckarsulm vor möglichen Schließungen",
+          "Bereit für 2 Tage KI-Festival? Hier ist eure Karte fürs Gelände. Das KI Festival kehrt auch 2026 zurück – powered by…"
         ]
       },
       {
-        "date": "2026-07-23",
-        "post_count": 6,
-        "prominence": 6.0,
-        "avg_sentiment": 0.67,
+        "date": "2026-07-20",
+        "post_count": 5,
+        "prominence": 5.0,
+        "avg_sentiment": 0.5,
         "crawler_window": {
-          "start": "2026-07-20",
-          "end": "2026-07-25"
+          "start": "2026-07-17",
+          "end": "2026-07-22"
         },
         "sample_titles": [
-          "Pulse Stage – wo 10 Minuten reichen, um den Funken überspringen zu lassen. Von Bildverarbeitung in der Ziegenhaltung…",
-          "Nur noch zwei Tage bis zum @ki_festival_by_ipai_foundation Am 25. und 26. Juli findet ihr Merkur, einen unserer Talking…"
+          "Innovation beginnt nicht im Unternehmen – sondern im Austausch",
+          "Herr Schreiber, ich schätze ihre unaufgeregte Art sehr. Toll wäre auch, mal von den positiven Dingen zu sprechen und zu…"
         ]
       },
       {
         "date": "2026-09-16",
         "post_count": 4,
         "prominence": 4.0,
-        "avg_sentiment": -49.25,
+        "avg_sentiment": 0.5,
         "crawler_window": {
           "start": "2026-09-13",
           "end": "2026-09-18"
@@ -1159,7 +1004,7 @@
         "date": "2026-09-29",
         "post_count": 6,
         "prominence": 6.0,
-        "avg_sentiment": -16.0,
+        "avg_sentiment": 0.6,
         "crawler_window": {
           "start": "2026-09-26",
           "end": "2026-10-01"
@@ -1173,7 +1018,7 @@
         "date": "2026-10-12",
         "post_count": 6,
         "prominence": 6.0,
-        "avg_sentiment": -16.0,
+        "avg_sentiment": 0.6,
         "crawler_window": {
           "start": "2026-10-09",
           "end": "2026-10-14"
@@ -1186,24 +1031,24 @@
     ],
     "change_points": [
       {
-        "date": "2025-03-25",
-        "avg_posts_before": 0.67,
-        "avg_posts_after": 1.54,
-        "avg_sentiment_before": -13.14,
-        "avg_sentiment_after": -12.66
+        "date": "2025-05-14",
+        "avg_posts_before": 0.72,
+        "avg_posts_after": 1.51,
+        "avg_sentiment_before": 0.73,
+        "avg_sentiment_after": 0.7
       }
     ]
   },
   {
     "project": "Paris_Cable_C1",
-    "total_posts": 713,
+    "total_posts": 708,
     "date_range": "2024-10-25 bis 2026-10-26",
     "peaks": [
       {
         "date": "2025-02-13",
         "post_count": 5,
         "prominence": 5.0,
-        "avg_sentiment": -19.0,
+        "avg_sentiment": 1.0,
         "crawler_window": {
           "start": "2025-02-10",
           "end": "2025-02-15"
@@ -1245,7 +1090,7 @@
         "date": "2025-08-14",
         "post_count": 4,
         "prominence": 4.0,
-        "avg_sentiment": -24.5,
+        "avg_sentiment": 0.33,
         "crawler_window": {
           "start": "2025-08-11",
           "end": "2025-08-16"
@@ -1259,7 +1104,7 @@
         "date": "2025-09-24",
         "post_count": 8,
         "prominence": 8.0,
-        "avg_sentiment": -24.38,
+        "avg_sentiment": 0.5,
         "crawler_window": {
           "start": "2025-09-21",
           "end": "2025-09-26"
@@ -1273,7 +1118,7 @@
         "date": "2025-10-01",
         "post_count": 16,
         "prominence": 16.0,
-        "avg_sentiment": -5.69,
+        "avg_sentiment": 0.53,
         "crawler_window": {
           "start": "2025-09-28",
           "end": "2025-10-03"
@@ -1301,7 +1146,7 @@
         "date": "2025-10-27",
         "post_count": 4,
         "prominence": 4.0,
-        "avg_sentiment": -24.25,
+        "avg_sentiment": 0.67,
         "crawler_window": {
           "start": "2025-10-24",
           "end": "2025-10-29"
@@ -1343,7 +1188,7 @@
         "date": "2025-12-13",
         "post_count": 46,
         "prominence": 46.0,
-        "avg_sentiment": -12.5,
+        "avg_sentiment": 0.47,
         "crawler_window": {
           "start": "2025-12-10",
           "end": "2025-12-15"
@@ -1371,7 +1216,7 @@
         "date": "2026-02-09",
         "post_count": 4,
         "prominence": 4.0,
-        "avg_sentiment": -24.0,
+        "avg_sentiment": 1.0,
         "crawler_window": {
           "start": "2026-02-06",
           "end": "2026-02-11"
@@ -1485,29 +1330,29 @@
         "date": "2025-09-23",
         "avg_posts_before": 0.53,
         "avg_posts_after": 5.67,
-        "avg_sentiment_before": -4.94,
-        "avg_sentiment_after": -10.74
+        "avg_sentiment_before": 0.73,
+        "avg_sentiment_after": 0.47
       },
       {
         "date": "2025-10-02",
         "avg_posts_before": 5.67,
-        "avg_posts_after": 1.42,
-        "avg_sentiment_before": -10.74,
-        "avg_sentiment_after": -3.54
+        "avg_posts_after": 1.41,
+        "avg_sentiment_before": 0.47,
+        "avg_sentiment_after": 0.57
       },
       {
         "date": "2025-12-12",
-        "avg_posts_before": 1.42,
+        "avg_posts_before": 1.41,
         "avg_posts_after": 13.22,
-        "avg_sentiment_before": -3.54,
-        "avg_sentiment_after": -12.25
+        "avg_sentiment_before": 0.57,
+        "avg_sentiment_after": 0.37
       },
       {
         "date": "2025-12-21",
         "avg_posts_before": 13.22,
-        "avg_posts_after": 0.86,
-        "avg_sentiment_before": -12.25,
-        "avg_sentiment_after": -10.36
+        "avg_posts_after": 0.85,
+        "avg_sentiment_before": 0.37,
+        "avg_sentiment_after": 0.75
       }
     ]
   }

@@ -1,0 +1,75 @@
+{
+  "projekt": "IPAI",
+  "peak": 25,
+  "datum": "2026-07-20",
+  "beitraege_am_tag": 5,
+  "prominenz": 5.0,
+  "vendor_tonlage": 0.5,
+  "beitraege_im_fenster": 12,
+  "fenster": {
+    "start": "2026-07-17",
+    "ende": "2026-07-22"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "heilbronn",
+      "anzahl": 14
+    },
+    {
+      "begriff": "festival",
+      "anzahl": 10
+    },
+    {
+      "begriff": "ipai",
+      "anzahl": 8
+    },
+    {
+      "begriff": "baden",
+      "anzahl": 8
+    },
+    {
+      "begriff": "juli",
+      "anzahl": 7
+    },
+    {
+      "begriff": "württemberg",
+      "anzahl": 6
+    },
+    {
+      "begriff": "neue",
+      "anzahl": 5
+    },
+    {
+      "begriff": "campus",
+      "anzahl": 5
+    },
+    {
+      "begriff": "schwarz",
+      "anzahl": 4
+    },
+    {
+      "begriff": "gruppe",
+      "anzahl": 4
+    },
+    {
+      "begriff": "netzwerk",
+      "anzahl": 4
+    },
+    {
+      "begriff": "mehr",
+      "anzahl": 4
+    },
+    {
+      "begriff": "nshko",
+      "anzahl": 4
+    },
+    {
+      "begriff": "live",
+      "anzahl": 4
+    },
+    {
+      "begriff": "stimme",
+      "anzahl": 4
+    }
+  ]
+}

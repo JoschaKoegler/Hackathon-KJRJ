@@ -1,0 +1,75 @@
+{
+  "projekt": "Heilbronn",
+  "peak": 4,
+  "datum": "2025-05-12",
+  "beitraege_am_tag": 13,
+  "prominenz": 13.0,
+  "vendor_tonlage": 0.62,
+  "beitraege_im_fenster": 18,
+  "fenster": {
+    "start": "2025-05-09",
+    "ende": "2025-05-14"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "heilbronn",
+      "anzahl": 62
+    },
+    {
+      "begriff": "seilbahn",
+      "anzahl": 54
+    },
+    {
+      "begriff": "land",
+      "anzahl": 33
+    },
+    {
+      "begriff": "millionen",
+      "anzahl": 27
+    },
+    {
+      "begriff": "stadt",
+      "anzahl": 18
+    },
+    {
+      "begriff": "sagt",
+      "anzahl": 15
+    },
+    {
+      "begriff": "geplante",
+      "anzahl": 13
+    },
+    {
+      "begriff": "baden",
+      "anzahl": 10
+    },
+    {
+      "begriff": "projekt",
+      "anzahl": 10
+    },
+    {
+      "begriff": "wieder",
+      "anzahl": 9
+    },
+    {
+      "begriff": "urbane",
+      "anzahl": 9
+    },
+    {
+      "begriff": "schritt",
+      "anzahl": 8
+    },
+    {
+      "begriff": "heilbronner",
+      "anzahl": 7
+    },
+    {
+      "begriff": "stuttgart",
+      "anzahl": 7
+    },
+    {
+      "begriff": "startschuss",
+      "anzahl": 7
+    }
+  ]
+}

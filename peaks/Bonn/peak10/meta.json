@@ -1,0 +1,75 @@
+{
+  "projekt": "Bonn",
+  "peak": 10,
+  "datum": "2025-09-07",
+  "beitraege_am_tag": 4,
+  "prominenz": 4.0,
+  "vendor_tonlage": 0.25,
+  "beitraege_im_fenster": 7,
+  "fenster": {
+    "start": "2025-09-04",
+    "ende": "2025-09-09"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "seilbahn",
+      "anzahl": 14
+    },
+    {
+      "begriff": "bonner",
+      "anzahl": 11
+    },
+    {
+      "begriff": "tempo",
+      "anzahl": 9
+    },
+    {
+      "begriff": "bonn",
+      "anzahl": 9
+    },
+    {
+      "begriff": "verkehrspolitik",
+      "anzahl": 8
+    },
+    {
+      "begriff": "adenauerallee",
+      "anzahl": 8
+    },
+    {
+      "begriff": "wahlumfrage",
+      "anzahl": 7
+    },
+    {
+      "begriff": "mehrheit",
+      "anzahl": 4
+    },
+    {
+      "begriff": "befragung",
+      "anzahl": 4
+    },
+    {
+      "begriff": "andere",
+      "anzahl": 4
+    },
+    {
+      "begriff": "vlotho",
+      "anzahl": 4
+    },
+    {
+      "begriff": "ideen",
+      "anzahl": 4
+    },
+    {
+      "begriff": "spiel",
+      "anzahl": 4
+    },
+    {
+      "begriff": "integrationsfläche",
+      "anzahl": 4
+    },
+    {
+      "begriff": "bonneberg",
+      "anzahl": 4
+    }
+  ]
+}

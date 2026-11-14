@@ -1,0 +1,75 @@
+{
+  "projekt": "Paris",
+  "peak": 15,
+  "datum": "2026-04-14",
+  "beitraege_am_tag": 4,
+  "prominenz": 4.0,
+  "vendor_tonlage": 1.0,
+  "beitraege_im_fenster": 10,
+  "fenster": {
+    "start": "2026-04-11",
+    "ende": "2026-04-16"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "doppelmayr",
+      "anzahl": 14
+    },
+    {
+      "begriff": "france",
+      "anzahl": 9
+    },
+    {
+      "begriff": "weltweit",
+      "anzahl": 9
+    },
+    {
+      "begriff": "paris",
+      "anzahl": 8
+    },
+    {
+      "begriff": "nicolas",
+      "anzahl": 8
+    },
+    {
+      "begriff": "lacroix",
+      "anzahl": 8
+    },
+    {
+      "begriff": "humoriste",
+      "anzahl": 7
+    },
+    {
+      "begriff": "gruppe",
+      "anzahl": 7
+    },
+    {
+      "begriff": "seilbahnen",
+      "anzahl": 7
+    },
+    {
+      "begriff": "alternatives",
+      "anzahl": 6
+    },
+    {
+      "begriff": "voiture",
+      "anzahl": 6
+    },
+    {
+      "begriff": "mobilité",
+      "anzahl": 6
+    },
+    {
+      "begriff": "wallonie",
+      "anzahl": 6
+    },
+    {
+      "begriff": "neue",
+      "anzahl": 6
+    },
+    {
+      "begriff": "téléphérique",
+      "anzahl": 5
+    }
+  ]
+}

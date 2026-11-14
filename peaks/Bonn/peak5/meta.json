@@ -1,0 +1,75 @@
+{
+  "projekt": "Bonn",
+  "peak": 5,
+  "datum": "2025-06-15",
+  "beitraege_am_tag": 8,
+  "prominenz": 8.0,
+  "vendor_tonlage": 1.0,
+  "beitraege_im_fenster": 14,
+  "fenster": {
+    "start": "2025-06-12",
+    "ende": "2025-06-17"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "seilbahn",
+      "anzahl": 47
+    },
+    {
+      "begriff": "bonn",
+      "anzahl": 37
+    },
+    {
+      "begriff": "soll",
+      "anzahl": 23
+    },
+    {
+      "begriff": "pionierprojekt",
+      "anzahl": 18
+    },
+    {
+      "begriff": "projekt",
+      "anzahl": 12
+    },
+    {
+      "begriff": "einzigartige",
+      "anzahl": 11
+    },
+    {
+      "begriff": "deutschland",
+      "anzahl": 11
+    },
+    {
+      "begriff": "stadt",
+      "anzahl": 10
+    },
+    {
+      "begriff": "premiere",
+      "anzahl": 10
+    },
+    {
+      "begriff": "bundesweit",
+      "anzahl": 8
+    },
+    {
+      "begriff": "rhein",
+      "anzahl": 8
+    },
+    {
+      "begriff": "form",
+      "anzahl": 8
+    },
+    {
+      "begriff": "etappe",
+      "anzahl": 8
+    },
+    {
+      "begriff": "bekommt",
+      "anzahl": 7
+    },
+    {
+      "begriff": "venusberg",
+      "anzahl": 7
+    }
+  ]
+}

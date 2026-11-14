@@ -1,0 +1,75 @@
+{
+  "projekt": "Paris",
+  "peak": 20,
+  "datum": "2026-09-21",
+  "beitraege_am_tag": 4,
+  "prominenz": 4.0,
+  "vendor_tonlage": 1.0,
+  "beitraege_im_fenster": 5,
+  "fenster": {
+    "start": "2026-09-18",
+    "ende": "2026-09-23"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "europe",
+      "anzahl": 7
+    },
+    {
+      "begriff": "paris",
+      "anzahl": 7
+    },
+    {
+      "begriff": "doppelmayr",
+      "anzahl": 7
+    },
+    {
+      "begriff": "tous",
+      "anzahl": 6
+    },
+    {
+      "begriff": "droits",
+      "anzahl": 6
+    },
+    {
+      "begriff": "réservés",
+      "anzahl": 6
+    },
+    {
+      "begriff": "publicité",
+      "anzahl": 6
+    },
+    {
+      "begriff": "voyage",
+      "anzahl": 5
+    },
+    {
+      "begriff": "france",
+      "anzahl": 5
+    },
+    {
+      "begriff": "train",
+      "anzahl": 4
+    },
+    {
+      "begriff": "seilbahn",
+      "anzahl": 4
+    },
+    {
+      "begriff": "belles",
+      "anzahl": 4
+    },
+    {
+      "begriff": "stations",
+      "anzahl": 4
+    },
+    {
+      "begriff": "classement",
+      "anzahl": 4
+    },
+    {
+      "begriff": "suisse",
+      "anzahl": 3
+    }
+  ]
+}

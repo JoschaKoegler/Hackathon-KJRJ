@@ -1,0 +1,75 @@
+{
+  "projekt": "Heilbronn",
+  "peak": 2,
+  "datum": "2025-04-04",
+  "beitraege_am_tag": 11,
+  "prominenz": 11.0,
+  "vendor_tonlage": 0.0,
+  "beitraege_im_fenster": 23,
+  "fenster": {
+    "start": "2025-04-01",
+    "ende": "2025-04-06"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "seilbahn",
+      "anzahl": 63
+    },
+    {
+      "begriff": "heilbronn",
+      "anzahl": 57
+    },
+    {
+      "begriff": "stadt",
+      "anzahl": 21
+    },
+    {
+      "begriff": "könnte",
+      "anzahl": 14
+    },
+    {
+      "begriff": "gemeinderat",
+      "anzahl": 12
+    },
+    {
+      "begriff": "nahverkehr",
+      "anzahl": 12
+    },
+    {
+      "begriff": "stimme",
+      "anzahl": 12
+    },
+    {
+      "begriff": "pläne",
+      "anzahl": 10
+    },
+    {
+      "begriff": "heilbronner",
+      "anzahl": 10
+    },
+    {
+      "begriff": "geräten",
+      "anzahl": 10
+    },
+    {
+      "begriff": "sichern",
+      "anzahl": 10
+    },
+    {
+      "begriff": "angebot",
+      "anzahl": 10
+    },
+    {
+      "begriff": "erste",
+      "anzahl": 9
+    },
+    {
+      "begriff": "öffentlichen",
+      "anzahl": 9
+    },
+    {
+      "begriff": "projekt",
+      "anzahl": 9
+    }
+  ]
+}

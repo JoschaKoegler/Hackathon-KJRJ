@@ -1,0 +1,75 @@
+{
+  "projekt": "IPAI",
+  "peak": 7,
+  "datum": "2025-05-16",
+  "beitraege_am_tag": 4,
+  "prominenz": 4.0,
+  "vendor_tonlage": 0.75,
+  "beitraege_im_fenster": 11,
+  "fenster": {
+    "start": "2025-05-13",
+    "ende": "2025-05-18"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "heilbronn",
+      "anzahl": 20
+    },
+    {
+      "begriff": "ipai",
+      "anzahl": 16
+    },
+    {
+      "begriff": "bischof",
+      "anzahl": 14
+    },
+    {
+      "begriff": "krämer",
+      "anzahl": 14
+    },
+    {
+      "begriff": "klaus",
+      "anzahl": 10
+    },
+    {
+      "begriff": "intelligenz",
+      "anzahl": 9
+    },
+    {
+      "begriff": "stadt",
+      "anzahl": 8
+    },
+    {
+      "begriff": "schwarz",
+      "anzahl": 7
+    },
+    {
+      "begriff": "künstliche",
+      "anzahl": 6
+    },
+    {
+      "begriff": "gruppe",
+      "anzahl": 6
+    },
+    {
+      "begriff": "unsere",
+      "anzahl": 5
+    },
+    {
+      "begriff": "zukunft",
+      "anzahl": 4
+    },
+    {
+      "begriff": "spaces",
+      "anzahl": 4
+    },
+    {
+      "begriff": "falschen",
+      "anzahl": 4
+    },
+    {
+      "begriff": "illusionen",
+      "anzahl": 4
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "projekt": "IPAI",
+  "peak": 4,
+  "datum": "2025-01-24",
+  "beitraege_am_tag": 4,
+  "prominenz": 4.0,
+  "vendor_tonlage": 1.0,
+  "beitraege_im_fenster": 6,
+  "fenster": {
+    "start": "2025-01-21",
+    "ende": "2025-01-26"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "stuttgart",
+      "anzahl": 11
+    },
+    {
+      "begriff": "künstliche",
+      "anzahl": 10
+    },
+    {
+      "begriff": "intelligenz",
+      "anzahl": 10
+    },
+    {
+      "begriff": "ipai",
+      "anzahl": 8
+    },
+    {
+      "begriff": "tritt",
+      "anzahl": 5
+    },
+    {
+      "begriff": "bernhard",
+      "anzahl": 4
+    },
+    {
+      "begriff": "feßler",
+      "anzahl": 4
+    },
+    {
+      "begriff": "heilbronn",
+      "anzahl": 4
+    },
+    {
+      "begriff": "heilbronner",
+      "anzahl": 4
+    },
+    {
+      "begriff": "google",
+      "anzahl": 4
+    },
+    {
+      "begriff": "neue",
+      "anzahl": 3
+    },
+    {
+      "begriff": "januar",
+      "anzahl": 3
+    },
+    {
+      "begriff": "wirtschaft",
+      "anzahl": 3
+    },
+    {
+      "begriff": "will",
+      "anzahl": 3
+    },
+    {
+      "begriff": "geht",
+      "anzahl": 3
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "projekt": "Heilbronn",
+  "peak": 10,
+  "datum": "2025-09-08",
+  "beitraege_am_tag": 5,
+  "prominenz": 5.0,
+  "vendor_tonlage": 0.67,
+  "beitraege_im_fenster": 8,
+  "fenster": {
+    "start": "2025-09-05",
+    "ende": "2025-09-10"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "köln",
+      "anzahl": 20
+    },
+    {
+      "begriff": "stadt",
+      "anzahl": 10
+    },
+    {
+      "begriff": "seilbahn",
+      "anzahl": 10
+    },
+    {
+      "begriff": "kölner",
+      "anzahl": 8
+    },
+    {
+      "begriff": "verkehrsunternehmen",
+      "anzahl": 8
+    },
+    {
+      "begriff": "verband",
+      "anzahl": 8
+    },
+    {
+      "begriff": "heilbronner",
+      "anzahl": 7
+    },
+    {
+      "begriff": "öpnv",
+      "anzahl": 6
+    },
+    {
+      "begriff": "stimme",
+      "anzahl": 6
+    },
+    {
+      "begriff": "geräten",
+      "anzahl": 6
+    },
+    {
+      "begriff": "sichern",
+      "anzahl": 6
+    },
+    {
+      "begriff": "angebot",
+      "anzahl": 6
+    },
+    {
+      "begriff": "stadtbahn",
+      "anzahl": 5
+    },
+    {
+      "begriff": "heilbronn",
+      "anzahl": 4
+    },
+    {
+      "begriff": "verkehrs",
+      "anzahl": 4
+    }
+  ]
+}

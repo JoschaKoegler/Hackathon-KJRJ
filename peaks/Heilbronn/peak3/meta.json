@@ -1,0 +1,75 @@
+{
+  "projekt": "Heilbronn",
+  "peak": 3,
+  "datum": "2025-04-25",
+  "beitraege_am_tag": 2,
+  "prominenz": 2.0,
+  "vendor_tonlage": 0.5,
+  "beitraege_im_fenster": 3,
+  "fenster": {
+    "start": "2025-04-22",
+    "ende": "2025-04-27"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "seilbahn",
+      "anzahl": 6
+    },
+    {
+      "begriff": "wiesbaden",
+      "anzahl": 5
+    },
+    {
+      "begriff": "ipai",
+      "anzahl": 4
+    },
+    {
+      "begriff": "plänen",
+      "anzahl": 4
+    },
+    {
+      "begriff": "straßenbahn",
+      "anzahl": 3
+    },
+    {
+      "begriff": "stadt",
+      "anzahl": 3
+    },
+    {
+      "begriff": "heilbronner",
+      "anzahl": 3
+    },
+    {
+      "begriff": "geomaus",
+      "anzahl": 2
+    },
+    {
+      "begriff": "anzeigen",
+      "anzahl": 2
+    },
+    {
+      "begriff": "somit",
+      "anzahl": 2
+    },
+    {
+      "begriff": "ohne",
+      "anzahl": 2
+    },
+    {
+      "begriff": "geologie",
+      "anzahl": 2
+    },
+    {
+      "begriff": "fast",
+      "anzahl": 2
+    },
+    {
+      "begriff": "möglich",
+      "anzahl": 2
+    },
+    {
+      "begriff": "bahn",
+      "anzahl": 2
+    }
+  ]
+}

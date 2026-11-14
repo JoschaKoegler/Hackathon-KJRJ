@@ -1,0 +1,75 @@
+{
+  "projekt": "IPAI",
+  "peak": 24,
+  "datum": "2026-07-09",
+  "beitraege_am_tag": 5,
+  "prominenz": 5.0,
+  "vendor_tonlage": 0.4,
+  "beitraege_im_fenster": 15,
+  "fenster": {
+    "start": "2026-07-06",
+    "ende": "2026-07-11"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "heilbronn",
+      "anzahl": 22
+    },
+    {
+      "begriff": "schwarz",
+      "anzahl": 19
+    },
+    {
+      "begriff": "ipai",
+      "anzahl": 11
+    },
+    {
+      "begriff": "campus",
+      "anzahl": 11
+    },
+    {
+      "begriff": "dieter",
+      "anzahl": 10
+    },
+    {
+      "begriff": "audi",
+      "anzahl": 8
+    },
+    {
+      "begriff": "google",
+      "anzahl": 8
+    },
+    {
+      "begriff": "will",
+      "anzahl": 8
+    },
+    {
+      "begriff": "zürich",
+      "anzahl": 8
+    },
+    {
+      "begriff": "özdemir",
+      "anzahl": 7
+    },
+    {
+      "begriff": "neckarsulm",
+      "anzahl": 7
+    },
+    {
+      "begriff": "juli",
+      "anzahl": 7
+    },
+    {
+      "begriff": "neuen",
+      "anzahl": 7
+    },
+    {
+      "begriff": "werk",
+      "anzahl": 6
+    },
+    {
+      "begriff": "stiftung",
+      "anzahl": 6
+    }
+  ]
+}

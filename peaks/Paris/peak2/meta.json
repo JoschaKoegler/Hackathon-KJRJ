@@ -1,0 +1,75 @@
+{
+  "projekt": "Paris",
+  "peak": 2,
+  "datum": "2025-02-27",
+  "beitraege_am_tag": 5,
+  "prominenz": 5.0,
+  "vendor_tonlage": 0.6,
+  "beitraege_im_fenster": 12,
+  "fenster": {
+    "start": "2025-02-24",
+    "ende": "2025-03-01"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "câble",
+      "anzahl": 41
+    },
+    {
+      "begriff": "téléphérique",
+      "anzahl": 34
+    },
+    {
+      "begriff": "marne",
+      "anzahl": 18
+    },
+    {
+      "begriff": "france",
+      "anzahl": 16
+    },
+    {
+      "begriff": "premier",
+      "anzahl": 14
+    },
+    {
+      "begriff": "francilien",
+      "anzahl": 10
+    },
+    {
+      "begriff": "créteil",
+      "anzahl": 9
+    },
+    {
+      "begriff": "boucle",
+      "anzahl": 9
+    },
+    {
+      "begriff": "opération",
+      "anzahl": 8
+    },
+    {
+      "begriff": "futur",
+      "anzahl": 8
+    },
+    {
+      "begriff": "fermetures",
+      "anzahl": 8
+    },
+    {
+      "begriff": "travaux",
+      "anzahl": 8
+    },
+    {
+      "begriff": "villeneuve",
+      "anzahl": 7
+    },
+    {
+      "begriff": "saint",
+      "anzahl": 7
+    },
+    {
+      "begriff": "georges",
+      "anzahl": 7
+    }
+  ]
+}

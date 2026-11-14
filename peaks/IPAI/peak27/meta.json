@@ -1,0 +1,75 @@
+{
+  "projekt": "IPAI",
+  "peak": 27,
+  "datum": "2026-09-29",
+  "beitraege_am_tag": 6,
+  "prominenz": 6.0,
+  "vendor_tonlage": 0.6,
+  "beitraege_im_fenster": 10,
+  "fenster": {
+    "start": "2026-09-26",
+    "ende": "2026-10-01"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "ipai",
+      "anzahl": 13
+    },
+    {
+      "begriff": "endrich",
+      "anzahl": 11
+    },
+    {
+      "begriff": "fraunhofer",
+      "anzahl": 11
+    },
+    {
+      "begriff": "neue",
+      "anzahl": 9
+    },
+    {
+      "begriff": "heilbronn",
+      "anzahl": 8
+    },
+    {
+      "begriff": "intelligenz",
+      "anzahl": 7
+    },
+    {
+      "begriff": "chip",
+      "anzahl": 7
+    },
+    {
+      "begriff": "robotic",
+      "anzahl": 6
+    },
+    {
+      "begriff": "weeks",
+      "anzahl": 6
+    },
+    {
+      "begriff": "design",
+      "anzahl": 6
+    },
+    {
+      "begriff": "electronics",
+      "anzahl": 6
+    },
+    {
+      "begriff": "medien",
+      "anzahl": 6
+    },
+    {
+      "begriff": "künstliche",
+      "anzahl": 5
+    },
+    {
+      "begriff": "mitgliedschaft",
+      "anzahl": 5
+    },
+    {
+      "begriff": "roboter",
+      "anzahl": 4
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "projekt": "Paris",
+  "peak": 8,
+  "datum": "2025-10-27",
+  "beitraege_am_tag": 4,
+  "prominenz": 4.0,
+  "vendor_tonlage": 0.67,
+  "beitraege_im_fenster": 13,
+  "fenster": {
+    "start": "2025-10-24",
+    "ende": "2025-10-29"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "téléphérique",
+      "anzahl": 32
+    },
+    {
+      "begriff": "france",
+      "anzahl": 25
+    },
+    {
+      "begriff": "câble",
+      "anzahl": 14
+    },
+    {
+      "begriff": "marne",
+      "anzahl": 13
+    },
+    {
+      "begriff": "chantier",
+      "anzahl": 12
+    },
+    {
+      "begriff": "octobre",
+      "anzahl": 11
+    },
+    {
+      "begriff": "bénédiction",
+      "anzahl": 9
+    },
+    {
+      "begriff": "prêtre",
+      "anzahl": 9
+    },
+    {
+      "begriff": "barcelone",
+      "anzahl": 9
+    },
+    {
+      "begriff": "premier",
+      "anzahl": 8
+    },
+    {
+      "begriff": "futur",
+      "anzahl": 8
+    },
+    {
+      "begriff": "avant",
+      "anzahl": 8
+    },
+    {
+      "begriff": "japon",
+      "anzahl": 6
+    },
+    {
+      "begriff": "première",
+      "anzahl": 6
+    },
+    {
+      "begriff": "tout",
+      "anzahl": 6
+    }
+  ]
+}

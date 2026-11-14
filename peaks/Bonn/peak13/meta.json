@@ -1,0 +1,75 @@
+{
+  "projekt": "Bonn",
+  "peak": 13,
+  "datum": "2025-12-16",
+  "beitraege_am_tag": 2,
+  "prominenz": 2.0,
+  "vendor_tonlage": 0.0,
+  "beitraege_im_fenster": 6,
+  "fenster": {
+    "start": "2025-12-13",
+    "ende": "2025-12-18"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "seilbahn",
+      "anzahl": 16
+    },
+    {
+      "begriff": "sprung",
+      "anzahl": 11
+    },
+    {
+      "begriff": "bonn",
+      "anzahl": 6
+    },
+    {
+      "begriff": "paris",
+      "anzahl": 6
+    },
+    {
+      "begriff": "luft",
+      "anzahl": 6
+    },
+    {
+      "begriff": "zipline",
+      "anzahl": 6
+    },
+    {
+      "begriff": "rhein",
+      "anzahl": 5
+    },
+    {
+      "begriff": "raum",
+      "anzahl": 5
+    },
+    {
+      "begriff": "westblick",
+      "anzahl": 4
+    },
+    {
+      "begriff": "bonner",
+      "anzahl": 4
+    },
+    {
+      "begriff": "längste",
+      "anzahl": 4
+    },
+    {
+      "begriff": "köln",
+      "anzahl": 4
+    },
+    {
+      "begriff": "onride",
+      "anzahl": 4
+    },
+    {
+      "begriff": "indoor",
+      "anzahl": 4
+    },
+    {
+      "begriff": "soll",
+      "anzahl": 3
+    }
+  ]
+}

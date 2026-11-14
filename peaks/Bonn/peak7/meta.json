@@ -1,0 +1,75 @@
+{
+  "projekt": "Bonn",
+  "peak": 7,
+  "datum": "2025-07-28",
+  "beitraege_am_tag": 2,
+  "prominenz": 2.0,
+  "vendor_tonlage": 1.0,
+  "beitraege_im_fenster": 2,
+  "fenster": {
+    "start": "2025-07-25",
+    "ende": "2025-07-30"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "montabaur",
+      "anzahl": 12
+    },
+    {
+      "begriff": "south",
+      "anzahl": 8
+    },
+    {
+      "begriff": "carolina",
+      "anzahl": 8
+    },
+    {
+      "begriff": "gast",
+      "anzahl": 6
+    },
+    {
+      "begriff": "zwei",
+      "anzahl": 5
+    },
+    {
+      "begriff": "jugend",
+      "anzahl": 5
+    },
+    {
+      "begriff": "teams",
+      "anzahl": 5
+    },
+    {
+      "begriff": "andree",
+      "anzahl": 3
+    },
+    {
+      "begriff": "stein",
+      "anzahl": 3
+    },
+    {
+      "begriff": "rathaus",
+      "anzahl": 3
+    },
+    {
+      "begriff": "fußballer",
+      "anzahl": 3
+    },
+    {
+      "begriff": "ihren",
+      "anzahl": 3
+    },
+    {
+      "begriff": "more",
+      "anzahl": 2
+    },
+    {
+      "begriff": "than",
+      "anzahl": 2
+    },
+    {
+      "begriff": "soccer",
+      "anzahl": 2
+    }
+  ]
+}

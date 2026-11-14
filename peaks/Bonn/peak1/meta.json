@@ -1,0 +1,75 @@
+{
+  "projekt": "Bonn",
+  "peak": 1,
+  "datum": "2024-11-19",
+  "beitraege_am_tag": 2,
+  "prominenz": 2.0,
+  "vendor_tonlage": 1.0,
+  "beitraege_im_fenster": 3,
+  "fenster": {
+    "start": "2024-11-16",
+    "ende": "2024-11-21"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "bonn",
+      "anzahl": 18
+    },
+    {
+      "begriff": "taskforce",
+      "anzahl": 6
+    },
+    {
+      "begriff": "verkehr",
+      "anzahl": 5
+    },
+    {
+      "begriff": "will",
+      "anzahl": 5
+    },
+    {
+      "begriff": "verkehrslage",
+      "anzahl": 5
+    },
+    {
+      "begriff": "nahverkehr",
+      "anzahl": 5
+    },
+    {
+      "begriff": "stadt",
+      "anzahl": 5
+    },
+    {
+      "begriff": "verbessern",
+      "anzahl": 4
+    },
+    {
+      "begriff": "funktionierendes",
+      "anzahl": 4
+    },
+    {
+      "begriff": "verkehrssystem",
+      "anzahl": 4
+    },
+    {
+      "begriff": "schlüssel",
+      "anzahl": 4
+    },
+    {
+      "begriff": "region",
+      "anzahl": 4
+    },
+    {
+      "begriff": "öffentlichen",
+      "anzahl": 4
+    },
+    {
+      "begriff": "bafin",
+      "anzahl": 4
+    },
+    {
+      "begriff": "ihren",
+      "anzahl": 4
+    }
+  ]
+}

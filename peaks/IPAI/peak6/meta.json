@@ -1,0 +1,75 @@
+{
+  "projekt": "IPAI",
+  "peak": 6,
+  "datum": "2025-03-31",
+  "beitraege_am_tag": 5,
+  "prominenz": 5.0,
+  "vendor_tonlage": 0.8,
+  "beitraege_im_fenster": 12,
+  "fenster": {
+    "start": "2025-03-28",
+    "ende": "2025-04-02"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "heilbronn",
+      "anzahl": 16
+    },
+    {
+      "begriff": "imec",
+      "anzahl": 15
+    },
+    {
+      "begriff": "baden",
+      "anzahl": 14
+    },
+    {
+      "begriff": "ipai",
+      "anzahl": 14
+    },
+    {
+      "begriff": "chip",
+      "anzahl": 13
+    },
+    {
+      "begriff": "württemberg",
+      "anzahl": 11
+    },
+    {
+      "begriff": "kommt",
+      "anzahl": 8
+    },
+    {
+      "begriff": "stimme",
+      "anzahl": 8
+    },
+    {
+      "begriff": "geräten",
+      "anzahl": 8
+    },
+    {
+      "begriff": "sichern",
+      "anzahl": 8
+    },
+    {
+      "begriff": "angebot",
+      "anzahl": 8
+    },
+    {
+      "begriff": "soll",
+      "anzahl": 7
+    },
+    {
+      "begriff": "forschungszentrum",
+      "anzahl": 7
+    },
+    {
+      "begriff": "heilbronner",
+      "anzahl": 7
+    },
+    {
+      "begriff": "zellcheming",
+      "anzahl": 6
+    }
+  ]
+}

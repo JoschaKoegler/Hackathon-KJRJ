@@ -1,0 +1,75 @@
+{
+  "projekt": "IPAI",
+  "peak": 26,
+  "datum": "2026-09-16",
+  "beitraege_am_tag": 4,
+  "prominenz": 4.0,
+  "vendor_tonlage": 0.5,
+  "beitraege_im_fenster": 10,
+  "fenster": {
+    "start": "2026-09-13",
+    "ende": "2026-09-18"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "heilbronn",
+      "anzahl": 13
+    },
+    {
+      "begriff": "neckarsulm",
+      "anzahl": 12
+    },
+    {
+      "begriff": "audi",
+      "anzahl": 11
+    },
+    {
+      "begriff": "ipai",
+      "anzahl": 9
+    },
+    {
+      "begriff": "schwarz",
+      "anzahl": 9
+    },
+    {
+      "begriff": "milliarden",
+      "anzahl": 7
+    },
+    {
+      "begriff": "özdemir",
+      "anzahl": 7
+    },
+    {
+      "begriff": "wohnungsmarkt",
+      "anzahl": 7
+    },
+    {
+      "begriff": "dieter",
+      "anzahl": 6
+    },
+    {
+      "begriff": "beschäftigten",
+      "anzahl": 6
+    },
+    {
+      "begriff": "werk",
+      "anzahl": 6
+    },
+    {
+      "begriff": "lidl",
+      "anzahl": 6
+    },
+    {
+      "begriff": "cosmos",
+      "anzahl": 5
+    },
+    {
+      "begriff": "stiftung",
+      "anzahl": 5
+    },
+    {
+      "begriff": "boom",
+      "anzahl": 5
+    }
+  ]
+}

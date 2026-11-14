@@ -1,0 +1,75 @@
+{
+  "projekt": "Bonn",
+  "peak": 19,
+  "datum": "2026-08-09",
+  "beitraege_am_tag": 2,
+  "prominenz": 2.0,
+  "vendor_tonlage": null,
+  "beitraege_im_fenster": 3,
+  "fenster": {
+    "start": "2026-08-06",
+    "ende": "2026-08-11"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "seilbahn",
+      "anzahl": 9
+    },
+    {
+      "begriff": "rheingefragt",
+      "anzahl": 6
+    },
+    {
+      "begriff": "köln",
+      "anzahl": 6
+    },
+    {
+      "begriff": "gondel",
+      "anzahl": 6
+    },
+    {
+      "begriff": "verkehrschaos",
+      "anzahl": 5
+    },
+    {
+      "begriff": "bonn",
+      "anzahl": 5
+    },
+    {
+      "begriff": "anna",
+      "anzahl": 4
+    },
+    {
+      "begriff": "fleischhauer",
+      "anzahl": 4
+    },
+    {
+      "begriff": "staffel",
+      "anzahl": 4
+    },
+    {
+      "begriff": "folge",
+      "anzahl": 4
+    },
+    {
+      "begriff": "dann",
+      "anzahl": 4
+    },
+    {
+      "begriff": "sport",
+      "anzahl": 4
+    },
+    {
+      "begriff": "kölner",
+      "anzahl": 4
+    },
+    {
+      "begriff": "bonner",
+      "anzahl": 3
+    },
+    {
+      "begriff": "aktuell",
+      "anzahl": 3
+    }
+  ]
+}

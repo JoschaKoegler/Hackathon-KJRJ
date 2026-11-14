@@ -1,0 +1,75 @@
+{
+  "projekt": "Heilbronn",
+  "peak": 16,
+  "datum": "2026-07-04",
+  "beitraege_am_tag": 4,
+  "prominenz": 4.0,
+  "vendor_tonlage": 0.75,
+  "beitraege_im_fenster": 9,
+  "fenster": {
+    "start": "2026-07-01",
+    "ende": "2026-07-06"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "seilbahn",
+      "anzahl": 18
+    },
+    {
+      "begriff": "heilbronn",
+      "anzahl": 10
+    },
+    {
+      "begriff": "stimme",
+      "anzahl": 7
+    },
+    {
+      "begriff": "volksfest",
+      "anzahl": 7
+    },
+    {
+      "begriff": "heilbronner",
+      "anzahl": 6
+    },
+    {
+      "begriff": "stuttgart",
+      "anzahl": 6
+    },
+    {
+      "begriff": "verkehrsclub",
+      "anzahl": 5
+    },
+    {
+      "begriff": "anbindung",
+      "anzahl": 5
+    },
+    {
+      "begriff": "juli",
+      "anzahl": 5
+    },
+    {
+      "begriff": "campus",
+      "anzahl": 4
+    },
+    {
+      "begriff": "dieter",
+      "anzahl": 4
+    },
+    {
+      "begriff": "jetzt",
+      "anzahl": 4
+    },
+    {
+      "begriff": "geräten",
+      "anzahl": 4
+    },
+    {
+      "begriff": "sichern",
+      "anzahl": 4
+    },
+    {
+      "begriff": "angebot",
+      "anzahl": 4
+    }
+  ]
+}

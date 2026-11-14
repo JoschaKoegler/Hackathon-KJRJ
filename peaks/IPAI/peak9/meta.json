@@ -1,0 +1,75 @@
+{
+  "projekt": "IPAI",
+  "peak": 9,
+  "datum": "2025-07-09",
+  "beitraege_am_tag": 11,
+  "prominenz": 11.0,
+  "vendor_tonlage": 0.82,
+  "beitraege_im_fenster": 31,
+  "fenster": {
+    "start": "2025-07-06",
+    "ende": "2025-07-11"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "ipai",
+      "anzahl": 87
+    },
+    {
+      "begriff": "heilbronn",
+      "anzahl": 51
+    },
+    {
+      "begriff": "soll",
+      "anzahl": 30
+    },
+    {
+      "begriff": "nxtgn",
+      "anzahl": 29
+    },
+    {
+      "begriff": "startup",
+      "anzahl": 24
+    },
+    {
+      "begriff": "baden",
+      "anzahl": 23
+    },
+    {
+      "begriff": "württemberg",
+      "anzahl": 23
+    },
+    {
+      "begriff": "park",
+      "anzahl": 20
+    },
+    {
+      "begriff": "campus",
+      "anzahl": 20
+    },
+    {
+      "begriff": "factory",
+      "anzahl": 20
+    },
+    {
+      "begriff": "zentrum",
+      "anzahl": 19
+    },
+    {
+      "begriff": "neue",
+      "anzahl": 16
+    },
+    {
+      "begriff": "juli",
+      "anzahl": 16
+    },
+    {
+      "begriff": "mvrdv",
+      "anzahl": 15
+    },
+    {
+      "begriff": "intelligenz",
+      "anzahl": 15
+    }
+  ]
+}

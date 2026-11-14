@@ -1,0 +1,75 @@
+{
+  "projekt": "Heilbronn",
+  "peak": 1,
+  "datum": "2025-03-28",
+  "beitraege_am_tag": 5,
+  "prominenz": 5.0,
+  "vendor_tonlage": 0.75,
+  "beitraege_im_fenster": 7,
+  "fenster": {
+    "start": "2025-03-25",
+    "ende": "2025-03-30"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "heilbronn",
+      "anzahl": 15
+    },
+    {
+      "begriff": "seilbahn",
+      "anzahl": 13
+    },
+    {
+      "begriff": "stadt",
+      "anzahl": 6
+    },
+    {
+      "begriff": "stadtbahn",
+      "anzahl": 5
+    },
+    {
+      "begriff": "köln",
+      "anzahl": 5
+    },
+    {
+      "begriff": "könnte",
+      "anzahl": 5
+    },
+    {
+      "begriff": "stimme",
+      "anzahl": 5
+    },
+    {
+      "begriff": "wenn",
+      "anzahl": 4
+    },
+    {
+      "begriff": "natürlich",
+      "anzahl": 4
+    },
+    {
+      "begriff": "kein",
+      "anzahl": 4
+    },
+    {
+      "begriff": "andere",
+      "anzahl": 4
+    },
+    {
+      "begriff": "baden",
+      "anzahl": 4
+    },
+    {
+      "begriff": "württemberg",
+      "anzahl": 4
+    },
+    {
+      "begriff": "google",
+      "anzahl": 4
+    },
+    {
+      "begriff": "ihren",
+      "anzahl": 4
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "projekt": "Bonn",
+  "peak": 15,
+  "datum": "2026-03-24",
+  "beitraege_am_tag": 4,
+  "prominenz": 4.0,
+  "vendor_tonlage": -0.25,
+  "beitraege_im_fenster": 11,
+  "fenster": {
+    "start": "2026-03-21",
+    "ende": "2026-03-26"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "seilbahn",
+      "anzahl": 35
+    },
+    {
+      "begriff": "bonn",
+      "anzahl": 24
+    },
+    {
+      "begriff": "stadt",
+      "anzahl": 12
+    },
+    {
+      "begriff": "bonner",
+      "anzahl": 11
+    },
+    {
+      "begriff": "soll",
+      "anzahl": 11
+    },
+    {
+      "begriff": "rhein",
+      "anzahl": 9
+    },
+    {
+      "begriff": "könnte",
+      "anzahl": 6
+    },
+    {
+      "begriff": "planung",
+      "anzahl": 6
+    },
+    {
+      "begriff": "rtlwest",
+      "anzahl": 6
+    },
+    {
+      "begriff": "verkehr",
+      "anzahl": 5
+    },
+    {
+      "begriff": "entlasten",
+      "anzahl": 5
+    },
+    {
+      "begriff": "neue",
+      "anzahl": 5
+    },
+    {
+      "begriff": "projekt",
+      "anzahl": 5
+    },
+    {
+      "begriff": "voran",
+      "anzahl": 5
+    },
+    {
+      "begriff": "millionenprojekt",
+      "anzahl": 4
+    }
+  ]
+}

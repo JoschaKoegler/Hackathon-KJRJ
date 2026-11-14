@@ -1,0 +1,75 @@
+{
+  "projekt": "Heilbronn",
+  "peak": 12,
+  "datum": "2025-10-21",
+  "beitraege_am_tag": 2,
+  "prominenz": 2.0,
+  "vendor_tonlage": -0.5,
+  "beitraege_im_fenster": 4,
+  "fenster": {
+    "start": "2025-10-18",
+    "ende": "2025-10-23"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "seilbahn",
+      "anzahl": 6
+    },
+    {
+      "begriff": "heilbronn",
+      "anzahl": 5
+    },
+    {
+      "begriff": "stadt",
+      "anzahl": 5
+    },
+    {
+      "begriff": "stadtbahn",
+      "anzahl": 4
+    },
+    {
+      "begriff": "ägeri",
+      "anzahl": 4
+    },
+    {
+      "begriff": "steht",
+      "anzahl": 4
+    },
+    {
+      "begriff": "schlechtem",
+      "anzahl": 4
+    },
+    {
+      "begriff": "stern",
+      "anzahl": 4
+    },
+    {
+      "begriff": "kommt",
+      "anzahl": 3
+    },
+    {
+      "begriff": "hier",
+      "anzahl": 3
+    },
+    {
+      "begriff": "dann",
+      "anzahl": 3
+    },
+    {
+      "begriff": "einfach",
+      "anzahl": 3
+    },
+    {
+      "begriff": "jetzt",
+      "anzahl": 3
+    },
+    {
+      "begriff": "ipai",
+      "anzahl": 3
+    },
+    {
+      "begriff": "hauptstadt",
+      "anzahl": 2
+    }
+  ]
+}

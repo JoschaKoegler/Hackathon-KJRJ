@@ -1,0 +1,75 @@
+{
+  "projekt": "IPAI",
+  "peak": 2,
+  "datum": "2024-12-17",
+  "beitraege_am_tag": 4,
+  "prominenz": 4.0,
+  "vendor_tonlage": 1.0,
+  "beitraege_im_fenster": 7,
+  "fenster": {
+    "start": "2024-12-14",
+    "ende": "2024-12-19"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "heilbronn",
+      "anzahl": 14
+    },
+    {
+      "begriff": "ipai",
+      "anzahl": 12
+    },
+    {
+      "begriff": "stimme",
+      "anzahl": 8
+    },
+    {
+      "begriff": "heilbronner",
+      "anzahl": 7
+    },
+    {
+      "begriff": "natürlich",
+      "anzahl": 6
+    },
+    {
+      "begriff": "geräten",
+      "anzahl": 6
+    },
+    {
+      "begriff": "sichern",
+      "anzahl": 6
+    },
+    {
+      "begriff": "angebot",
+      "anzahl": 6
+    },
+    {
+      "begriff": "christian",
+      "anzahl": 5
+    },
+    {
+      "begriff": "news",
+      "anzahl": 4
+    },
+    {
+      "begriff": "dezember",
+      "anzahl": 4
+    },
+    {
+      "begriff": "park",
+      "anzahl": 4
+    },
+    {
+      "begriff": "europaweit",
+      "anzahl": 4
+    },
+    {
+      "begriff": "können",
+      "anzahl": 4
+    },
+    {
+      "begriff": "unser",
+      "anzahl": 4
+    }
+  ]
+}

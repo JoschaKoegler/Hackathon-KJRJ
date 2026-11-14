@@ -1,0 +1,75 @@
+{
+  "projekt": "IPAI",
+  "peak": 11,
+  "datum": "2025-10-10",
+  "beitraege_am_tag": 4,
+  "prominenz": 4.0,
+  "vendor_tonlage": 0.0,
+  "beitraege_im_fenster": 10,
+  "fenster": {
+    "start": "2025-10-07",
+    "ende": "2025-10-12"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "heilbronn",
+      "anzahl": 27
+    },
+    {
+      "begriff": "lidl",
+      "anzahl": 18
+    },
+    {
+      "begriff": "campus",
+      "anzahl": 16
+    },
+    {
+      "begriff": "gründer",
+      "anzahl": 15
+    },
+    {
+      "begriff": "schwarz",
+      "anzahl": 14
+    },
+    {
+      "begriff": "focus",
+      "anzahl": 12
+    },
+    {
+      "begriff": "online",
+      "anzahl": 12
+    },
+    {
+      "begriff": "millionen",
+      "anzahl": 11
+    },
+    {
+      "begriff": "dieter",
+      "anzahl": 9
+    },
+    {
+      "begriff": "steckt",
+      "anzahl": 9
+    },
+    {
+      "begriff": "deutschland",
+      "anzahl": 8
+    },
+    {
+      "begriff": "ipai",
+      "anzahl": 7
+    },
+    {
+      "begriff": "nobles",
+      "anzahl": 6
+    },
+    {
+      "begriff": "vorhaben",
+      "anzahl": 6
+    },
+    {
+      "begriff": "scheitern",
+      "anzahl": 6
+    }
+  ]
+}

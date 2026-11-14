@@ -1,0 +1,75 @@
+{
+  "projekt": "Bonn",
+  "peak": 8,
+  "datum": "2025-08-05",
+  "beitraege_am_tag": 2,
+  "prominenz": 2.0,
+  "vendor_tonlage": 1.0,
+  "beitraege_im_fenster": 5,
+  "fenster": {
+    "start": "2025-08-02",
+    "ende": "2025-08-07"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "rhein",
+      "anzahl": 28
+    },
+    {
+      "begriff": "flammen",
+      "anzahl": 18
+    },
+    {
+      "begriff": "koblenz",
+      "anzahl": 18
+    },
+    {
+      "begriff": "spay",
+      "anzahl": 12
+    },
+    {
+      "begriff": "findet",
+      "anzahl": 7
+    },
+    {
+      "begriff": "statt",
+      "anzahl": 7
+    },
+    {
+      "begriff": "premiere",
+      "anzahl": 6
+    },
+    {
+      "begriff": "wieder",
+      "anzahl": 5
+    },
+    {
+      "begriff": "ticketpreise",
+      "anzahl": 4
+    },
+    {
+      "begriff": "bietet",
+      "anzahl": 4
+    },
+    {
+      "begriff": "jahr",
+      "anzahl": 4
+    },
+    {
+      "begriff": "feuerwerk",
+      "anzahl": 4
+    },
+    {
+      "begriff": "feiern",
+      "anzahl": 4
+    },
+    {
+      "begriff": "jahren",
+      "anzahl": 3
+    },
+    {
+      "begriff": "aktualisiert",
+      "anzahl": 3
+    }
+  ]
+}

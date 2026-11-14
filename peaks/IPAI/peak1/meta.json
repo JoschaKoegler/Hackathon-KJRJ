@@ -1,0 +1,75 @@
+{
+  "projekt": "IPAI",
+  "peak": 1,
+  "datum": "2024-11-20",
+  "beitraege_am_tag": 6,
+  "prominenz": 6.0,
+  "vendor_tonlage": 0.67,
+  "beitraege_im_fenster": 9,
+  "fenster": {
+    "start": "2024-11-17",
+    "ende": "2024-11-22"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "bank",
+      "anzahl": 38
+    },
+    {
+      "begriff": "aleph",
+      "anzahl": 37
+    },
+    {
+      "begriff": "alpha",
+      "anzahl": 37
+    },
+    {
+      "begriff": "deutsche",
+      "anzahl": 34
+    },
+    {
+      "begriff": "start",
+      "anzahl": 26
+    },
+    {
+      "begriff": "deutschen",
+      "anzahl": 16
+    },
+    {
+      "begriff": "steigt",
+      "anzahl": 15
+    },
+    {
+      "begriff": "partner",
+      "anzahl": 10
+    },
+    {
+      "begriff": "anteile",
+      "anzahl": 10
+    },
+    {
+      "begriff": "künstliche",
+      "anzahl": 9
+    },
+    {
+      "begriff": "intelligenz",
+      "anzahl": 9
+    },
+    {
+      "begriff": "heidelberger",
+      "anzahl": 9
+    },
+    {
+      "begriff": "zwei",
+      "anzahl": 8
+    },
+    {
+      "begriff": "unternehmen",
+      "anzahl": 8
+    },
+    {
+      "begriff": "bereich",
+      "anzahl": 7
+    }
+  ]
+}

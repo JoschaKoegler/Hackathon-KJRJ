@@ -1,0 +1,75 @@
+{
+  "projekt": "Bonn",
+  "peak": 9,
+  "datum": "2025-08-29",
+  "beitraege_am_tag": 6,
+  "prominenz": 6.0,
+  "vendor_tonlage": -0.5,
+  "beitraege_im_fenster": 8,
+  "fenster": {
+    "start": "2025-08-26",
+    "ende": "2025-08-31"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "seilbahn",
+      "anzahl": 33
+    },
+    {
+      "begriff": "bonn",
+      "anzahl": 22
+    },
+    {
+      "begriff": "projekt",
+      "anzahl": 15
+    },
+    {
+      "begriff": "voran",
+      "anzahl": 11
+    },
+    {
+      "begriff": "schreitet",
+      "anzahl": 9
+    },
+    {
+      "begriff": "stadtverwaltung",
+      "anzahl": 9
+    },
+    {
+      "begriff": "stadt",
+      "anzahl": 9
+    },
+    {
+      "begriff": "bonner",
+      "anzahl": 9
+    },
+    {
+      "begriff": "ihrem",
+      "anzahl": 8
+    },
+    {
+      "begriff": "stützen",
+      "anzahl": 8
+    },
+    {
+      "begriff": "rückschlag",
+      "anzahl": 8
+    },
+    {
+      "begriff": "antrag",
+      "anzahl": 6
+    },
+    {
+      "begriff": "gelände",
+      "anzahl": 6
+    },
+    {
+      "begriff": "pfeiler",
+      "anzahl": 6
+    },
+    {
+      "begriff": "planung",
+      "anzahl": 5
+    }
+  ]
+}

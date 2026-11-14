@@ -1,0 +1,75 @@
+{
+  "projekt": "Heilbronn",
+  "peak": 20,
+  "datum": "2026-08-21",
+  "beitraege_am_tag": 2,
+  "prominenz": 2.0,
+  "vendor_tonlage": 1.0,
+  "beitraege_im_fenster": 3,
+  "fenster": {
+    "start": "2026-08-18",
+    "ende": "2026-08-23"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "heilbronn",
+      "anzahl": 5
+    },
+    {
+      "begriff": "dann",
+      "anzahl": 4
+    },
+    {
+      "begriff": "hirne",
+      "anzahl": 4
+    },
+    {
+      "begriff": "seilbahn",
+      "anzahl": 3
+    },
+    {
+      "begriff": "immer",
+      "anzahl": 3
+    },
+    {
+      "begriff": "unabhängige",
+      "anzahl": 3
+    },
+    {
+      "begriff": "monatstreffen",
+      "anzahl": 3
+    },
+    {
+      "begriff": "folgen",
+      "anzahl": 3
+    },
+    {
+      "begriff": "sollen",
+      "anzahl": 2
+    },
+    {
+      "begriff": "autos",
+      "anzahl": 2
+    },
+    {
+      "begriff": "parken",
+      "anzahl": 2
+    },
+    {
+      "begriff": "park",
+      "anzahl": 2
+    },
+    {
+      "begriff": "rein",
+      "anzahl": 2
+    },
+    {
+      "begriff": "hast",
+      "anzahl": 2
+    },
+    {
+      "begriff": "doch",
+      "anzahl": 2
+    }
+  ]
+}

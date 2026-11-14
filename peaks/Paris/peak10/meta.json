@@ -1,0 +1,75 @@
+{
+  "projekt": "Paris",
+  "peak": 10,
+  "datum": "2025-11-22",
+  "beitraege_am_tag": 6,
+  "prominenz": 6.0,
+  "vendor_tonlage": 0.67,
+  "beitraege_im_fenster": 14,
+  "fenster": {
+    "start": "2025-11-19",
+    "ende": "2025-11-24"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "téléphérique",
+      "anzahl": 25
+    },
+    {
+      "begriff": "france",
+      "anzahl": 17
+    },
+    {
+      "begriff": "évacuation",
+      "anzahl": 16
+    },
+    {
+      "begriff": "pompiers",
+      "anzahl": 16
+    },
+    {
+      "begriff": "marne",
+      "anzahl": 12
+    },
+    {
+      "begriff": "premier",
+      "anzahl": 11
+    },
+    {
+      "begriff": "novembre",
+      "anzahl": 11
+    },
+    {
+      "begriff": "limeil",
+      "anzahl": 10
+    },
+    {
+      "begriff": "brévannes",
+      "anzahl": 10
+    },
+    {
+      "begriff": "ouverture",
+      "anzahl": 9
+    },
+    {
+      "begriff": "urbain",
+      "anzahl": 9
+    },
+    {
+      "begriff": "paris",
+      "anzahl": 9
+    },
+    {
+      "begriff": "câble",
+      "anzahl": 8
+    },
+    {
+      "begriff": "avant",
+      "anzahl": 8
+    },
+    {
+      "begriff": "cabines",
+      "anzahl": 7
+    }
+  ]
+}

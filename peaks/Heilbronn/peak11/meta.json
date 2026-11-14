@@ -1,0 +1,75 @@
+{
+  "projekt": "Heilbronn",
+  "peak": 11,
+  "datum": "2025-09-19",
+  "beitraege_am_tag": 2,
+  "prominenz": 2.0,
+  "vendor_tonlage": null,
+  "beitraege_im_fenster": 4,
+  "fenster": {
+    "start": "2025-09-16",
+    "ende": "2025-09-21"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "köln",
+      "anzahl": 15
+    },
+    {
+      "begriff": "kölner",
+      "anzahl": 6
+    },
+    {
+      "begriff": "verkehrsunternehmen",
+      "anzahl": 6
+    },
+    {
+      "begriff": "stadt",
+      "anzahl": 6
+    },
+    {
+      "begriff": "stadtbahn",
+      "anzahl": 5
+    },
+    {
+      "begriff": "seilbahn",
+      "anzahl": 4
+    },
+    {
+      "begriff": "verkehrs",
+      "anzahl": 3
+    },
+    {
+      "begriff": "betriebe",
+      "anzahl": 3
+    },
+    {
+      "begriff": "aktiengesellschaft",
+      "anzahl": 3
+    },
+    {
+      "begriff": "betreibt",
+      "anzahl": 3
+    },
+    {
+      "begriff": "öpnv",
+      "anzahl": 3
+    },
+    {
+      "begriff": "städtischen",
+      "anzahl": 3
+    },
+    {
+      "begriff": "buslinien",
+      "anzahl": 3
+    },
+    {
+      "begriff": "gehören",
+      "anzahl": 3
+    },
+    {
+      "begriff": "stadtwerken",
+      "anzahl": 3
+    }
+  ]
+}

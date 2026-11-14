@@ -1,0 +1,75 @@
+{
+  "projekt": "IPAI",
+  "peak": 19,
+  "datum": "2026-03-06",
+  "beitraege_am_tag": 5,
+  "prominenz": 5.0,
+  "vendor_tonlage": 0.6,
+  "beitraege_im_fenster": 12,
+  "fenster": {
+    "start": "2026-03-03",
+    "ende": "2026-03-08"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "heilbronn",
+      "anzahl": 26
+    },
+    {
+      "begriff": "chip",
+      "anzahl": 23
+    },
+    {
+      "begriff": "fraunhofer",
+      "anzahl": 19
+    },
+    {
+      "begriff": "ipai",
+      "anzahl": 11
+    },
+    {
+      "begriff": "design",
+      "anzahl": 11
+    },
+    {
+      "begriff": "forschungs",
+      "anzahl": 9
+    },
+    {
+      "begriff": "baut",
+      "anzahl": 8
+    },
+    {
+      "begriff": "hnfiz",
+      "anzahl": 7
+    },
+    {
+      "begriff": "innovation",
+      "anzahl": 6
+    },
+    {
+      "begriff": "zentrum",
+      "anzahl": 6
+    },
+    {
+      "begriff": "innovationszentrum",
+      "anzahl": 6
+    },
+    {
+      "begriff": "park",
+      "anzahl": 5
+    },
+    {
+      "begriff": "chipdesign",
+      "anzahl": 5
+    },
+    {
+      "begriff": "land",
+      "anzahl": 5
+    },
+    {
+      "begriff": "leistungsangebot",
+      "anzahl": 5
+    }
+  ]
+}

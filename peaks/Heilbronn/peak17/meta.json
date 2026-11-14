@@ -1,0 +1,75 @@
+{
+  "projekt": "Heilbronn",
+  "peak": 17,
+  "datum": "2026-07-23",
+  "beitraege_am_tag": 4,
+  "prominenz": 4.0,
+  "vendor_tonlage": 0.75,
+  "beitraege_im_fenster": 8,
+  "fenster": {
+    "start": "2026-07-20",
+    "ende": "2026-07-25"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "seilbahn",
+      "anzahl": 11
+    },
+    {
+      "begriff": "heilbronner",
+      "anzahl": 10
+    },
+    {
+      "begriff": "stimme",
+      "anzahl": 8
+    },
+    {
+      "begriff": "geräten",
+      "anzahl": 8
+    },
+    {
+      "begriff": "sichern",
+      "anzahl": 8
+    },
+    {
+      "begriff": "angebot",
+      "anzahl": 8
+    },
+    {
+      "begriff": "keine",
+      "anzahl": 6
+    },
+    {
+      "begriff": "kölner",
+      "anzahl": 6
+    },
+    {
+      "begriff": "lichter",
+      "anzahl": 6
+    },
+    {
+      "begriff": "feuerwerk",
+      "anzahl": 6
+    },
+    {
+      "begriff": "millionen",
+      "anzahl": 5
+    },
+    {
+      "begriff": "soll",
+      "anzahl": 5
+    },
+    {
+      "begriff": "andere",
+      "anzahl": 5
+    },
+    {
+      "begriff": "juli",
+      "anzahl": 5
+    },
+    {
+      "begriff": "alle",
+      "anzahl": 4
+    }
+  ]
+}

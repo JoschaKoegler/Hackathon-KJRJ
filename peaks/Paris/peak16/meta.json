@@ -1,0 +1,75 @@
+{
+  "projekt": "Paris",
+  "peak": 16,
+  "datum": "2026-05-04",
+  "beitraege_am_tag": 5,
+  "prominenz": 5.0,
+  "vendor_tonlage": 0.0,
+  "beitraege_im_fenster": 7,
+  "fenster": {
+    "start": "2026-05-01",
+    "ende": "2026-05-06"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "téléphérique",
+      "anzahl": 13
+    },
+    {
+      "begriff": "marne",
+      "anzahl": 11
+    },
+    {
+      "begriff": "france",
+      "anzahl": 9
+    },
+    {
+      "begriff": "paris",
+      "anzahl": 9
+    },
+    {
+      "begriff": "jours",
+      "anzahl": 8
+    },
+    {
+      "begriff": "câble",
+      "anzahl": 8
+    },
+    {
+      "begriff": "pendant",
+      "anzahl": 7
+    },
+    {
+      "begriff": "isère",
+      "anzahl": 5
+    },
+    {
+      "begriff": "arrêt",
+      "anzahl": 5
+    },
+    {
+      "begriff": "banlieue",
+      "anzahl": 5
+    },
+    {
+      "begriff": "parisienne",
+      "anzahl": 5
+    },
+    {
+      "begriff": "insolites",
+      "anzahl": 5
+    },
+    {
+      "begriff": "spots",
+      "anzahl": 5
+    },
+    {
+      "begriff": "touristiques",
+      "anzahl": 5
+    },
+    {
+      "begriff": "découvrir",
+      "anzahl": 5
+    }
+  ]
+}

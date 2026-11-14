@@ -1,0 +1,75 @@
+{
+  "projekt": "Heilbronn",
+  "peak": 14,
+  "datum": "2025-12-16",
+  "beitraege_am_tag": 3,
+  "prominenz": 3.0,
+  "vendor_tonlage": 0.67,
+  "beitraege_im_fenster": 5,
+  "fenster": {
+    "start": "2025-12-13",
+    "ende": "2025-12-18"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "heilbronn",
+      "anzahl": 11
+    },
+    {
+      "begriff": "stadt",
+      "anzahl": 7
+    },
+    {
+      "begriff": "seilbahn",
+      "anzahl": 7
+    },
+    {
+      "begriff": "urbanen",
+      "anzahl": 7
+    },
+    {
+      "begriff": "planung",
+      "anzahl": 6
+    },
+    {
+      "begriff": "soll",
+      "anzahl": 5
+    },
+    {
+      "begriff": "paris",
+      "anzahl": 5
+    },
+    {
+      "begriff": "seilbahnsysteme",
+      "anzahl": 5
+    },
+    {
+      "begriff": "weihnachtsmärkte",
+      "anzahl": 5
+    },
+    {
+      "begriff": "bayern",
+      "anzahl": 5
+    },
+    {
+      "begriff": "nahverkehrsplan",
+      "anzahl": 4
+    },
+    {
+      "begriff": "ihre",
+      "anzahl": 4
+    },
+    {
+      "begriff": "bauarbeiten",
+      "anzahl": 4
+    },
+    {
+      "begriff": "eisenbahnlinien",
+      "anzahl": 4
+    },
+    {
+      "begriff": "unsere",
+      "anzahl": 4
+    }
+  ]
+}

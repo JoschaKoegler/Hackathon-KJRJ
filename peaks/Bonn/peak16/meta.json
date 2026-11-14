@@ -1,0 +1,75 @@
+{
+  "projekt": "Bonn",
+  "peak": 16,
+  "datum": "2026-05-14",
+  "beitraege_am_tag": 2,
+  "prominenz": 2.0,
+  "vendor_tonlage": 1.0,
+  "beitraege_im_fenster": 2,
+  "fenster": {
+    "start": "2026-05-11",
+    "ende": "2026-05-16"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "seilbahn",
+      "anzahl": 6
+    },
+    {
+      "begriff": "bonn",
+      "anzahl": 4
+    },
+    {
+      "begriff": "bonner",
+      "anzahl": 4
+    },
+    {
+      "begriff": "aktuelle",
+      "anzahl": 3
+    },
+    {
+      "begriff": "sachstand",
+      "anzahl": 3
+    },
+    {
+      "begriff": "planungen",
+      "anzahl": 3
+    },
+    {
+      "begriff": "nehmen",
+      "anzahl": 3
+    },
+    {
+      "begriff": "gestalt",
+      "anzahl": 3
+    },
+    {
+      "begriff": "kosten",
+      "anzahl": 3
+    },
+    {
+      "begriff": "deutlich",
+      "anzahl": 3
+    },
+    {
+      "begriff": "gestiegen",
+      "anzahl": 3
+    },
+    {
+      "begriff": "doch",
+      "anzahl": 2
+    },
+    {
+      "begriff": "projekt",
+      "anzahl": 2
+    },
+    {
+      "begriff": "großprojekt",
+      "anzahl": 1
+    },
+    {
+      "begriff": "stadt",
+      "anzahl": 1
+    }
+  ]
+}

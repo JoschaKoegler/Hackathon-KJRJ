@@ -1,0 +1,75 @@
+{
+  "projekt": "Bonn",
+  "peak": 18,
+  "datum": "2026-07-15",
+  "beitraege_am_tag": 4,
+  "prominenz": 4.0,
+  "vendor_tonlage": 0.0,
+  "beitraege_im_fenster": 6,
+  "fenster": {
+    "start": "2026-07-12",
+    "ende": "2026-07-17"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "bonn",
+      "anzahl": 21
+    },
+    {
+      "begriff": "stadt",
+      "anzahl": 16
+    },
+    {
+      "begriff": "stadthaus",
+      "anzahl": 15
+    },
+    {
+      "begriff": "stoppt",
+      "anzahl": 9
+    },
+    {
+      "begriff": "sanierung",
+      "anzahl": 9
+    },
+    {
+      "begriff": "pläne",
+      "anzahl": 9
+    },
+    {
+      "begriff": "bonner",
+      "anzahl": 8
+    },
+    {
+      "begriff": "großprojekte",
+      "anzahl": 6
+    },
+    {
+      "begriff": "haushalt",
+      "anzahl": 4
+    },
+    {
+      "begriff": "bald",
+      "anzahl": 4
+    },
+    {
+      "begriff": "leere",
+      "anzahl": 4
+    },
+    {
+      "begriff": "zukunft",
+      "anzahl": 4
+    },
+    {
+      "begriff": "fehlen",
+      "anzahl": 3
+    },
+    {
+      "begriff": "braucht",
+      "anzahl": 3
+    },
+    {
+      "begriff": "stadtverwaltung",
+      "anzahl": 3
+    }
+  ]
+}

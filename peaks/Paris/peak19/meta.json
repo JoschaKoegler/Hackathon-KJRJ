@@ -1,0 +1,75 @@
+{
+  "projekt": "Paris",
+  "peak": 19,
+  "datum": "2026-08-03",
+  "beitraege_am_tag": 5,
+  "prominenz": 5.0,
+  "vendor_tonlage": 0.0,
+  "beitraege_im_fenster": 9,
+  "fenster": {
+    "start": "2026-07-31",
+    "ende": "2026-08-05"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "août",
+      "anzahl": 22
+    },
+    {
+      "begriff": "téléphérique",
+      "anzahl": 20
+    },
+    {
+      "begriff": "jusqu",
+      "anzahl": 15
+    },
+    {
+      "begriff": "fermé",
+      "anzahl": 14
+    },
+    {
+      "begriff": "marne",
+      "anzahl": 12
+    },
+    {
+      "begriff": "maintenance",
+      "anzahl": 12
+    },
+    {
+      "begriff": "câble",
+      "anzahl": 10
+    },
+    {
+      "begriff": "transports",
+      "anzahl": 10
+    },
+    {
+      "begriff": "france",
+      "anzahl": 10
+    },
+    {
+      "begriff": "paris",
+      "anzahl": 7
+    },
+    {
+      "begriff": "comment",
+      "anzahl": 6
+    },
+    {
+      "begriff": "lundi",
+      "anzahl": 6
+    },
+    {
+      "begriff": "bigorre",
+      "anzahl": 6
+    },
+    {
+      "begriff": "premier",
+      "anzahl": 6
+    },
+    {
+      "begriff": "dubrovnik",
+      "anzahl": 6
+    }
+  ]
+}

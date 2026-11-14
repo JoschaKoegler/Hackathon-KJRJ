@@ -1,0 +1,75 @@
+{
+  "projekt": "Bonn",
+  "peak": 11,
+  "datum": "2025-11-12",
+  "beitraege_am_tag": 2,
+  "prominenz": 2.0,
+  "vendor_tonlage": 0.5,
+  "beitraege_im_fenster": 2,
+  "fenster": {
+    "start": "2025-11-09",
+    "ende": "2025-11-14"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "sechs",
+      "anzahl": 6
+    },
+    {
+      "begriff": "koalition",
+      "anzahl": 5
+    },
+    {
+      "begriff": "genehmigt",
+      "anzahl": 5
+    },
+    {
+      "begriff": "nahverkehrsprojekte",
+      "anzahl": 5
+    },
+    {
+      "begriff": "kölner",
+      "anzahl": 5
+    },
+    {
+      "begriff": "beschlossen",
+      "anzahl": 3
+    },
+    {
+      "begriff": "grüne",
+      "anzahl": 2
+    },
+    {
+      "begriff": "öpnv",
+      "anzahl": 2
+    },
+    {
+      "begriff": "projekten",
+      "anzahl": 2
+    },
+    {
+      "begriff": "west",
+      "anzahl": 2
+    },
+    {
+      "begriff": "achse",
+      "anzahl": 2
+    },
+    {
+      "begriff": "zunächst",
+      "anzahl": 2
+    },
+    {
+      "begriff": "interimslösung",
+      "anzahl": 2
+    },
+    {
+      "begriff": "längeren",
+      "anzahl": 2
+    },
+    {
+      "begriff": "bahnsteigen",
+      "anzahl": 2
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "projekt": "Heilbronn",
+  "peak": 18,
+  "datum": "2026-07-31",
+  "beitraege_am_tag": 5,
+  "prominenz": 5.0,
+  "vendor_tonlage": 0.25,
+  "beitraege_im_fenster": 8,
+  "fenster": {
+    "start": "2026-07-28",
+    "ende": "2026-08-02"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "seilbahn",
+      "anzahl": 17
+    },
+    {
+      "begriff": "heilbronn",
+      "anzahl": 13
+    },
+    {
+      "begriff": "mehr",
+      "anzahl": 6
+    },
+    {
+      "begriff": "kölner",
+      "anzahl": 6
+    },
+    {
+      "begriff": "lichter",
+      "anzahl": 6
+    },
+    {
+      "begriff": "feuerwerk",
+      "anzahl": 6
+    },
+    {
+      "begriff": "urbane",
+      "anzahl": 5
+    },
+    {
+      "begriff": "gemeinderat",
+      "anzahl": 5
+    },
+    {
+      "begriff": "heilbronner",
+      "anzahl": 5
+    },
+    {
+      "begriff": "sichern",
+      "anzahl": 5
+    },
+    {
+      "begriff": "angebot",
+      "anzahl": 5
+    },
+    {
+      "begriff": "beschlossen",
+      "anzahl": 4
+    },
+    {
+      "begriff": "natürlich",
+      "anzahl": 4
+    },
+    {
+      "begriff": "bald",
+      "anzahl": 4
+    },
+    {
+      "begriff": "vorplanung",
+      "anzahl": 4
+    }
+  ]
+}

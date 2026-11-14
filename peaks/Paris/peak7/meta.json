@@ -1,0 +1,75 @@
+{
+  "projekt": "Paris",
+  "peak": 7,
+  "datum": "2025-10-20",
+  "beitraege_am_tag": 5,
+  "prominenz": 5.0,
+  "vendor_tonlage": 0.8,
+  "beitraege_im_fenster": 14,
+  "fenster": {
+    "start": "2025-10-17",
+    "ende": "2025-10-22"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "téléphérique",
+      "anzahl": 32
+    },
+    {
+      "begriff": "france",
+      "anzahl": 23
+    },
+    {
+      "begriff": "premier",
+      "anzahl": 16
+    },
+    {
+      "begriff": "urbain",
+      "anzahl": 12
+    },
+    {
+      "begriff": "ajaccio",
+      "anzahl": 11
+    },
+    {
+      "begriff": "octobre",
+      "anzahl": 11
+    },
+    {
+      "begriff": "formés",
+      "anzahl": 10
+    },
+    {
+      "begriff": "alpes",
+      "anzahl": 9
+    },
+    {
+      "begriff": "samedi",
+      "anzahl": 8
+    },
+    {
+      "begriff": "francilien",
+      "anzahl": 8
+    },
+    {
+      "begriff": "savoie",
+      "anzahl": 7
+    },
+    {
+      "begriff": "câble",
+      "anzahl": 7
+    },
+    {
+      "begriff": "face",
+      "anzahl": 6
+    },
+    {
+      "begriff": "président",
+      "anzahl": 6
+    },
+    {
+      "begriff": "doppelmayr",
+      "anzahl": 6
+    }
+  ]
+}

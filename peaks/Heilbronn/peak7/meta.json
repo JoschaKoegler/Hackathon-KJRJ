@@ -1,0 +1,75 @@
+{
+  "projekt": "Heilbronn",
+  "peak": 7,
+  "datum": "2025-06-30",
+  "beitraege_am_tag": 2,
+  "prominenz": 2.0,
+  "vendor_tonlage": 0.5,
+  "beitraege_im_fenster": 2,
+  "fenster": {
+    "start": "2025-06-27",
+    "ende": "2025-07-02"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "heilbronn",
+      "anzahl": 4
+    },
+    {
+      "begriff": "seilbahn",
+      "anzahl": 4
+    },
+    {
+      "begriff": "stimme",
+      "anzahl": 4
+    },
+    {
+      "begriff": "geräten",
+      "anzahl": 4
+    },
+    {
+      "begriff": "sichern",
+      "anzahl": 4
+    },
+    {
+      "begriff": "angebot",
+      "anzahl": 4
+    },
+    {
+      "begriff": "plant",
+      "anzahl": 2
+    },
+    {
+      "begriff": "stadt",
+      "anzahl": 2
+    },
+    {
+      "begriff": "beispiel",
+      "anzahl": 2
+    },
+    {
+      "begriff": "toulouse",
+      "anzahl": 2
+    },
+    {
+      "begriff": "lernen",
+      "anzahl": 2
+    },
+    {
+      "begriff": "kann",
+      "anzahl": 2
+    },
+    {
+      "begriff": "juni",
+      "anzahl": 2
+    },
+    {
+      "begriff": "jetzt",
+      "anzahl": 2
+    },
+    {
+      "begriff": "vollen",
+      "anzahl": 2
+    }
+  ]
+}

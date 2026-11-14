@@ -1,0 +1,75 @@
+{
+  "projekt": "IPAI",
+  "peak": 3,
+  "datum": "2025-01-07",
+  "beitraege_am_tag": 5,
+  "prominenz": 5.0,
+  "vendor_tonlage": 0.8,
+  "beitraege_im_fenster": 5,
+  "fenster": {
+    "start": "2025-01-04",
+    "ende": "2025-01-09"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "ipai",
+      "anzahl": 20
+    },
+    {
+      "begriff": "teil",
+      "anzahl": 7
+    },
+    {
+      "begriff": "community",
+      "anzahl": 7
+    },
+    {
+      "begriff": "know",
+      "anzahl": 7
+    },
+    {
+      "begriff": "weiter",
+      "anzahl": 7
+    },
+    {
+      "begriff": "dieffenbacher",
+      "anzahl": 6
+    },
+    {
+      "begriff": "baut",
+      "anzahl": 6
+    },
+    {
+      "begriff": "park",
+      "anzahl": 5
+    },
+    {
+      "begriff": "heilbronn",
+      "anzahl": 5
+    },
+    {
+      "begriff": "foto",
+      "anzahl": 5
+    },
+    {
+      "begriff": "bild",
+      "anzahl": 5
+    },
+    {
+      "begriff": "innovation",
+      "anzahl": 4
+    },
+    {
+      "begriff": "artificial",
+      "anzahl": 4
+    },
+    {
+      "begriff": "intelligence",
+      "anzahl": 4
+    },
+    {
+      "begriff": "privat",
+      "anzahl": 4
+    }
+  ]
+}

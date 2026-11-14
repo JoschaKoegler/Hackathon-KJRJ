@@ -1,578 +1,6769 @@
-[
-  {
-    "peak": 1,
-    "datum": "2025-05-12",
-    "beitraege_am_tag": 15,
-    "beitraege_im_fenster": 32,
-    "fenster": {
-      "start": "2025-05-09",
-      "ende": "2025-05-14"
+{
+  "peaks": [
+    {
+      "projekt": "Heilbronn",
+      "peak": 1,
+      "datum": "2025-03-28",
+      "beitraege_am_tag": 5,
+      "prominenz": 5.0,
+      "vendor_tonlage": 0.75,
+      "beitraege_im_fenster": 7,
+      "fenster": {
+        "start": "2025-03-25",
+        "ende": "2025-03-30"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "heilbronn",
+          "anzahl": 15
+        },
+        {
+          "begriff": "seilbahn",
+          "anzahl": 13
+        },
+        {
+          "begriff": "stadt",
+          "anzahl": 6
+        },
+        {
+          "begriff": "stadtbahn",
+          "anzahl": 5
+        },
+        {
+          "begriff": "köln",
+          "anzahl": 5
+        },
+        {
+          "begriff": "könnte",
+          "anzahl": 5
+        },
+        {
+          "begriff": "stimme",
+          "anzahl": 5
+        },
+        {
+          "begriff": "wenn",
+          "anzahl": 4
+        },
+        {
+          "begriff": "natürlich",
+          "anzahl": 4
+        },
+        {
+          "begriff": "kein",
+          "anzahl": 4
+        },
+        {
+          "begriff": "andere",
+          "anzahl": 4
+        },
+        {
+          "begriff": "baden",
+          "anzahl": 4
+        },
+        {
+          "begriff": "württemberg",
+          "anzahl": 4
+        },
+        {
+          "begriff": "google",
+          "anzahl": 4
+        },
+        {
+          "begriff": "ihren",
+          "anzahl": 4
+        }
+      ]
     },
-    "haeufigste_begriffe": [
-      {
-        "begriff": "heilbronn",
-        "anzahl": 76
+    {
+      "projekt": "Heilbronn",
+      "peak": 2,
+      "datum": "2025-04-04",
+      "beitraege_am_tag": 11,
+      "prominenz": 11.0,
+      "vendor_tonlage": 0.0,
+      "beitraege_im_fenster": 23,
+      "fenster": {
+        "start": "2025-04-01",
+        "ende": "2025-04-06"
       },
-      {
-        "begriff": "seilbahn",
-        "anzahl": 58
-      },
-      {
-        "begriff": "land",
-        "anzahl": 34
-      },
-      {
-        "begriff": "millionen",
-        "anzahl": 27
-      },
-      {
-        "begriff": "stadt",
-        "anzahl": 26
-      },
-      {
-        "begriff": "téléphérique",
-        "anzahl": 19
-      },
-      {
-        "begriff": "câble",
-        "anzahl": 19
-      },
-      {
-        "begriff": "france",
-        "anzahl": 17
-      },
-      {
-        "begriff": "sagt",
-        "anzahl": 15
-      },
-      {
-        "begriff": "baden",
-        "anzahl": 13
-      },
-      {
-        "begriff": "geplante",
-        "anzahl": 13
-      },
-      {
-        "begriff": "projekt",
-        "anzahl": 10
-      },
-      {
-        "begriff": "urbane",
-        "anzahl": 10
-      },
-      {
-        "begriff": "heilbronner",
-        "anzahl": 9
-      },
-      {
-        "begriff": "ipai",
-        "anzahl": 9
-      }
-    ]
-  },
-  {
-    "peak": 2,
-    "datum": "2025-10-01",
-    "beitraege_am_tag": 18,
-    "beitraege_im_fenster": 43,
-    "fenster": {
-      "start": "2025-09-28",
-      "ende": "2025-10-03"
+      "haeufigste_begriffe": [
+        {
+          "begriff": "seilbahn",
+          "anzahl": 63
+        },
+        {
+          "begriff": "heilbronn",
+          "anzahl": 57
+        },
+        {
+          "begriff": "stadt",
+          "anzahl": 21
+        },
+        {
+          "begriff": "könnte",
+          "anzahl": 14
+        },
+        {
+          "begriff": "gemeinderat",
+          "anzahl": 12
+        },
+        {
+          "begriff": "nahverkehr",
+          "anzahl": 12
+        },
+        {
+          "begriff": "stimme",
+          "anzahl": 12
+        },
+        {
+          "begriff": "pläne",
+          "anzahl": 10
+        },
+        {
+          "begriff": "heilbronner",
+          "anzahl": 10
+        },
+        {
+          "begriff": "geräten",
+          "anzahl": 10
+        },
+        {
+          "begriff": "sichern",
+          "anzahl": 10
+        },
+        {
+          "begriff": "angebot",
+          "anzahl": 10
+        },
+        {
+          "begriff": "erste",
+          "anzahl": 9
+        },
+        {
+          "begriff": "öffentlichen",
+          "anzahl": 9
+        },
+        {
+          "begriff": "projekt",
+          "anzahl": 9
+        }
+      ]
     },
-    "haeufigste_begriffe": [
-      {
-        "begriff": "téléphérique",
-        "anzahl": 73
+    {
+      "projekt": "Heilbronn",
+      "peak": 3,
+      "datum": "2025-04-25",
+      "beitraege_am_tag": 2,
+      "prominenz": 2.0,
+      "vendor_tonlage": 0.5,
+      "beitraege_im_fenster": 3,
+      "fenster": {
+        "start": "2025-04-22",
+        "ende": "2025-04-27"
       },
-      {
-        "begriff": "cabines",
-        "anzahl": 39
-      },
-      {
-        "begriff": "france",
-        "anzahl": 34
-      },
-      {
-        "begriff": "femmes",
-        "anzahl": 29
-      },
-      {
-        "begriff": "agressions",
-        "anzahl": 26
-      },
-      {
-        "begriff": "députée",
-        "anzahl": 26
-      },
-      {
-        "begriff": "sexuelles",
-        "anzahl": 24
-      },
-      {
-        "begriff": "premier",
-        "anzahl": 19
-      },
-      {
-        "begriff": "créteil",
-        "anzahl": 18
-      },
-      {
-        "begriff": "pécresse",
-        "anzahl": 17
-      },
-      {
-        "begriff": "mixtes",
-        "anzahl": 16
-      },
-      {
-        "begriff": "décembre",
-        "anzahl": 16
-      },
-      {
-        "begriff": "octobre",
-        "anzahl": 15
-      },
-      {
-        "begriff": "abomangoli",
-        "anzahl": 15
-      },
-      {
-        "begriff": "nadège",
-        "anzahl": 14
-      }
-    ]
-  },
-  {
-    "peak": 3,
-    "datum": "2025-10-21",
-    "beitraege_am_tag": 56,
-    "beitraege_im_fenster": 107,
-    "fenster": {
-      "start": "2025-10-18",
-      "ende": "2025-10-23"
+      "haeufigste_begriffe": [
+        {
+          "begriff": "seilbahn",
+          "anzahl": 6
+        },
+        {
+          "begriff": "wiesbaden",
+          "anzahl": 5
+        },
+        {
+          "begriff": "ipai",
+          "anzahl": 4
+        },
+        {
+          "begriff": "plänen",
+          "anzahl": 4
+        },
+        {
+          "begriff": "straßenbahn",
+          "anzahl": 3
+        },
+        {
+          "begriff": "stadt",
+          "anzahl": 3
+        },
+        {
+          "begriff": "heilbronner",
+          "anzahl": 3
+        },
+        {
+          "begriff": "geomaus",
+          "anzahl": 2
+        },
+        {
+          "begriff": "anzeigen",
+          "anzahl": 2
+        },
+        {
+          "begriff": "somit",
+          "anzahl": 2
+        },
+        {
+          "begriff": "ohne",
+          "anzahl": 2
+        },
+        {
+          "begriff": "geologie",
+          "anzahl": 2
+        },
+        {
+          "begriff": "fast",
+          "anzahl": 2
+        },
+        {
+          "begriff": "möglich",
+          "anzahl": 2
+        },
+        {
+          "begriff": "bahn",
+          "anzahl": 2
+        }
+      ]
     },
-    "haeufigste_begriffe": [
-      {
-        "begriff": "heilbronn",
-        "anzahl": 210
+    {
+      "projekt": "Heilbronn",
+      "peak": 4,
+      "datum": "2025-05-12",
+      "beitraege_am_tag": 13,
+      "prominenz": 13.0,
+      "vendor_tonlage": 0.62,
+      "beitraege_im_fenster": 18,
+      "fenster": {
+        "start": "2025-05-09",
+        "ende": "2025-05-14"
       },
-      {
-        "begriff": "ipai",
-        "anzahl": 198
-      },
-      {
-        "begriff": "merz",
-        "anzahl": 126
-      },
-      {
-        "begriff": "campus",
-        "anzahl": 116
-      },
-      {
-        "begriff": "spatenstich",
-        "anzahl": 106
-      },
-      {
-        "begriff": "friedrich",
-        "anzahl": 64
-      },
-      {
-        "begriff": "bundeskanzler",
-        "anzahl": 61
-      },
-      {
-        "begriff": "google",
-        "anzahl": 48
-      },
-      {
-        "begriff": "baden",
-        "anzahl": 46
-      },
-      {
-        "begriff": "soll",
-        "anzahl": 46
-      },
-      {
-        "begriff": "kanzler",
-        "anzahl": 37
-      },
-      {
-        "begriff": "intelligenz",
-        "anzahl": 37
-      },
-      {
-        "begriff": "künstliche",
-        "anzahl": 35
-      },
-      {
-        "begriff": "téléphérique",
-        "anzahl": 34
-      },
-      {
-        "begriff": "kretschmann",
-        "anzahl": 33
-      }
-    ]
-  },
-  {
-    "peak": 4,
-    "datum": "2025-11-12",
-    "beitraege_am_tag": 14,
-    "beitraege_im_fenster": 29,
-    "fenster": {
-      "start": "2025-11-09",
-      "ende": "2025-11-14"
+      "haeufigste_begriffe": [
+        {
+          "begriff": "heilbronn",
+          "anzahl": 62
+        },
+        {
+          "begriff": "seilbahn",
+          "anzahl": 54
+        },
+        {
+          "begriff": "land",
+          "anzahl": 33
+        },
+        {
+          "begriff": "millionen",
+          "anzahl": 27
+        },
+        {
+          "begriff": "stadt",
+          "anzahl": 18
+        },
+        {
+          "begriff": "sagt",
+          "anzahl": 15
+        },
+        {
+          "begriff": "geplante",
+          "anzahl": 13
+        },
+        {
+          "begriff": "baden",
+          "anzahl": 10
+        },
+        {
+          "begriff": "projekt",
+          "anzahl": 10
+        },
+        {
+          "begriff": "wieder",
+          "anzahl": 9
+        },
+        {
+          "begriff": "urbane",
+          "anzahl": 9
+        },
+        {
+          "begriff": "schritt",
+          "anzahl": 8
+        },
+        {
+          "begriff": "heilbronner",
+          "anzahl": 7
+        },
+        {
+          "begriff": "stuttgart",
+          "anzahl": 7
+        },
+        {
+          "begriff": "startschuss",
+          "anzahl": 7
+        }
+      ]
     },
-    "haeufigste_begriffe": [
-      {
-        "begriff": "ipai",
-        "anzahl": 39
+    {
+      "projekt": "Heilbronn",
+      "peak": 5,
+      "datum": "2025-05-27",
+      "beitraege_am_tag": 3,
+      "prominenz": 3.0,
+      "vendor_tonlage": 1.0,
+      "beitraege_im_fenster": 7,
+      "fenster": {
+        "start": "2025-05-24",
+        "ende": "2025-05-29"
       },
-      {
-        "begriff": "heilbronn",
-        "anzahl": 39
-      },
-      {
-        "begriff": "france",
-        "anzahl": 34
-      },
-      {
-        "begriff": "téléphérique",
-        "anzahl": 25
-      },
-      {
-        "begriff": "campus",
-        "anzahl": 20
-      },
-      {
-        "begriff": "künstliche",
-        "anzahl": 19
-      },
-      {
-        "begriff": "intelligenz",
-        "anzahl": 19
-      },
-      {
-        "begriff": "premier",
-        "anzahl": 19
-      },
-      {
-        "begriff": "urbain",
-        "anzahl": 19
-      },
-      {
-        "begriff": "ouvrir",
-        "anzahl": 15
-      },
-      {
-        "begriff": "point",
-        "anzahl": 11
-      },
-      {
-        "begriff": "sechs",
-        "anzahl": 10
-      },
-      {
-        "begriff": "zukunft",
-        "anzahl": 9
-      },
-      {
-        "begriff": "land",
-        "anzahl": 9
-      },
-      {
-        "begriff": "öpnv",
-        "anzahl": 8
-      }
-    ]
-  },
-  {
-    "peak": 5,
-    "datum": "2025-12-13",
-    "beitraege_am_tag": 48,
-    "beitraege_im_fenster": 115,
-    "fenster": {
-      "start": "2025-12-10",
-      "ende": "2025-12-15"
+      "haeufigste_begriffe": [
+        {
+          "begriff": "seilbahn",
+          "anzahl": 31
+        },
+        {
+          "begriff": "baden",
+          "anzahl": 21
+        },
+        {
+          "begriff": "württemberg",
+          "anzahl": 21
+        },
+        {
+          "begriff": "stadt",
+          "anzahl": 17
+        },
+        {
+          "begriff": "soll",
+          "anzahl": 15
+        },
+        {
+          "begriff": "urbane",
+          "anzahl": 14
+        },
+        {
+          "begriff": "nahverkehr",
+          "anzahl": 12
+        },
+        {
+          "begriff": "land",
+          "anzahl": 12
+        },
+        {
+          "begriff": "heilbronn",
+          "anzahl": 11
+        },
+        {
+          "begriff": "projekt",
+          "anzahl": 10
+        },
+        {
+          "begriff": "hier",
+          "anzahl": 9
+        },
+        {
+          "begriff": "erste",
+          "anzahl": 7
+        },
+        {
+          "begriff": "unterstützt",
+          "anzahl": 7
+        },
+        {
+          "begriff": "planungskosten",
+          "anzahl": 7
+        },
+        {
+          "begriff": "bald",
+          "anzahl": 7
+        }
+      ]
     },
-    "haeufigste_begriffe": [
-      {
-        "begriff": "téléphérique",
-        "anzahl": 213
+    {
+      "projekt": "Heilbronn",
+      "peak": 6,
+      "datum": "2025-06-07",
+      "beitraege_am_tag": 3,
+      "prominenz": 3.0,
+      "vendor_tonlage": 1.0,
+      "beitraege_im_fenster": 4,
+      "fenster": {
+        "start": "2025-06-04",
+        "ende": "2025-06-09"
       },
-      {
-        "begriff": "france",
-        "anzahl": 194
-      },
-      {
-        "begriff": "premier",
-        "anzahl": 111
-      },
-      {
-        "begriff": "câble",
-        "anzahl": 109
-      },
-      {
-        "begriff": "urbain",
-        "anzahl": 102
-      },
-      {
-        "begriff": "paris",
-        "anzahl": 100
-      },
-      {
-        "begriff": "créteil",
-        "anzahl": 74
-      },
-      {
-        "begriff": "seilbahn",
-        "anzahl": 66
-      },
-      {
-        "begriff": "marne",
-        "anzahl": 65
-      },
-      {
-        "begriff": "samedi",
-        "anzahl": 65
-      },
-      {
-        "begriff": "décembre",
-        "anzahl": 55
-      },
-      {
-        "begriff": "villeneuve",
-        "anzahl": 53
-      },
-      {
-        "begriff": "saint",
-        "anzahl": 49
-      },
-      {
-        "begriff": "georges",
-        "anzahl": 49
-      },
-      {
-        "begriff": "europe",
-        "anzahl": 44
-      }
-    ]
-  },
-  {
-    "peak": 6,
-    "datum": "2026-02-09",
-    "beitraege_am_tag": 12,
-    "beitraege_im_fenster": 23,
-    "fenster": {
-      "start": "2026-02-06",
-      "ende": "2026-02-11"
+      "haeufigste_begriffe": [
+        {
+          "begriff": "fulda",
+          "anzahl": 10
+        },
+        {
+          "begriff": "frühstück",
+          "anzahl": 7
+        },
+        {
+          "begriff": "seilbahn",
+          "anzahl": 7
+        },
+        {
+          "begriff": "köln",
+          "anzahl": 5
+        },
+        {
+          "begriff": "möglich",
+          "anzahl": 4
+        },
+        {
+          "begriff": "hochschule",
+          "anzahl": 4
+        },
+        {
+          "begriff": "stadt",
+          "anzahl": 4
+        },
+        {
+          "begriff": "grundsätzlich",
+          "anzahl": 3
+        },
+        {
+          "begriff": "monatlichen",
+          "anzahl": 2
+        },
+        {
+          "begriff": "bereits",
+          "anzahl": 2
+        },
+        {
+          "begriff": "unser",
+          "anzahl": 2
+        },
+        {
+          "begriff": "laut",
+          "anzahl": 2
+        },
+        {
+          "begriff": "google",
+          "anzahl": 2
+        },
+        {
+          "begriff": "folgen",
+          "anzahl": 2
+        },
+        {
+          "begriff": "zukunftsmusik",
+          "anzahl": 2
+        }
+      ]
     },
-    "haeufigste_begriffe": [
-      {
-        "begriff": "ipai",
-        "anzahl": 28
+    {
+      "projekt": "Heilbronn",
+      "peak": 7,
+      "datum": "2025-06-30",
+      "beitraege_am_tag": 2,
+      "prominenz": 2.0,
+      "vendor_tonlage": 0.5,
+      "beitraege_im_fenster": 2,
+      "fenster": {
+        "start": "2025-06-27",
+        "ende": "2025-07-02"
       },
-      {
-        "begriff": "heilbronn",
-        "anzahl": 23
-      },
-      {
-        "begriff": "prezero",
-        "anzahl": 16
-      },
-      {
-        "begriff": "marc",
-        "anzahl": 13
-      },
-      {
-        "begriff": "intelligenz",
-        "anzahl": 12
-      },
-      {
-        "begriff": "group",
-        "anzahl": 11
-      },
-      {
-        "begriff": "kirchner",
-        "anzahl": 10
-      },
-      {
-        "begriff": "produktion",
-        "anzahl": 9
-      },
-      {
-        "begriff": "apple",
-        "anzahl": 9
-      },
-      {
-        "begriff": "manager",
-        "anzahl": 9
-      },
-      {
-        "begriff": "téléphériques",
-        "anzahl": 8
-      },
-      {
-        "begriff": "europe",
-        "anzahl": 8
-      },
-      {
-        "begriff": "audi",
-        "anzahl": 7
-      },
-      {
-        "begriff": "künstliche",
-        "anzahl": 7
-      },
-      {
-        "begriff": "trajets",
-        "anzahl": 7
-      }
-    ]
-  },
-  {
-    "peak": 7,
-    "datum": "2026-02-23",
-    "beitraege_am_tag": 12,
-    "beitraege_im_fenster": 20,
-    "fenster": {
-      "start": "2026-02-20",
-      "ende": "2026-02-25"
+      "haeufigste_begriffe": [
+        {
+          "begriff": "heilbronn",
+          "anzahl": 4
+        },
+        {
+          "begriff": "seilbahn",
+          "anzahl": 4
+        },
+        {
+          "begriff": "stimme",
+          "anzahl": 4
+        },
+        {
+          "begriff": "geräten",
+          "anzahl": 4
+        },
+        {
+          "begriff": "sichern",
+          "anzahl": 4
+        },
+        {
+          "begriff": "angebot",
+          "anzahl": 4
+        },
+        {
+          "begriff": "plant",
+          "anzahl": 2
+        },
+        {
+          "begriff": "stadt",
+          "anzahl": 2
+        },
+        {
+          "begriff": "beispiel",
+          "anzahl": 2
+        },
+        {
+          "begriff": "toulouse",
+          "anzahl": 2
+        },
+        {
+          "begriff": "lernen",
+          "anzahl": 2
+        },
+        {
+          "begriff": "kann",
+          "anzahl": 2
+        },
+        {
+          "begriff": "juni",
+          "anzahl": 2
+        },
+        {
+          "begriff": "jetzt",
+          "anzahl": 2
+        },
+        {
+          "begriff": "vollen",
+          "anzahl": 2
+        }
+      ]
     },
-    "haeufigste_begriffe": [
-      {
-        "begriff": "merz",
-        "anzahl": 31
+    {
+      "projekt": "Heilbronn",
+      "peak": 8,
+      "datum": "2025-08-04",
+      "beitraege_am_tag": 3,
+      "prominenz": 3.0,
+      "vendor_tonlage": 0.5,
+      "beitraege_im_fenster": 3,
+      "fenster": {
+        "start": "2025-08-01",
+        "ende": "2025-08-06"
       },
-      {
-        "begriff": "heilbronn",
-        "anzahl": 27
-      },
-      {
-        "begriff": "pinocchio",
-        "anzahl": 22
-      },
-      {
-        "begriff": "rentner",
-        "anzahl": 21
-      },
-      {
-        "begriff": "polizei",
-        "anzahl": 18
-      },
-      {
-        "begriff": "bundeskanzler",
-        "anzahl": 17
-      },
-      {
-        "begriff": "ipai",
-        "anzahl": 14
-      },
-      {
-        "begriff": "friedrich",
-        "anzahl": 13
-      },
-      {
-        "begriff": "ermittelt",
-        "anzahl": 12
-      },
-      {
-        "begriff": "facebook",
-        "anzahl": 10
-      },
-      {
-        "begriff": "bezeichnet",
-        "anzahl": 9
-      },
-      {
-        "begriff": "wegen",
-        "anzahl": 9
-      },
-      {
-        "begriff": "voiture",
-        "anzahl": 8
-      },
-      {
-        "begriff": "gegen",
-        "anzahl": 8
-      },
-      {
-        "begriff": "kommentar",
-        "anzahl": 8
-      }
-    ]
-  },
-  {
-    "peak": 8,
-    "datum": "2026-05-28",
-    "beitraege_am_tag": 12,
-    "beitraege_im_fenster": 29,
-    "fenster": {
-      "start": "2026-05-25",
-      "ende": "2026-05-30"
+      "haeufigste_begriffe": [
+        {
+          "begriff": "münchen",
+          "anzahl": 6
+        },
+        {
+          "begriff": "theresienwiese",
+          "anzahl": 6
+        },
+        {
+          "begriff": "stadt",
+          "anzahl": 5
+        },
+        {
+          "begriff": "köln",
+          "anzahl": 5
+        },
+        {
+          "begriff": "spielplatz",
+          "anzahl": 4
+        },
+        {
+          "begriff": "eröffnet",
+          "anzahl": 4
+        },
+        {
+          "begriff": "fitnessparcours",
+          "anzahl": 4
+        },
+        {
+          "begriff": "kinder",
+          "anzahl": 4
+        },
+        {
+          "begriff": "seilbahn",
+          "anzahl": 4
+        },
+        {
+          "begriff": "zwei",
+          "anzahl": 2
+        },
+        {
+          "begriff": "kommen",
+          "anzahl": 2
+        },
+        {
+          "begriff": "kölner",
+          "anzahl": 2
+        },
+        {
+          "begriff": "verkehrsunternehmen",
+          "anzahl": 2
+        },
+        {
+          "begriff": "google",
+          "anzahl": 1
+        },
+        {
+          "begriff": "folgen",
+          "anzahl": 1
+        }
+      ]
     },
-    "haeufigste_begriffe": [
-      {
-        "begriff": "heilbronn",
-        "anzahl": 52
+    {
+      "projekt": "Heilbronn",
+      "peak": 9,
+      "datum": "2025-08-19",
+      "beitraege_am_tag": 2,
+      "prominenz": 2.0,
+      "vendor_tonlage": 1.0,
+      "beitraege_im_fenster": 5,
+      "fenster": {
+        "start": "2025-08-16",
+        "ende": "2025-08-21"
       },
-      {
-        "begriff": "ipai",
-        "anzahl": 40
+      "haeufigste_begriffe": [
+        {
+          "begriff": "baden",
+          "anzahl": 15
+        },
+        {
+          "begriff": "seilbahn",
+          "anzahl": 14
+        },
+        {
+          "begriff": "stadt",
+          "anzahl": 13
+        },
+        {
+          "begriff": "württemberg",
+          "anzahl": 10
+        },
+        {
+          "begriff": "nahverkehrs",
+          "anzahl": 9
+        },
+        {
+          "begriff": "erste",
+          "anzahl": 7
+        },
+        {
+          "begriff": "plant",
+          "anzahl": 6
+        },
+        {
+          "begriff": "hier",
+          "anzahl": 5
+        },
+        {
+          "begriff": "württembergs",
+          "anzahl": 5
+        },
+        {
+          "begriff": "bereits",
+          "anzahl": 4
+        },
+        {
+          "begriff": "stand",
+          "anzahl": 3
+        },
+        {
+          "begriff": "google",
+          "anzahl": 3
+        },
+        {
+          "begriff": "folgen",
+          "anzahl": 3
+        },
+        {
+          "begriff": "mehrere",
+          "anzahl": 3
+        },
+        {
+          "begriff": "städte",
+          "anzahl": 3
+        }
+      ]
+    },
+    {
+      "projekt": "Heilbronn",
+      "peak": 10,
+      "datum": "2025-09-08",
+      "beitraege_am_tag": 5,
+      "prominenz": 5.0,
+      "vendor_tonlage": 0.67,
+      "beitraege_im_fenster": 8,
+      "fenster": {
+        "start": "2025-09-05",
+        "ende": "2025-09-10"
       },
-      {
-        "begriff": "procter",
-        "anzahl": 23
+      "haeufigste_begriffe": [
+        {
+          "begriff": "köln",
+          "anzahl": 20
+        },
+        {
+          "begriff": "stadt",
+          "anzahl": 10
+        },
+        {
+          "begriff": "seilbahn",
+          "anzahl": 10
+        },
+        {
+          "begriff": "kölner",
+          "anzahl": 8
+        },
+        {
+          "begriff": "verkehrsunternehmen",
+          "anzahl": 8
+        },
+        {
+          "begriff": "verband",
+          "anzahl": 8
+        },
+        {
+          "begriff": "heilbronner",
+          "anzahl": 7
+        },
+        {
+          "begriff": "öpnv",
+          "anzahl": 6
+        },
+        {
+          "begriff": "stimme",
+          "anzahl": 6
+        },
+        {
+          "begriff": "geräten",
+          "anzahl": 6
+        },
+        {
+          "begriff": "sichern",
+          "anzahl": 6
+        },
+        {
+          "begriff": "angebot",
+          "anzahl": 6
+        },
+        {
+          "begriff": "stadtbahn",
+          "anzahl": 5
+        },
+        {
+          "begriff": "heilbronn",
+          "anzahl": 4
+        },
+        {
+          "begriff": "verkehrs",
+          "anzahl": 4
+        }
+      ]
+    },
+    {
+      "projekt": "Heilbronn",
+      "peak": 11,
+      "datum": "2025-09-19",
+      "beitraege_am_tag": 2,
+      "prominenz": 2.0,
+      "vendor_tonlage": null,
+      "beitraege_im_fenster": 4,
+      "fenster": {
+        "start": "2025-09-16",
+        "ende": "2025-09-21"
       },
-      {
-        "begriff": "gamble",
-        "anzahl": 23
+      "haeufigste_begriffe": [
+        {
+          "begriff": "köln",
+          "anzahl": 15
+        },
+        {
+          "begriff": "kölner",
+          "anzahl": 6
+        },
+        {
+          "begriff": "verkehrsunternehmen",
+          "anzahl": 6
+        },
+        {
+          "begriff": "stadt",
+          "anzahl": 6
+        },
+        {
+          "begriff": "stadtbahn",
+          "anzahl": 5
+        },
+        {
+          "begriff": "seilbahn",
+          "anzahl": 4
+        },
+        {
+          "begriff": "verkehrs",
+          "anzahl": 3
+        },
+        {
+          "begriff": "betriebe",
+          "anzahl": 3
+        },
+        {
+          "begriff": "aktiengesellschaft",
+          "anzahl": 3
+        },
+        {
+          "begriff": "betreibt",
+          "anzahl": 3
+        },
+        {
+          "begriff": "öpnv",
+          "anzahl": 3
+        },
+        {
+          "begriff": "städtischen",
+          "anzahl": 3
+        },
+        {
+          "begriff": "buslinien",
+          "anzahl": 3
+        },
+        {
+          "begriff": "gehören",
+          "anzahl": 3
+        },
+        {
+          "begriff": "stadtwerken",
+          "anzahl": 3
+        }
+      ]
+    },
+    {
+      "projekt": "Heilbronn",
+      "peak": 12,
+      "datum": "2025-10-21",
+      "beitraege_am_tag": 2,
+      "prominenz": 2.0,
+      "vendor_tonlage": -0.5,
+      "beitraege_im_fenster": 4,
+      "fenster": {
+        "start": "2025-10-18",
+        "ende": "2025-10-23"
       },
-      {
-        "begriff": "merz",
-        "anzahl": 19
+      "haeufigste_begriffe": [
+        {
+          "begriff": "seilbahn",
+          "anzahl": 6
+        },
+        {
+          "begriff": "heilbronn",
+          "anzahl": 5
+        },
+        {
+          "begriff": "stadt",
+          "anzahl": 5
+        },
+        {
+          "begriff": "stadtbahn",
+          "anzahl": 4
+        },
+        {
+          "begriff": "ägeri",
+          "anzahl": 4
+        },
+        {
+          "begriff": "steht",
+          "anzahl": 4
+        },
+        {
+          "begriff": "schlechtem",
+          "anzahl": 4
+        },
+        {
+          "begriff": "stern",
+          "anzahl": 4
+        },
+        {
+          "begriff": "kommt",
+          "anzahl": 3
+        },
+        {
+          "begriff": "hier",
+          "anzahl": 3
+        },
+        {
+          "begriff": "dann",
+          "anzahl": 3
+        },
+        {
+          "begriff": "einfach",
+          "anzahl": 3
+        },
+        {
+          "begriff": "jetzt",
+          "anzahl": 3
+        },
+        {
+          "begriff": "ipai",
+          "anzahl": 3
+        },
+        {
+          "begriff": "hauptstadt",
+          "anzahl": 2
+        }
+      ]
+    },
+    {
+      "projekt": "Heilbronn",
+      "peak": 13,
+      "datum": "2025-11-21",
+      "beitraege_am_tag": 2,
+      "prominenz": 2.0,
+      "vendor_tonlage": 0.5,
+      "beitraege_im_fenster": 2,
+      "fenster": {
+        "start": "2025-11-18",
+        "ende": "2025-11-23"
       },
-      {
-        "begriff": "mitglied",
-        "anzahl": 17
+      "haeufigste_begriffe": [
+        {
+          "begriff": "seilbahn",
+          "anzahl": 4
+        },
+        {
+          "begriff": "heilbronn",
+          "anzahl": 4
+        },
+        {
+          "begriff": "paris",
+          "anzahl": 2
+        },
+        {
+          "begriff": "eröffnung",
+          "anzahl": 2
+        },
+        {
+          "begriff": "steht",
+          "anzahl": 2
+        },
+        {
+          "begriff": "gondel",
+          "anzahl": 2
+        },
+        {
+          "begriff": "pläne",
+          "anzahl": 2
+        },
+        {
+          "begriff": "stimme",
+          "anzahl": 2
+        },
+        {
+          "begriff": "geräten",
+          "anzahl": 2
+        },
+        {
+          "begriff": "sichern",
+          "anzahl": 2
+        },
+        {
+          "begriff": "angebot",
+          "anzahl": 2
+        },
+        {
+          "begriff": "bevorstehende",
+          "anzahl": 2
+        },
+        {
+          "begriff": "urbane",
+          "anzahl": 2
+        },
+        {
+          "begriff": "könnte",
+          "anzahl": 2
+        },
+        {
+          "begriff": "wichtige",
+          "anzahl": 2
+        }
+      ]
+    },
+    {
+      "projekt": "Heilbronn",
+      "peak": 14,
+      "datum": "2025-12-16",
+      "beitraege_am_tag": 3,
+      "prominenz": 3.0,
+      "vendor_tonlage": 0.67,
+      "beitraege_im_fenster": 5,
+      "fenster": {
+        "start": "2025-12-13",
+        "ende": "2025-12-18"
       },
-      {
-        "begriff": "lackaffe",
-        "anzahl": 16
+      "haeufigste_begriffe": [
+        {
+          "begriff": "heilbronn",
+          "anzahl": 11
+        },
+        {
+          "begriff": "stadt",
+          "anzahl": 7
+        },
+        {
+          "begriff": "seilbahn",
+          "anzahl": 7
+        },
+        {
+          "begriff": "urbanen",
+          "anzahl": 7
+        },
+        {
+          "begriff": "planung",
+          "anzahl": 6
+        },
+        {
+          "begriff": "soll",
+          "anzahl": 5
+        },
+        {
+          "begriff": "paris",
+          "anzahl": 5
+        },
+        {
+          "begriff": "seilbahnsysteme",
+          "anzahl": 5
+        },
+        {
+          "begriff": "weihnachtsmärkte",
+          "anzahl": 5
+        },
+        {
+          "begriff": "bayern",
+          "anzahl": 5
+        },
+        {
+          "begriff": "nahverkehrsplan",
+          "anzahl": 4
+        },
+        {
+          "begriff": "ihre",
+          "anzahl": 4
+        },
+        {
+          "begriff": "bauarbeiten",
+          "anzahl": 4
+        },
+        {
+          "begriff": "eisenbahnlinien",
+          "anzahl": 4
+        },
+        {
+          "begriff": "unsere",
+          "anzahl": 4
+        }
+      ]
+    },
+    {
+      "projekt": "Heilbronn",
+      "peak": 15,
+      "datum": "2026-02-26",
+      "beitraege_am_tag": 2,
+      "prominenz": 2.0,
+      "vendor_tonlage": 0.5,
+      "beitraege_im_fenster": 4,
+      "fenster": {
+        "start": "2026-02-23",
+        "ende": "2026-02-28"
       },
-      {
-        "begriff": "zukunft",
-        "anzahl": 15
+      "haeufigste_begriffe": [
+        {
+          "begriff": "tourengeher",
+          "anzahl": 7
+        },
+        {
+          "begriff": "seilbahn",
+          "anzahl": 6
+        },
+        {
+          "begriff": "februar",
+          "anzahl": 6
+        },
+        {
+          "begriff": "frühfahrt",
+          "anzahl": 5
+        },
+        {
+          "begriff": "freitag",
+          "anzahl": 5
+        },
+        {
+          "begriff": "backnang",
+          "anzahl": 4
+        },
+        {
+          "begriff": "wieder",
+          "anzahl": 4
+        },
+        {
+          "begriff": "stadtseilbahn",
+          "anzahl": 3
+        },
+        {
+          "begriff": "möglich",
+          "anzahl": 3
+        },
+        {
+          "begriff": "favoriten",
+          "anzahl": 3
+        },
+        {
+          "begriff": "heilbronner",
+          "anzahl": 3
+        },
+        {
+          "begriff": "biegel",
+          "anzahl": 2
+        },
+        {
+          "begriff": "bürgerheim",
+          "anzahl": 2
+        },
+        {
+          "begriff": "grünen",
+          "anzahl": 2
+        },
+        {
+          "begriff": "fraktion",
+          "anzahl": 2
+        }
+      ]
+    },
+    {
+      "projekt": "Heilbronn",
+      "peak": 16,
+      "datum": "2026-07-04",
+      "beitraege_am_tag": 4,
+      "prominenz": 4.0,
+      "vendor_tonlage": 0.75,
+      "beitraege_im_fenster": 9,
+      "fenster": {
+        "start": "2026-07-01",
+        "ende": "2026-07-06"
       },
-      {
-        "begriff": "plattform",
-        "anzahl": 15
+      "haeufigste_begriffe": [
+        {
+          "begriff": "seilbahn",
+          "anzahl": 18
+        },
+        {
+          "begriff": "heilbronn",
+          "anzahl": 10
+        },
+        {
+          "begriff": "stimme",
+          "anzahl": 7
+        },
+        {
+          "begriff": "volksfest",
+          "anzahl": 7
+        },
+        {
+          "begriff": "heilbronner",
+          "anzahl": 6
+        },
+        {
+          "begriff": "stuttgart",
+          "anzahl": 6
+        },
+        {
+          "begriff": "verkehrsclub",
+          "anzahl": 5
+        },
+        {
+          "begriff": "anbindung",
+          "anzahl": 5
+        },
+        {
+          "begriff": "juli",
+          "anzahl": 5
+        },
+        {
+          "begriff": "campus",
+          "anzahl": 4
+        },
+        {
+          "begriff": "dieter",
+          "anzahl": 4
+        },
+        {
+          "begriff": "jetzt",
+          "anzahl": 4
+        },
+        {
+          "begriff": "geräten",
+          "anzahl": 4
+        },
+        {
+          "begriff": "sichern",
+          "anzahl": 4
+        },
+        {
+          "begriff": "angebot",
+          "anzahl": 4
+        }
+      ]
+    },
+    {
+      "projekt": "Heilbronn",
+      "peak": 17,
+      "datum": "2026-07-23",
+      "beitraege_am_tag": 4,
+      "prominenz": 4.0,
+      "vendor_tonlage": 0.75,
+      "beitraege_im_fenster": 8,
+      "fenster": {
+        "start": "2026-07-20",
+        "ende": "2026-07-25"
       },
-      {
-        "begriff": "seine",
-        "anzahl": 13
+      "haeufigste_begriffe": [
+        {
+          "begriff": "seilbahn",
+          "anzahl": 11
+        },
+        {
+          "begriff": "heilbronner",
+          "anzahl": 10
+        },
+        {
+          "begriff": "stimme",
+          "anzahl": 8
+        },
+        {
+          "begriff": "geräten",
+          "anzahl": 8
+        },
+        {
+          "begriff": "sichern",
+          "anzahl": 8
+        },
+        {
+          "begriff": "angebot",
+          "anzahl": 8
+        },
+        {
+          "begriff": "keine",
+          "anzahl": 6
+        },
+        {
+          "begriff": "kölner",
+          "anzahl": 6
+        },
+        {
+          "begriff": "lichter",
+          "anzahl": 6
+        },
+        {
+          "begriff": "feuerwerk",
+          "anzahl": 6
+        },
+        {
+          "begriff": "millionen",
+          "anzahl": 5
+        },
+        {
+          "begriff": "soll",
+          "anzahl": 5
+        },
+        {
+          "begriff": "andere",
+          "anzahl": 5
+        },
+        {
+          "begriff": "juli",
+          "anzahl": 5
+        },
+        {
+          "begriff": "alle",
+          "anzahl": 4
+        }
+      ]
+    },
+    {
+      "projekt": "Heilbronn",
+      "peak": 18,
+      "datum": "2026-07-31",
+      "beitraege_am_tag": 5,
+      "prominenz": 5.0,
+      "vendor_tonlage": 0.25,
+      "beitraege_im_fenster": 8,
+      "fenster": {
+        "start": "2026-07-28",
+        "ende": "2026-08-02"
       },
-      {
-        "begriff": "künstliche",
-        "anzahl": 13
+      "haeufigste_begriffe": [
+        {
+          "begriff": "seilbahn",
+          "anzahl": 17
+        },
+        {
+          "begriff": "heilbronn",
+          "anzahl": 13
+        },
+        {
+          "begriff": "mehr",
+          "anzahl": 6
+        },
+        {
+          "begriff": "kölner",
+          "anzahl": 6
+        },
+        {
+          "begriff": "lichter",
+          "anzahl": 6
+        },
+        {
+          "begriff": "feuerwerk",
+          "anzahl": 6
+        },
+        {
+          "begriff": "urbane",
+          "anzahl": 5
+        },
+        {
+          "begriff": "gemeinderat",
+          "anzahl": 5
+        },
+        {
+          "begriff": "heilbronner",
+          "anzahl": 5
+        },
+        {
+          "begriff": "sichern",
+          "anzahl": 5
+        },
+        {
+          "begriff": "angebot",
+          "anzahl": 5
+        },
+        {
+          "begriff": "beschlossen",
+          "anzahl": 4
+        },
+        {
+          "begriff": "natürlich",
+          "anzahl": 4
+        },
+        {
+          "begriff": "bald",
+          "anzahl": 4
+        },
+        {
+          "begriff": "vorplanung",
+          "anzahl": 4
+        }
+      ]
+    },
+    {
+      "projekt": "Heilbronn",
+      "peak": 19,
+      "datum": "2026-08-14",
+      "beitraege_am_tag": 2,
+      "prominenz": 2.0,
+      "vendor_tonlage": 1.0,
+      "beitraege_im_fenster": 2,
+      "fenster": {
+        "start": "2026-08-11",
+        "ende": "2026-08-16"
       },
-      {
-        "begriff": "intelligenz",
-        "anzahl": 13
+      "haeufigste_begriffe": [
+        {
+          "begriff": "seilbahn",
+          "anzahl": 7
+        },
+        {
+          "begriff": "heilbronn",
+          "anzahl": 5
+        },
+        {
+          "begriff": "urbane",
+          "anzahl": 4
+        },
+        {
+          "begriff": "stadt",
+          "anzahl": 3
+        },
+        {
+          "begriff": "pressemitteilung",
+          "anzahl": 2
+        },
+        {
+          "begriff": "plant",
+          "anzahl": 2
+        },
+        {
+          "begriff": "beschlossen",
+          "anzahl": 2
+        },
+        {
+          "begriff": "öffentlichen",
+          "anzahl": 2
+        },
+        {
+          "begriff": "nahverkehr",
+          "anzahl": 2
+        },
+        {
+          "begriff": "minuten",
+          "anzahl": 1
+        },
+        {
+          "begriff": "ipai",
+          "anzahl": 1
+        },
+        {
+          "begriff": "bringt",
+          "anzahl": 1
+        },
+        {
+          "begriff": "detailplanung",
+          "anzahl": 1
+        },
+        {
+          "begriff": "explortal",
+          "anzahl": 1
+        },
+        {
+          "begriff": "logistics",
+          "anzahl": 1
+        }
+      ]
+    },
+    {
+      "projekt": "Heilbronn",
+      "peak": 20,
+      "datum": "2026-08-21",
+      "beitraege_am_tag": 2,
+      "prominenz": 2.0,
+      "vendor_tonlage": 1.0,
+      "beitraege_im_fenster": 3,
+      "fenster": {
+        "start": "2026-08-18",
+        "ende": "2026-08-23"
       },
-      {
-        "begriff": "strafbefehl",
-        "anzahl": 12
+      "haeufigste_begriffe": [
+        {
+          "begriff": "heilbronn",
+          "anzahl": 5
+        },
+        {
+          "begriff": "dann",
+          "anzahl": 4
+        },
+        {
+          "begriff": "hirne",
+          "anzahl": 4
+        },
+        {
+          "begriff": "seilbahn",
+          "anzahl": 3
+        },
+        {
+          "begriff": "immer",
+          "anzahl": 3
+        },
+        {
+          "begriff": "unabhängige",
+          "anzahl": 3
+        },
+        {
+          "begriff": "monatstreffen",
+          "anzahl": 3
+        },
+        {
+          "begriff": "folgen",
+          "anzahl": 3
+        },
+        {
+          "begriff": "sollen",
+          "anzahl": 2
+        },
+        {
+          "begriff": "autos",
+          "anzahl": 2
+        },
+        {
+          "begriff": "parken",
+          "anzahl": 2
+        },
+        {
+          "begriff": "park",
+          "anzahl": 2
+        },
+        {
+          "begriff": "rein",
+          "anzahl": 2
+        },
+        {
+          "begriff": "hast",
+          "anzahl": 2
+        },
+        {
+          "begriff": "doch",
+          "anzahl": 2
+        }
+      ]
+    },
+    {
+      "projekt": "Bonn",
+      "peak": 1,
+      "datum": "2024-11-19",
+      "beitraege_am_tag": 2,
+      "prominenz": 2.0,
+      "vendor_tonlage": 1.0,
+      "beitraege_im_fenster": 3,
+      "fenster": {
+        "start": "2024-11-16",
+        "ende": "2024-11-21"
       },
-      {
-        "begriff": "friedrich",
-        "anzahl": 11
+      "haeufigste_begriffe": [
+        {
+          "begriff": "bonn",
+          "anzahl": 18
+        },
+        {
+          "begriff": "taskforce",
+          "anzahl": 6
+        },
+        {
+          "begriff": "verkehr",
+          "anzahl": 5
+        },
+        {
+          "begriff": "will",
+          "anzahl": 5
+        },
+        {
+          "begriff": "verkehrslage",
+          "anzahl": 5
+        },
+        {
+          "begriff": "nahverkehr",
+          "anzahl": 5
+        },
+        {
+          "begriff": "stadt",
+          "anzahl": 5
+        },
+        {
+          "begriff": "verbessern",
+          "anzahl": 4
+        },
+        {
+          "begriff": "funktionierendes",
+          "anzahl": 4
+        },
+        {
+          "begriff": "verkehrssystem",
+          "anzahl": 4
+        },
+        {
+          "begriff": "schlüssel",
+          "anzahl": 4
+        },
+        {
+          "begriff": "region",
+          "anzahl": 4
+        },
+        {
+          "begriff": "öffentlichen",
+          "anzahl": 4
+        },
+        {
+          "begriff": "bafin",
+          "anzahl": 4
+        },
+        {
+          "begriff": "ihren",
+          "anzahl": 4
+        }
+      ]
+    },
+    {
+      "projekt": "Bonn",
+      "peak": 2,
+      "datum": "2025-01-16",
+      "beitraege_am_tag": 2,
+      "prominenz": 2.0,
+      "vendor_tonlage": 1.0,
+      "beitraege_im_fenster": 3,
+      "fenster": {
+        "start": "2025-01-13",
+        "ende": "2025-01-18"
       },
-      {
-        "begriff": "campus",
-        "anzahl": 10
-      }
-    ]
-  }
-]
+      "haeufigste_begriffe": [
+        {
+          "begriff": "bonner",
+          "anzahl": 6
+        },
+        {
+          "begriff": "bonn",
+          "anzahl": 6
+        },
+        {
+          "begriff": "verlängerung",
+          "anzahl": 6
+        },
+        {
+          "begriff": "bedarfsplan",
+          "anzahl": 6
+        },
+        {
+          "begriff": "bonns",
+          "anzahl": 5
+        },
+        {
+          "begriff": "dörner",
+          "anzahl": 5
+        },
+        {
+          "begriff": "oper",
+          "anzahl": 4
+        },
+        {
+          "begriff": "buschdorf",
+          "anzahl": 4
+        },
+        {
+          "begriff": "öpnv",
+          "anzahl": 4
+        },
+        {
+          "begriff": "stadtbahnlinie",
+          "anzahl": 4
+        },
+        {
+          "begriff": "auerberg",
+          "anzahl": 4
+        },
+        {
+          "begriff": "linie",
+          "anzahl": 4
+        },
+        {
+          "begriff": "aufgenommen",
+          "anzahl": 4
+        },
+        {
+          "begriff": "sanierung",
+          "anzahl": 3
+        },
+        {
+          "begriff": "neubau",
+          "anzahl": 3
+        }
+      ]
+    },
+    {
+      "projekt": "Bonn",
+      "peak": 3,
+      "datum": "2025-04-08",
+      "beitraege_am_tag": 2,
+      "prominenz": 2.0,
+      "vendor_tonlage": 0.0,
+      "beitraege_im_fenster": 2,
+      "fenster": {
+        "start": "2025-04-05",
+        "ende": "2025-04-10"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "bonn",
+          "anzahl": 9
+        },
+        {
+          "begriff": "keinen",
+          "anzahl": 8
+        },
+        {
+          "begriff": "seilbahn",
+          "anzahl": 8
+        },
+        {
+          "begriff": "stadt",
+          "anzahl": 6
+        },
+        {
+          "begriff": "findet",
+          "anzahl": 6
+        },
+        {
+          "begriff": "projektsteuerer",
+          "anzahl": 4
+        },
+        {
+          "begriff": "verantwortlichen",
+          "anzahl": 4
+        },
+        {
+          "begriff": "großprojekt",
+          "anzahl": 3
+        },
+        {
+          "begriff": "stadtwerke",
+          "anzahl": 2
+        },
+        {
+          "begriff": "unternehmer",
+          "anzahl": 2
+        },
+        {
+          "begriff": "gefunden",
+          "anzahl": 2
+        },
+        {
+          "begriff": "örtliche",
+          "anzahl": 2
+        },
+        {
+          "begriff": "verkehrsclub",
+          "anzahl": 2
+        },
+        {
+          "begriff": "fordert",
+          "anzahl": 2
+        },
+        {
+          "begriff": "tempo",
+          "anzahl": 2
+        }
+      ]
+    },
+    {
+      "projekt": "Bonn",
+      "peak": 4,
+      "datum": "2025-06-02",
+      "beitraege_am_tag": 2,
+      "prominenz": 2.0,
+      "vendor_tonlage": 0.5,
+      "beitraege_im_fenster": 3,
+      "fenster": {
+        "start": "2025-05-30",
+        "ende": "2025-06-04"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "seilbahn",
+          "anzahl": 11
+        },
+        {
+          "begriff": "koblenz",
+          "anzahl": 9
+        },
+        {
+          "begriff": "pakettransport",
+          "anzahl": 7
+        },
+        {
+          "begriff": "rheinsteig",
+          "anzahl": 7
+        },
+        {
+          "begriff": "hochschule",
+          "anzahl": 4
+        },
+        {
+          "begriff": "darmstadt",
+          "anzahl": 4
+        },
+        {
+          "begriff": "etappen",
+          "anzahl": 4
+        },
+        {
+          "begriff": "deutschen",
+          "anzahl": 3
+        },
+        {
+          "begriff": "pakete",
+          "anzahl": 3
+        },
+        {
+          "begriff": "seilbahnen",
+          "anzahl": 3
+        },
+        {
+          "begriff": "setzt",
+          "anzahl": 2
+        },
+        {
+          "begriff": "nachhaltigen",
+          "anzahl": 2
+        },
+        {
+          "begriff": "skyfreight",
+          "anzahl": 2
+        },
+        {
+          "begriff": "starten",
+          "anzahl": 2
+        },
+        {
+          "begriff": "feldversuch",
+          "anzahl": 2
+        }
+      ]
+    },
+    {
+      "projekt": "Bonn",
+      "peak": 5,
+      "datum": "2025-06-15",
+      "beitraege_am_tag": 8,
+      "prominenz": 8.0,
+      "vendor_tonlage": 1.0,
+      "beitraege_im_fenster": 14,
+      "fenster": {
+        "start": "2025-06-12",
+        "ende": "2025-06-17"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "seilbahn",
+          "anzahl": 47
+        },
+        {
+          "begriff": "bonn",
+          "anzahl": 37
+        },
+        {
+          "begriff": "soll",
+          "anzahl": 23
+        },
+        {
+          "begriff": "pionierprojekt",
+          "anzahl": 18
+        },
+        {
+          "begriff": "projekt",
+          "anzahl": 12
+        },
+        {
+          "begriff": "einzigartige",
+          "anzahl": 11
+        },
+        {
+          "begriff": "deutschland",
+          "anzahl": 11
+        },
+        {
+          "begriff": "stadt",
+          "anzahl": 10
+        },
+        {
+          "begriff": "premiere",
+          "anzahl": 10
+        },
+        {
+          "begriff": "bundesweit",
+          "anzahl": 8
+        },
+        {
+          "begriff": "rhein",
+          "anzahl": 8
+        },
+        {
+          "begriff": "form",
+          "anzahl": 8
+        },
+        {
+          "begriff": "etappe",
+          "anzahl": 8
+        },
+        {
+          "begriff": "bekommt",
+          "anzahl": 7
+        },
+        {
+          "begriff": "venusberg",
+          "anzahl": 7
+        }
+      ]
+    },
+    {
+      "projekt": "Bonn",
+      "peak": 6,
+      "datum": "2025-06-25",
+      "beitraege_am_tag": 2,
+      "prominenz": 2.0,
+      "vendor_tonlage": 1.0,
+      "beitraege_im_fenster": 3,
+      "fenster": {
+        "start": "2025-06-22",
+        "ende": "2025-06-27"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "dörner",
+          "anzahl": 7
+        },
+        {
+          "begriff": "bonn",
+          "anzahl": 7
+        },
+        {
+          "begriff": "bonns",
+          "anzahl": 6
+        },
+        {
+          "begriff": "fordert",
+          "anzahl": 6
+        },
+        {
+          "begriff": "köln",
+          "anzahl": 6
+        },
+        {
+          "begriff": "verbindung",
+          "anzahl": 5
+        },
+        {
+          "begriff": "beuel",
+          "anzahl": 5
+        },
+        {
+          "begriff": "rheinland",
+          "anzahl": 5
+        },
+        {
+          "begriff": "bahn",
+          "anzahl": 5
+        },
+        {
+          "begriff": "stadt",
+          "anzahl": 4
+        },
+        {
+          "begriff": "seilbahn",
+          "anzahl": 4
+        },
+        {
+          "begriff": "durchgängige",
+          "anzahl": 2
+        },
+        {
+          "begriff": "oberbürgermeisterin",
+          "anzahl": 2
+        },
+        {
+          "begriff": "katja",
+          "anzahl": 2
+        },
+        {
+          "begriff": "projekt",
+          "anzahl": 2
+        }
+      ]
+    },
+    {
+      "projekt": "Bonn",
+      "peak": 7,
+      "datum": "2025-07-28",
+      "beitraege_am_tag": 2,
+      "prominenz": 2.0,
+      "vendor_tonlage": 1.0,
+      "beitraege_im_fenster": 2,
+      "fenster": {
+        "start": "2025-07-25",
+        "ende": "2025-07-30"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "montabaur",
+          "anzahl": 12
+        },
+        {
+          "begriff": "south",
+          "anzahl": 8
+        },
+        {
+          "begriff": "carolina",
+          "anzahl": 8
+        },
+        {
+          "begriff": "gast",
+          "anzahl": 6
+        },
+        {
+          "begriff": "zwei",
+          "anzahl": 5
+        },
+        {
+          "begriff": "jugend",
+          "anzahl": 5
+        },
+        {
+          "begriff": "teams",
+          "anzahl": 5
+        },
+        {
+          "begriff": "andree",
+          "anzahl": 3
+        },
+        {
+          "begriff": "stein",
+          "anzahl": 3
+        },
+        {
+          "begriff": "rathaus",
+          "anzahl": 3
+        },
+        {
+          "begriff": "fußballer",
+          "anzahl": 3
+        },
+        {
+          "begriff": "ihren",
+          "anzahl": 3
+        },
+        {
+          "begriff": "more",
+          "anzahl": 2
+        },
+        {
+          "begriff": "than",
+          "anzahl": 2
+        },
+        {
+          "begriff": "soccer",
+          "anzahl": 2
+        }
+      ]
+    },
+    {
+      "projekt": "Bonn",
+      "peak": 8,
+      "datum": "2025-08-05",
+      "beitraege_am_tag": 2,
+      "prominenz": 2.0,
+      "vendor_tonlage": 1.0,
+      "beitraege_im_fenster": 5,
+      "fenster": {
+        "start": "2025-08-02",
+        "ende": "2025-08-07"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "rhein",
+          "anzahl": 28
+        },
+        {
+          "begriff": "flammen",
+          "anzahl": 18
+        },
+        {
+          "begriff": "koblenz",
+          "anzahl": 18
+        },
+        {
+          "begriff": "spay",
+          "anzahl": 12
+        },
+        {
+          "begriff": "findet",
+          "anzahl": 7
+        },
+        {
+          "begriff": "statt",
+          "anzahl": 7
+        },
+        {
+          "begriff": "premiere",
+          "anzahl": 6
+        },
+        {
+          "begriff": "wieder",
+          "anzahl": 5
+        },
+        {
+          "begriff": "ticketpreise",
+          "anzahl": 4
+        },
+        {
+          "begriff": "bietet",
+          "anzahl": 4
+        },
+        {
+          "begriff": "jahr",
+          "anzahl": 4
+        },
+        {
+          "begriff": "feuerwerk",
+          "anzahl": 4
+        },
+        {
+          "begriff": "feiern",
+          "anzahl": 4
+        },
+        {
+          "begriff": "jahren",
+          "anzahl": 3
+        },
+        {
+          "begriff": "aktualisiert",
+          "anzahl": 3
+        }
+      ]
+    },
+    {
+      "projekt": "Bonn",
+      "peak": 9,
+      "datum": "2025-08-29",
+      "beitraege_am_tag": 6,
+      "prominenz": 6.0,
+      "vendor_tonlage": -0.5,
+      "beitraege_im_fenster": 8,
+      "fenster": {
+        "start": "2025-08-26",
+        "ende": "2025-08-31"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "seilbahn",
+          "anzahl": 33
+        },
+        {
+          "begriff": "bonn",
+          "anzahl": 22
+        },
+        {
+          "begriff": "projekt",
+          "anzahl": 15
+        },
+        {
+          "begriff": "voran",
+          "anzahl": 11
+        },
+        {
+          "begriff": "schreitet",
+          "anzahl": 9
+        },
+        {
+          "begriff": "stadtverwaltung",
+          "anzahl": 9
+        },
+        {
+          "begriff": "stadt",
+          "anzahl": 9
+        },
+        {
+          "begriff": "bonner",
+          "anzahl": 9
+        },
+        {
+          "begriff": "ihrem",
+          "anzahl": 8
+        },
+        {
+          "begriff": "stützen",
+          "anzahl": 8
+        },
+        {
+          "begriff": "rückschlag",
+          "anzahl": 8
+        },
+        {
+          "begriff": "antrag",
+          "anzahl": 6
+        },
+        {
+          "begriff": "gelände",
+          "anzahl": 6
+        },
+        {
+          "begriff": "pfeiler",
+          "anzahl": 6
+        },
+        {
+          "begriff": "planung",
+          "anzahl": 5
+        }
+      ]
+    },
+    {
+      "projekt": "Bonn",
+      "peak": 10,
+      "datum": "2025-09-07",
+      "beitraege_am_tag": 4,
+      "prominenz": 4.0,
+      "vendor_tonlage": 0.25,
+      "beitraege_im_fenster": 7,
+      "fenster": {
+        "start": "2025-09-04",
+        "ende": "2025-09-09"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "seilbahn",
+          "anzahl": 14
+        },
+        {
+          "begriff": "bonner",
+          "anzahl": 11
+        },
+        {
+          "begriff": "tempo",
+          "anzahl": 9
+        },
+        {
+          "begriff": "bonn",
+          "anzahl": 9
+        },
+        {
+          "begriff": "verkehrspolitik",
+          "anzahl": 8
+        },
+        {
+          "begriff": "adenauerallee",
+          "anzahl": 8
+        },
+        {
+          "begriff": "wahlumfrage",
+          "anzahl": 7
+        },
+        {
+          "begriff": "mehrheit",
+          "anzahl": 4
+        },
+        {
+          "begriff": "befragung",
+          "anzahl": 4
+        },
+        {
+          "begriff": "andere",
+          "anzahl": 4
+        },
+        {
+          "begriff": "vlotho",
+          "anzahl": 4
+        },
+        {
+          "begriff": "ideen",
+          "anzahl": 4
+        },
+        {
+          "begriff": "spiel",
+          "anzahl": 4
+        },
+        {
+          "begriff": "integrationsfläche",
+          "anzahl": 4
+        },
+        {
+          "begriff": "bonneberg",
+          "anzahl": 4
+        }
+      ]
+    },
+    {
+      "projekt": "Bonn",
+      "peak": 11,
+      "datum": "2025-11-12",
+      "beitraege_am_tag": 2,
+      "prominenz": 2.0,
+      "vendor_tonlage": 0.5,
+      "beitraege_im_fenster": 2,
+      "fenster": {
+        "start": "2025-11-09",
+        "ende": "2025-11-14"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "sechs",
+          "anzahl": 6
+        },
+        {
+          "begriff": "koalition",
+          "anzahl": 5
+        },
+        {
+          "begriff": "genehmigt",
+          "anzahl": 5
+        },
+        {
+          "begriff": "nahverkehrsprojekte",
+          "anzahl": 5
+        },
+        {
+          "begriff": "kölner",
+          "anzahl": 5
+        },
+        {
+          "begriff": "beschlossen",
+          "anzahl": 3
+        },
+        {
+          "begriff": "grüne",
+          "anzahl": 2
+        },
+        {
+          "begriff": "öpnv",
+          "anzahl": 2
+        },
+        {
+          "begriff": "projekten",
+          "anzahl": 2
+        },
+        {
+          "begriff": "west",
+          "anzahl": 2
+        },
+        {
+          "begriff": "achse",
+          "anzahl": 2
+        },
+        {
+          "begriff": "zunächst",
+          "anzahl": 2
+        },
+        {
+          "begriff": "interimslösung",
+          "anzahl": 2
+        },
+        {
+          "begriff": "längeren",
+          "anzahl": 2
+        },
+        {
+          "begriff": "bahnsteigen",
+          "anzahl": 2
+        }
+      ]
+    },
+    {
+      "projekt": "Bonn",
+      "peak": 12,
+      "datum": "2025-12-08",
+      "beitraege_am_tag": 2,
+      "prominenz": 2.0,
+      "vendor_tonlage": 0.5,
+      "beitraege_im_fenster": 3,
+      "fenster": {
+        "start": "2025-12-05",
+        "ende": "2025-12-10"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "mannheim",
+          "anzahl": 9
+        },
+        {
+          "begriff": "ludwigshafen",
+          "anzahl": 9
+        },
+        {
+          "begriff": "rhein",
+          "anzahl": 7
+        },
+        {
+          "begriff": "seilbahn",
+          "anzahl": 6
+        },
+        {
+          "begriff": "fordern",
+          "anzahl": 3
+        },
+        {
+          "begriff": "unterstützung",
+          "anzahl": 3
+        },
+        {
+          "begriff": "bundesländer",
+          "anzahl": 3
+        },
+        {
+          "begriff": "brückensanierung",
+          "anzahl": 3
+        },
+        {
+          "begriff": "unserer",
+          "anzahl": 3
+        },
+        {
+          "begriff": "verkehrschaos",
+          "anzahl": 3
+        },
+        {
+          "begriff": "während",
+          "anzahl": 3
+        },
+        {
+          "begriff": "seid",
+          "anzahl": 3
+        },
+        {
+          "begriff": "dabei",
+          "anzahl": 3
+        },
+        {
+          "begriff": "fraktionen",
+          "anzahl": 2
+        },
+        {
+          "begriff": "mehr",
+          "anzahl": 2
+        }
+      ]
+    },
+    {
+      "projekt": "Bonn",
+      "peak": 13,
+      "datum": "2025-12-16",
+      "beitraege_am_tag": 2,
+      "prominenz": 2.0,
+      "vendor_tonlage": 0.0,
+      "beitraege_im_fenster": 6,
+      "fenster": {
+        "start": "2025-12-13",
+        "ende": "2025-12-18"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "seilbahn",
+          "anzahl": 16
+        },
+        {
+          "begriff": "sprung",
+          "anzahl": 11
+        },
+        {
+          "begriff": "bonn",
+          "anzahl": 6
+        },
+        {
+          "begriff": "paris",
+          "anzahl": 6
+        },
+        {
+          "begriff": "luft",
+          "anzahl": 6
+        },
+        {
+          "begriff": "zipline",
+          "anzahl": 6
+        },
+        {
+          "begriff": "rhein",
+          "anzahl": 5
+        },
+        {
+          "begriff": "raum",
+          "anzahl": 5
+        },
+        {
+          "begriff": "westblick",
+          "anzahl": 4
+        },
+        {
+          "begriff": "bonner",
+          "anzahl": 4
+        },
+        {
+          "begriff": "längste",
+          "anzahl": 4
+        },
+        {
+          "begriff": "köln",
+          "anzahl": 4
+        },
+        {
+          "begriff": "onride",
+          "anzahl": 4
+        },
+        {
+          "begriff": "indoor",
+          "anzahl": 4
+        },
+        {
+          "begriff": "soll",
+          "anzahl": 3
+        }
+      ]
+    },
+    {
+      "projekt": "Bonn",
+      "peak": 14,
+      "datum": "2026-03-05",
+      "beitraege_am_tag": 3,
+      "prominenz": 3.0,
+      "vendor_tonlage": -0.33,
+      "beitraege_im_fenster": 6,
+      "fenster": {
+        "start": "2026-03-02",
+        "ende": "2026-03-07"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "seilbahn",
+          "anzahl": 31
+        },
+        {
+          "begriff": "bonn",
+          "anzahl": 20
+        },
+        {
+          "begriff": "bonner",
+          "anzahl": 16
+        },
+        {
+          "begriff": "jahre",
+          "anzahl": 15
+        },
+        {
+          "begriff": "verzögert",
+          "anzahl": 14
+        },
+        {
+          "begriff": "mehrere",
+          "anzahl": 12
+        },
+        {
+          "begriff": "soll",
+          "anzahl": 6
+        },
+        {
+          "begriff": "stadt",
+          "anzahl": 6
+        },
+        {
+          "begriff": "erst",
+          "anzahl": 6
+        },
+        {
+          "begriff": "völlig",
+          "anzahl": 6
+        },
+        {
+          "begriff": "falscher",
+          "anzahl": 6
+        },
+        {
+          "begriff": "schritt",
+          "anzahl": 6
+        },
+        {
+          "begriff": "inbetriebnahme",
+          "anzahl": 5
+        },
+        {
+          "begriff": "starten",
+          "anzahl": 5
+        },
+        {
+          "begriff": "könnte",
+          "anzahl": 4
+        }
+      ]
+    },
+    {
+      "projekt": "Bonn",
+      "peak": 15,
+      "datum": "2026-03-24",
+      "beitraege_am_tag": 4,
+      "prominenz": 4.0,
+      "vendor_tonlage": -0.25,
+      "beitraege_im_fenster": 11,
+      "fenster": {
+        "start": "2026-03-21",
+        "ende": "2026-03-26"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "seilbahn",
+          "anzahl": 35
+        },
+        {
+          "begriff": "bonn",
+          "anzahl": 24
+        },
+        {
+          "begriff": "stadt",
+          "anzahl": 12
+        },
+        {
+          "begriff": "bonner",
+          "anzahl": 11
+        },
+        {
+          "begriff": "soll",
+          "anzahl": 11
+        },
+        {
+          "begriff": "rhein",
+          "anzahl": 9
+        },
+        {
+          "begriff": "könnte",
+          "anzahl": 6
+        },
+        {
+          "begriff": "planung",
+          "anzahl": 6
+        },
+        {
+          "begriff": "rtlwest",
+          "anzahl": 6
+        },
+        {
+          "begriff": "verkehr",
+          "anzahl": 5
+        },
+        {
+          "begriff": "entlasten",
+          "anzahl": 5
+        },
+        {
+          "begriff": "neue",
+          "anzahl": 5
+        },
+        {
+          "begriff": "projekt",
+          "anzahl": 5
+        },
+        {
+          "begriff": "voran",
+          "anzahl": 5
+        },
+        {
+          "begriff": "millionenprojekt",
+          "anzahl": 4
+        }
+      ]
+    },
+    {
+      "projekt": "Bonn",
+      "peak": 16,
+      "datum": "2026-05-14",
+      "beitraege_am_tag": 2,
+      "prominenz": 2.0,
+      "vendor_tonlage": 1.0,
+      "beitraege_im_fenster": 2,
+      "fenster": {
+        "start": "2026-05-11",
+        "ende": "2026-05-16"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "seilbahn",
+          "anzahl": 6
+        },
+        {
+          "begriff": "bonn",
+          "anzahl": 4
+        },
+        {
+          "begriff": "bonner",
+          "anzahl": 4
+        },
+        {
+          "begriff": "aktuelle",
+          "anzahl": 3
+        },
+        {
+          "begriff": "sachstand",
+          "anzahl": 3
+        },
+        {
+          "begriff": "planungen",
+          "anzahl": 3
+        },
+        {
+          "begriff": "nehmen",
+          "anzahl": 3
+        },
+        {
+          "begriff": "gestalt",
+          "anzahl": 3
+        },
+        {
+          "begriff": "kosten",
+          "anzahl": 3
+        },
+        {
+          "begriff": "deutlich",
+          "anzahl": 3
+        },
+        {
+          "begriff": "gestiegen",
+          "anzahl": 3
+        },
+        {
+          "begriff": "doch",
+          "anzahl": 2
+        },
+        {
+          "begriff": "projekt",
+          "anzahl": 2
+        },
+        {
+          "begriff": "großprojekt",
+          "anzahl": 1
+        },
+        {
+          "begriff": "stadt",
+          "anzahl": 1
+        }
+      ]
+    },
+    {
+      "projekt": "Bonn",
+      "peak": 17,
+      "datum": "2026-06-18",
+      "beitraege_am_tag": 2,
+      "prominenz": 2.0,
+      "vendor_tonlage": 1.0,
+      "beitraege_im_fenster": 5,
+      "fenster": {
+        "start": "2026-06-15",
+        "ende": "2026-06-20"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "raum",
+          "anzahl": 12
+        },
+        {
+          "begriff": "frick",
+          "anzahl": 12
+        },
+        {
+          "begriff": "massnahmen",
+          "anzahl": 11
+        },
+        {
+          "begriff": "stein",
+          "anzahl": 11
+        },
+        {
+          "begriff": "laufenburg",
+          "anzahl": 11
+        },
+        {
+          "begriff": "seilbahn",
+          "anzahl": 4
+        },
+        {
+          "begriff": "neue",
+          "anzahl": 4
+        },
+        {
+          "begriff": "gesamtverkehrskonzept",
+          "anzahl": 4
+        },
+        {
+          "begriff": "reisebericht",
+          "anzahl": 3
+        },
+        {
+          "begriff": "steuerungsgremium",
+          "anzahl": 3
+        },
+        {
+          "begriff": "gesamtverkehrskonzepts",
+          "anzahl": 3
+        },
+        {
+          "begriff": "bonn",
+          "anzahl": 3
+        },
+        {
+          "begriff": "dransdorf",
+          "anzahl": 3
+        },
+        {
+          "begriff": "stadtbahn",
+          "anzahl": 3
+        },
+        {
+          "begriff": "lena",
+          "anzahl": 3
+        }
+      ]
+    },
+    {
+      "projekt": "Bonn",
+      "peak": 18,
+      "datum": "2026-07-15",
+      "beitraege_am_tag": 4,
+      "prominenz": 4.0,
+      "vendor_tonlage": 0.0,
+      "beitraege_im_fenster": 6,
+      "fenster": {
+        "start": "2026-07-12",
+        "ende": "2026-07-17"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "bonn",
+          "anzahl": 21
+        },
+        {
+          "begriff": "stadt",
+          "anzahl": 16
+        },
+        {
+          "begriff": "stadthaus",
+          "anzahl": 15
+        },
+        {
+          "begriff": "stoppt",
+          "anzahl": 9
+        },
+        {
+          "begriff": "sanierung",
+          "anzahl": 9
+        },
+        {
+          "begriff": "pläne",
+          "anzahl": 9
+        },
+        {
+          "begriff": "bonner",
+          "anzahl": 8
+        },
+        {
+          "begriff": "großprojekte",
+          "anzahl": 6
+        },
+        {
+          "begriff": "haushalt",
+          "anzahl": 4
+        },
+        {
+          "begriff": "bald",
+          "anzahl": 4
+        },
+        {
+          "begriff": "leere",
+          "anzahl": 4
+        },
+        {
+          "begriff": "zukunft",
+          "anzahl": 4
+        },
+        {
+          "begriff": "fehlen",
+          "anzahl": 3
+        },
+        {
+          "begriff": "braucht",
+          "anzahl": 3
+        },
+        {
+          "begriff": "stadtverwaltung",
+          "anzahl": 3
+        }
+      ]
+    },
+    {
+      "projekt": "Bonn",
+      "peak": 19,
+      "datum": "2026-08-09",
+      "beitraege_am_tag": 2,
+      "prominenz": 2.0,
+      "vendor_tonlage": null,
+      "beitraege_im_fenster": 3,
+      "fenster": {
+        "start": "2026-08-06",
+        "ende": "2026-08-11"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "seilbahn",
+          "anzahl": 9
+        },
+        {
+          "begriff": "rheingefragt",
+          "anzahl": 6
+        },
+        {
+          "begriff": "köln",
+          "anzahl": 6
+        },
+        {
+          "begriff": "gondel",
+          "anzahl": 6
+        },
+        {
+          "begriff": "verkehrschaos",
+          "anzahl": 5
+        },
+        {
+          "begriff": "bonn",
+          "anzahl": 5
+        },
+        {
+          "begriff": "anna",
+          "anzahl": 4
+        },
+        {
+          "begriff": "fleischhauer",
+          "anzahl": 4
+        },
+        {
+          "begriff": "staffel",
+          "anzahl": 4
+        },
+        {
+          "begriff": "folge",
+          "anzahl": 4
+        },
+        {
+          "begriff": "dann",
+          "anzahl": 4
+        },
+        {
+          "begriff": "sport",
+          "anzahl": 4
+        },
+        {
+          "begriff": "kölner",
+          "anzahl": 4
+        },
+        {
+          "begriff": "bonner",
+          "anzahl": 3
+        },
+        {
+          "begriff": "aktuell",
+          "anzahl": 3
+        }
+      ]
+    },
+    {
+      "projekt": "Bonn",
+      "peak": 20,
+      "datum": "2026-09-06",
+      "beitraege_am_tag": 2,
+      "prominenz": 2.0,
+      "vendor_tonlage": null,
+      "beitraege_im_fenster": 2,
+      "fenster": {
+        "start": "2026-09-03",
+        "ende": "2026-09-08"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "frauenmuseum",
+          "anzahl": 4
+        },
+        {
+          "begriff": "marianne",
+          "anzahl": 4
+        },
+        {
+          "begriff": "pitzen",
+          "anzahl": 4
+        },
+        {
+          "begriff": "bonn",
+          "anzahl": 4
+        },
+        {
+          "begriff": "erste",
+          "anzahl": 3
+        },
+        {
+          "begriff": "rheingefragt",
+          "anzahl": 3
+        },
+        {
+          "begriff": "seilbahn",
+          "anzahl": 3
+        },
+        {
+          "begriff": "folge",
+          "anzahl": 3
+        },
+        {
+          "begriff": "gründete",
+          "anzahl": 3
+        },
+        {
+          "begriff": "jahren",
+          "anzahl": 2
+        },
+        {
+          "begriff": "unserem",
+          "anzahl": 2
+        },
+        {
+          "begriff": "kanal",
+          "anzahl": 2
+        },
+        {
+          "begriff": "interview",
+          "anzahl": 2
+        },
+        {
+          "begriff": "kölner",
+          "anzahl": 2
+        },
+        {
+          "begriff": "staffel",
+          "anzahl": 2
+        }
+      ]
+    },
+    {
+      "projekt": "Bonn",
+      "peak": 21,
+      "datum": "2026-10-02",
+      "beitraege_am_tag": 2,
+      "prominenz": 2.0,
+      "vendor_tonlage": 0.5,
+      "beitraege_im_fenster": 2,
+      "fenster": {
+        "start": "2026-09-29",
+        "ende": "2026-10-04"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "rhein",
+          "anzahl": 4
+        },
+        {
+          "begriff": "bucht",
+          "anzahl": 3
+        },
+        {
+          "begriff": "upgrade",
+          "anzahl": 3
+        },
+        {
+          "begriff": "bonn",
+          "anzahl": 3
+        },
+        {
+          "begriff": "sieg",
+          "anzahl": 3
+        },
+        {
+          "begriff": "nordbrückensperrung",
+          "anzahl": 3
+        },
+        {
+          "begriff": "auswirkungen",
+          "anzahl": 3
+        },
+        {
+          "begriff": "kabine",
+          "anzahl": 2
+        },
+        {
+          "begriff": "gewinnt",
+          "anzahl": 2
+        },
+        {
+          "begriff": "suite",
+          "anzahl": 2
+        },
+        {
+          "begriff": "radio",
+          "anzahl": 2
+        },
+        {
+          "begriff": "seid",
+          "anzahl": 2
+        },
+        {
+          "begriff": "dabei",
+          "anzahl": 2
+        },
+        {
+          "begriff": "teil",
+          "anzahl": 2
+        },
+        {
+          "begriff": "unserer",
+          "anzahl": 2
+        }
+      ]
+    },
+    {
+      "projekt": "Paris",
+      "peak": 1,
+      "datum": "2025-02-13",
+      "beitraege_am_tag": 5,
+      "prominenz": 5.0,
+      "vendor_tonlage": 1.0,
+      "beitraege_im_fenster": 9,
+      "fenster": {
+        "start": "2025-02-10",
+        "ende": "2025-02-15"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "téléphérique",
+          "anzahl": 10
+        },
+        {
+          "begriff": "créteil",
+          "anzahl": 9
+        },
+        {
+          "begriff": "câble",
+          "anzahl": 8
+        },
+        {
+          "begriff": "premier",
+          "anzahl": 6
+        },
+        {
+          "begriff": "bien",
+          "anzahl": 6
+        },
+        {
+          "begriff": "mais",
+          "anzahl": 6
+        },
+        {
+          "begriff": "loin",
+          "anzahl": 6
+        },
+        {
+          "begriff": "chez",
+          "anzahl": 6
+        },
+        {
+          "begriff": "fait",
+          "anzahl": 6
+        },
+        {
+          "begriff": "heureux",
+          "anzahl": 6
+        },
+        {
+          "begriff": "france",
+          "anzahl": 5
+        },
+        {
+          "begriff": "arrivée",
+          "anzahl": 5
+        },
+        {
+          "begriff": "février",
+          "anzahl": 4
+        },
+        {
+          "begriff": "numériques",
+          "anzahl": 4
+        },
+        {
+          "begriff": "actualité",
+          "anzahl": 4
+        }
+      ]
+    },
+    {
+      "projekt": "Paris",
+      "peak": 2,
+      "datum": "2025-02-27",
+      "beitraege_am_tag": 5,
+      "prominenz": 5.0,
+      "vendor_tonlage": 0.6,
+      "beitraege_im_fenster": 12,
+      "fenster": {
+        "start": "2025-02-24",
+        "ende": "2025-03-01"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "câble",
+          "anzahl": 41
+        },
+        {
+          "begriff": "téléphérique",
+          "anzahl": 34
+        },
+        {
+          "begriff": "marne",
+          "anzahl": 18
+        },
+        {
+          "begriff": "france",
+          "anzahl": 16
+        },
+        {
+          "begriff": "premier",
+          "anzahl": 14
+        },
+        {
+          "begriff": "francilien",
+          "anzahl": 10
+        },
+        {
+          "begriff": "créteil",
+          "anzahl": 9
+        },
+        {
+          "begriff": "boucle",
+          "anzahl": 9
+        },
+        {
+          "begriff": "opération",
+          "anzahl": 8
+        },
+        {
+          "begriff": "futur",
+          "anzahl": 8
+        },
+        {
+          "begriff": "fermetures",
+          "anzahl": 8
+        },
+        {
+          "begriff": "travaux",
+          "anzahl": 8
+        },
+        {
+          "begriff": "villeneuve",
+          "anzahl": 7
+        },
+        {
+          "begriff": "saint",
+          "anzahl": 7
+        },
+        {
+          "begriff": "georges",
+          "anzahl": 7
+        }
+      ]
+    },
+    {
+      "projekt": "Paris",
+      "peak": 3,
+      "datum": "2025-05-13",
+      "beitraege_am_tag": 4,
+      "prominenz": 4.0,
+      "vendor_tonlage": 1.0,
+      "beitraege_im_fenster": 5,
+      "fenster": {
+        "start": "2025-05-10",
+        "ende": "2025-05-15"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "téléphérique",
+          "anzahl": 19
+        },
+        {
+          "begriff": "câble",
+          "anzahl": 16
+        },
+        {
+          "begriff": "france",
+          "anzahl": 14
+        },
+        {
+          "begriff": "francilien",
+          "anzahl": 8
+        },
+        {
+          "begriff": "urbain",
+          "anzahl": 7
+        },
+        {
+          "begriff": "mobilités",
+          "anzahl": 7
+        },
+        {
+          "begriff": "appel",
+          "anzahl": 7
+        },
+        {
+          "begriff": "pied",
+          "anzahl": 6
+        },
+        {
+          "begriff": "cabines",
+          "anzahl": 5
+        },
+        {
+          "begriff": "premier",
+          "anzahl": 5
+        },
+        {
+          "begriff": "premières",
+          "anzahl": 4
+        },
+        {
+          "begriff": "phase",
+          "anzahl": 4
+        },
+        {
+          "begriff": "test",
+          "anzahl": 4
+        },
+        {
+          "begriff": "marne",
+          "anzahl": 4
+        },
+        {
+          "begriff": "street",
+          "anzahl": 4
+        }
+      ]
+    },
+    {
+      "projekt": "Paris",
+      "peak": 4,
+      "datum": "2025-08-14",
+      "beitraege_am_tag": 4,
+      "prominenz": 4.0,
+      "vendor_tonlage": 0.33,
+      "beitraege_im_fenster": 5,
+      "fenster": {
+        "start": "2025-08-11",
+        "ende": "2025-08-16"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "téléphérique",
+          "anzahl": 18
+        },
+        {
+          "begriff": "service",
+          "anzahl": 12
+        },
+        {
+          "begriff": "bientôt",
+          "anzahl": 11
+        },
+        {
+          "begriff": "angle",
+          "anzahl": 8
+        },
+        {
+          "begriff": "créteil",
+          "anzahl": 8
+        },
+        {
+          "begriff": "villeneuve",
+          "anzahl": 8
+        },
+        {
+          "begriff": "saint",
+          "anzahl": 8
+        },
+        {
+          "begriff": "georges",
+          "anzahl": 8
+        },
+        {
+          "begriff": "entre",
+          "anzahl": 7
+        },
+        {
+          "begriff": "août",
+          "anzahl": 5
+        },
+        {
+          "begriff": "marne",
+          "anzahl": 5
+        },
+        {
+          "begriff": "france",
+          "anzahl": 5
+        },
+        {
+          "begriff": "urbain",
+          "anzahl": 4
+        },
+        {
+          "begriff": "comme",
+          "anzahl": 3
+        },
+        {
+          "begriff": "métro",
+          "anzahl": 3
+        }
+      ]
+    },
+    {
+      "projekt": "Paris",
+      "peak": 5,
+      "datum": "2025-09-24",
+      "beitraege_am_tag": 8,
+      "prominenz": 8.0,
+      "vendor_tonlage": 0.5,
+      "beitraege_im_fenster": 22,
+      "fenster": {
+        "start": "2025-09-21",
+        "ende": "2025-09-26"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "téléphérique",
+          "anzahl": 59
+        },
+        {
+          "begriff": "france",
+          "anzahl": 52
+        },
+        {
+          "begriff": "premier",
+          "anzahl": 41
+        },
+        {
+          "begriff": "décembre",
+          "anzahl": 37
+        },
+        {
+          "begriff": "câble",
+          "anzahl": 20
+        },
+        {
+          "begriff": "urbain",
+          "anzahl": 19
+        },
+        {
+          "begriff": "marne",
+          "anzahl": 18
+        },
+        {
+          "begriff": "sera",
+          "anzahl": 17
+        },
+        {
+          "begriff": "valérie",
+          "anzahl": 16
+        },
+        {
+          "begriff": "pécresse",
+          "anzahl": 15
+        },
+        {
+          "begriff": "créteil",
+          "anzahl": 13
+        },
+        {
+          "begriff": "mardi",
+          "anzahl": 12
+        },
+        {
+          "begriff": "présidente",
+          "anzahl": 12
+        },
+        {
+          "begriff": "région",
+          "anzahl": 12
+        },
+        {
+          "begriff": "date",
+          "anzahl": 12
+        }
+      ]
+    },
+    {
+      "projekt": "Paris",
+      "peak": 6,
+      "datum": "2025-10-01",
+      "beitraege_am_tag": 16,
+      "prominenz": 16.0,
+      "vendor_tonlage": 0.53,
+      "beitraege_im_fenster": 32,
+      "fenster": {
+        "start": "2025-09-28",
+        "ende": "2025-10-03"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "téléphérique",
+          "anzahl": 73
+        },
+        {
+          "begriff": "cabines",
+          "anzahl": 39
+        },
+        {
+          "begriff": "france",
+          "anzahl": 34
+        },
+        {
+          "begriff": "femmes",
+          "anzahl": 29
+        },
+        {
+          "begriff": "agressions",
+          "anzahl": 26
+        },
+        {
+          "begriff": "députée",
+          "anzahl": 26
+        },
+        {
+          "begriff": "sexuelles",
+          "anzahl": 24
+        },
+        {
+          "begriff": "premier",
+          "anzahl": 19
+        },
+        {
+          "begriff": "créteil",
+          "anzahl": 18
+        },
+        {
+          "begriff": "pécresse",
+          "anzahl": 17
+        },
+        {
+          "begriff": "mixtes",
+          "anzahl": 16
+        },
+        {
+          "begriff": "décembre",
+          "anzahl": 16
+        },
+        {
+          "begriff": "octobre",
+          "anzahl": 15
+        },
+        {
+          "begriff": "abomangoli",
+          "anzahl": 15
+        },
+        {
+          "begriff": "nadège",
+          "anzahl": 14
+        }
+      ]
+    },
+    {
+      "projekt": "Paris",
+      "peak": 7,
+      "datum": "2025-10-20",
+      "beitraege_am_tag": 5,
+      "prominenz": 5.0,
+      "vendor_tonlage": 0.8,
+      "beitraege_im_fenster": 14,
+      "fenster": {
+        "start": "2025-10-17",
+        "ende": "2025-10-22"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "téléphérique",
+          "anzahl": 32
+        },
+        {
+          "begriff": "france",
+          "anzahl": 23
+        },
+        {
+          "begriff": "premier",
+          "anzahl": 16
+        },
+        {
+          "begriff": "urbain",
+          "anzahl": 12
+        },
+        {
+          "begriff": "ajaccio",
+          "anzahl": 11
+        },
+        {
+          "begriff": "octobre",
+          "anzahl": 11
+        },
+        {
+          "begriff": "formés",
+          "anzahl": 10
+        },
+        {
+          "begriff": "alpes",
+          "anzahl": 9
+        },
+        {
+          "begriff": "samedi",
+          "anzahl": 8
+        },
+        {
+          "begriff": "francilien",
+          "anzahl": 8
+        },
+        {
+          "begriff": "savoie",
+          "anzahl": 7
+        },
+        {
+          "begriff": "câble",
+          "anzahl": 7
+        },
+        {
+          "begriff": "face",
+          "anzahl": 6
+        },
+        {
+          "begriff": "président",
+          "anzahl": 6
+        },
+        {
+          "begriff": "doppelmayr",
+          "anzahl": 6
+        }
+      ]
+    },
+    {
+      "projekt": "Paris",
+      "peak": 8,
+      "datum": "2025-10-27",
+      "beitraege_am_tag": 4,
+      "prominenz": 4.0,
+      "vendor_tonlage": 0.67,
+      "beitraege_im_fenster": 13,
+      "fenster": {
+        "start": "2025-10-24",
+        "ende": "2025-10-29"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "téléphérique",
+          "anzahl": 32
+        },
+        {
+          "begriff": "france",
+          "anzahl": 25
+        },
+        {
+          "begriff": "câble",
+          "anzahl": 14
+        },
+        {
+          "begriff": "marne",
+          "anzahl": 13
+        },
+        {
+          "begriff": "chantier",
+          "anzahl": 12
+        },
+        {
+          "begriff": "octobre",
+          "anzahl": 11
+        },
+        {
+          "begriff": "bénédiction",
+          "anzahl": 9
+        },
+        {
+          "begriff": "prêtre",
+          "anzahl": 9
+        },
+        {
+          "begriff": "barcelone",
+          "anzahl": 9
+        },
+        {
+          "begriff": "premier",
+          "anzahl": 8
+        },
+        {
+          "begriff": "futur",
+          "anzahl": 8
+        },
+        {
+          "begriff": "avant",
+          "anzahl": 8
+        },
+        {
+          "begriff": "japon",
+          "anzahl": 6
+        },
+        {
+          "begriff": "première",
+          "anzahl": 6
+        },
+        {
+          "begriff": "tout",
+          "anzahl": 6
+        }
+      ]
+    },
+    {
+      "projekt": "Paris",
+      "peak": 9,
+      "datum": "2025-11-12",
+      "beitraege_am_tag": 7,
+      "prominenz": 7.0,
+      "vendor_tonlage": 0.43,
+      "beitraege_im_fenster": 10,
+      "fenster": {
+        "start": "2025-11-09",
+        "ende": "2025-11-14"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "france",
+          "anzahl": 34
+        },
+        {
+          "begriff": "téléphérique",
+          "anzahl": 25
+        },
+        {
+          "begriff": "premier",
+          "anzahl": 19
+        },
+        {
+          "begriff": "urbain",
+          "anzahl": 19
+        },
+        {
+          "begriff": "ouvrir",
+          "anzahl": 15
+        },
+        {
+          "begriff": "point",
+          "anzahl": 11
+        },
+        {
+          "begriff": "nouveau",
+          "anzahl": 8
+        },
+        {
+          "begriff": "première",
+          "anzahl": 8
+        },
+        {
+          "begriff": "notre",
+          "anzahl": 8
+        },
+        {
+          "begriff": "euronews",
+          "anzahl": 6
+        },
+        {
+          "begriff": "youtube",
+          "anzahl": 6
+        },
+        {
+          "begriff": "novembre",
+          "anzahl": 5
+        },
+        {
+          "begriff": "décembre",
+          "anzahl": 5
+        },
+        {
+          "begriff": "source",
+          "anzahl": 5
+        },
+        {
+          "begriff": "europe",
+          "anzahl": 5
+        }
+      ]
+    },
+    {
+      "projekt": "Paris",
+      "peak": 10,
+      "datum": "2025-11-22",
+      "beitraege_am_tag": 6,
+      "prominenz": 6.0,
+      "vendor_tonlage": 0.67,
+      "beitraege_im_fenster": 14,
+      "fenster": {
+        "start": "2025-11-19",
+        "ende": "2025-11-24"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "téléphérique",
+          "anzahl": 25
+        },
+        {
+          "begriff": "france",
+          "anzahl": 17
+        },
+        {
+          "begriff": "évacuation",
+          "anzahl": 16
+        },
+        {
+          "begriff": "pompiers",
+          "anzahl": 16
+        },
+        {
+          "begriff": "marne",
+          "anzahl": 12
+        },
+        {
+          "begriff": "premier",
+          "anzahl": 11
+        },
+        {
+          "begriff": "novembre",
+          "anzahl": 11
+        },
+        {
+          "begriff": "limeil",
+          "anzahl": 10
+        },
+        {
+          "begriff": "brévannes",
+          "anzahl": 10
+        },
+        {
+          "begriff": "ouverture",
+          "anzahl": 9
+        },
+        {
+          "begriff": "urbain",
+          "anzahl": 9
+        },
+        {
+          "begriff": "paris",
+          "anzahl": 9
+        },
+        {
+          "begriff": "câble",
+          "anzahl": 8
+        },
+        {
+          "begriff": "avant",
+          "anzahl": 8
+        },
+        {
+          "begriff": "cabines",
+          "anzahl": 7
+        }
+      ]
+    },
+    {
+      "projekt": "Paris",
+      "peak": 11,
+      "datum": "2025-12-13",
+      "beitraege_am_tag": 46,
+      "prominenz": 46.0,
+      "vendor_tonlage": 0.47,
+      "beitraege_im_fenster": 105,
+      "fenster": {
+        "start": "2025-12-10",
+        "ende": "2025-12-15"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "téléphérique",
+          "anzahl": 213
+        },
+        {
+          "begriff": "france",
+          "anzahl": 194
+        },
+        {
+          "begriff": "premier",
+          "anzahl": 111
+        },
+        {
+          "begriff": "câble",
+          "anzahl": 109
+        },
+        {
+          "begriff": "urbain",
+          "anzahl": 102
+        },
+        {
+          "begriff": "paris",
+          "anzahl": 87
+        },
+        {
+          "begriff": "créteil",
+          "anzahl": 74
+        },
+        {
+          "begriff": "marne",
+          "anzahl": 65
+        },
+        {
+          "begriff": "samedi",
+          "anzahl": 65
+        },
+        {
+          "begriff": "décembre",
+          "anzahl": 55
+        },
+        {
+          "begriff": "villeneuve",
+          "anzahl": 53
+        },
+        {
+          "begriff": "seilbahn",
+          "anzahl": 50
+        },
+        {
+          "begriff": "saint",
+          "anzahl": 49
+        },
+        {
+          "begriff": "georges",
+          "anzahl": 49
+        },
+        {
+          "begriff": "europe",
+          "anzahl": 44
+        }
+      ]
+    },
+    {
+      "projekt": "Paris",
+      "peak": 12,
+      "datum": "2026-01-08",
+      "beitraege_am_tag": 7,
+      "prominenz": 7.0,
+      "vendor_tonlage": 0.86,
+      "beitraege_im_fenster": 16,
+      "fenster": {
+        "start": "2026-01-05",
+        "ende": "2026-01-10"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "france",
+          "anzahl": 27
+        },
+        {
+          "begriff": "janvier",
+          "anzahl": 22
+        },
+        {
+          "begriff": "tempête",
+          "anzahl": 21
+        },
+        {
+          "begriff": "goretti",
+          "anzahl": 21
+        },
+        {
+          "begriff": "téléphérique",
+          "anzahl": 19
+        },
+        {
+          "begriff": "paris",
+          "anzahl": 14
+        },
+        {
+          "begriff": "urbain",
+          "anzahl": 13
+        },
+        {
+          "begriff": "câble",
+          "anzahl": 12
+        },
+        {
+          "begriff": "vendredi",
+          "anzahl": 12
+        },
+        {
+          "begriff": "transports",
+          "anzahl": 11
+        },
+        {
+          "begriff": "premier",
+          "anzahl": 11
+        },
+        {
+          "begriff": "neige",
+          "anzahl": 9
+        },
+        {
+          "begriff": "marne",
+          "anzahl": 7
+        },
+        {
+          "begriff": "arrêt",
+          "anzahl": 7
+        },
+        {
+          "begriff": "jeudi",
+          "anzahl": 7
+        }
+      ]
+    },
+    {
+      "projekt": "Paris",
+      "peak": 13,
+      "datum": "2026-02-09",
+      "beitraege_am_tag": 4,
+      "prominenz": 4.0,
+      "vendor_tonlage": 1.0,
+      "beitraege_im_fenster": 7,
+      "fenster": {
+        "start": "2026-02-06",
+        "ende": "2026-02-11"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "téléphériques",
+          "anzahl": 8
+        },
+        {
+          "begriff": "europe",
+          "anzahl": 8
+        },
+        {
+          "begriff": "trajets",
+          "anzahl": 7
+        },
+        {
+          "begriff": "téléphérique",
+          "anzahl": 7
+        },
+        {
+          "begriff": "sauna",
+          "anzahl": 5
+        },
+        {
+          "begriff": "sans",
+          "anzahl": 5
+        },
+        {
+          "begriff": "toit",
+          "anzahl": 5
+        },
+        {
+          "begriff": "rotatif",
+          "anzahl": 5
+        },
+        {
+          "begriff": "hors",
+          "anzahl": 5
+        },
+        {
+          "begriff": "commun",
+          "anzahl": 5
+        },
+        {
+          "begriff": "proposent",
+          "anzahl": 5
+        },
+        {
+          "begriff": "uniques",
+          "anzahl": 5
+        },
+        {
+          "begriff": "suisse",
+          "anzahl": 5
+        },
+        {
+          "begriff": "insolites",
+          "anzahl": 5
+        },
+        {
+          "begriff": "février",
+          "anzahl": 4
+        }
+      ]
+    },
+    {
+      "projekt": "Paris",
+      "peak": 14,
+      "datum": "2026-03-19",
+      "beitraege_am_tag": 4,
+      "prominenz": 4.0,
+      "vendor_tonlage": 0.75,
+      "beitraege_im_fenster": 7,
+      "fenster": {
+        "start": "2026-03-16",
+        "ende": "2026-03-21"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "municipales",
+          "anzahl": 9
+        },
+        {
+          "begriff": "france",
+          "anzahl": 9
+        },
+        {
+          "begriff": "transdev",
+          "anzahl": 9
+        },
+        {
+          "begriff": "aiacciu",
+          "anzahl": 8
+        },
+        {
+          "begriff": "téléphérique",
+          "anzahl": 8
+        },
+        {
+          "begriff": "premier",
+          "anzahl": 7
+        },
+        {
+          "begriff": "groupe",
+          "anzahl": 7
+        },
+        {
+          "begriff": "place",
+          "anzahl": 6
+        },
+        {
+          "begriff": "résultats",
+          "anzahl": 5
+        },
+        {
+          "begriff": "mars",
+          "anzahl": 5
+        },
+        {
+          "begriff": "câble",
+          "anzahl": 5
+        },
+        {
+          "begriff": "croissance",
+          "anzahl": 5
+        },
+        {
+          "begriff": "vivu",
+          "anzahl": 4
+        },
+        {
+          "begriff": "deux",
+          "anzahl": 4
+        },
+        {
+          "begriff": "avons",
+          "anzahl": 4
+        }
+      ]
+    },
+    {
+      "projekt": "Paris",
+      "peak": 15,
+      "datum": "2026-04-14",
+      "beitraege_am_tag": 4,
+      "prominenz": 4.0,
+      "vendor_tonlage": 1.0,
+      "beitraege_im_fenster": 10,
+      "fenster": {
+        "start": "2026-04-11",
+        "ende": "2026-04-16"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "doppelmayr",
+          "anzahl": 14
+        },
+        {
+          "begriff": "france",
+          "anzahl": 9
+        },
+        {
+          "begriff": "weltweit",
+          "anzahl": 9
+        },
+        {
+          "begriff": "paris",
+          "anzahl": 8
+        },
+        {
+          "begriff": "nicolas",
+          "anzahl": 8
+        },
+        {
+          "begriff": "lacroix",
+          "anzahl": 8
+        },
+        {
+          "begriff": "humoriste",
+          "anzahl": 7
+        },
+        {
+          "begriff": "gruppe",
+          "anzahl": 7
+        },
+        {
+          "begriff": "seilbahnen",
+          "anzahl": 7
+        },
+        {
+          "begriff": "alternatives",
+          "anzahl": 6
+        },
+        {
+          "begriff": "voiture",
+          "anzahl": 6
+        },
+        {
+          "begriff": "mobilité",
+          "anzahl": 6
+        },
+        {
+          "begriff": "wallonie",
+          "anzahl": 6
+        },
+        {
+          "begriff": "neue",
+          "anzahl": 6
+        },
+        {
+          "begriff": "téléphérique",
+          "anzahl": 5
+        }
+      ]
+    },
+    {
+      "projekt": "Paris",
+      "peak": 16,
+      "datum": "2026-05-04",
+      "beitraege_am_tag": 5,
+      "prominenz": 5.0,
+      "vendor_tonlage": 0.0,
+      "beitraege_im_fenster": 7,
+      "fenster": {
+        "start": "2026-05-01",
+        "ende": "2026-05-06"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "téléphérique",
+          "anzahl": 13
+        },
+        {
+          "begriff": "marne",
+          "anzahl": 11
+        },
+        {
+          "begriff": "france",
+          "anzahl": 9
+        },
+        {
+          "begriff": "paris",
+          "anzahl": 9
+        },
+        {
+          "begriff": "jours",
+          "anzahl": 8
+        },
+        {
+          "begriff": "câble",
+          "anzahl": 8
+        },
+        {
+          "begriff": "pendant",
+          "anzahl": 7
+        },
+        {
+          "begriff": "isère",
+          "anzahl": 5
+        },
+        {
+          "begriff": "arrêt",
+          "anzahl": 5
+        },
+        {
+          "begriff": "banlieue",
+          "anzahl": 5
+        },
+        {
+          "begriff": "parisienne",
+          "anzahl": 5
+        },
+        {
+          "begriff": "insolites",
+          "anzahl": 5
+        },
+        {
+          "begriff": "spots",
+          "anzahl": 5
+        },
+        {
+          "begriff": "touristiques",
+          "anzahl": 5
+        },
+        {
+          "begriff": "découvrir",
+          "anzahl": 5
+        }
+      ]
+    },
+    {
+      "projekt": "Paris",
+      "peak": 17,
+      "datum": "2026-06-08",
+      "beitraege_am_tag": 6,
+      "prominenz": 6.0,
+      "vendor_tonlage": 0.5,
+      "beitraege_im_fenster": 11,
+      "fenster": {
+        "start": "2026-06-05",
+        "ende": "2026-06-10"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "téléphérique",
+          "anzahl": 19
+        },
+        {
+          "begriff": "juin",
+          "anzahl": 17
+        },
+        {
+          "begriff": "câble",
+          "anzahl": 16
+        },
+        {
+          "begriff": "paris",
+          "anzahl": 12
+        },
+        {
+          "begriff": "mardi",
+          "anzahl": 10
+        },
+        {
+          "begriff": "trafic",
+          "anzahl": 10
+        },
+        {
+          "begriff": "france",
+          "anzahl": 9
+        },
+        {
+          "begriff": "voyageurs",
+          "anzahl": 8
+        },
+        {
+          "begriff": "exercice",
+          "anzahl": 8
+        },
+        {
+          "begriff": "marne",
+          "anzahl": 8
+        },
+        {
+          "begriff": "voici",
+          "anzahl": 7
+        },
+        {
+          "begriff": "dépêche",
+          "anzahl": 7
+        },
+        {
+          "begriff": "arrêt",
+          "anzahl": 7
+        },
+        {
+          "begriff": "votre",
+          "anzahl": 6
+        },
+        {
+          "begriff": "évacuation",
+          "anzahl": 6
+        }
+      ]
+    },
+    {
+      "projekt": "Paris",
+      "peak": 18,
+      "datum": "2026-06-22",
+      "beitraege_am_tag": 4,
+      "prominenz": 4.0,
+      "vendor_tonlage": 1.0,
+      "beitraege_im_fenster": 11,
+      "fenster": {
+        "start": "2026-06-19",
+        "ende": "2026-06-24"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "france",
+          "anzahl": 9
+        },
+        {
+          "begriff": "câble",
+          "anzahl": 9
+        },
+        {
+          "begriff": "randonnées",
+          "anzahl": 8
+        },
+        {
+          "begriff": "téléphérique",
+          "anzahl": 7
+        },
+        {
+          "begriff": "mobilités",
+          "anzahl": 6
+        },
+        {
+          "begriff": "millions",
+          "anzahl": 6
+        },
+        {
+          "begriff": "marne",
+          "anzahl": 6
+        },
+        {
+          "begriff": "belles",
+          "anzahl": 6
+        },
+        {
+          "begriff": "appenzell",
+          "anzahl": 6
+        },
+        {
+          "begriff": "engadine",
+          "anzahl": 6
+        },
+        {
+          "begriff": "haute",
+          "anzahl": 5
+        },
+        {
+          "begriff": "publics",
+          "anzahl": 4
+        },
+        {
+          "begriff": "provence",
+          "anzahl": 4
+        },
+        {
+          "begriff": "entre",
+          "anzahl": 4
+        },
+        {
+          "begriff": "suisse",
+          "anzahl": 4
+        }
+      ]
+    },
+    {
+      "projekt": "Paris",
+      "peak": 19,
+      "datum": "2026-08-03",
+      "beitraege_am_tag": 5,
+      "prominenz": 5.0,
+      "vendor_tonlage": 0.0,
+      "beitraege_im_fenster": 9,
+      "fenster": {
+        "start": "2026-07-31",
+        "ende": "2026-08-05"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "août",
+          "anzahl": 22
+        },
+        {
+          "begriff": "téléphérique",
+          "anzahl": 20
+        },
+        {
+          "begriff": "jusqu",
+          "anzahl": 15
+        },
+        {
+          "begriff": "fermé",
+          "anzahl": 14
+        },
+        {
+          "begriff": "marne",
+          "anzahl": 12
+        },
+        {
+          "begriff": "maintenance",
+          "anzahl": 12
+        },
+        {
+          "begriff": "câble",
+          "anzahl": 10
+        },
+        {
+          "begriff": "transports",
+          "anzahl": 10
+        },
+        {
+          "begriff": "france",
+          "anzahl": 10
+        },
+        {
+          "begriff": "paris",
+          "anzahl": 7
+        },
+        {
+          "begriff": "comment",
+          "anzahl": 6
+        },
+        {
+          "begriff": "lundi",
+          "anzahl": 6
+        },
+        {
+          "begriff": "bigorre",
+          "anzahl": 6
+        },
+        {
+          "begriff": "premier",
+          "anzahl": 6
+        },
+        {
+          "begriff": "dubrovnik",
+          "anzahl": 6
+        }
+      ]
+    },
+    {
+      "projekt": "Paris",
+      "peak": 20,
+      "datum": "2026-09-21",
+      "beitraege_am_tag": 4,
+      "prominenz": 4.0,
+      "vendor_tonlage": 1.0,
+      "beitraege_im_fenster": 5,
+      "fenster": {
+        "start": "2026-09-18",
+        "ende": "2026-09-23"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "europe",
+          "anzahl": 7
+        },
+        {
+          "begriff": "paris",
+          "anzahl": 7
+        },
+        {
+          "begriff": "doppelmayr",
+          "anzahl": 7
+        },
+        {
+          "begriff": "tous",
+          "anzahl": 6
+        },
+        {
+          "begriff": "droits",
+          "anzahl": 6
+        },
+        {
+          "begriff": "réservés",
+          "anzahl": 6
+        },
+        {
+          "begriff": "publicité",
+          "anzahl": 6
+        },
+        {
+          "begriff": "voyage",
+          "anzahl": 5
+        },
+        {
+          "begriff": "france",
+          "anzahl": 5
+        },
+        {
+          "begriff": "train",
+          "anzahl": 4
+        },
+        {
+          "begriff": "seilbahn",
+          "anzahl": 4
+        },
+        {
+          "begriff": "belles",
+          "anzahl": 4
+        },
+        {
+          "begriff": "stations",
+          "anzahl": 4
+        },
+        {
+          "begriff": "classement",
+          "anzahl": 4
+        },
+        {
+          "begriff": "suisse",
+          "anzahl": 3
+        }
+      ]
+    },
+    {
+      "projekt": "IPAI",
+      "peak": 1,
+      "datum": "2024-11-20",
+      "beitraege_am_tag": 6,
+      "prominenz": 6.0,
+      "vendor_tonlage": 0.67,
+      "beitraege_im_fenster": 9,
+      "fenster": {
+        "start": "2024-11-17",
+        "ende": "2024-11-22"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "bank",
+          "anzahl": 38
+        },
+        {
+          "begriff": "aleph",
+          "anzahl": 37
+        },
+        {
+          "begriff": "alpha",
+          "anzahl": 37
+        },
+        {
+          "begriff": "deutsche",
+          "anzahl": 34
+        },
+        {
+          "begriff": "start",
+          "anzahl": 26
+        },
+        {
+          "begriff": "deutschen",
+          "anzahl": 16
+        },
+        {
+          "begriff": "steigt",
+          "anzahl": 15
+        },
+        {
+          "begriff": "partner",
+          "anzahl": 10
+        },
+        {
+          "begriff": "anteile",
+          "anzahl": 10
+        },
+        {
+          "begriff": "künstliche",
+          "anzahl": 9
+        },
+        {
+          "begriff": "intelligenz",
+          "anzahl": 9
+        },
+        {
+          "begriff": "heidelberger",
+          "anzahl": 9
+        },
+        {
+          "begriff": "zwei",
+          "anzahl": 8
+        },
+        {
+          "begriff": "unternehmen",
+          "anzahl": 8
+        },
+        {
+          "begriff": "bereich",
+          "anzahl": 7
+        }
+      ]
+    },
+    {
+      "projekt": "IPAI",
+      "peak": 2,
+      "datum": "2024-12-17",
+      "beitraege_am_tag": 4,
+      "prominenz": 4.0,
+      "vendor_tonlage": 1.0,
+      "beitraege_im_fenster": 7,
+      "fenster": {
+        "start": "2024-12-14",
+        "ende": "2024-12-19"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "heilbronn",
+          "anzahl": 14
+        },
+        {
+          "begriff": "ipai",
+          "anzahl": 12
+        },
+        {
+          "begriff": "stimme",
+          "anzahl": 8
+        },
+        {
+          "begriff": "heilbronner",
+          "anzahl": 7
+        },
+        {
+          "begriff": "natürlich",
+          "anzahl": 6
+        },
+        {
+          "begriff": "geräten",
+          "anzahl": 6
+        },
+        {
+          "begriff": "sichern",
+          "anzahl": 6
+        },
+        {
+          "begriff": "angebot",
+          "anzahl": 6
+        },
+        {
+          "begriff": "christian",
+          "anzahl": 5
+        },
+        {
+          "begriff": "news",
+          "anzahl": 4
+        },
+        {
+          "begriff": "dezember",
+          "anzahl": 4
+        },
+        {
+          "begriff": "park",
+          "anzahl": 4
+        },
+        {
+          "begriff": "europaweit",
+          "anzahl": 4
+        },
+        {
+          "begriff": "können",
+          "anzahl": 4
+        },
+        {
+          "begriff": "unser",
+          "anzahl": 4
+        }
+      ]
+    },
+    {
+      "projekt": "IPAI",
+      "peak": 3,
+      "datum": "2025-01-07",
+      "beitraege_am_tag": 5,
+      "prominenz": 5.0,
+      "vendor_tonlage": 0.8,
+      "beitraege_im_fenster": 5,
+      "fenster": {
+        "start": "2025-01-04",
+        "ende": "2025-01-09"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "ipai",
+          "anzahl": 20
+        },
+        {
+          "begriff": "teil",
+          "anzahl": 7
+        },
+        {
+          "begriff": "community",
+          "anzahl": 7
+        },
+        {
+          "begriff": "know",
+          "anzahl": 7
+        },
+        {
+          "begriff": "weiter",
+          "anzahl": 7
+        },
+        {
+          "begriff": "dieffenbacher",
+          "anzahl": 6
+        },
+        {
+          "begriff": "baut",
+          "anzahl": 6
+        },
+        {
+          "begriff": "park",
+          "anzahl": 5
+        },
+        {
+          "begriff": "heilbronn",
+          "anzahl": 5
+        },
+        {
+          "begriff": "foto",
+          "anzahl": 5
+        },
+        {
+          "begriff": "bild",
+          "anzahl": 5
+        },
+        {
+          "begriff": "innovation",
+          "anzahl": 4
+        },
+        {
+          "begriff": "artificial",
+          "anzahl": 4
+        },
+        {
+          "begriff": "intelligence",
+          "anzahl": 4
+        },
+        {
+          "begriff": "privat",
+          "anzahl": 4
+        }
+      ]
+    },
+    {
+      "projekt": "IPAI",
+      "peak": 4,
+      "datum": "2025-01-24",
+      "beitraege_am_tag": 4,
+      "prominenz": 4.0,
+      "vendor_tonlage": 1.0,
+      "beitraege_im_fenster": 6,
+      "fenster": {
+        "start": "2025-01-21",
+        "ende": "2025-01-26"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "stuttgart",
+          "anzahl": 11
+        },
+        {
+          "begriff": "künstliche",
+          "anzahl": 10
+        },
+        {
+          "begriff": "intelligenz",
+          "anzahl": 10
+        },
+        {
+          "begriff": "ipai",
+          "anzahl": 8
+        },
+        {
+          "begriff": "tritt",
+          "anzahl": 5
+        },
+        {
+          "begriff": "bernhard",
+          "anzahl": 4
+        },
+        {
+          "begriff": "feßler",
+          "anzahl": 4
+        },
+        {
+          "begriff": "heilbronn",
+          "anzahl": 4
+        },
+        {
+          "begriff": "heilbronner",
+          "anzahl": 4
+        },
+        {
+          "begriff": "google",
+          "anzahl": 4
+        },
+        {
+          "begriff": "neue",
+          "anzahl": 3
+        },
+        {
+          "begriff": "januar",
+          "anzahl": 3
+        },
+        {
+          "begriff": "wirtschaft",
+          "anzahl": 3
+        },
+        {
+          "begriff": "will",
+          "anzahl": 3
+        },
+        {
+          "begriff": "geht",
+          "anzahl": 3
+        }
+      ]
+    },
+    {
+      "projekt": "IPAI",
+      "peak": 5,
+      "datum": "2025-02-11",
+      "beitraege_am_tag": 9,
+      "prominenz": 9.0,
+      "vendor_tonlage": 0.78,
+      "beitraege_im_fenster": 12,
+      "fenster": {
+        "start": "2025-02-08",
+        "ende": "2025-02-13"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "bechtle",
+          "anzahl": 43
+        },
+        {
+          "begriff": "intelligenz",
+          "anzahl": 21
+        },
+        {
+          "begriff": "setzt",
+          "anzahl": 16
+        },
+        {
+          "begriff": "positionierung",
+          "anzahl": 14
+        },
+        {
+          "begriff": "ipai",
+          "anzahl": 14
+        },
+        {
+          "begriff": "künstliche",
+          "anzahl": 13
+        },
+        {
+          "begriff": "schlüsseltechnologie",
+          "anzahl": 12
+        },
+        {
+          "begriff": "veröffentlicht",
+          "anzahl": 11
+        },
+        {
+          "begriff": "entwicklung",
+          "anzahl": 10
+        },
+        {
+          "begriff": "strategische",
+          "anzahl": 7
+        },
+        {
+          "begriff": "künstlicher",
+          "anzahl": 7
+        },
+        {
+          "begriff": "europa",
+          "anzahl": 7
+        },
+        {
+          "begriff": "aktiv",
+          "anzahl": 7
+        },
+        {
+          "begriff": "zukunft",
+          "anzahl": 6
+        },
+        {
+          "begriff": "dabei",
+          "anzahl": 6
+        }
+      ]
+    },
+    {
+      "projekt": "IPAI",
+      "peak": 6,
+      "datum": "2025-03-31",
+      "beitraege_am_tag": 5,
+      "prominenz": 5.0,
+      "vendor_tonlage": 0.8,
+      "beitraege_im_fenster": 12,
+      "fenster": {
+        "start": "2025-03-28",
+        "ende": "2025-04-02"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "heilbronn",
+          "anzahl": 16
+        },
+        {
+          "begriff": "imec",
+          "anzahl": 15
+        },
+        {
+          "begriff": "baden",
+          "anzahl": 14
+        },
+        {
+          "begriff": "ipai",
+          "anzahl": 14
+        },
+        {
+          "begriff": "chip",
+          "anzahl": 13
+        },
+        {
+          "begriff": "württemberg",
+          "anzahl": 11
+        },
+        {
+          "begriff": "kommt",
+          "anzahl": 8
+        },
+        {
+          "begriff": "stimme",
+          "anzahl": 8
+        },
+        {
+          "begriff": "geräten",
+          "anzahl": 8
+        },
+        {
+          "begriff": "sichern",
+          "anzahl": 8
+        },
+        {
+          "begriff": "angebot",
+          "anzahl": 8
+        },
+        {
+          "begriff": "soll",
+          "anzahl": 7
+        },
+        {
+          "begriff": "forschungszentrum",
+          "anzahl": 7
+        },
+        {
+          "begriff": "heilbronner",
+          "anzahl": 7
+        },
+        {
+          "begriff": "zellcheming",
+          "anzahl": 6
+        }
+      ]
+    },
+    {
+      "projekt": "IPAI",
+      "peak": 7,
+      "datum": "2025-05-16",
+      "beitraege_am_tag": 4,
+      "prominenz": 4.0,
+      "vendor_tonlage": 0.75,
+      "beitraege_im_fenster": 11,
+      "fenster": {
+        "start": "2025-05-13",
+        "ende": "2025-05-18"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "heilbronn",
+          "anzahl": 20
+        },
+        {
+          "begriff": "ipai",
+          "anzahl": 16
+        },
+        {
+          "begriff": "bischof",
+          "anzahl": 14
+        },
+        {
+          "begriff": "krämer",
+          "anzahl": 14
+        },
+        {
+          "begriff": "klaus",
+          "anzahl": 10
+        },
+        {
+          "begriff": "intelligenz",
+          "anzahl": 9
+        },
+        {
+          "begriff": "stadt",
+          "anzahl": 8
+        },
+        {
+          "begriff": "schwarz",
+          "anzahl": 7
+        },
+        {
+          "begriff": "künstliche",
+          "anzahl": 6
+        },
+        {
+          "begriff": "gruppe",
+          "anzahl": 6
+        },
+        {
+          "begriff": "unsere",
+          "anzahl": 5
+        },
+        {
+          "begriff": "zukunft",
+          "anzahl": 4
+        },
+        {
+          "begriff": "spaces",
+          "anzahl": 4
+        },
+        {
+          "begriff": "falschen",
+          "anzahl": 4
+        },
+        {
+          "begriff": "illusionen",
+          "anzahl": 4
+        }
+      ]
+    },
+    {
+      "projekt": "IPAI",
+      "peak": 8,
+      "datum": "2025-06-16",
+      "beitraege_am_tag": 6,
+      "prominenz": 6.0,
+      "vendor_tonlage": 0.67,
+      "beitraege_im_fenster": 12,
+      "fenster": {
+        "start": "2025-06-13",
+        "ende": "2025-06-18"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "ipai",
+          "anzahl": 21
+        },
+        {
+          "begriff": "vodafone",
+          "anzahl": 18
+        },
+        {
+          "begriff": "heilbronn",
+          "anzahl": 15
+        },
+        {
+          "begriff": "park",
+          "anzahl": 8
+        },
+        {
+          "begriff": "intelligenz",
+          "anzahl": 8
+        },
+        {
+          "begriff": "kifestival",
+          "anzahl": 8
+        },
+        {
+          "begriff": "heilbronner",
+          "anzahl": 8
+        },
+        {
+          "begriff": "künstliche",
+          "anzahl": 7
+        },
+        {
+          "begriff": "innovation",
+          "anzahl": 6
+        },
+        {
+          "begriff": "mitglied",
+          "anzahl": 6
+        },
+        {
+          "begriff": "festival",
+          "anzahl": 6
+        },
+        {
+          "begriff": "artificial",
+          "anzahl": 5
+        },
+        {
+          "begriff": "intelligence",
+          "anzahl": 5
+        },
+        {
+          "begriff": "zukunft",
+          "anzahl": 5
+        },
+        {
+          "begriff": "innovationspark",
+          "anzahl": 5
+        }
+      ]
+    },
+    {
+      "projekt": "IPAI",
+      "peak": 9,
+      "datum": "2025-07-09",
+      "beitraege_am_tag": 11,
+      "prominenz": 11.0,
+      "vendor_tonlage": 0.82,
+      "beitraege_im_fenster": 31,
+      "fenster": {
+        "start": "2025-07-06",
+        "ende": "2025-07-11"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "ipai",
+          "anzahl": 87
+        },
+        {
+          "begriff": "heilbronn",
+          "anzahl": 51
+        },
+        {
+          "begriff": "soll",
+          "anzahl": 30
+        },
+        {
+          "begriff": "nxtgn",
+          "anzahl": 29
+        },
+        {
+          "begriff": "startup",
+          "anzahl": 24
+        },
+        {
+          "begriff": "baden",
+          "anzahl": 23
+        },
+        {
+          "begriff": "württemberg",
+          "anzahl": 23
+        },
+        {
+          "begriff": "park",
+          "anzahl": 20
+        },
+        {
+          "begriff": "campus",
+          "anzahl": 20
+        },
+        {
+          "begriff": "factory",
+          "anzahl": 20
+        },
+        {
+          "begriff": "zentrum",
+          "anzahl": 19
+        },
+        {
+          "begriff": "neue",
+          "anzahl": 16
+        },
+        {
+          "begriff": "juli",
+          "anzahl": 16
+        },
+        {
+          "begriff": "mvrdv",
+          "anzahl": 15
+        },
+        {
+          "begriff": "intelligenz",
+          "anzahl": 15
+        }
+      ]
+    },
+    {
+      "projekt": "IPAI",
+      "peak": 10,
+      "datum": "2025-07-19",
+      "beitraege_am_tag": 4,
+      "prominenz": 4.0,
+      "vendor_tonlage": 0.25,
+      "beitraege_im_fenster": 11,
+      "fenster": {
+        "start": "2025-07-16",
+        "ende": "2025-07-21"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "heilbronn",
+          "anzahl": 28
+        },
+        {
+          "begriff": "ipai",
+          "anzahl": 16
+        },
+        {
+          "begriff": "festival",
+          "anzahl": 12
+        },
+        {
+          "begriff": "festivals",
+          "anzahl": 7
+        },
+        {
+          "begriff": "veranstalter",
+          "anzahl": 7
+        },
+        {
+          "begriff": "evakuierung",
+          "anzahl": 6
+        },
+        {
+          "begriff": "unwetterwarnung",
+          "anzahl": 6
+        },
+        {
+          "begriff": "parkhaus",
+          "anzahl": 6
+        },
+        {
+          "begriff": "erfolg",
+          "anzahl": 4
+        },
+        {
+          "begriff": "juli",
+          "anzahl": 4
+        },
+        {
+          "begriff": "menschen",
+          "anzahl": 4
+        },
+        {
+          "begriff": "schwarz",
+          "anzahl": 4
+        },
+        {
+          "begriff": "baden",
+          "anzahl": 4
+        },
+        {
+          "begriff": "württemberg",
+          "anzahl": 4
+        },
+        {
+          "begriff": "beendet",
+          "anzahl": 4
+        }
+      ]
+    },
+    {
+      "projekt": "IPAI",
+      "peak": 11,
+      "datum": "2025-10-10",
+      "beitraege_am_tag": 4,
+      "prominenz": 4.0,
+      "vendor_tonlage": 0.0,
+      "beitraege_im_fenster": 10,
+      "fenster": {
+        "start": "2025-10-07",
+        "ende": "2025-10-12"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "heilbronn",
+          "anzahl": 27
+        },
+        {
+          "begriff": "lidl",
+          "anzahl": 18
+        },
+        {
+          "begriff": "campus",
+          "anzahl": 16
+        },
+        {
+          "begriff": "gründer",
+          "anzahl": 15
+        },
+        {
+          "begriff": "schwarz",
+          "anzahl": 14
+        },
+        {
+          "begriff": "focus",
+          "anzahl": 12
+        },
+        {
+          "begriff": "online",
+          "anzahl": 12
+        },
+        {
+          "begriff": "millionen",
+          "anzahl": 11
+        },
+        {
+          "begriff": "dieter",
+          "anzahl": 9
+        },
+        {
+          "begriff": "steckt",
+          "anzahl": 9
+        },
+        {
+          "begriff": "deutschland",
+          "anzahl": 8
+        },
+        {
+          "begriff": "ipai",
+          "anzahl": 7
+        },
+        {
+          "begriff": "nobles",
+          "anzahl": 6
+        },
+        {
+          "begriff": "vorhaben",
+          "anzahl": 6
+        },
+        {
+          "begriff": "scheitern",
+          "anzahl": 6
+        }
+      ]
+    },
+    {
+      "projekt": "IPAI",
+      "peak": 12,
+      "datum": "2025-10-21",
+      "beitraege_am_tag": 52,
+      "prominenz": 52.0,
+      "vendor_tonlage": 0.59,
+      "beitraege_im_fenster": 89,
+      "fenster": {
+        "start": "2025-10-18",
+        "ende": "2025-10-23"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "heilbronn",
+          "anzahl": 205
+        },
+        {
+          "begriff": "ipai",
+          "anzahl": 195
+        },
+        {
+          "begriff": "merz",
+          "anzahl": 126
+        },
+        {
+          "begriff": "campus",
+          "anzahl": 115
+        },
+        {
+          "begriff": "spatenstich",
+          "anzahl": 106
+        },
+        {
+          "begriff": "friedrich",
+          "anzahl": 64
+        },
+        {
+          "begriff": "bundeskanzler",
+          "anzahl": 61
+        },
+        {
+          "begriff": "baden",
+          "anzahl": 46
+        },
+        {
+          "begriff": "google",
+          "anzahl": 46
+        },
+        {
+          "begriff": "soll",
+          "anzahl": 45
+        },
+        {
+          "begriff": "kanzler",
+          "anzahl": 37
+        },
+        {
+          "begriff": "intelligenz",
+          "anzahl": 37
+        },
+        {
+          "begriff": "künstliche",
+          "anzahl": 35
+        },
+        {
+          "begriff": "kretschmann",
+          "anzahl": 33
+        },
+        {
+          "begriff": "innovationspark",
+          "anzahl": 32
+        }
+      ]
+    },
+    {
+      "projekt": "IPAI",
+      "peak": 13,
+      "datum": "2025-10-29",
+      "beitraege_am_tag": 7,
+      "prominenz": 7.0,
+      "vendor_tonlage": 0.6,
+      "beitraege_im_fenster": 12,
+      "fenster": {
+        "start": "2025-10-26",
+        "ende": "2025-10-31"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "heilbronn",
+          "anzahl": 29
+        },
+        {
+          "begriff": "ipai",
+          "anzahl": 28
+        },
+        {
+          "begriff": "campus",
+          "anzahl": 12
+        },
+        {
+          "begriff": "europas",
+          "anzahl": 11
+        },
+        {
+          "begriff": "spatenstich",
+          "anzahl": 9
+        },
+        {
+          "begriff": "soll",
+          "anzahl": 7
+        },
+        {
+          "begriff": "unsere",
+          "anzahl": 6
+        },
+        {
+          "begriff": "merz",
+          "anzahl": 6
+        },
+        {
+          "begriff": "start",
+          "anzahl": 6
+        },
+        {
+          "begriff": "heilbronner",
+          "anzahl": 5
+        },
+        {
+          "begriff": "oktober",
+          "anzahl": 5
+        },
+        {
+          "begriff": "innovation",
+          "anzahl": 5
+        },
+        {
+          "begriff": "gemeinsam",
+          "anzahl": 5
+        },
+        {
+          "begriff": "züblin",
+          "anzahl": 5
+        },
+        {
+          "begriff": "innovationspark",
+          "anzahl": 5
+        }
+      ]
+    },
+    {
+      "projekt": "IPAI",
+      "peak": 14,
+      "datum": "2025-11-06",
+      "beitraege_am_tag": 5,
+      "prominenz": 4.0,
+      "vendor_tonlage": 0.8,
+      "beitraege_im_fenster": 17,
+      "fenster": {
+        "start": "2025-11-03",
+        "ende": "2025-11-08"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "ipai",
+          "anzahl": 43
+        },
+        {
+          "begriff": "heilbronn",
+          "anzahl": 37
+        },
+        {
+          "begriff": "spaces",
+          "anzahl": 16
+        },
+        {
+          "begriff": "fraunhofer",
+          "anzahl": 14
+        },
+        {
+          "begriff": "robotik",
+          "anzahl": 13
+        },
+        {
+          "begriff": "marketing",
+          "anzahl": 13
+        },
+        {
+          "begriff": "campus",
+          "anzahl": 11
+        },
+        {
+          "begriff": "intelligenz",
+          "anzahl": 8
+        },
+        {
+          "begriff": "papst",
+          "anzahl": 8
+        },
+        {
+          "begriff": "vertrieb",
+          "anzahl": 8
+        },
+        {
+          "begriff": "ökosystem",
+          "anzahl": 7
+        },
+        {
+          "begriff": "bild",
+          "anzahl": 6
+        },
+        {
+          "begriff": "außenstelle",
+          "anzahl": 6
+        },
+        {
+          "begriff": "automatisierung",
+          "anzahl": 6
+        },
+        {
+          "begriff": "standort",
+          "anzahl": 6
+        }
+      ]
+    },
+    {
+      "projekt": "IPAI",
+      "peak": 15,
+      "datum": "2026-01-15",
+      "beitraege_am_tag": 4,
+      "prominenz": 4.0,
+      "vendor_tonlage": 0.75,
+      "beitraege_im_fenster": 9,
+      "fenster": {
+        "start": "2026-01-12",
+        "ende": "2026-01-17"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "heilbronn",
+          "anzahl": 14
+        },
+        {
+          "begriff": "ipai",
+          "anzahl": 11
+        },
+        {
+          "begriff": "intelligenz",
+          "anzahl": 11
+        },
+        {
+          "begriff": "künstliche",
+          "anzahl": 10
+        },
+        {
+          "begriff": "baden",
+          "anzahl": 8
+        },
+        {
+          "begriff": "connaix",
+          "anzahl": 7
+        },
+        {
+          "begriff": "neue",
+          "anzahl": 6
+        },
+        {
+          "begriff": "forschungszentrum",
+          "anzahl": 6
+        },
+        {
+          "begriff": "württemberg",
+          "anzahl": 6
+        },
+        {
+          "begriff": "post",
+          "anzahl": 6
+        },
+        {
+          "begriff": "neuen",
+          "anzahl": 5
+        },
+        {
+          "begriff": "schwarz",
+          "anzahl": 5
+        },
+        {
+          "begriff": "investiert",
+          "anzahl": 5
+        },
+        {
+          "begriff": "land",
+          "anzahl": 5
+        },
+        {
+          "begriff": "transformation",
+          "anzahl": 5
+        }
+      ]
+    },
+    {
+      "projekt": "IPAI",
+      "peak": 16,
+      "datum": "2026-01-27",
+      "beitraege_am_tag": 6,
+      "prominenz": 6.0,
+      "vendor_tonlage": 0.83,
+      "beitraege_im_fenster": 14,
+      "fenster": {
+        "start": "2026-01-24",
+        "ende": "2026-01-29"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "ipai",
+          "anzahl": 15
+        },
+        {
+          "begriff": "audi",
+          "anzahl": 15
+        },
+        {
+          "begriff": "produktion",
+          "anzahl": 14
+        },
+        {
+          "begriff": "intelligenz",
+          "anzahl": 12
+        },
+        {
+          "begriff": "baden",
+          "anzahl": 11
+        },
+        {
+          "begriff": "württemberg",
+          "anzahl": 10
+        },
+        {
+          "begriff": "helukabel",
+          "anzahl": 10
+        },
+        {
+          "begriff": "mitglied",
+          "anzahl": 8
+        },
+        {
+          "begriff": "nxtgn",
+          "anzahl": 8
+        },
+        {
+          "begriff": "heilbronn",
+          "anzahl": 7
+        },
+        {
+          "begriff": "connaix",
+          "anzahl": 7
+        },
+        {
+          "begriff": "gmbh",
+          "anzahl": 7
+        },
+        {
+          "begriff": "innovations",
+          "anzahl": 6
+        },
+        {
+          "begriff": "smetana",
+          "anzahl": 6
+        },
+        {
+          "begriff": "papst",
+          "anzahl": 6
+        }
+      ]
+    },
+    {
+      "projekt": "IPAI",
+      "peak": 17,
+      "datum": "2026-02-09",
+      "beitraege_am_tag": 6,
+      "prominenz": 6.0,
+      "vendor_tonlage": 0.67,
+      "beitraege_im_fenster": 13,
+      "fenster": {
+        "start": "2026-02-06",
+        "ende": "2026-02-11"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "ipai",
+          "anzahl": 27
+        },
+        {
+          "begriff": "heilbronn",
+          "anzahl": 19
+        },
+        {
+          "begriff": "prezero",
+          "anzahl": 16
+        },
+        {
+          "begriff": "marc",
+          "anzahl": 13
+        },
+        {
+          "begriff": "intelligenz",
+          "anzahl": 12
+        },
+        {
+          "begriff": "group",
+          "anzahl": 11
+        },
+        {
+          "begriff": "kirchner",
+          "anzahl": 10
+        },
+        {
+          "begriff": "produktion",
+          "anzahl": 9
+        },
+        {
+          "begriff": "apple",
+          "anzahl": 9
+        },
+        {
+          "begriff": "manager",
+          "anzahl": 9
+        },
+        {
+          "begriff": "audi",
+          "anzahl": 7
+        },
+        {
+          "begriff": "künstliche",
+          "anzahl": 7
+        },
+        {
+          "begriff": "recycling",
+          "anzahl": 6
+        },
+        {
+          "begriff": "kreislaufwirtschaft",
+          "anzahl": 6
+        },
+        {
+          "begriff": "einsatz",
+          "anzahl": 5
+        }
+      ]
+    },
+    {
+      "projekt": "IPAI",
+      "peak": 18,
+      "datum": "2026-02-23",
+      "beitraege_am_tag": 11,
+      "prominenz": 11.0,
+      "vendor_tonlage": 0.1,
+      "beitraege_im_fenster": 14,
+      "fenster": {
+        "start": "2026-02-20",
+        "ende": "2026-02-25"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "merz",
+          "anzahl": 31
+        },
+        {
+          "begriff": "heilbronn",
+          "anzahl": 25
+        },
+        {
+          "begriff": "pinocchio",
+          "anzahl": 22
+        },
+        {
+          "begriff": "rentner",
+          "anzahl": 21
+        },
+        {
+          "begriff": "polizei",
+          "anzahl": 18
+        },
+        {
+          "begriff": "bundeskanzler",
+          "anzahl": 17
+        },
+        {
+          "begriff": "ipai",
+          "anzahl": 14
+        },
+        {
+          "begriff": "friedrich",
+          "anzahl": 13
+        },
+        {
+          "begriff": "ermittelt",
+          "anzahl": 12
+        },
+        {
+          "begriff": "facebook",
+          "anzahl": 10
+        },
+        {
+          "begriff": "bezeichnet",
+          "anzahl": 9
+        },
+        {
+          "begriff": "wegen",
+          "anzahl": 9
+        },
+        {
+          "begriff": "gegen",
+          "anzahl": 8
+        },
+        {
+          "begriff": "kommentar",
+          "anzahl": 8
+        },
+        {
+          "begriff": "besuch",
+          "anzahl": 7
+        }
+      ]
+    },
+    {
+      "projekt": "IPAI",
+      "peak": 19,
+      "datum": "2026-03-06",
+      "beitraege_am_tag": 5,
+      "prominenz": 5.0,
+      "vendor_tonlage": 0.6,
+      "beitraege_im_fenster": 12,
+      "fenster": {
+        "start": "2026-03-03",
+        "ende": "2026-03-08"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "heilbronn",
+          "anzahl": 26
+        },
+        {
+          "begriff": "chip",
+          "anzahl": 23
+        },
+        {
+          "begriff": "fraunhofer",
+          "anzahl": 19
+        },
+        {
+          "begriff": "ipai",
+          "anzahl": 11
+        },
+        {
+          "begriff": "design",
+          "anzahl": 11
+        },
+        {
+          "begriff": "forschungs",
+          "anzahl": 9
+        },
+        {
+          "begriff": "baut",
+          "anzahl": 8
+        },
+        {
+          "begriff": "hnfiz",
+          "anzahl": 7
+        },
+        {
+          "begriff": "innovation",
+          "anzahl": 6
+        },
+        {
+          "begriff": "zentrum",
+          "anzahl": 6
+        },
+        {
+          "begriff": "innovationszentrum",
+          "anzahl": 6
+        },
+        {
+          "begriff": "park",
+          "anzahl": 5
+        },
+        {
+          "begriff": "chipdesign",
+          "anzahl": 5
+        },
+        {
+          "begriff": "land",
+          "anzahl": 5
+        },
+        {
+          "begriff": "leistungsangebot",
+          "anzahl": 5
+        }
+      ]
+    },
+    {
+      "projekt": "IPAI",
+      "peak": 20,
+      "datum": "2026-03-26",
+      "beitraege_am_tag": 5,
+      "prominenz": 5.0,
+      "vendor_tonlage": 0.8,
+      "beitraege_im_fenster": 8,
+      "fenster": {
+        "start": "2026-03-23",
+        "ende": "2026-03-28"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "chip",
+          "anzahl": 10
+        },
+        {
+          "begriff": "heilbronn",
+          "anzahl": 10
+        },
+        {
+          "begriff": "fraunhofer",
+          "anzahl": 10
+        },
+        {
+          "begriff": "ipai",
+          "anzahl": 8
+        },
+        {
+          "begriff": "gmbh",
+          "anzahl": 6
+        },
+        {
+          "begriff": "connect",
+          "anzahl": 5
+        },
+        {
+          "begriff": "chipdesign",
+          "anzahl": 5
+        },
+        {
+          "begriff": "mobil",
+          "anzahl": 5
+        },
+        {
+          "begriff": "browa",
+          "anzahl": 4
+        },
+        {
+          "begriff": "heilbronner",
+          "anzahl": 4
+        },
+        {
+          "begriff": "stimme",
+          "anzahl": 4
+        },
+        {
+          "begriff": "geräten",
+          "anzahl": 4
+        },
+        {
+          "begriff": "sichern",
+          "anzahl": 4
+        },
+        {
+          "begriff": "angebot",
+          "anzahl": 4
+        },
+        {
+          "begriff": "einladung",
+          "anzahl": 3
+        }
+      ]
+    },
+    {
+      "projekt": "IPAI",
+      "peak": 21,
+      "datum": "2026-05-13",
+      "beitraege_am_tag": 4,
+      "prominenz": 4.0,
+      "vendor_tonlage": 0.5,
+      "beitraege_im_fenster": 9,
+      "fenster": {
+        "start": "2026-05-10",
+        "ende": "2026-05-15"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "robotik",
+          "anzahl": 20
+        },
+        {
+          "begriff": "heilbronn",
+          "anzahl": 15
+        },
+        {
+          "begriff": "deutschland",
+          "anzahl": 11
+        },
+        {
+          "begriff": "flugzeugabsturz",
+          "anzahl": 6
+        },
+        {
+          "begriff": "lohmiller",
+          "anzahl": 6
+        },
+        {
+          "begriff": "milliarden",
+          "anzahl": 6
+        },
+        {
+          "begriff": "digitalisierung",
+          "anzahl": 6
+        },
+        {
+          "begriff": "automation",
+          "anzahl": 6
+        },
+        {
+          "begriff": "ipai",
+          "anzahl": 6
+        },
+        {
+          "begriff": "familie",
+          "anzahl": 5
+        },
+        {
+          "begriff": "fokus",
+          "anzahl": 5
+        },
+        {
+          "begriff": "about",
+          "anzahl": 5
+        },
+        {
+          "begriff": "intelligente",
+          "anzahl": 5
+        },
+        {
+          "begriff": "seine",
+          "anzahl": 5
+        },
+        {
+          "begriff": "droht",
+          "anzahl": 4
+        }
+      ]
+    },
+    {
+      "projekt": "IPAI",
+      "peak": 22,
+      "datum": "2026-05-28",
+      "beitraege_am_tag": 11,
+      "prominenz": 11.0,
+      "vendor_tonlage": 0.36,
+      "beitraege_im_fenster": 24,
+      "fenster": {
+        "start": "2026-05-25",
+        "ende": "2026-05-30"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "heilbronn",
+          "anzahl": 51
+        },
+        {
+          "begriff": "ipai",
+          "anzahl": 40
+        },
+        {
+          "begriff": "procter",
+          "anzahl": 23
+        },
+        {
+          "begriff": "gamble",
+          "anzahl": 23
+        },
+        {
+          "begriff": "merz",
+          "anzahl": 19
+        },
+        {
+          "begriff": "mitglied",
+          "anzahl": 17
+        },
+        {
+          "begriff": "lackaffe",
+          "anzahl": 16
+        },
+        {
+          "begriff": "zukunft",
+          "anzahl": 15
+        },
+        {
+          "begriff": "plattform",
+          "anzahl": 15
+        },
+        {
+          "begriff": "seine",
+          "anzahl": 13
+        },
+        {
+          "begriff": "künstliche",
+          "anzahl": 13
+        },
+        {
+          "begriff": "intelligenz",
+          "anzahl": 13
+        },
+        {
+          "begriff": "strafbefehl",
+          "anzahl": 12
+        },
+        {
+          "begriff": "friedrich",
+          "anzahl": 11
+        },
+        {
+          "begriff": "campus",
+          "anzahl": 10
+        }
+      ]
+    },
+    {
+      "projekt": "IPAI",
+      "peak": 23,
+      "datum": "2026-06-11",
+      "beitraege_am_tag": 6,
+      "prominenz": 6.0,
+      "vendor_tonlage": 0.6,
+      "beitraege_im_fenster": 15,
+      "fenster": {
+        "start": "2026-06-08",
+        "ende": "2026-06-13"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "ipai",
+          "anzahl": 36
+        },
+        {
+          "begriff": "heilbronn",
+          "anzahl": 33
+        },
+        {
+          "begriff": "baustelle",
+          "anzahl": 21
+        },
+        {
+          "begriff": "entsteht",
+          "anzahl": 16
+        },
+        {
+          "begriff": "campus",
+          "anzahl": 16
+        },
+        {
+          "begriff": "heilbronner",
+          "anzahl": 12
+        },
+        {
+          "begriff": "künstliche",
+          "anzahl": 11
+        },
+        {
+          "begriff": "intelligenz",
+          "anzahl": 10
+        },
+        {
+          "begriff": "park",
+          "anzahl": 9
+        },
+        {
+          "begriff": "zukunft",
+          "anzahl": 8
+        },
+        {
+          "begriff": "hektar",
+          "anzahl": 8
+        },
+        {
+          "begriff": "offenen",
+          "anzahl": 8
+        },
+        {
+          "begriff": "hier",
+          "anzahl": 8
+        },
+        {
+          "begriff": "besucher",
+          "anzahl": 8
+        },
+        {
+          "begriff": "juni",
+          "anzahl": 7
+        }
+      ]
+    },
+    {
+      "projekt": "IPAI",
+      "peak": 24,
+      "datum": "2026-07-09",
+      "beitraege_am_tag": 5,
+      "prominenz": 5.0,
+      "vendor_tonlage": 0.4,
+      "beitraege_im_fenster": 15,
+      "fenster": {
+        "start": "2026-07-06",
+        "ende": "2026-07-11"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "heilbronn",
+          "anzahl": 22
+        },
+        {
+          "begriff": "schwarz",
+          "anzahl": 19
+        },
+        {
+          "begriff": "ipai",
+          "anzahl": 11
+        },
+        {
+          "begriff": "campus",
+          "anzahl": 11
+        },
+        {
+          "begriff": "dieter",
+          "anzahl": 10
+        },
+        {
+          "begriff": "audi",
+          "anzahl": 8
+        },
+        {
+          "begriff": "google",
+          "anzahl": 8
+        },
+        {
+          "begriff": "will",
+          "anzahl": 8
+        },
+        {
+          "begriff": "zürich",
+          "anzahl": 8
+        },
+        {
+          "begriff": "özdemir",
+          "anzahl": 7
+        },
+        {
+          "begriff": "neckarsulm",
+          "anzahl": 7
+        },
+        {
+          "begriff": "juli",
+          "anzahl": 7
+        },
+        {
+          "begriff": "neuen",
+          "anzahl": 7
+        },
+        {
+          "begriff": "werk",
+          "anzahl": 6
+        },
+        {
+          "begriff": "stiftung",
+          "anzahl": 6
+        }
+      ]
+    },
+    {
+      "projekt": "IPAI",
+      "peak": 25,
+      "datum": "2026-07-20",
+      "beitraege_am_tag": 5,
+      "prominenz": 5.0,
+      "vendor_tonlage": 0.5,
+      "beitraege_im_fenster": 12,
+      "fenster": {
+        "start": "2026-07-17",
+        "ende": "2026-07-22"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "heilbronn",
+          "anzahl": 14
+        },
+        {
+          "begriff": "festival",
+          "anzahl": 10
+        },
+        {
+          "begriff": "ipai",
+          "anzahl": 8
+        },
+        {
+          "begriff": "baden",
+          "anzahl": 8
+        },
+        {
+          "begriff": "juli",
+          "anzahl": 7
+        },
+        {
+          "begriff": "württemberg",
+          "anzahl": 6
+        },
+        {
+          "begriff": "neue",
+          "anzahl": 5
+        },
+        {
+          "begriff": "campus",
+          "anzahl": 5
+        },
+        {
+          "begriff": "schwarz",
+          "anzahl": 4
+        },
+        {
+          "begriff": "gruppe",
+          "anzahl": 4
+        },
+        {
+          "begriff": "netzwerk",
+          "anzahl": 4
+        },
+        {
+          "begriff": "mehr",
+          "anzahl": 4
+        },
+        {
+          "begriff": "nshko",
+          "anzahl": 4
+        },
+        {
+          "begriff": "live",
+          "anzahl": 4
+        },
+        {
+          "begriff": "stimme",
+          "anzahl": 4
+        }
+      ]
+    },
+    {
+      "projekt": "IPAI",
+      "peak": 26,
+      "datum": "2026-09-16",
+      "beitraege_am_tag": 4,
+      "prominenz": 4.0,
+      "vendor_tonlage": 0.5,
+      "beitraege_im_fenster": 10,
+      "fenster": {
+        "start": "2026-09-13",
+        "ende": "2026-09-18"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "heilbronn",
+          "anzahl": 13
+        },
+        {
+          "begriff": "neckarsulm",
+          "anzahl": 12
+        },
+        {
+          "begriff": "audi",
+          "anzahl": 11
+        },
+        {
+          "begriff": "ipai",
+          "anzahl": 9
+        },
+        {
+          "begriff": "schwarz",
+          "anzahl": 9
+        },
+        {
+          "begriff": "milliarden",
+          "anzahl": 7
+        },
+        {
+          "begriff": "özdemir",
+          "anzahl": 7
+        },
+        {
+          "begriff": "wohnungsmarkt",
+          "anzahl": 7
+        },
+        {
+          "begriff": "dieter",
+          "anzahl": 6
+        },
+        {
+          "begriff": "beschäftigten",
+          "anzahl": 6
+        },
+        {
+          "begriff": "werk",
+          "anzahl": 6
+        },
+        {
+          "begriff": "lidl",
+          "anzahl": 6
+        },
+        {
+          "begriff": "cosmos",
+          "anzahl": 5
+        },
+        {
+          "begriff": "stiftung",
+          "anzahl": 5
+        },
+        {
+          "begriff": "boom",
+          "anzahl": 5
+        }
+      ]
+    },
+    {
+      "projekt": "IPAI",
+      "peak": 27,
+      "datum": "2026-09-29",
+      "beitraege_am_tag": 6,
+      "prominenz": 6.0,
+      "vendor_tonlage": 0.6,
+      "beitraege_im_fenster": 10,
+      "fenster": {
+        "start": "2026-09-26",
+        "ende": "2026-10-01"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "ipai",
+          "anzahl": 13
+        },
+        {
+          "begriff": "endrich",
+          "anzahl": 11
+        },
+        {
+          "begriff": "fraunhofer",
+          "anzahl": 11
+        },
+        {
+          "begriff": "neue",
+          "anzahl": 9
+        },
+        {
+          "begriff": "heilbronn",
+          "anzahl": 8
+        },
+        {
+          "begriff": "intelligenz",
+          "anzahl": 7
+        },
+        {
+          "begriff": "chip",
+          "anzahl": 7
+        },
+        {
+          "begriff": "robotic",
+          "anzahl": 6
+        },
+        {
+          "begriff": "weeks",
+          "anzahl": 6
+        },
+        {
+          "begriff": "design",
+          "anzahl": 6
+        },
+        {
+          "begriff": "electronics",
+          "anzahl": 6
+        },
+        {
+          "begriff": "medien",
+          "anzahl": 6
+        },
+        {
+          "begriff": "künstliche",
+          "anzahl": 5
+        },
+        {
+          "begriff": "mitgliedschaft",
+          "anzahl": 5
+        },
+        {
+          "begriff": "roboter",
+          "anzahl": 4
+        }
+      ]
+    },
+    {
+      "projekt": "IPAI",
+      "peak": 28,
+      "datum": "2026-10-12",
+      "beitraege_am_tag": 6,
+      "prominenz": 6.0,
+      "vendor_tonlage": 0.6,
+      "beitraege_im_fenster": 12,
+      "fenster": {
+        "start": "2026-10-09",
+        "ende": "2026-10-14"
+      },
+      "haeufigste_begriffe": [
+        {
+          "begriff": "ipai",
+          "anzahl": 25
+        },
+        {
+          "begriff": "heilbronn",
+          "anzahl": 20
+        },
+        {
+          "begriff": "zukunftssprechtag",
+          "anzahl": 11
+        },
+        {
+          "begriff": "innovation",
+          "anzahl": 10
+        },
+        {
+          "begriff": "deutschland",
+          "anzahl": 9
+        },
+        {
+          "begriff": "regelmäßiger",
+          "anzahl": 8
+        },
+        {
+          "begriff": "kann",
+          "anzahl": 8
+        },
+        {
+          "begriff": "künstliche",
+          "anzahl": 7
+        },
+        {
+          "begriff": "intelligenz",
+          "anzahl": 7
+        },
+        {
+          "begriff": "unternehmen",
+          "anzahl": 6
+        },
+        {
+          "begriff": "november",
+          "anzahl": 6
+        },
+        {
+          "begriff": "neuen",
+          "anzahl": 6
+        },
+        {
+          "begriff": "alle",
+          "anzahl": 6
+        },
+        {
+          "begriff": "referentin",
+          "anzahl": 6
+        },
+        {
+          "begriff": "arbeitswelt",
+          "anzahl": 6
+        }
+      ]
+    }
+  ],
+  "trendbrueche": [
+    {
+      "date": "2025-03-27",
+      "avg_posts_before": 0.06,
+      "avg_posts_after": 1.43,
+      "avg_sentiment_before": 0.8,
+      "avg_sentiment_after": 0.47,
+      "projekt": "Heilbronn"
+    },
+    {
+      "date": "2025-04-03",
+      "avg_posts_before": 1.43,
+      "avg_posts_after": 3.38,
+      "avg_sentiment_before": 0.47,
+      "avg_sentiment_after": 0.52,
+      "projekt": "Heilbronn"
+    },
+    {
+      "date": "2025-04-11",
+      "avg_posts_before": 3.38,
+      "avg_posts_after": 0.35,
+      "avg_sentiment_before": 0.52,
+      "avg_sentiment_after": 0.23,
+      "projekt": "Heilbronn"
+    },
+    {
+      "date": "2025-05-12",
+      "avg_posts_before": 0.35,
+      "avg_posts_after": 2.86,
+      "avg_sentiment_before": 0.23,
+      "avg_sentiment_after": 0.82,
+      "projekt": "Heilbronn"
+    },
+    {
+      "date": "2025-05-19",
+      "avg_posts_before": 2.86,
+      "avg_posts_after": 1.0,
+      "avg_sentiment_before": 0.82,
+      "avg_sentiment_after": 0.5,
+      "projekt": "Heilbronn"
+    },
+    {
+      "date": "2025-05-29",
+      "avg_posts_before": 1.0,
+      "avg_posts_after": 0.31,
+      "avg_sentiment_before": 0.5,
+      "avg_sentiment_after": 0.71,
+      "projekt": "Heilbronn"
+    },
+    {
+      "date": "2025-09-23",
+      "avg_posts_before": 0.53,
+      "avg_posts_after": 5.67,
+      "avg_sentiment_before": 0.73,
+      "avg_sentiment_after": 0.47,
+      "projekt": "Paris"
+    },
+    {
+      "date": "2025-10-02",
+      "avg_posts_before": 5.67,
+      "avg_posts_after": 1.41,
+      "avg_sentiment_before": 0.47,
+      "avg_sentiment_after": 0.57,
+      "projekt": "Paris"
+    },
+    {
+      "date": "2025-12-12",
+      "avg_posts_before": 1.41,
+      "avg_posts_after": 13.22,
+      "avg_sentiment_before": 0.57,
+      "avg_sentiment_after": 0.37,
+      "projekt": "Paris"
+    },
+    {
+      "date": "2025-12-21",
+      "avg_posts_before": 13.22,
+      "avg_posts_after": 0.85,
+      "avg_sentiment_before": 0.37,
+      "avg_sentiment_after": 0.75,
+      "projekt": "Paris"
+    },
+    {
+      "date": "2025-05-14",
+      "avg_posts_before": 0.72,
+      "avg_posts_after": 1.51,
+      "avg_sentiment_before": 0.73,
+      "avg_sentiment_after": 0.7,
+      "projekt": "IPAI"
+    }
+  ]
+}

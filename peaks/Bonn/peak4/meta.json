@@ -1,0 +1,75 @@
+{
+  "projekt": "Bonn",
+  "peak": 4,
+  "datum": "2025-06-02",
+  "beitraege_am_tag": 2,
+  "prominenz": 2.0,
+  "vendor_tonlage": 0.5,
+  "beitraege_im_fenster": 3,
+  "fenster": {
+    "start": "2025-05-30",
+    "ende": "2025-06-04"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "seilbahn",
+      "anzahl": 11
+    },
+    {
+      "begriff": "koblenz",
+      "anzahl": 9
+    },
+    {
+      "begriff": "pakettransport",
+      "anzahl": 7
+    },
+    {
+      "begriff": "rheinsteig",
+      "anzahl": 7
+    },
+    {
+      "begriff": "hochschule",
+      "anzahl": 4
+    },
+    {
+      "begriff": "darmstadt",
+      "anzahl": 4
+    },
+    {
+      "begriff": "etappen",
+      "anzahl": 4
+    },
+    {
+      "begriff": "deutschen",
+      "anzahl": 3
+    },
+    {
+      "begriff": "pakete",
+      "anzahl": 3
+    },
+    {
+      "begriff": "seilbahnen",
+      "anzahl": 3
+    },
+    {
+      "begriff": "setzt",
+      "anzahl": 2
+    },
+    {
+      "begriff": "nachhaltigen",
+      "anzahl": 2
+    },
+    {
+      "begriff": "skyfreight",
+      "anzahl": 2
+    },
+    {
+      "begriff": "starten",
+      "anzahl": 2
+    },
+    {
+      "begriff": "feldversuch",
+      "anzahl": 2
+    }
+  ]
+}

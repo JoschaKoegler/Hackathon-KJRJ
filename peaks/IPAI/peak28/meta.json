@@ -1,0 +1,75 @@
+{
+  "projekt": "IPAI",
+  "peak": 28,
+  "datum": "2026-10-12",
+  "beitraege_am_tag": 6,
+  "prominenz": 6.0,
+  "vendor_tonlage": 0.6,
+  "beitraege_im_fenster": 12,
+  "fenster": {
+    "start": "2026-10-09",
+    "ende": "2026-10-14"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "ipai",
+      "anzahl": 25
+    },
+    {
+      "begriff": "heilbronn",
+      "anzahl": 20
+    },
+    {
+      "begriff": "zukunftssprechtag",
+      "anzahl": 11
+    },
+    {
+      "begriff": "innovation",
+      "anzahl": 10
+    },
+    {
+      "begriff": "deutschland",
+      "anzahl": 9
+    },
+    {
+      "begriff": "regelmäßiger",
+      "anzahl": 8
+    },
+    {
+      "begriff": "kann",
+      "anzahl": 8
+    },
+    {
+      "begriff": "künstliche",
+      "anzahl": 7
+    },
+    {
+      "begriff": "intelligenz",
+      "anzahl": 7
+    },
+    {
+      "begriff": "unternehmen",
+      "anzahl": 6
+    },
+    {
+      "begriff": "november",
+      "anzahl": 6
+    },
+    {
+      "begriff": "neuen",
+      "anzahl": 6
+    },
+    {
+      "begriff": "alle",
+      "anzahl": 6
+    },
+    {
+      "begriff": "referentin",
+      "anzahl": 6
+    },
+    {
+      "begriff": "arbeitswelt",
+      "anzahl": 6
+    }
+  ]
+}

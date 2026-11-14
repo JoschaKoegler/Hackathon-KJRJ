@@ -1,0 +1,75 @@
+{
+  "projekt": "Heilbronn",
+  "peak": 15,
+  "datum": "2026-02-26",
+  "beitraege_am_tag": 2,
+  "prominenz": 2.0,
+  "vendor_tonlage": 0.5,
+  "beitraege_im_fenster": 4,
+  "fenster": {
+    "start": "2026-02-23",
+    "ende": "2026-02-28"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "tourengeher",
+      "anzahl": 7
+    },
+    {
+      "begriff": "seilbahn",
+      "anzahl": 6
+    },
+    {
+      "begriff": "februar",
+      "anzahl": 6
+    },
+    {
+      "begriff": "frühfahrt",
+      "anzahl": 5
+    },
+    {
+      "begriff": "freitag",
+      "anzahl": 5
+    },
+    {
+      "begriff": "backnang",
+      "anzahl": 4
+    },
+    {
+      "begriff": "wieder",
+      "anzahl": 4
+    },
+    {
+      "begriff": "stadtseilbahn",
+      "anzahl": 3
+    },
+    {
+      "begriff": "möglich",
+      "anzahl": 3
+    },
+    {
+      "begriff": "favoriten",
+      "anzahl": 3
+    },
+    {
+      "begriff": "heilbronner",
+      "anzahl": 3
+    },
+    {
+      "begriff": "biegel",
+      "anzahl": 2
+    },
+    {
+      "begriff": "bürgerheim",
+      "anzahl": 2
+    },
+    {
+      "begriff": "grünen",
+      "anzahl": 2
+    },
+    {
+      "begriff": "fraktion",
+      "anzahl": 2
+    }
+  ]
+}

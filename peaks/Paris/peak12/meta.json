@@ -1,0 +1,75 @@
+{
+  "projekt": "Paris",
+  "peak": 12,
+  "datum": "2026-01-08",
+  "beitraege_am_tag": 7,
+  "prominenz": 7.0,
+  "vendor_tonlage": 0.86,
+  "beitraege_im_fenster": 16,
+  "fenster": {
+    "start": "2026-01-05",
+    "ende": "2026-01-10"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "france",
+      "anzahl": 27
+    },
+    {
+      "begriff": "janvier",
+      "anzahl": 22
+    },
+    {
+      "begriff": "tempête",
+      "anzahl": 21
+    },
+    {
+      "begriff": "goretti",
+      "anzahl": 21
+    },
+    {
+      "begriff": "téléphérique",
+      "anzahl": 19
+    },
+    {
+      "begriff": "paris",
+      "anzahl": 14
+    },
+    {
+      "begriff": "urbain",
+      "anzahl": 13
+    },
+    {
+      "begriff": "câble",
+      "anzahl": 12
+    },
+    {
+      "begriff": "vendredi",
+      "anzahl": 12
+    },
+    {
+      "begriff": "transports",
+      "anzahl": 11
+    },
+    {
+      "begriff": "premier",
+      "anzahl": 11
+    },
+    {
+      "begriff": "neige",
+      "anzahl": 9
+    },
+    {
+      "begriff": "marne",
+      "anzahl": 7
+    },
+    {
+      "begriff": "arrêt",
+      "anzahl": 7
+    },
+    {
+      "begriff": "jeudi",
+      "anzahl": 7
+    }
+  ]
+}

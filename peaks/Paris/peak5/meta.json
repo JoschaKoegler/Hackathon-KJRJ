@@ -1,0 +1,75 @@
+{
+  "projekt": "Paris",
+  "peak": 5,
+  "datum": "2025-09-24",
+  "beitraege_am_tag": 8,
+  "prominenz": 8.0,
+  "vendor_tonlage": 0.5,
+  "beitraege_im_fenster": 22,
+  "fenster": {
+    "start": "2025-09-21",
+    "ende": "2025-09-26"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "téléphérique",
+      "anzahl": 59
+    },
+    {
+      "begriff": "france",
+      "anzahl": 52
+    },
+    {
+      "begriff": "premier",
+      "anzahl": 41
+    },
+    {
+      "begriff": "décembre",
+      "anzahl": 37
+    },
+    {
+      "begriff": "câble",
+      "anzahl": 20
+    },
+    {
+      "begriff": "urbain",
+      "anzahl": 19
+    },
+    {
+      "begriff": "marne",
+      "anzahl": 18
+    },
+    {
+      "begriff": "sera",
+      "anzahl": 17
+    },
+    {
+      "begriff": "valérie",
+      "anzahl": 16
+    },
+    {
+      "begriff": "pécresse",
+      "anzahl": 15
+    },
+    {
+      "begriff": "créteil",
+      "anzahl": 13
+    },
+    {
+      "begriff": "mardi",
+      "anzahl": 12
+    },
+    {
+      "begriff": "présidente",
+      "anzahl": 12
+    },
+    {
+      "begriff": "région",
+      "anzahl": 12
+    },
+    {
+      "begriff": "date",
+      "anzahl": 12
+    }
+  ]
+}

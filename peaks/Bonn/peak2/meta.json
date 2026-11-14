@@ -1,0 +1,75 @@
+{
+  "projekt": "Bonn",
+  "peak": 2,
+  "datum": "2025-01-16",
+  "beitraege_am_tag": 2,
+  "prominenz": 2.0,
+  "vendor_tonlage": 1.0,
+  "beitraege_im_fenster": 3,
+  "fenster": {
+    "start": "2025-01-13",
+    "ende": "2025-01-18"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "bonner",
+      "anzahl": 6
+    },
+    {
+      "begriff": "bonn",
+      "anzahl": 6
+    },
+    {
+      "begriff": "verlängerung",
+      "anzahl": 6
+    },
+    {
+      "begriff": "bedarfsplan",
+      "anzahl": 6
+    },
+    {
+      "begriff": "bonns",
+      "anzahl": 5
+    },
+    {
+      "begriff": "dörner",
+      "anzahl": 5
+    },
+    {
+      "begriff": "oper",
+      "anzahl": 4
+    },
+    {
+      "begriff": "buschdorf",
+      "anzahl": 4
+    },
+    {
+      "begriff": "öpnv",
+      "anzahl": 4
+    },
+    {
+      "begriff": "stadtbahnlinie",
+      "anzahl": 4
+    },
+    {
+      "begriff": "auerberg",
+      "anzahl": 4
+    },
+    {
+      "begriff": "linie",
+      "anzahl": 4
+    },
+    {
+      "begriff": "aufgenommen",
+      "anzahl": 4
+    },
+    {
+      "begriff": "sanierung",
+      "anzahl": 3
+    },
+    {
+      "begriff": "neubau",
+      "anzahl": 3
+    }
+  ]
+}

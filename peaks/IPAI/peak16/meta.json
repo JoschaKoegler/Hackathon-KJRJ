@@ -1,0 +1,75 @@
+{
+  "projekt": "IPAI",
+  "peak": 16,
+  "datum": "2026-01-27",
+  "beitraege_am_tag": 6,
+  "prominenz": 6.0,
+  "vendor_tonlage": 0.83,
+  "beitraege_im_fenster": 14,
+  "fenster": {
+    "start": "2026-01-24",
+    "ende": "2026-01-29"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "ipai",
+      "anzahl": 15
+    },
+    {
+      "begriff": "audi",
+      "anzahl": 15
+    },
+    {
+      "begriff": "produktion",
+      "anzahl": 14
+    },
+    {
+      "begriff": "intelligenz",
+      "anzahl": 12
+    },
+    {
+      "begriff": "baden",
+      "anzahl": 11
+    },
+    {
+      "begriff": "württemberg",
+      "anzahl": 10
+    },
+    {
+      "begriff": "helukabel",
+      "anzahl": 10
+    },
+    {
+      "begriff": "mitglied",
+      "anzahl": 8
+    },
+    {
+      "begriff": "nxtgn",
+      "anzahl": 8
+    },
+    {
+      "begriff": "heilbronn",
+      "anzahl": 7
+    },
+    {
+      "begriff": "connaix",
+      "anzahl": 7
+    },
+    {
+      "begriff": "gmbh",
+      "anzahl": 7
+    },
+    {
+      "begriff": "innovations",
+      "anzahl": 6
+    },
+    {
+      "begriff": "smetana",
+      "anzahl": 6
+    },
+    {
+      "begriff": "papst",
+      "anzahl": 6
+    }
+  ]
+}

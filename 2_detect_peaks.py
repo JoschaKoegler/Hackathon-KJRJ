@@ -14,6 +14,7 @@ OUTPUT_FILE = BASE_DIR / "detected_events.json"
 MIN_PEAK_DISTANCE_DAYS = 7    # Mindestabstand zwischen zwei Peaks in Tagen
 PROMINENCE_FACTOR = 1.5       # Höher = nur extremere Ausschläge werden erkannt
 CHANGEPOINT_PENALTY = 12.0    # Höher = nur sehr deutliche Trendwenden (z.B. 8.0 - 20.0)
+SENTIMENT_FEHLWERT = -99      # keine Angabe, geht in keinen Mittelwert ein
 
 
 # ==========================================
@@ -54,6 +55,11 @@ def detect_changepoints_binseg(series: np.ndarray, penalty: float = 12.0, min_si
 # 3. ZEITREIHEN-ANALYSE PRO PROJEKT
 # ==========================================
 def analyze_project_timeseries(df_proj: pd.DataFrame, project_name: str) -> dict:
+    df_proj = df_proj.copy()
+    if "sentiment" in df_proj.columns:
+        df_proj["sentiment"] = pd.to_numeric(df_proj["sentiment"], errors="coerce")
+        df_proj.loc[df_proj["sentiment"].eq(SENTIMENT_FEHLWERT), "sentiment"] = np.nan
+
     daily = df_proj.groupby("date").agg(
         count=("mention_id", "count"),
         avg_sentiment=("sentiment", "mean")
@@ -152,6 +158,7 @@ def main():
     df = pd.DataFrame(clean_data)
     df["date"] = pd.to_datetime(df["published_at"], utc=True, errors="coerce").dt.tz_localize(None).dt.floor("D")
     df["sentiment"] = pd.to_numeric(df.get("sentiment"), errors="coerce")
+    df.loc[df["sentiment"].eq(SENTIMENT_FEHLWERT), "sentiment"] = np.nan
     df = df.dropna(subset=["date"]).copy()
 
     df_exploded = df.explode("matched_projects").rename(columns={"matched_projects": "project"})

@@ -1,0 +1,75 @@
+{
+  "projekt": "Paris",
+  "peak": 9,
+  "datum": "2025-11-12",
+  "beitraege_am_tag": 7,
+  "prominenz": 7.0,
+  "vendor_tonlage": 0.43,
+  "beitraege_im_fenster": 10,
+  "fenster": {
+    "start": "2025-11-09",
+    "ende": "2025-11-14"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "france",
+      "anzahl": 34
+    },
+    {
+      "begriff": "téléphérique",
+      "anzahl": 25
+    },
+    {
+      "begriff": "premier",
+      "anzahl": 19
+    },
+    {
+      "begriff": "urbain",
+      "anzahl": 19
+    },
+    {
+      "begriff": "ouvrir",
+      "anzahl": 15
+    },
+    {
+      "begriff": "point",
+      "anzahl": 11
+    },
+    {
+      "begriff": "nouveau",
+      "anzahl": 8
+    },
+    {
+      "begriff": "première",
+      "anzahl": 8
+    },
+    {
+      "begriff": "notre",
+      "anzahl": 8
+    },
+    {
+      "begriff": "euronews",
+      "anzahl": 6
+    },
+    {
+      "begriff": "youtube",
+      "anzahl": 6
+    },
+    {
+      "begriff": "novembre",
+      "anzahl": 5
+    },
+    {
+      "begriff": "décembre",
+      "anzahl": 5
+    },
+    {
+      "begriff": "source",
+      "anzahl": 5
+    },
+    {
+      "begriff": "europe",
+      "anzahl": 5
+    }
+  ]
+}

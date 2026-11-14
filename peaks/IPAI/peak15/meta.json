@@ -1,0 +1,75 @@
+{
+  "projekt": "IPAI",
+  "peak": 15,
+  "datum": "2026-01-15",
+  "beitraege_am_tag": 4,
+  "prominenz": 4.0,
+  "vendor_tonlage": 0.75,
+  "beitraege_im_fenster": 9,
+  "fenster": {
+    "start": "2026-01-12",
+    "ende": "2026-01-17"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "heilbronn",
+      "anzahl": 14
+    },
+    {
+      "begriff": "ipai",
+      "anzahl": 11
+    },
+    {
+      "begriff": "intelligenz",
+      "anzahl": 11
+    },
+    {
+      "begriff": "künstliche",
+      "anzahl": 10
+    },
+    {
+      "begriff": "baden",
+      "anzahl": 8
+    },
+    {
+      "begriff": "connaix",
+      "anzahl": 7
+    },
+    {
+      "begriff": "neue",
+      "anzahl": 6
+    },
+    {
+      "begriff": "forschungszentrum",
+      "anzahl": 6
+    },
+    {
+      "begriff": "württemberg",
+      "anzahl": 6
+    },
+    {
+      "begriff": "post",
+      "anzahl": 6
+    },
+    {
+      "begriff": "neuen",
+      "anzahl": 5
+    },
+    {
+      "begriff": "schwarz",
+      "anzahl": 5
+    },
+    {
+      "begriff": "investiert",
+      "anzahl": 5
+    },
+    {
+      "begriff": "land",
+      "anzahl": 5
+    },
+    {
+      "begriff": "transformation",
+      "anzahl": 5
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "projekt": "Bonn",
+  "peak": 14,
+  "datum": "2026-03-05",
+  "beitraege_am_tag": 3,
+  "prominenz": 3.0,
+  "vendor_tonlage": -0.33,
+  "beitraege_im_fenster": 6,
+  "fenster": {
+    "start": "2026-03-02",
+    "ende": "2026-03-07"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "seilbahn",
+      "anzahl": 31
+    },
+    {
+      "begriff": "bonn",
+      "anzahl": 20
+    },
+    {
+      "begriff": "bonner",
+      "anzahl": 16
+    },
+    {
+      "begriff": "jahre",
+      "anzahl": 15
+    },
+    {
+      "begriff": "verzögert",
+      "anzahl": 14
+    },
+    {
+      "begriff": "mehrere",
+      "anzahl": 12
+    },
+    {
+      "begriff": "soll",
+      "anzahl": 6
+    },
+    {
+      "begriff": "stadt",
+      "anzahl": 6
+    },
+    {
+      "begriff": "erst",
+      "anzahl": 6
+    },
+    {
+      "begriff": "völlig",
+      "anzahl": 6
+    },
+    {
+      "begriff": "falscher",
+      "anzahl": 6
+    },
+    {
+      "begriff": "schritt",
+      "anzahl": 6
+    },
+    {
+      "begriff": "inbetriebnahme",
+      "anzahl": 5
+    },
+    {
+      "begriff": "starten",
+      "anzahl": 5
+    },
+    {
+      "begriff": "könnte",
+      "anzahl": 4
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "projekt": "IPAI",
+  "peak": 8,
+  "datum": "2025-06-16",
+  "beitraege_am_tag": 6,
+  "prominenz": 6.0,
+  "vendor_tonlage": 0.67,
+  "beitraege_im_fenster": 12,
+  "fenster": {
+    "start": "2025-06-13",
+    "ende": "2025-06-18"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "ipai",
+      "anzahl": 21
+    },
+    {
+      "begriff": "vodafone",
+      "anzahl": 18
+    },
+    {
+      "begriff": "heilbronn",
+      "anzahl": 15
+    },
+    {
+      "begriff": "park",
+      "anzahl": 8
+    },
+    {
+      "begriff": "intelligenz",
+      "anzahl": 8
+    },
+    {
+      "begriff": "kifestival",
+      "anzahl": 8
+    },
+    {
+      "begriff": "heilbronner",
+      "anzahl": 8
+    },
+    {
+      "begriff": "künstliche",
+      "anzahl": 7
+    },
+    {
+      "begriff": "innovation",
+      "anzahl": 6
+    },
+    {
+      "begriff": "mitglied",
+      "anzahl": 6
+    },
+    {
+      "begriff": "festival",
+      "anzahl": 6
+    },
+    {
+      "begriff": "artificial",
+      "anzahl": 5
+    },
+    {
+      "begriff": "intelligence",
+      "anzahl": 5
+    },
+    {
+      "begriff": "zukunft",
+      "anzahl": 5
+    },
+    {
+      "begriff": "innovationspark",
+      "anzahl": 5
+    }
+  ]
+}

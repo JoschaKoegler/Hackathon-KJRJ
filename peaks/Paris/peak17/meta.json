@@ -1,0 +1,75 @@
+{
+  "projekt": "Paris",
+  "peak": 17,
+  "datum": "2026-06-08",
+  "beitraege_am_tag": 6,
+  "prominenz": 6.0,
+  "vendor_tonlage": 0.5,
+  "beitraege_im_fenster": 11,
+  "fenster": {
+    "start": "2026-06-05",
+    "ende": "2026-06-10"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "téléphérique",
+      "anzahl": 19
+    },
+    {
+      "begriff": "juin",
+      "anzahl": 17
+    },
+    {
+      "begriff": "câble",
+      "anzahl": 16
+    },
+    {
+      "begriff": "paris",
+      "anzahl": 12
+    },
+    {
+      "begriff": "mardi",
+      "anzahl": 10
+    },
+    {
+      "begriff": "trafic",
+      "anzahl": 10
+    },
+    {
+      "begriff": "france",
+      "anzahl": 9
+    },
+    {
+      "begriff": "voyageurs",
+      "anzahl": 8
+    },
+    {
+      "begriff": "exercice",
+      "anzahl": 8
+    },
+    {
+      "begriff": "marne",
+      "anzahl": 8
+    },
+    {
+      "begriff": "voici",
+      "anzahl": 7
+    },
+    {
+      "begriff": "dépêche",
+      "anzahl": 7
+    },
+    {
+      "begriff": "arrêt",
+      "anzahl": 7
+    },
+    {
+      "begriff": "votre",
+      "anzahl": 6
+    },
+    {
+      "begriff": "évacuation",
+      "anzahl": 6
+    }
+  ]
+}

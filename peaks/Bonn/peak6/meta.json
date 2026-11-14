@@ -1,0 +1,75 @@
+{
+  "projekt": "Bonn",
+  "peak": 6,
+  "datum": "2025-06-25",
+  "beitraege_am_tag": 2,
+  "prominenz": 2.0,
+  "vendor_tonlage": 1.0,
+  "beitraege_im_fenster": 3,
+  "fenster": {
+    "start": "2025-06-22",
+    "ende": "2025-06-27"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "dörner",
+      "anzahl": 7
+    },
+    {
+      "begriff": "bonn",
+      "anzahl": 7
+    },
+    {
+      "begriff": "bonns",
+      "anzahl": 6
+    },
+    {
+      "begriff": "fordert",
+      "anzahl": 6
+    },
+    {
+      "begriff": "köln",
+      "anzahl": 6
+    },
+    {
+      "begriff": "verbindung",
+      "anzahl": 5
+    },
+    {
+      "begriff": "beuel",
+      "anzahl": 5
+    },
+    {
+      "begriff": "rheinland",
+      "anzahl": 5
+    },
+    {
+      "begriff": "bahn",
+      "anzahl": 5
+    },
+    {
+      "begriff": "stadt",
+      "anzahl": 4
+    },
+    {
+      "begriff": "seilbahn",
+      "anzahl": 4
+    },
+    {
+      "begriff": "durchgängige",
+      "anzahl": 2
+    },
+    {
+      "begriff": "oberbürgermeisterin",
+      "anzahl": 2
+    },
+    {
+      "begriff": "katja",
+      "anzahl": 2
+    },
+    {
+      "begriff": "projekt",
+      "anzahl": 2
+    }
+  ]
+}

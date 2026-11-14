@@ -1,0 +1,75 @@
+{
+  "projekt": "Bonn",
+  "peak": 20,
+  "datum": "2026-09-06",
+  "beitraege_am_tag": 2,
+  "prominenz": 2.0,
+  "vendor_tonlage": null,
+  "beitraege_im_fenster": 2,
+  "fenster": {
+    "start": "2026-09-03",
+    "ende": "2026-09-08"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "frauenmuseum",
+      "anzahl": 4
+    },
+    {
+      "begriff": "marianne",
+      "anzahl": 4
+    },
+    {
+      "begriff": "pitzen",
+      "anzahl": 4
+    },
+    {
+      "begriff": "bonn",
+      "anzahl": 4
+    },
+    {
+      "begriff": "erste",
+      "anzahl": 3
+    },
+    {
+      "begriff": "rheingefragt",
+      "anzahl": 3
+    },
+    {
+      "begriff": "seilbahn",
+      "anzahl": 3
+    },
+    {
+      "begriff": "folge",
+      "anzahl": 3
+    },
+    {
+      "begriff": "gründete",
+      "anzahl": 3
+    },
+    {
+      "begriff": "jahren",
+      "anzahl": 2
+    },
+    {
+      "begriff": "unserem",
+      "anzahl": 2
+    },
+    {
+      "begriff": "kanal",
+      "anzahl": 2
+    },
+    {
+      "begriff": "interview",
+      "anzahl": 2
+    },
+    {
+      "begriff": "kölner",
+      "anzahl": 2
+    },
+    {
+      "begriff": "staffel",
+      "anzahl": 2
+    }
+  ]
+}

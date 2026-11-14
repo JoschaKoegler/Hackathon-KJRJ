@@ -1,0 +1,75 @@
+{
+  "projekt": "Heilbronn",
+  "peak": 5,
+  "datum": "2025-05-27",
+  "beitraege_am_tag": 3,
+  "prominenz": 3.0,
+  "vendor_tonlage": 1.0,
+  "beitraege_im_fenster": 7,
+  "fenster": {
+    "start": "2025-05-24",
+    "ende": "2025-05-29"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "seilbahn",
+      "anzahl": 31
+    },
+    {
+      "begriff": "baden",
+      "anzahl": 21
+    },
+    {
+      "begriff": "württemberg",
+      "anzahl": 21
+    },
+    {
+      "begriff": "stadt",
+      "anzahl": 17
+    },
+    {
+      "begriff": "soll",
+      "anzahl": 15
+    },
+    {
+      "begriff": "urbane",
+      "anzahl": 14
+    },
+    {
+      "begriff": "nahverkehr",
+      "anzahl": 12
+    },
+    {
+      "begriff": "land",
+      "anzahl": 12
+    },
+    {
+      "begriff": "heilbronn",
+      "anzahl": 11
+    },
+    {
+      "begriff": "projekt",
+      "anzahl": 10
+    },
+    {
+      "begriff": "hier",
+      "anzahl": 9
+    },
+    {
+      "begriff": "erste",
+      "anzahl": 7
+    },
+    {
+      "begriff": "unterstützt",
+      "anzahl": 7
+    },
+    {
+      "begriff": "planungskosten",
+      "anzahl": 7
+    },
+    {
+      "begriff": "bald",
+      "anzahl": 7
+    }
+  ]
+}

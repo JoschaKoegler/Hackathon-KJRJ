@@ -1,0 +1,75 @@
+{
+  "projekt": "Paris",
+  "peak": 3,
+  "datum": "2025-05-13",
+  "beitraege_am_tag": 4,
+  "prominenz": 4.0,
+  "vendor_tonlage": 1.0,
+  "beitraege_im_fenster": 5,
+  "fenster": {
+    "start": "2025-05-10",
+    "ende": "2025-05-15"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "téléphérique",
+      "anzahl": 19
+    },
+    {
+      "begriff": "câble",
+      "anzahl": 16
+    },
+    {
+      "begriff": "france",
+      "anzahl": 14
+    },
+    {
+      "begriff": "francilien",
+      "anzahl": 8
+    },
+    {
+      "begriff": "urbain",
+      "anzahl": 7
+    },
+    {
+      "begriff": "mobilités",
+      "anzahl": 7
+    },
+    {
+      "begriff": "appel",
+      "anzahl": 7
+    },
+    {
+      "begriff": "pied",
+      "anzahl": 6
+    },
+    {
+      "begriff": "cabines",
+      "anzahl": 5
+    },
+    {
+      "begriff": "premier",
+      "anzahl": 5
+    },
+    {
+      "begriff": "premières",
+      "anzahl": 4
+    },
+    {
+      "begriff": "phase",
+      "anzahl": 4
+    },
+    {
+      "begriff": "test",
+      "anzahl": 4
+    },
+    {
+      "begriff": "marne",
+      "anzahl": 4
+    },
+    {
+      "begriff": "street",
+      "anzahl": 4
+    }
+  ]
+}

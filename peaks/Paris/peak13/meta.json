@@ -1,0 +1,75 @@
+{
+  "projekt": "Paris",
+  "peak": 13,
+  "datum": "2026-02-09",
+  "beitraege_am_tag": 4,
+  "prominenz": 4.0,
+  "vendor_tonlage": 1.0,
+  "beitraege_im_fenster": 7,
+  "fenster": {
+    "start": "2026-02-06",
+    "ende": "2026-02-11"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "téléphériques",
+      "anzahl": 8
+    },
+    {
+      "begriff": "europe",
+      "anzahl": 8
+    },
+    {
+      "begriff": "trajets",
+      "anzahl": 7
+    },
+    {
+      "begriff": "téléphérique",
+      "anzahl": 7
+    },
+    {
+      "begriff": "sauna",
+      "anzahl": 5
+    },
+    {
+      "begriff": "sans",
+      "anzahl": 5
+    },
+    {
+      "begriff": "toit",
+      "anzahl": 5
+    },
+    {
+      "begriff": "rotatif",
+      "anzahl": 5
+    },
+    {
+      "begriff": "hors",
+      "anzahl": 5
+    },
+    {
+      "begriff": "commun",
+      "anzahl": 5
+    },
+    {
+      "begriff": "proposent",
+      "anzahl": 5
+    },
+    {
+      "begriff": "uniques",
+      "anzahl": 5
+    },
+    {
+      "begriff": "suisse",
+      "anzahl": 5
+    },
+    {
+      "begriff": "insolites",
+      "anzahl": 5
+    },
+    {
+      "begriff": "février",
+      "anzahl": 4
+    }
+  ]
+}

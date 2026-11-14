@@ -1,0 +1,75 @@
+{
+  "projekt": "Heilbronn",
+  "peak": 19,
+  "datum": "2026-08-14",
+  "beitraege_am_tag": 2,
+  "prominenz": 2.0,
+  "vendor_tonlage": 1.0,
+  "beitraege_im_fenster": 2,
+  "fenster": {
+    "start": "2026-08-11",
+    "ende": "2026-08-16"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "seilbahn",
+      "anzahl": 7
+    },
+    {
+      "begriff": "heilbronn",
+      "anzahl": 5
+    },
+    {
+      "begriff": "urbane",
+      "anzahl": 4
+    },
+    {
+      "begriff": "stadt",
+      "anzahl": 3
+    },
+    {
+      "begriff": "pressemitteilung",
+      "anzahl": 2
+    },
+    {
+      "begriff": "plant",
+      "anzahl": 2
+    },
+    {
+      "begriff": "beschlossen",
+      "anzahl": 2
+    },
+    {
+      "begriff": "öffentlichen",
+      "anzahl": 2
+    },
+    {
+      "begriff": "nahverkehr",
+      "anzahl": 2
+    },
+    {
+      "begriff": "minuten",
+      "anzahl": 1
+    },
+    {
+      "begriff": "ipai",
+      "anzahl": 1
+    },
+    {
+      "begriff": "bringt",
+      "anzahl": 1
+    },
+    {
+      "begriff": "detailplanung",
+      "anzahl": 1
+    },
+    {
+      "begriff": "explortal",
+      "anzahl": 1
+    },
+    {
+      "begriff": "logistics",
+      "anzahl": 1
+    }
+  ]
+}

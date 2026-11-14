@@ -1,0 +1,75 @@
+{
+  "projekt": "Bonn",
+  "peak": 21,
+  "datum": "2026-10-02",
+  "beitraege_am_tag": 2,
+  "prominenz": 2.0,
+  "vendor_tonlage": 0.5,
+  "beitraege_im_fenster": 2,
+  "fenster": {
+    "start": "2026-09-29",
+    "ende": "2026-10-04"
+  },
+  "haeufigste_begriffe": [
+    {
+      "begriff": "rhein",
+      "anzahl": 4
+    },
+    {
+      "begriff": "bucht",
+      "anzahl": 3
+    },
+    {
+      "begriff": "upgrade",
+      "anzahl": 3
+    },
+    {
+      "begriff": "bonn",
+      "anzahl": 3
+    },
+    {
+      "begriff": "sieg",
+      "anzahl": 3
+    },
+    {
+      "begriff": "nordbrückensperrung",
+      "anzahl": 3
+    },
+    {
+      "begriff": "auswirkungen",
+      "anzahl": 3
+    },
+    {
+      "begriff": "kabine",
+      "anzahl": 2
+    },
+    {
+      "begriff": "gewinnt",
+      "anzahl": 2
+    },
+    {
+      "begriff": "suite",
+      "anzahl": 2
+    },
+    {
+      "begriff": "radio",
+      "anzahl": 2
+    },
+    {
+      "begriff": "seid",
+      "anzahl": 2
+    },
+    {
+      "begriff": "dabei",
+      "anzahl": 2
+    },
+    {
+      "begriff": "teil",
+      "anzahl": 2
+    },
+    {
+      "begriff": "unserer",
+      "anzahl": 2
+    }
+  ]
+}
