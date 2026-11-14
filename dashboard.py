@@ -834,6 +834,8 @@ SEITE = r"""<!DOCTYPE html>
     flex: 0 0 auto;
     align-items: center;
     justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
     gap: 4px;
     padding: 6px;
   }
