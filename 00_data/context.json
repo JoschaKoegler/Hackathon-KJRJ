@@ -1,0 +1,3520 @@
+{
+  "collection_metadata": {
+    "collected_at_utc": "2026-11-14T20:15:09.418844+00:00",
+    "methods": [
+      "Peak context from the project's own posts: distinctive terms vs. baseline (document-level log-odds), rule-based event typing, amount extraction, source/syndication profile",
+      "Targeted Google News RSS search built from the peak's distinctive terms; hits ranked by overlap with the peak's posts",
+      "Persistence analysis: decay time to baseline, post volume 7-21 days after, sentiment 14 days before/after",
+      "Public HTML metadata & headline extraction from official city/project homepages",
+      "Optional: manually curated event list (curated_events.json); optional LLM summary (USE_LLM)"
+    ],
+    "interpretation_note": "context.summary describes the likely occasion based on the posts and external headlines; confidence high/medium/low is scored from event type, independent sources, external corroboration and topic fit — not from a fixed post count.",
+    "compliance_note": "Only publicly accessible pages without login or paywall were queried; no personal user identifiers collected."
+  },
+  "projects": [
+    {
+      "project": "Bonn_Seilbahn",
+      "total_posts": 148,
+      "date_range": "2024-10-28 to 2026-10-23",
+      "peak_selection": {
+        "max_major_peaks": 8,
+        "min_spacing_days": 45,
+        "n_major": 3,
+        "n_significant_peaks": 3,
+        "dispersion": 1.263,
+        "false_alarm_budget": 0.5
+      },
+      "peaks": [
+        {
+          "date": "2025-06-15",
+          "post_count": 8,
+          "baseline_posts_per_day": 0.1,
+          "relative_to_baseline": 78.5,
+          "significance": 7.8,
+          "excess_posts": 13.3,
+          "prominence": 8.0,
+          "avg_sentiment": 2.0,
+          "tone_n": 4,
+          "tone_missing": 0,
+          "crawler_window": {
+            "start": "2025-06-12",
+            "end": "2025-06-17"
+          },
+          "sample_titles": [
+            "„Pionierprojekt“: NRW bekommt bundesweit einzigartige Seilbahn",
+            "„Pionierprojekt“: Eine in Deutschland einzigartige Seilbahn soll in NRW entstehen"
+          ],
+          "rank": 1,
+          "tier": "major",
+          "crawled": true,
+          "context": {
+            "event_type": "Media coverage (no clear trigger)",
+            "event_type_secondary": null,
+            "summary": "",
+            "confidence": "medium",
+            "confidence_points": 3,
+            "method": "rule-based",
+            "top_terms": [
+              "einzigartige",
+              "bundesweit",
+              "bekommt",
+              "öffentlichen",
+              "parkplätze",
+              "premiere"
+            ],
+            "amounts_mentioned": [
+              "12,4 millionen"
+            ],
+            "top_headlines": [
+              "Seilbahn-Projekt in Bonn bricht zur nächsten Etappe auf",
+              "„Pionierprojekt“: NRW bekommt bundesweit einzigartige Seilbahn",
+              "„Pionierprojekt“: Eine in Deutschland einzigartige Seilbahn soll in NRW entstehen"
+            ],
+            "source_profile": {
+              "n_posts": 14,
+              "n_sources": 9,
+              "n_unique_titles": 9,
+              "media_types": {
+                "News": 11,
+                "Other": 1,
+                "Microblog": 1,
+                "Blog": 1
+              },
+              "top_source": "www.wa.de",
+              "top_source_share": 0.29,
+              "likely_syndication": false
+            },
+            "topic_share": 1.0,
+            "off_topic_suspect": false,
+            "event_type_scores": {
+              "Planning / route / feasibility": 5.0,
+              "Personnel": 4.0,
+              "Political decision": 1,
+              "Service disruption / closure": 1
+            },
+            "curated_events": [],
+            "external_candidates": [],
+            "evidence_mention_ids": [
+              "10256007,13912",
+              "10256007,13917",
+              "10256007,13928",
+              "10394504,12994",
+              "10394504,13001",
+              "10394504,13013",
+              "15729122,543",
+              "16056164,8019",
+              "162232,22471",
+              "22226218,3941"
+            ],
+            "effects": {
+              "baseline_posts_per_day": 0.32,
+              "decay_days": 2,
+              "decay_note": null,
+              "persistence": "faded",
+              "avg_posts_per_day_days_7_to_21": 0.47,
+              "sentiment_14d_before": 1.33,
+              "sentiment_14d_after": 0.67,
+              "sentiment_n_before_after": [
+                6,
+                6
+              ],
+              "sentiment_missing_before_after": [
+                1,
+                1
+              ],
+              "tone_before": {
+                "counts": {
+                  "Positive": 2,
+                  "Neutral": 4,
+                  "Negative": 0
+                },
+                "shares": {
+                  "Positive": 0.3333,
+                  "Neutral": 0.6667,
+                  "Negative": 0.0
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": 0.0968,
+                    "high": 0.7
+                  },
+                  "Neutral": {
+                    "low": 0.3,
+                    "high": 0.9032
+                  },
+                  "Negative": {
+                    "low": 0.0,
+                    "high": 0.3903
+                  }
+                },
+                "classified": 6,
+                "unclassified": 1,
+                "stories": 7,
+                "balance": 0.3333,
+                "balance_low": -0.0771,
+                "balance_high": 0.7438,
+                "balance_se": 0.2094,
+                "mean": 1.33,
+                "n": 6,
+                "n_missing": 1
+              },
+              "tone_after": {
+                "counts": {
+                  "Positive": 1,
+                  "Neutral": 2,
+                  "Negative": 3
+                },
+                "shares": {
+                  "Positive": 0.1667,
+                  "Neutral": 0.3333,
+                  "Negative": 0.5
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": 0.0301,
+                    "high": 0.5635
+                  },
+                  "Neutral": {
+                    "low": 0.0968,
+                    "high": 0.7
+                  },
+                  "Negative": {
+                    "low": 0.1876,
+                    "high": 0.8124
+                  }
+                },
+                "classified": 6,
+                "unclassified": 1,
+                "stories": 7,
+                "balance": -0.3333,
+                "balance_low": -0.8856,
+                "balance_high": 0.219,
+                "balance_se": 0.2818,
+                "mean": 0.67,
+                "n": 6,
+                "n_missing": 1
+              }
+            }
+          }
+        },
+        {
+          "date": "2025-08-29",
+          "post_count": 6,
+          "baseline_posts_per_day": 0.22,
+          "relative_to_baseline": 27.0,
+          "significance": 4.2,
+          "excess_posts": 6.6,
+          "prominence": 6.0,
+          "avg_sentiment": 1.33,
+          "tone_n": 6,
+          "tone_missing": 0,
+          "crawler_window": {
+            "start": "2025-08-26",
+            "end": "2025-08-31"
+          },
+          "sample_titles": [
+            "Planung für das Projekt Seilbahn in #Bonn schreitet voran: 📅 Die Stadtverwaltung hält an ihrem Ziel fest, den Antrag…",
+            "Planung für das Projekt Seilbahn schreitet voran"
+          ],
+          "rank": 3,
+          "tier": "major",
+          "crawled": true,
+          "context": {
+            "event_type": "Planning / route / feasibility",
+            "event_type_secondary": null,
+            "summary": "",
+            "confidence": "high",
+            "confidence_points": 7,
+            "method": "rule-based",
+            "top_terms": [
+              "antrag",
+              "lehnt",
+              "schreitet",
+              "üblich",
+              "warte",
+              "unternehmens"
+            ],
+            "amounts_mentioned": [],
+            "top_headlines": [
+              "Planung für das Projekt Seilbahn in #Bonn schreitet voran: 📅 Die Stadtverwaltung hält an ihrem Ziel fest, den Antrag…",
+              "Planung für das Projekt Seilbahn schreitet voran",
+              "🚡 Das Seilbahn-Projekt bleibt auf Kurs! Die Bonner Seilbahn nimmt Gestalt an: Stadtverwaltung und Stadtwerke treiben…"
+            ],
+            "source_profile": {
+              "n_posts": 8,
+              "n_sources": 6,
+              "n_unique_titles": 8,
+              "media_types": {
+                "Pictures": 2,
+                "Other": 1,
+                "News": 4,
+                "Microblog": 1
+              },
+              "top_source": "www.instagram.com",
+              "top_source_share": 0.25,
+              "likely_syndication": false
+            },
+            "topic_share": 1.0,
+            "off_topic_suspect": false,
+            "event_type_scores": {
+              "Political decision": 6.0,
+              "Planning / route / feasibility": 12.0,
+              "Protest / public participation": 0.5,
+              "Safety / incident": 0.5
+            },
+            "curated_events": [],
+            "external_candidates": [
+              {
+                "title": "Stadt Bonn: Projekt Seilbahn schreitet voran",
+                "source": "Radio Bonn / Rhein-Sieg",
+                "published": "Sat, 30 Aug 2025 07:00:00 GMT",
+                "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQd2JveS04Ql9kMHlLTEx4VWRPREo3dVBlWm5iNE1zaDhSRDlPcWNMU1FLM1NMZnFPMGtXV2o4Z0QxcEgyYnQ2ajRySGFBOVUxRVN0QlNrdXcyVUFlRUNnaGZHYXBQRkhxcmQtRkxlZVllaXk5cFEtd2VyS3lxU3V4aUZuQWxfLXBucnZsUw?oc=5",
+                "match_score": 4
+              }
+            ],
+            "evidence_mention_ids": [
+              "11342743,809097",
+              "12569394,577",
+              "12908655,43390",
+              "14202555,1292",
+              "28294713,39618",
+              "28294713,39670",
+              "29316251,23662754",
+              "9776584,4976"
+            ],
+            "effects": {
+              "baseline_posts_per_day": 0.19,
+              "decay_days": 7,
+              "decay_note": null,
+              "persistence": "stayed high",
+              "avg_posts_per_day_days_7_to_21": 0.8,
+              "sentiment_14d_before": 0.5,
+              "sentiment_14d_after": 0.77,
+              "sentiment_n_before_after": [
+                2,
+                13
+              ],
+              "sentiment_missing_before_after": [
+                0,
+                2
+              ],
+              "tone_before": {
+                "counts": {
+                  "Positive": 0,
+                  "Neutral": 1,
+                  "Negative": 1
+                },
+                "shares": {
+                  "Positive": 0.0,
+                  "Neutral": 0.5,
+                  "Negative": 0.5
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": 0.0,
+                    "high": 0.6576
+                  },
+                  "Neutral": {
+                    "low": 0.0945,
+                    "high": 0.9055
+                  },
+                  "Negative": {
+                    "low": 0.0945,
+                    "high": 0.9055
+                  }
+                },
+                "classified": 2,
+                "unclassified": 0,
+                "stories": 2,
+                "balance": -0.5,
+                "balance_low": -1.0,
+                "balance_high": 0.2332,
+                "balance_se": 0.3741,
+                "mean": 0.5,
+                "n": 2,
+                "n_missing": 0
+              },
+              "tone_after": {
+                "counts": {
+                  "Positive": 1,
+                  "Neutral": 8,
+                  "Negative": 4
+                },
+                "shares": {
+                  "Positive": 0.0769,
+                  "Neutral": 0.6154,
+                  "Negative": 0.3077
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": 0.0137,
+                    "high": 0.3331
+                  },
+                  "Neutral": {
+                    "low": 0.3552,
+                    "high": 0.8229
+                  },
+                  "Negative": {
+                    "low": 0.1268,
+                    "high": 0.5763
+                  }
+                },
+                "classified": 13,
+                "unclassified": 2,
+                "stories": 15,
+                "balance": -0.2308,
+                "balance_low": -0.5443,
+                "balance_high": 0.0827,
+                "balance_se": 0.16,
+                "mean": 0.77,
+                "n": 13,
+                "n_missing": 2
+              }
+            }
+          }
+        },
+        {
+          "date": "2026-03-24",
+          "post_count": 4,
+          "baseline_posts_per_day": 0.11,
+          "relative_to_baseline": 36.0,
+          "significance": 3.8,
+          "excess_posts": 8.3,
+          "prominence": 4.0,
+          "avg_sentiment": 1.25,
+          "tone_n": 4,
+          "tone_missing": 0,
+          "crawler_window": {
+            "start": "2026-03-21",
+            "end": "2026-03-26"
+          },
+          "sample_titles": [
+            "Seilbahn über Bonn – Millionenprojekt soll Verkehr entlasten",
+            "Seilbahn für Bonn geplant: Ab 2032 könnte sie fahren"
+          ],
+          "rank": 2,
+          "tier": "major",
+          "crawled": true,
+          "context": {
+            "event_type": "Planning / route / feasibility",
+            "event_type_secondary": null,
+            "summary": "",
+            "confidence": "high",
+            "confidence_points": 6,
+            "method": "rule-based",
+            "top_terms": [
+              "guido",
+              "strategisches",
+              "staufreie",
+              "stark",
+              "millionenprojekt",
+              "nähergekommen"
+            ],
+            "amounts_mentioned": [
+              "155 millionen euro",
+              "17,6 millionen euro",
+              "155 millionen"
+            ],
+            "top_headlines": [
+              "Seilbahn über Bonn – Millionenprojekt soll Verkehr entlasten",
+              "Wäre es nicht sinnvoller die bestehende Straßenbahn auszubauen? Wie ich sehe ist die ziemlich zentrisch auf das…",
+              "https://lokalklick.eu/2026/03/27/neuer-sachstand-zur-bonner-seilbahn/"
+            ],
+            "source_profile": {
+              "n_posts": 9,
+              "n_sources": 7,
+              "n_unique_titles": 8,
+              "media_types": {
+                "YouTube Comments": 1,
+                "News": 5,
+                "Other": 1,
+                "YouTube Video": 1,
+                "Microblog": 1
+              },
+              "top_source": "www.youtube.com",
+              "top_source_share": 0.22,
+              "likely_syndication": false
+            },
+            "topic_share": 1.0,
+            "off_topic_suspect": false,
+            "event_type_scores": {
+              "Planning / route / feasibility": 4.5,
+              "Protest / public participation": 1.5,
+              "Service disruption / closure": 2,
+              "Cost / funding": 4,
+              "Visualisation / design": 0.5
+            },
+            "curated_events": [],
+            "external_candidates": [
+              {
+                "title": "Seilbahn über Bonn – Millionenprojekt soll Verkehr entlasten",
+                "source": "RTL.de",
+                "published": "Tue, 24 Mar 2026 07:00:00 GMT",
+                "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPUS1LWS1PNkJpN1hHNEJoZFYxQjB3SVJ0RnpQM04yN0ZqSW1CMlJaTDBfWHU2WFg3cGcyLUYyN0NySTY3MkFCeFEzMnhOSTJqLWxpU0VJakpNbUZZM0lIQnlyN2o3Z0JpcTZVM0VvUTdTRFI0NFRpOTlqV2RRWUlKMkRYN29ya0VBTUwybDVGWk02amJXc3R6Qkx1RUJLMTlfS21vclpn?oc=5",
+                "match_score": 4
+              }
+            ],
+            "evidence_mention_ids": [
+              "11277555,692232899",
+              "22317976,517053",
+              "22658992,43605",
+              "26519078,35292",
+              "2707355,27729",
+              "27963376,185185",
+              "28294713,46998",
+              "28469335,293292",
+              "29316254,40808989"
+            ],
+            "effects": {
+              "baseline_posts_per_day": 0.26,
+              "decay_days": 9,
+              "decay_note": null,
+              "persistence": "faded",
+              "avg_posts_per_day_days_7_to_21": 0.27,
+              "sentiment_14d_before": null,
+              "sentiment_14d_after": 1.17,
+              "sentiment_n_before_after": [
+                0,
+                6
+              ],
+              "sentiment_missing_before_after": [
+                0,
+                0
+              ],
+              "tone_before": {
+                "counts": {
+                  "Positive": 0,
+                  "Neutral": 0,
+                  "Negative": 0
+                },
+                "shares": {
+                  "Positive": 0.0,
+                  "Neutral": 0.0,
+                  "Negative": 0.0
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": null,
+                    "high": null
+                  },
+                  "Neutral": {
+                    "low": null,
+                    "high": null
+                  },
+                  "Negative": {
+                    "low": null,
+                    "high": null
+                  }
+                },
+                "classified": 0,
+                "unclassified": 0,
+                "stories": 0,
+                "balance": null,
+                "balance_low": null,
+                "balance_high": null,
+                "balance_se": null,
+                "mean": null,
+                "n": 0,
+                "n_missing": 0
+              },
+              "tone_after": {
+                "counts": {
+                  "Positive": 1,
+                  "Neutral": 5,
+                  "Negative": 0
+                },
+                "shares": {
+                  "Positive": 0.1667,
+                  "Neutral": 0.8333,
+                  "Negative": 0.0
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": 0.0301,
+                    "high": 0.5635
+                  },
+                  "Neutral": {
+                    "low": 0.4365,
+                    "high": 0.9699
+                  },
+                  "Negative": {
+                    "low": 0.0,
+                    "high": 0.3903
+                  }
+                },
+                "classified": 6,
+                "unclassified": 0,
+                "stories": 6,
+                "balance": 0.1667,
+                "balance_low": -0.1904,
+                "balance_high": 0.5237,
+                "balance_se": 0.1822,
+                "mean": 1.17,
+                "n": 6,
+                "n_missing": 0
+              }
+            }
+          }
+        }
+      ],
+      "change_points": [],
+      "project_context": {
+        "display_name": "Urbane Seilbahn Bonn (Venusberg – Beuel)",
+        "city": "Bonn",
+        "stage": "Planning",
+        "official_site_scans": [
+          {
+            "source_url": "https://www.bonn.de",
+            "page_title": "Startseite bonn.de | Bundesstadt Bonn",
+            "meta_description": "Herzlich willkommen auf den Internetseiten der Bundesstadt Bonn! Hier finden Sie Informationen zur Stadt und haben Zugang zu allen Services der Stadtverwaltung.",
+            "matching_headlines": [
+              "Nordbrücke Förderanträge für digitale Mobilität gestellt",
+              "Verkehrshinweise. Informationen zur Nordbrücke"
+            ],
+            "status": "ok"
+          }
+        ],
+        "latest_news": [
+          {
+            "title": "Volt fordert einen Bauturbo für die Fuß-/Radbrücke in der Höhe der Zweiten Fährgasse und für die Seilbahn",
+            "source": "Volt Deutschland",
+            "published": "Wed, 23 Sep 2026 17:36:51 GMT",
+            "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPVUFVTkJ4S09YMWtyaWFqWVlDUGo2NmUwTXlIQ0QwbmVybHdIR1FhWWZ3Z2NxX1FDNXZscWhtTzkzZWNDb0dTVG1jekd3b0d2bGEzZDg4SDBYOEZrMDNKY2dXVVVBX1Q5cnhhOHUtMmlUTEN0Um4tQkh2NXgzMG94bk9qOGhqb0lFNHdGSFc0RTlObVJRenVTenE0UEtKcTJtVU4zRERRanJDc0RHajVUM0tCam5lTUtQalBMOGo0TWlrZWIyXzlDeHdRRjd6Ukd3eUdOMjBhODJMSmIxOUhncV9RYXl3SXVad0VF?oc=5"
+          },
+          {
+            "title": "Könnte die Seilbahn gegen das Verkehrschaos helfen?",
+            "source": "Radio Bonn / Rhein-Sieg",
+            "published": "Thu, 11 Jun 2026 07:00:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPRWhVa0lzeXJIZ0FDYzRuOURPbzc5M2xERGNRY1VVYUVzU1VqaHZRQ2NTNzRpWlBYNTN3cnRlLVM1amVOUkZfdGpMVXppU1Jqc2tjSmpnT1lDcTNwRFpGdTNuZWtJVDk2RWFJVzZxN0tSTC1NcGdpS1hyR3piMDlQRWNTck9FZUpMQ2NIRWUzSy1ncEZKdi1v?oc=5"
+          },
+          {
+            "title": "Nahverkehr: Bonner Seilbahn soll erst ab 2032 starten und das sind die Gründe",
+            "source": "General-Anzeiger Bonn",
+            "published": "Wed, 04 Mar 2026 08:00:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNbGtEWUNJN3A3ZWlLTXZRSmZDbTMzdmYxWXRTQWZRNU1ZNlNuVE9BTnBBRGpjT2dZY1lCb0l6Ukh3NE5zdDlkaVJmSHFzU2k0OWNRYUlBTVNhRU94WVZodVBjM1Z1QUdGVlBaMEtacml5OEQ1WVp5N0I2UWNtaV9oQW44ZllNSHhaZ3dnSy0zb0hESUNlQjctTg?oc=5"
+          },
+          {
+            "title": "Seilbahn über Bonn – Millionenprojekt soll Verkehr entlasten",
+            "source": "RTL.de",
+            "published": "Tue, 24 Mar 2026 07:00:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPUS1LWS1PNkJpN1hHNEJoZFYxQjB3SVJ0RnpQM04yN0ZqSW1CMlJaTDBfWHU2WFg3cGcyLUYyN0NySTY3MkFCeFEzMnhOSTJqLWxpU0VJakpNbUZZM0lIQnlyN2o3Z0JpcTZVM0VvUTdTRFI0NFRpOTlqV2RRWUlKMkRYN29ya0VBTUwybDVGWk02amJXc3R6Qkx1RUJLMTlfS21vclpn?oc=5"
+          }
+        ],
+        "curated_events": []
+      }
+    },
+    {
+      "project": "Heilbronn_Seilbahn",
+      "total_posts": 210,
+      "date_range": "2024-12-19 to 2026-10-15",
+      "peak_selection": {
+        "max_major_peaks": 7,
+        "min_spacing_days": 47,
+        "n_major": 2,
+        "n_significant_peaks": 5,
+        "dispersion": 1.511,
+        "false_alarm_budget": 0.5
+      },
+      "peaks": [
+        {
+          "date": "2025-03-28",
+          "post_count": 4,
+          "baseline_posts_per_day": 0.16,
+          "relative_to_baseline": 25.4,
+          "significance": 3.2,
+          "excess_posts": 4.0,
+          "prominence": 4.0,
+          "avg_sentiment": 1.25,
+          "tone_n": 4,
+          "tone_missing": 0,
+          "crawler_window": {
+            "start": "2025-03-25",
+            "end": "2025-03-30"
+          },
+          "sample_titles": [
+            "Seilbahn durch Heilbronn: Pläne für spektakuläres Projekt werden konkreter - STIMME.de",
+            "Statt Bus und Stadtbahn: Heilbronn plant Seilbahn zum KI-Park"
+          ],
+          "rank": 5,
+          "tier": "minor",
+          "crawled": true,
+          "context": {
+            "event_type": "Political decision",
+            "event_type_secondary": null,
+            "summary": "",
+            "confidence": "high",
+            "confidence_points": 6,
+            "method": "rule-based",
+            "top_terms": [
+              "genießen",
+              "böblingen",
+              "baubeschluss",
+              "nachgedacht",
+              "tatsächlich",
+              "erstmals"
+            ],
+            "amounts_mentioned": [],
+            "top_headlines": [
+              "360 Grad | Eine Seilbahn und neue Sport-Arenen für Heilbronn - STIMME.de",
+              "Seilbahn durch Heilbronn: Pläne für spektakuläres Projekt werden konkreter - STIMME.de",
+              "Statt Bus und Stadtbahn: Heilbronn plant Seilbahn zum KI-Park"
+            ],
+            "source_profile": {
+              "n_posts": 5,
+              "n_sources": 4,
+              "n_unique_titles": 5,
+              "media_types": {
+                "News": 5
+              },
+              "top_source": "www.stimme.de",
+              "top_source_share": 0.4,
+              "likely_syndication": false
+            },
+            "topic_share": 1.0,
+            "off_topic_suspect": false,
+            "event_type_scores": {
+              "Political decision": 3,
+              "Planning / route / feasibility": 1
+            },
+            "curated_events": [],
+            "external_candidates": [
+              {
+                "title": "Seilbahn durch Heilbronn: Pläne für spektakuläres Projekt werden konkreter",
+                "source": "Stimme",
+                "published": "Fri, 28 Mar 2025 07:00:00 GMT",
+                "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPVGJSVTNsNy1palZERlhPazQzWVNfWjQ4Nk5lLW1RMG1jeG1mdXhwVkxEbkdoVXk0OUxFV214Q0RTZjAwT2o4MkFhaVRDbnBEaEx4aGxxeXNFM3FoSWZpLWJRMzUzangxQ1ItUVdEb3YyUU91SE1kMW1GS1FKWll3UEJUTjVGRWRHYlhuNVVaZnkyY0xGNVB4cHptOUhTOU1wQmhPQVVNU0VaS0lfa0xCckFOUlRJdFhLWUZCaXJYd2x4Z243LXdIbXZldmM4TnpKZk9SanZB?oc=5",
+                "match_score": 4
+              },
+              {
+                "title": "Seilbahn-Pläne in Heilbronn werden konkret: Die Details zum Mega-Projekt",
+                "source": "Echo24.de",
+                "published": "Fri, 04 Apr 2025 07:00:00 GMT",
+                "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNX3NCWmtjMXhhcHhzM3hwckRwZUdHSGs1M2ZPU1JteVhnU2owdVlSSG1kaGxvaE8yYUYzdGJrZlNBQW16Z0xtdlJZTmxLclJZV015dWNrRUxpNVVzd3ZSWmdkMTdZOVBKYl80eW9RcUdLZTctdkxKZmxaVlFBVmV4Yk02MGZYVHBCa1lNWFh5R3hsMndxSVRIOEo4U2hCcmQ4cFRqUmxJQzYzejI5dWRQalpVNEFzLXlFTkxETTdQdEtlY2RnMlVBeFNLcURrQnRkd1I4WWRjNkxqYWRxZ2c?oc=5",
+                "match_score": 2
+              }
+            ],
+            "evidence_mention_ids": [
+              "29174404,127945",
+              "29174404,128161",
+              "26449075,47254",
+              "28295141,270517",
+              "29174404,128326"
+            ],
+            "effects": {
+              "baseline_posts_per_day": 0.0,
+              "decay_days": 1,
+              "decay_note": null,
+              "persistence": "stayed high",
+              "avg_posts_per_day_days_7_to_21": 1.73,
+              "sentiment_14d_before": null,
+              "sentiment_14d_after": 1.63,
+              "sentiment_n_before_after": [
+                0,
+                27
+              ],
+              "sentiment_missing_before_after": [
+                0,
+                3
+              ],
+              "tone_before": {
+                "counts": {
+                  "Positive": 0,
+                  "Neutral": 0,
+                  "Negative": 0
+                },
+                "shares": {
+                  "Positive": 0.0,
+                  "Neutral": 0.0,
+                  "Negative": 0.0
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": null,
+                    "high": null
+                  },
+                  "Neutral": {
+                    "low": null,
+                    "high": null
+                  },
+                  "Negative": {
+                    "low": null,
+                    "high": null
+                  }
+                },
+                "classified": 0,
+                "unclassified": 0,
+                "stories": 0,
+                "balance": null,
+                "balance_low": null,
+                "balance_high": null,
+                "balance_se": null,
+                "mean": null,
+                "n": 0,
+                "n_missing": 0
+              },
+              "tone_after": {
+                "counts": {
+                  "Positive": 17,
+                  "Neutral": 10,
+                  "Negative": 0
+                },
+                "shares": {
+                  "Positive": 0.6296,
+                  "Neutral": 0.3704,
+                  "Negative": 0.0
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": 0.4423,
+                    "high": 0.7847
+                  },
+                  "Neutral": {
+                    "low": 0.2153,
+                    "high": 0.5577
+                  },
+                  "Negative": {
+                    "low": 0.0,
+                    "high": 0.1246
+                  }
+                },
+                "classified": 27,
+                "unclassified": 3,
+                "stories": 30,
+                "balance": 0.6296,
+                "balance_low": 0.4368,
+                "balance_high": 0.8224,
+                "balance_se": 0.0984,
+                "mean": 1.63,
+                "n": 27,
+                "n_missing": 3
+              }
+            }
+          }
+        },
+        {
+          "date": "2025-04-04",
+          "post_count": 15,
+          "baseline_posts_per_day": 0.16,
+          "relative_to_baseline": 95.1,
+          "significance": 11.2,
+          "excess_posts": 25.1,
+          "prominence": 15.0,
+          "avg_sentiment": 1.6,
+          "tone_n": 10,
+          "tone_missing": 2,
+          "crawler_window": {
+            "start": "2025-04-01",
+            "end": "2025-04-06"
+          },
+          "sample_titles": [
+            "ÖPNV der Zukunft? Heilbronn plant Seilbahn zum KI-Hotspot",
+            "++ Info-Date am Morgen, 4.4.25: US-Zölle drücken Welthandel ++ - SWR Aktuell"
+          ],
+          "rank": 1,
+          "tier": "major",
+          "crawled": true,
+          "context": {
+            "event_type": "Political decision",
+            "event_type_secondary": null,
+            "summary": "",
+            "confidence": "high",
+            "confidence_points": 7,
+            "method": "rule-based",
+            "top_terms": [
+              "licht",
+              "grünes",
+              "geplant",
+              "sommer",
+              "künstliche",
+              "drees"
+            ],
+            "amounts_mentioned": [],
+            "top_headlines": [
+              "Öffentlicher Nahverkehr: Heilbronn sagt Ja zur Seilbahn-Idee",
+              "Medienberichte • Re: Heilbronn: Seilbahn für öffentlichen Nahverkehr",
+              "Seilbahn-Pläne für Heilbronn: Bilder zeigen mögliche Haltestellen - STIMME.de"
+            ],
+            "source_profile": {
+              "n_posts": 26,
+              "n_sources": 18,
+              "n_unique_titles": 22,
+              "media_types": {
+                "News": 16,
+                "Social Network": 1,
+                "Other": 3,
+                "Forums": 4,
+                "Pictures": 1,
+                "Microblog": 1
+              },
+              "top_source": "stimme.de",
+              "top_source_share": 0.15,
+              "likely_syndication": false
+            },
+            "topic_share": 0.92,
+            "off_topic_suspect": false,
+            "event_type_scores": {
+              "Political decision": 17.5,
+              "Planning / route / feasibility": 13.0,
+              "Cost / funding": 5.0,
+              "Visualisation / design": 2,
+              "Personnel": 2
+            },
+            "curated_events": [],
+            "external_candidates": [
+              {
+                "title": "Bilder zeigen mögliche Seilbahn-Haltestellen in Heilbronn",
+                "source": "Stimme",
+                "published": "Tue, 01 Apr 2025 07:00:00 GMT",
+                "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPUk9OeTNzTGlkM2hZcDhqeS0zbHk3V0hsOFJHa3k5ektuLTNBUDNNZzVmemJWWXBnckx5X2tlbTJrS2tteXlONGM4MkRreC1CVEJIRXFSUkZ4YlZ5cVB0SHVtakd2OWVLYjF0RHZHZ0F1ZU1OZjEzb3ZfY2x3MlBsdl92R3I1eVYyQWo3OEtjYUs1aEhIakRId28zQ1dxMWNTNzNldTRVcUxwNFNRMVFRX1FwOXp1UjBx?oc=5",
+                "match_score": 4
+              }
+            ],
+            "evidence_mention_ids": [
+              "29174404,129397",
+              "29174404,129403",
+              "29174404,129421",
+              "29174404,129700",
+              "29174404,129715",
+              "4101569,18733",
+              "10575219,1427",
+              "29174404,129874",
+              "11999879,52045",
+              "28900880,37843"
+            ],
+            "effects": {
+              "baseline_posts_per_day": 0.16,
+              "decay_days": 1,
+              "decay_note": null,
+              "persistence": "faded",
+              "avg_posts_per_day_days_7_to_21": 0.27,
+              "sentiment_14d_before": 1.2,
+              "sentiment_14d_after": 1.5,
+              "sentiment_n_before_after": [
+                5,
+                10
+              ],
+              "sentiment_missing_before_after": [
+                0,
+                0
+              ],
+              "tone_before": {
+                "counts": {
+                  "Positive": 1,
+                  "Neutral": 4,
+                  "Negative": 0
+                },
+                "shares": {
+                  "Positive": 0.2,
+                  "Neutral": 0.8,
+                  "Negative": 0.0
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": 0.0362,
+                    "high": 0.6245
+                  },
+                  "Neutral": {
+                    "low": 0.3755,
+                    "high": 0.9638
+                  },
+                  "Negative": {
+                    "low": 0.0,
+                    "high": 0.4345
+                  }
+                },
+                "classified": 5,
+                "unclassified": 0,
+                "stories": 5,
+                "balance": 0.2,
+                "balance_low": -0.2097,
+                "balance_high": 0.6097,
+                "balance_se": 0.209,
+                "mean": 1.2,
+                "n": 5,
+                "n_missing": 0
+              },
+              "tone_after": {
+                "counts": {
+                  "Positive": 5,
+                  "Neutral": 5,
+                  "Negative": 0
+                },
+                "shares": {
+                  "Positive": 0.5,
+                  "Neutral": 0.5,
+                  "Negative": 0.0
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": 0.2366,
+                    "high": 0.7634
+                  },
+                  "Neutral": {
+                    "low": 0.2366,
+                    "high": 0.7634
+                  },
+                  "Negative": {
+                    "low": 0.0,
+                    "high": 0.2775
+                  }
+                },
+                "classified": 10,
+                "unclassified": 0,
+                "stories": 10,
+                "balance": 0.5,
+                "balance_low": 0.1666,
+                "balance_high": 0.8334,
+                "balance_se": 0.1701,
+                "mean": 1.5,
+                "n": 10,
+                "n_missing": 0
+              }
+            }
+          }
+        },
+        {
+          "date": "2025-05-12",
+          "post_count": 13,
+          "baseline_posts_per_day": 0.33,
+          "relative_to_baseline": 39.0,
+          "significance": 6.6,
+          "excess_posts": 15.0,
+          "prominence": 13.0,
+          "avg_sentiment": 1.82,
+          "tone_n": 11,
+          "tone_missing": 2,
+          "crawler_window": {
+            "start": "2025-05-09",
+            "end": "2025-05-14"
+          },
+          "sample_titles": [
+            "Seilbahn in Heilbronn: Land unterstützt Pläne mit Millionen-Betrag - STIMME.de",
+            "Seilbahn für Heilbronn: Die Chancen steigen - STIMME.de"
+          ],
+          "rank": 2,
+          "tier": "minor",
+          "crawled": true,
+          "context": {
+            "event_type": "Media coverage (no clear trigger)",
+            "event_type_secondary": null,
+            "summary": "",
+            "confidence": "medium",
+            "confidence_points": 5,
+            "method": "rule-based",
+            "top_terms": [
+              "winfried",
+              "verkehrsminister",
+              "absichtserklärung",
+              "übernimmt",
+              "planungskosten",
+              "hälfte"
+            ],
+            "amounts_mentioned": [
+              "38.000 euro"
+            ],
+            "top_headlines": [
+              "Seilbahn in Heilbronn: Land unterstützt Pläne mit Millionen-Betrag - STIMME.de",
+              "Seilbahn für Heilbronn: Die Chancen steigen - STIMME.de",
+              "Verkehr: Land sagt Millionen für geplante Seilbahn in Heilbronn zu"
+            ],
+            "source_profile": {
+              "n_posts": 17,
+              "n_sources": 16,
+              "n_unique_titles": 17,
+              "media_types": {
+                "News": 9,
+                "Other": 4,
+                "Blog": 1,
+                "Microblog": 3
+              },
+              "top_source": "www.stimme.de",
+              "top_source_share": 0.12,
+              "likely_syndication": false
+            },
+            "topic_share": 0.94,
+            "off_topic_suspect": false,
+            "event_type_scores": {
+              "Cost / funding": 6.5,
+              "Planning / route / feasibility": 2.0,
+              "Protest / public participation": 1,
+              "Service disruption / closure": 1,
+              "Event / summit": 0.5
+            },
+            "curated_events": [],
+            "external_candidates": [
+              {
+                "title": "Seilbahn in Heilbronn: Land unterstützt Pläne mit Millionen-Betrag",
+                "source": "Stimme",
+                "published": "Mon, 12 May 2025 07:00:00 GMT",
+                "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPbG5GYUcwdEduQWpQOVNWSWZKWEFOTWZMaDZnZGY5bmJNNUdIbXp1dm0wdEVzbnVKOG4zQVhZejcwZXpsdnJyenI4X20xSWNPZnpnOFBVWmRHY2QwLXRZWmh6MkZSM0JFSFdWLW9TSTNyd0Vwbk52YWxmWkpwU3ZmNTN2cXF6RmpOWUFTZDZfVEdMSHZkMEZzOThGSUlpNEhqSGpVMDViSUpGMkhzRHV2Q2NaRnVGSFZZWHkyWGh5eDY3QW9OUEU2clRyR2UzZw?oc=5",
+                "match_score": 4
+              },
+              {
+                "title": "Verkehr: Land sagt Millionen für geplante Seilbahn in Heilbronn zu",
+                "source": "DIE ZEIT",
+                "published": "Mon, 12 May 2025 07:00:00 GMT",
+                "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNaldSUlhqUXFPaTlGT3JxUGVhcktEcFQ1a1czazM2M3FaWUVlVzNpNS05aVNwZXJhN05wSTRPUGZPWUkwd29XY0xGMEtQQmIxdHN3MEVINHVNYnVBOHJnMGVxWkRtMElPcEhiOHV2UnB2NXg1aDREVnhaNGJfNHJ2alpNWXBaaC1qSDkzclI3SnB6ZENKTzhkZlh3?oc=5",
+                "match_score": 3
+              }
+            ],
+            "evidence_mention_ids": [
+              "29174404,138527",
+              "29174404,138528",
+              "9307457,53450",
+              "29175652,61452",
+              "275423,19895",
+              "26063259,182994",
+              "6943645,1804",
+              "28900850,41606",
+              "29241097,2465",
+              "29200848,7073"
+            ],
+            "effects": {
+              "baseline_posts_per_day": 0.42,
+              "decay_days": 4,
+              "decay_note": null,
+              "persistence": "faded",
+              "avg_posts_per_day_days_7_to_21": 0.8,
+              "sentiment_14d_before": 0.5,
+              "sentiment_14d_after": 1.77,
+              "sentiment_n_before_after": [
+                2,
+                13
+              ],
+              "sentiment_missing_before_after": [
+                1,
+                1
+              ],
+              "tone_before": {
+                "counts": {
+                  "Positive": 0,
+                  "Neutral": 1,
+                  "Negative": 1
+                },
+                "shares": {
+                  "Positive": 0.0,
+                  "Neutral": 0.5,
+                  "Negative": 0.5
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": 0.0,
+                    "high": 0.6576
+                  },
+                  "Neutral": {
+                    "low": 0.0945,
+                    "high": 0.9055
+                  },
+                  "Negative": {
+                    "low": 0.0945,
+                    "high": 0.9055
+                  }
+                },
+                "classified": 2,
+                "unclassified": 1,
+                "stories": 3,
+                "balance": -0.5,
+                "balance_low": -1.0,
+                "balance_high": 0.2332,
+                "balance_se": 0.3741,
+                "mean": 0.5,
+                "n": 2,
+                "n_missing": 1
+              },
+              "tone_after": {
+                "counts": {
+                  "Positive": 10,
+                  "Neutral": 3,
+                  "Negative": 0
+                },
+                "shares": {
+                  "Positive": 0.7692,
+                  "Neutral": 0.2308,
+                  "Negative": 0.0
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": 0.4974,
+                    "high": 0.9182
+                  },
+                  "Neutral": {
+                    "low": 0.0818,
+                    "high": 0.5026
+                  },
+                  "Negative": {
+                    "low": 0.0,
+                    "high": 0.2281
+                  }
+                },
+                "classified": 13,
+                "unclassified": 1,
+                "stories": 14,
+                "balance": 0.7692,
+                "balance_low": 0.4954,
+                "balance_high": 1.0,
+                "balance_se": 0.1397,
+                "mean": 1.77,
+                "n": 13,
+                "n_missing": 1
+              }
+            }
+          }
+        },
+        {
+          "date": "2026-07-04",
+          "post_count": 4,
+          "baseline_posts_per_day": 0.16,
+          "relative_to_baseline": 25.4,
+          "significance": 3.2,
+          "excess_posts": 7.0,
+          "prominence": 4.0,
+          "avg_sentiment": 1.0,
+          "tone_n": 4,
+          "tone_missing": 0,
+          "crawler_window": {
+            "start": "2026-07-01",
+            "end": "2026-07-06"
+          },
+          "sample_titles": [
+            "Lange war es still um das viel beachtete Heilbronner Seilbahn-Projekt. Jetzt gibt es neue Details.",
+            "Der ökologisch orientierte Verkehrsclub sieht Heilbronns Pläne, eine Seilbahn zu bauen, kritisch."
+          ],
+          "rank": 3,
+          "tier": "major",
+          "crawled": true,
+          "context": {
+            "event_type": "Opening / start of service",
+            "event_type_secondary": null,
+            "summary": "",
+            "confidence": "high",
+            "confidence_points": 6,
+            "method": "rule-based",
+            "top_terms": [
+              "verkehrsclub",
+              "details",
+              "nennt",
+              "ringle",
+              "youtube",
+              "baubürgermeister"
+            ],
+            "amounts_mentioned": [],
+            "top_headlines": [
+              "Lange war es still um das viel beachtete Heilbronner Seilbahn-Projekt. Jetzt gibt es neue Details.",
+              "Der ökologisch orientierte Verkehrsclub sieht Heilbronns Pläne, eine Seilbahn zu bauen, kritisch.",
+              "Seilbahn für Heilbronn: Stadt nennt erstmals möglichen Eröffnungstermin - STIMME.de"
+            ],
+            "source_profile": {
+              "n_posts": 8,
+              "n_sources": 6,
+              "n_unique_titles": 8,
+              "media_types": {
+                "Social Network": 2,
+                "News": 3,
+                "Other": 2,
+                "YouTube Comments": 1
+              },
+              "top_source": "www.facebook.com",
+              "top_source_share": 0.25,
+              "likely_syndication": false
+            },
+            "topic_share": 0.75,
+            "off_topic_suspect": false,
+            "event_type_scores": {
+              "Opening / start of service": 5,
+              "Protest / public participation": 2.0
+            },
+            "curated_events": [],
+            "external_candidates": [
+              {
+                "title": "Seilbahn für Heilbronn: Stadt nennt erstmals möglichen Eröffnungstermin",
+                "source": "Stimme",
+                "published": "Sat, 04 Jul 2026 07:00:00 GMT",
+                "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPallCYXlzbGNveUtJdFZ6V3V0SXVHZWt1SnNENW1naG40THJXUVZQT3hNaHlqeDRXUElOaHZzbjVvUzZhM19HUk1MUjhTek5SRWFSUUt4SnhsNW9RVk14UWNIVUlyOC1VRzZqano3MzFEbjlYVWtXTGtmczVNcWpGOGlsR0g4LWZMV09JcTBzd0xaSVNLZDJ5UnZZckNJQ0dfUVFuYURXMUdlWmpGWk85VVA0YkVjLVVUM3BhWERtdWEtOGlDNWZzQmtBUDRkM2J4QVNKYzcweFJoTVdjdjcwb3FR?oc=5",
+                "match_score": 5
+              }
+            ],
+            "evidence_mention_ids": [
+              "4101569,23505",
+              "4101569,23504",
+              "29174404,246192",
+              "29174404,246205",
+              "11830837,554672",
+              "24523237,1831",
+              "29174404,246652",
+              "11277511,717446802"
+            ],
+            "effects": {
+              "baseline_posts_per_day": 0.1,
+              "decay_days": 5,
+              "decay_note": null,
+              "persistence": "faded",
+              "avg_posts_per_day_days_7_to_21": 0.4,
+              "sentiment_14d_before": null,
+              "sentiment_14d_after": 1.0,
+              "sentiment_n_before_after": [
+                0,
+                1
+              ],
+              "sentiment_missing_before_after": [
+                0,
+                0
+              ],
+              "tone_before": {
+                "counts": {
+                  "Positive": 0,
+                  "Neutral": 0,
+                  "Negative": 0
+                },
+                "shares": {
+                  "Positive": 0.0,
+                  "Neutral": 0.0,
+                  "Negative": 0.0
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": null,
+                    "high": null
+                  },
+                  "Neutral": {
+                    "low": null,
+                    "high": null
+                  },
+                  "Negative": {
+                    "low": null,
+                    "high": null
+                  }
+                },
+                "classified": 0,
+                "unclassified": 0,
+                "stories": 0,
+                "balance": null,
+                "balance_low": null,
+                "balance_high": null,
+                "balance_se": null,
+                "mean": null,
+                "n": 0,
+                "n_missing": 0
+              },
+              "tone_after": {
+                "counts": {
+                  "Positive": 0,
+                  "Neutral": 1,
+                  "Negative": 0
+                },
+                "shares": {
+                  "Positive": 0.0,
+                  "Neutral": 1.0,
+                  "Negative": 0.0
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": 0.0,
+                    "high": 0.7935
+                  },
+                  "Neutral": {
+                    "low": 0.2065,
+                    "high": 1.0
+                  },
+                  "Negative": {
+                    "low": 0.0,
+                    "high": 0.7935
+                  }
+                },
+                "classified": 1,
+                "unclassified": 0,
+                "stories": 1,
+                "balance": 0.0,
+                "balance_low": -0.784,
+                "balance_high": 0.784,
+                "balance_se": 0.4,
+                "mean": 1.0,
+                "n": 1,
+                "n_missing": 0
+              }
+            }
+          }
+        },
+        {
+          "date": "2026-07-23",
+          "post_count": 4,
+          "baseline_posts_per_day": 0.16,
+          "relative_to_baseline": 25.4,
+          "significance": 3.2,
+          "excess_posts": 4.9,
+          "prominence": 4.0,
+          "avg_sentiment": 1.0,
+          "tone_n": 3,
+          "tone_missing": 1,
+          "crawler_window": {
+            "start": "2026-07-20",
+            "end": "2026-07-25"
+          },
+          "sample_titles": [
+            "Stadtbahn für 157 Millionen Euro? Das ist keine Traumtänzerei - STIMME.de",
+            "Neuer Plan für Heilbronner Seilbahn: Hier soll die City-Haltestelle entstehen - STIMME.de"
+          ],
+          "rank": 4,
+          "tier": "minor",
+          "crawled": true,
+          "context": {
+            "event_type": "Cost / funding",
+            "event_type_secondary": null,
+            "summary": "Note: many posts look like reprints of the same story",
+            "confidence": "high",
+            "confidence_points": 6,
+            "method": "rule-based",
+            "top_terms": [
+              "haltestelle"
+            ],
+            "amounts_mentioned": [
+              "157 millionen euro",
+              "146,3 millionen"
+            ],
+            "top_headlines": [
+              "Heilbronner Seilbahn soll 157 Millionen Euro kosten: Neuer Platz für City-Halt - STIMME.de",
+              "Stadtbahn für 157 Millionen Euro? Das ist keine Traumtänzerei - STIMME.de",
+              "Neuer Plan für Heilbronner Seilbahn: Hier soll die City-Haltestelle entstehen - STIMME.de"
+            ],
+            "source_profile": {
+              "n_posts": 6,
+              "n_sources": 3,
+              "n_unique_titles": 6,
+              "media_types": {
+                "News": 5,
+                "Social Network": 1
+              },
+              "top_source": "www.stimme.de",
+              "top_source_share": 0.67,
+              "likely_syndication": true
+            },
+            "topic_share": 1.0,
+            "off_topic_suspect": false,
+            "event_type_scores": {
+              "Cost / funding": 16.5,
+              "Planning / route / feasibility": 4
+            },
+            "curated_events": [],
+            "external_candidates": [
+              {
+                "title": "Heilbronner Seilbahn soll 157 Millionen Euro kosten: Neuer Platz für City-Halt",
+                "source": "Stimme",
+                "published": "Wed, 22 Jul 2026 07:00:00 GMT",
+                "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNR0ZuMTBLenJmTXZXRVdsSWZ0Y200RDhUd0RrWHlXOGRaeXNrWHJ3b3dhZ014dmZHcFZRQUhXTE5SVmN5UXFoQUozd3Vhdm9jLVhDU3hDMjUydTdrcGFwbjhxc2NGSTBZazlsTjNITWtkQzQ1YlBlZDM3d2ZkNDZHcS1fN2FzZmlHSnJUOWVWUEs3S3NGYk83emotMTk3UWxaenFEN2pUSEthRkt4V2w1aXJn?oc=5",
+                "match_score": 3
+              },
+              {
+                "title": "Neuer Plan für Heilbronner Seilbahn: Hier soll die City-Haltestelle entstehen",
+                "source": "Stimme",
+                "published": "Thu, 23 Jul 2026 07:00:00 GMT",
+                "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNQTF0ajNnYi1ncHhabTRkeWNiVWRPaWs1WG9uRklUOWVsTkwzODhJaE9ETk5fNl9qd0JkYjg2d0JSRkVRNFQ4ZnhoWG5JZEVBTWpiUlBTbjBoYWRJaWdNNlpLZ2x1Z2g2Z2V1bGFWQllmZml2REtUVU5nLUpXUW53VDVUSWdvbzVSMFdGR2tOMkVtN2JHdktMSUs1a3VoeUZRbXY3TGotRzE2NmVVYVBfTmx4MHdxbGRJLVBweQ?oc=5",
+                "match_score": 3
+              }
+            ],
+            "evidence_mention_ids": [
+              "29174404,251360",
+              "29174404,251611",
+              "29174404,251662",
+              "4101569,23748",
+              "29174404,251829",
+              "22318860,104932"
+            ],
+            "effects": {
+              "baseline_posts_per_day": 0.29,
+              "decay_days": 9,
+              "decay_note": null,
+              "persistence": "faded",
+              "avg_posts_per_day_days_7_to_21": 0.27,
+              "sentiment_14d_before": null,
+              "sentiment_14d_after": 1.27,
+              "sentiment_n_before_after": [
+                0,
+                11
+              ],
+              "sentiment_missing_before_after": [
+                0,
+                2
+              ],
+              "tone_before": {
+                "counts": {
+                  "Positive": 0,
+                  "Neutral": 0,
+                  "Negative": 0
+                },
+                "shares": {
+                  "Positive": 0.0,
+                  "Neutral": 0.0,
+                  "Negative": 0.0
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": null,
+                    "high": null
+                  },
+                  "Neutral": {
+                    "low": null,
+                    "high": null
+                  },
+                  "Negative": {
+                    "low": null,
+                    "high": null
+                  }
+                },
+                "classified": 0,
+                "unclassified": 0,
+                "stories": 0,
+                "balance": null,
+                "balance_low": null,
+                "balance_high": null,
+                "balance_se": null,
+                "mean": null,
+                "n": 0,
+                "n_missing": 0
+              },
+              "tone_after": {
+                "counts": {
+                  "Positive": 3,
+                  "Neutral": 8,
+                  "Negative": 0
+                },
+                "shares": {
+                  "Positive": 0.2727,
+                  "Neutral": 0.7273,
+                  "Negative": 0.0
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": 0.0975,
+                    "high": 0.5657
+                  },
+                  "Neutral": {
+                    "low": 0.4343,
+                    "high": 0.9025
+                  },
+                  "Negative": {
+                    "low": 0.0,
+                    "high": 0.2588
+                  }
+                },
+                "classified": 11,
+                "unclassified": 2,
+                "stories": 13,
+                "balance": 0.2727,
+                "balance_low": -0.0112,
+                "balance_high": 0.5567,
+                "balance_se": 0.1449,
+                "mean": 1.27,
+                "n": 11,
+                "n_missing": 2
+              }
+            }
+          }
+        }
+      ],
+      "change_points": [],
+      "project_context": {
+        "display_name": "Urbane Seilbahn Heilbronn (City – IPAI)",
+        "city": "Heilbronn",
+        "stage": "Planning / feasibility",
+        "official_site_scans": [
+          {
+            "source_url": "https://www.heilbronn.de",
+            "page_title": "Stadt Heilbronn: Stadt Heilbronn: Startseite",
+            "meta_description": "Offizielles Internetportal der Stadt Heilbronn",
+            "matching_headlines": [
+              "Betriebliches Mobilitätsmanagement",
+              "Innovationspark Künstliche Intelligenz (IPAI) +",
+              "IPAI-Baustelle nimmt Gestalt an",
+              "Neue Einblicke in den IPAI",
+              "Verkehr und Standort IPAI"
+            ],
+            "status": "ok"
+          }
+        ],
+        "latest_news": [
+          {
+            "title": "Urbane Seilbahn Heilbronn: Vorplanung kann beginnen",
+            "source": "Seilbahn.net",
+            "published": "Fri, 07 Aug 2026 06:28:03 GMT",
+            "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPUHoyd042dy1QRGlGWlBZbGpJenhFT01UY3RLU3VZcmQxWnB5M3lDR3I0dGNZRktDODNqUUhJMWc3OHpfLW1STEtVeHBwWmpZaWRvUnhCZW13QjdsN3hBaU9NZl85aUFveFJ4dW03bFFHM2NBSUZNZG9RRkxZZGE3QjlQLWJSV1dIbElRcA?oc=5"
+          },
+          {
+            "title": "Seilbahn in Heilbronn: Stadt verrät, wann erstmals Passagiere darin fahren könnten",
+            "source": "Echo24.de",
+            "published": "Wed, 08 Jul 2026 07:00:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNZFViS3JueEczbHhxN0M4a3ozYmF1TUxTWENVTGJwem41eVh3a1loWGNTM3hLa0RLVWlRcnZmWFNTbE5ielRjWHZaX0VCRWsxdmpyemoySDlNQkNKTFJkTFBIeGk2aFdORDYtMi1Hd0dxeUNSWENPMDAtY3IweUlzUjEwVUJ5bmpDYTNwNlU3RXZaY2xyTVJ6RUtuV3FZcXRXbFhDTTJ2SVlJR2pvTXBpTnFkTUE0MXlLNjBQZ2pwX2RrMmpsTUtMekxqRzhaa3VmbERXbm4xVzE3Qmc?oc=5"
+          },
+          {
+            "title": "Heilbronn: Seilbahn-Projekt nimmt nächste Hürde - Sinsheim-Kraichgau - Nachrichten und Aktuelles aus der Region",
+            "source": "Rhein-Neckar-Zeitung",
+            "published": "Fri, 31 Jul 2026 07:00:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQaDFHdmpNdXlEZERJV3NHem9mb1VWS25IUWQwSW1KeFk3UWg5OVk4c1lIU3l1QTZRX05FRFZGMmNpLW1NNWtienF0WDZpN19va195Zy1pVUs2bGlVbjJuT1NQUHF6SG9DakZSOTcwQ25qdlh3MkstekdFMzhWNk5NWm82S2lyVHJiaXQ0MVB1SFp0ZHlhOTlJOGQzdmRPMmpxcjdQdlBLdS1VMkhfRS1FLXE4bHNMeURyNGVfS3NR?oc=5"
+          },
+          {
+            "title": "Heilbronn plant Seilbahn zum Ipai: Gemeinderat treibt Millionenprojekt voran",
+            "source": "Stimme",
+            "published": "Thu, 30 Jul 2026 07:00:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNVlcxVXhXYW1XYTdCeXBQT2ZibHczMDNxeG82ZlRRdUNmWE9tLUpIR2o0QWJITTNiRURCOHN3TW9tVlJYMWg4NkQ4NVYzODFiN1ZmNldKOGJ5bVJUcHoyS2g5RXJ5d3pNM2RBSW5kdmptZkdhMWJuQ0xENnQwS3JfYTZNSW5qc185YkEzdUd5Zm5VN3dxT1B2VnBMbVc4U1JibElIR0xBRlFEWTJILTY3YTFxVlc5dnRfNGFjVDVHek9TSDdU?oc=5"
+          }
+        ],
+        "curated_events": []
+      }
+    },
+    {
+      "project": "IPAI_Campus",
+      "total_posts": 847,
+      "date_range": "2024-10-20 to 2026-10-25",
+      "peak_selection": {
+        "max_major_peaks": 8,
+        "min_spacing_days": 46,
+        "n_major": 5,
+        "n_significant_peaks": 5,
+        "dispersion": 0.612,
+        "false_alarm_budget": 0.5
+      },
+      "peaks": [
+        {
+          "date": "2025-02-11",
+          "post_count": 7,
+          "baseline_posts_per_day": 0.58,
+          "relative_to_baseline": 12.2,
+          "significance": 3.5,
+          "excess_posts": 6.5,
+          "prominence": 7.0,
+          "avg_sentiment": 1.25,
+          "tone_n": 4,
+          "tone_missing": 2,
+          "crawler_window": {
+            "start": "2025-02-08",
+            "end": "2025-02-13"
+          },
+          "sample_titles": [
+            "Bechtle setzt auf Künstliche Intelligenz als Schlüsseltechnologie",
+            "Strategie für KI-Ausbau: Bechtle veröffentlicht KI-Positionierung"
+          ],
+          "rank": 4,
+          "tier": "major",
+          "crawled": true,
+          "context": {
+            "event_type": "Personnel",
+            "event_type_secondary": null,
+            "summary": "",
+            "confidence": "medium",
+            "confidence_points": 3,
+            "method": "rule-based",
+            "top_terms": [
+              "veröffentlicht",
+              "prozessen",
+              "kundenprojekten",
+              "einzusetzen",
+              "positionierung",
+              "neuentwicklungen"
+            ],
+            "amounts_mentioned": [],
+            "top_headlines": [
+              "Bechtle setzt auf Künstliche Intelligenz als Schlüsseltechnologie",
+              "'Geschwindigkeit der Baufahrzeuge im Bereich der ipai Baustelle zu hoch' an Stadt Heilbronn",
+              "Strategie für KI-Ausbau: Bechtle veröffentlicht KI-Positionierung"
+            ],
+            "source_profile": {
+              "n_posts": 10,
+              "n_sources": 10,
+              "n_unique_titles": 9,
+              "media_types": {
+                "Other": 7,
+                "News": 3
+              },
+              "top_source": "www.bechtle.com",
+              "top_source_share": 0.1,
+              "likely_syndication": false
+            },
+            "topic_share": 0.5,
+            "off_topic_suspect": false,
+            "event_type_scores": {
+              "Partnership / membership": 5.5,
+              "Construction / milestone": 4,
+              "Political decision": 0.5,
+              "Personnel": 3,
+              "Cost / funding": 0.5
+            },
+            "curated_events": [],
+            "external_candidates": [],
+            "evidence_mention_ids": [
+              "10241732,276",
+              "12180881,20038",
+              "13279183,3550",
+              "25599020,173",
+              "29155765,890",
+              "29169236,747",
+              "29188507,1268",
+              "29311243,2524",
+              "6757161,7857",
+              "9241394,355"
+            ],
+            "effects": {
+              "baseline_posts_per_day": 0.45,
+              "decay_days": 1,
+              "decay_note": null,
+              "persistence": "faded",
+              "avg_posts_per_day_days_7_to_21": 0.53,
+              "sentiment_14d_before": 1.5,
+              "sentiment_14d_after": 2.0,
+              "sentiment_n_before_after": [
+                2,
+                3
+              ],
+              "sentiment_missing_before_after": [
+                1,
+                1
+              ],
+              "tone_before": {
+                "counts": {
+                  "Positive": 1,
+                  "Neutral": 1,
+                  "Negative": 0
+                },
+                "shares": {
+                  "Positive": 0.5,
+                  "Neutral": 0.5,
+                  "Negative": 0.0
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": 0.0945,
+                    "high": 0.9055
+                  },
+                  "Neutral": {
+                    "low": 0.0945,
+                    "high": 0.9055
+                  },
+                  "Negative": {
+                    "low": 0.0,
+                    "high": 0.6576
+                  }
+                },
+                "classified": 2,
+                "unclassified": 1,
+                "stories": 3,
+                "balance": 0.5,
+                "balance_low": -0.2332,
+                "balance_high": 1.0,
+                "balance_se": 0.3741,
+                "mean": 1.5,
+                "n": 2,
+                "n_missing": 1
+              },
+              "tone_after": {
+                "counts": {
+                  "Positive": 3,
+                  "Neutral": 0,
+                  "Negative": 0
+                },
+                "shares": {
+                  "Positive": 1.0,
+                  "Neutral": 0.0,
+                  "Negative": 0.0
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": 0.4385,
+                    "high": 1.0
+                  },
+                  "Neutral": {
+                    "low": 0.0,
+                    "high": 0.5615
+                  },
+                  "Negative": {
+                    "low": 0.0,
+                    "high": 0.5615
+                  }
+                },
+                "classified": 3,
+                "unclassified": 1,
+                "stories": 4,
+                "balance": 1.0,
+                "balance_low": 0.384,
+                "balance_high": 1.0,
+                "balance_se": 0.3143,
+                "mean": 2.0,
+                "n": 3,
+                "n_missing": 1
+              }
+            }
+          }
+        },
+        {
+          "date": "2025-07-09",
+          "post_count": 11,
+          "baseline_posts_per_day": 0.64,
+          "relative_to_baseline": 17.1,
+          "significance": 5.4,
+          "excess_posts": 23.9,
+          "prominence": 11.0,
+          "avg_sentiment": 1.55,
+          "tone_n": 11,
+          "tone_missing": 0,
+          "crawler_window": {
+            "start": "2025-07-06",
+            "end": "2025-07-11"
+          },
+          "sample_titles": [
+            "So soll Ipai Heilbronn mal aussehen: Illustrationen zeigen künftigen KI-Park",
+            "So soll Ipai Heilbronn später aussehen: Visualisierungen zeigen künftigen KI-Park"
+          ],
+          "rank": 2,
+          "tier": "major",
+          "crawled": true,
+          "context": {
+            "event_type": "Media coverage (no clear trigger)",
+            "event_type_secondary": null,
+            "summary": "",
+            "confidence": "medium",
+            "confidence_points": 4,
+            "method": "rule-based",
+            "top_terms": [
+              "aussehen",
+              "energie",
+              "universität",
+              "entsteht",
+              "zentrale",
+              "millionen"
+            ],
+            "amounts_mentioned": [
+              "20 millionen euro",
+              "20 mio.",
+              "50 millionen euro"
+            ],
+            "top_headlines": [
+              "Millionenförderung für Startup Factory in Baden-Württemberg",
+              "So soll Ipai Heilbronn mal aussehen: Illustrationen zeigen künftigen KI-Park",
+              "So soll Ipai Heilbronn später aussehen: Visualisierungen zeigen künftigen KI-Park"
+            ],
+            "source_profile": {
+              "n_posts": 28,
+              "n_sources": 18,
+              "n_unique_titles": 27,
+              "media_types": {
+                "News": 15,
+                "Blog": 1,
+                "Pictures": 8,
+                "Other": 3,
+                "Social Network": 1
+              },
+              "top_source": "www.instagram.com",
+              "top_source_share": 0.29,
+              "likely_syndication": false
+            },
+            "topic_share": 0.57,
+            "off_topic_suspect": false,
+            "event_type_scores": {
+              "Planning / route / feasibility": 5,
+              "Visualisation / design": 10.5,
+              "Cost / funding": 18.5,
+              "Partnership / membership": 2.5,
+              "Event / summit": 3.0,
+              "Political decision": 1,
+              "Safety / incident": 1,
+              "Personnel": 9.0,
+              "Construction / milestone": 2
+            },
+            "curated_events": [],
+            "external_candidates": [
+              {
+                "title": "Ipai entsteht in Heilbronn: So soll der KI-Park aussehen",
+                "source": "Stimme",
+                "published": "Wed, 09 Jul 2025 07:00:00 GMT",
+                "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxObmFETWNBWm5CYlhZN0dUQ05UOHRxNEM0ZV9YajYxMGtqVFJJOExVYmx4TGliUHF4T1JOb2RQZGE4UFJ1VDNmeEJwZ1JQVUpEN2hEZGpWUGQ1YU9rSHRBdC1mZ0ZDSEhyUkZRUnpfTUxWUHM5eERJdERScWE2Wndnb1cyZlZPT2RRUVE?oc=5",
+                "match_score": 4
+              },
+              {
+                "title": "So soll Ipai Heilbronn aussehen: Visualisierungen geben erste Einblicke in KI-Park",
+                "source": "Echo24.de",
+                "published": "Mon, 14 Jul 2025 07:00:00 GMT",
+                "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNRGJYekgySW5Hc3BuR0tzUWN5bFFYQlJ0UkxRaGZYcnc1bFJnSTBuQXk0NWs5THFDZVNFSklCVVBlR0hEUWtmLVpGd1AyZGUyWWNQb3QxZTJqTi1LMjlwWmx6UWY4VG0zWlV5Z21nQW93RXRKRnd5Y0FOTktsYWdjdHozQ3VPTmFSVzJCQlJmam9ZNUdLZDZRNk1DZ2h5RFRia3YtYmFPX2ZSb2J4YlJsUWxHbk00eXoxTVk5SFU5NGVtVFN5V1huM2QyZUJWZw?oc=5",
+                "match_score": 3
+              }
+            ],
+            "evidence_mention_ids": [
+              "11309869,6218",
+              "11309869,6224",
+              "11309869,6238",
+              "15710895,12668",
+              "16016996,2450",
+              "17712358,275190",
+              "17712358,275345",
+              "17712358,275437",
+              "17712358,275564",
+              "17712358,275598"
+            ],
+            "effects": {
+              "baseline_posts_per_day": 1.32,
+              "decay_days": 3,
+              "decay_note": null,
+              "persistence": "faded",
+              "avg_posts_per_day_days_7_to_21": 0.6,
+              "sentiment_14d_before": 1.33,
+              "sentiment_14d_after": 1.33,
+              "sentiment_n_before_after": [
+                3,
+                9
+              ],
+              "sentiment_missing_before_after": [
+                8,
+                5
+              ],
+              "tone_before": {
+                "counts": {
+                  "Positive": 1,
+                  "Neutral": 2,
+                  "Negative": 0
+                },
+                "shares": {
+                  "Positive": 0.3333,
+                  "Neutral": 0.6667,
+                  "Negative": 0.0
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": 0.0615,
+                    "high": 0.7923
+                  },
+                  "Neutral": {
+                    "low": 0.2077,
+                    "high": 0.9385
+                  },
+                  "Negative": {
+                    "low": 0.0,
+                    "high": 0.5615
+                  }
+                },
+                "classified": 3,
+                "unclassified": 8,
+                "stories": 11,
+                "balance": 0.3333,
+                "balance_low": -0.2474,
+                "balance_high": 0.9141,
+                "balance_se": 0.2963,
+                "mean": 1.33,
+                "n": 3,
+                "n_missing": 8
+              },
+              "tone_after": {
+                "counts": {
+                  "Positive": 3,
+                  "Neutral": 6,
+                  "Negative": 0
+                },
+                "shares": {
+                  "Positive": 0.3333,
+                  "Neutral": 0.6667,
+                  "Negative": 0.0
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": 0.1206,
+                    "high": 0.6458
+                  },
+                  "Neutral": {
+                    "low": 0.3542,
+                    "high": 0.8794
+                  },
+                  "Negative": {
+                    "low": 0.0,
+                    "high": 0.2992
+                  }
+                },
+                "classified": 9,
+                "unclassified": 5,
+                "stories": 14,
+                "balance": 0.3333,
+                "balance_low": 0.0024,
+                "balance_high": 0.6643,
+                "balance_se": 0.1688,
+                "mean": 1.33,
+                "n": 9,
+                "n_missing": 5
+              }
+            }
+          }
+        },
+        {
+          "date": "2025-10-21",
+          "post_count": 49,
+          "baseline_posts_per_day": 1.4,
+          "relative_to_baseline": 35.0,
+          "significance": 15.5,
+          "excess_posts": 77.5,
+          "prominence": 49.0,
+          "avg_sentiment": 1.83,
+          "tone_n": 42,
+          "tone_missing": 7,
+          "crawler_window": {
+            "start": "2025-10-18",
+            "end": "2025-10-23"
+          },
+          "sample_titles": [
+            "IPAI: Spatenstich in Heilbronn für größtes KI-Zentrum",
+            "Mit dem IPAI-Campus in Heilbronn sind enorme Hoffnungen verbunden. Beim Spatenstich spricht Kanzler Friedrich Merz von…"
+          ],
+          "rank": 1,
+          "tier": "major",
+          "crawled": true,
+          "context": {
+            "event_type": "Construction / milestone",
+            "event_type_secondary": null,
+            "summary": "",
+            "confidence": "high",
+            "confidence_points": 7,
+            "method": "rule-based",
+            "top_terms": [
+              "projekt",
+              "zentrum",
+              "spatenstich",
+              "kretschmann",
+              "friedrich",
+              "winfried"
+            ],
+            "amounts_mentioned": [
+              "50 millionen euro",
+              "150 milliarden",
+              "50 mio. euro"
+            ],
+            "top_headlines": [
+              "Imec eröffnet Standort in Heilbronn zur Entwicklung chipletbasierter Automobilsysteme",
+              "Detailansicht - VKZ",
+              "Heilbronn und die Grenzen der Machbarkeit: Wie der „Mensch-und-KI“-Park zwischen Macht, Symbolik und Realität…"
+            ],
+            "source_profile": {
+              "n_posts": 86,
+              "n_sources": 54,
+              "n_unique_titles": 84,
+              "media_types": {
+                "News": 51,
+                "Other": 14,
+                "Social Network": 4,
+                "YouTube Comments": 1,
+                "Pictures": 4,
+                "YouTube Video": 6,
+                "Microblog": 5,
+                "Video": 1
+              },
+              "top_source": "www.youtube.com",
+              "top_source_share": 0.08,
+              "likely_syndication": false
+            },
+            "topic_share": 0.85,
+            "off_topic_suspect": false,
+            "event_type_scores": {
+              "Planning / route / feasibility": 27.5,
+              "Construction / milestone": 136.5,
+              "Partnership / membership": 2.0,
+              "Cost / funding": 13.0,
+              "Personnel": 5,
+              "Opening / start of service": 24,
+              "Protest / public participation": 4.5,
+              "Event / summit": 4.5,
+              "Political decision": 1.5,
+              "Visualisation / design": 7.5,
+              "Safety / incident": 4
+            },
+            "curated_events": [],
+            "external_candidates": [
+              {
+                "title": "Spatenstich mit Kanzler: So will Heilbronn zum KI-Zentrum in Europa werden",
+                "source": "SWR",
+                "published": "Mon, 20 Oct 2025 07:00:00 GMT",
+                "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNTEd4NUFUODdCQmhaN3NQOURSVUw0a3V6QUVCVHVGOGo3cFAzbzNHN3FMRGRzT1RYdVE1VU12R3VHS2Q4bHY5T3d6akpfeEdyYzUxX2NBUmYxRi1mdkpmZ01aWmU0WlI2SWdJLUVnam81NGVzbU9Xc1VWTWJaRkhzaWMxYTN2Njl6dW9fUkpXYzFGTTItZHhNVHh5OVdYd2xJd0JzQ3lINS1aZkdCbEtHX21sMFJWM2NEUWpOTjBKc3FsbEFMZjVIS2JTYUpMWFpTUVE?oc=5",
+                "match_score": 4
+              },
+              {
+                "title": "Spatenstich IPAI CAMPUS in Heilbronn",
+                "source": "Startbase",
+                "published": "Wed, 22 Oct 2025 07:00:00 GMT",
+                "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5CSno3TFdCOFhFcldlVVE3dU1vSUg3ZzFqUTZiSWdlSmZsWi16cUVTS0E3b1RJSEQxWmZ1cnQzT3FyT1JrUGhQd09Nc1NHYW5Va25hQVdqbDF3Q3lEeFktbnByNElQVER5RkVBYmpaVWpKZTBGc3c?oc=5",
+                "match_score": 2
+              }
+            ],
+            "evidence_mention_ids": [
+              "10036199,622",
+              "10911896,848",
+              "10935906,4676",
+              "11249541,84127",
+              "11277533,650706002",
+              "11388048,101",
+              "11412242,2719",
+              "11478923,514087",
+              "11542466,36689",
+              "11671944,2642"
+            ],
+            "effects": {
+              "baseline_posts_per_day": 1.45,
+              "decay_days": 4,
+              "decay_note": null,
+              "persistence": "stayed high",
+              "avg_posts_per_day_days_7_to_21": 2.47,
+              "sentiment_14d_before": 1.44,
+              "sentiment_14d_after": 1.54,
+              "sentiment_n_before_after": [
+                9,
+                26
+              ],
+              "sentiment_missing_before_after": [
+                16,
+                11
+              ],
+              "tone_before": {
+                "counts": {
+                  "Positive": 4,
+                  "Neutral": 5,
+                  "Negative": 0
+                },
+                "shares": {
+                  "Positive": 0.4444,
+                  "Neutral": 0.5556,
+                  "Negative": 0.0
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": 0.1888,
+                    "high": 0.7334
+                  },
+                  "Neutral": {
+                    "low": 0.2666,
+                    "high": 0.8112
+                  },
+                  "Negative": {
+                    "low": 0.0,
+                    "high": 0.2992
+                  }
+                },
+                "classified": 9,
+                "unclassified": 16,
+                "stories": 25,
+                "balance": 0.4444,
+                "balance_low": 0.0964,
+                "balance_high": 0.7925,
+                "balance_se": 0.1776,
+                "mean": 1.44,
+                "n": 9,
+                "n_missing": 16
+              },
+              "tone_after": {
+                "counts": {
+                  "Positive": 14,
+                  "Neutral": 12,
+                  "Negative": 0
+                },
+                "shares": {
+                  "Positive": 0.5385,
+                  "Neutral": 0.4615,
+                  "Negative": 0.0
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": 0.3546,
+                    "high": 0.7124
+                  },
+                  "Neutral": {
+                    "low": 0.2876,
+                    "high": 0.6454
+                  },
+                  "Negative": {
+                    "low": 0.0,
+                    "high": 0.1287
+                  }
+                },
+                "classified": 26,
+                "unclassified": 11,
+                "stories": 37,
+                "balance": 0.5385,
+                "balance_low": 0.3385,
+                "balance_high": 0.7384,
+                "balance_se": 0.102,
+                "mean": 1.54,
+                "n": 26,
+                "n_missing": 11
+              }
+            }
+          }
+        },
+        {
+          "date": "2026-02-23",
+          "post_count": 10,
+          "baseline_posts_per_day": 1.07,
+          "relative_to_baseline": 9.4,
+          "significance": 3.5,
+          "excess_posts": 5.7,
+          "prominence": 10.0,
+          "avg_sentiment": 1.67,
+          "tone_n": 3,
+          "tone_missing": 7,
+          "crawler_window": {
+            "start": "2026-02-20",
+            "end": "2026-02-25"
+          },
+          "sample_titles": [
+            "🌱💡 Zukunft gestalten: Wirtschaft. Innovation. Klimaschutz. – Mit Franziska Brantner! 🌍✨ Am 1.März lade ich Dich…",
+            "Contact Software wird Mitglied im IPAI - IT&Production"
+          ],
+          "rank": 5,
+          "tier": "major",
+          "crawled": true,
+          "context": {
+            "event_type": "Partnership / membership",
+            "event_type_secondary": null,
+            "summary": "",
+            "confidence": "medium",
+            "confidence_points": 4,
+            "method": "rule-based",
+            "top_terms": [
+              "pinocchio",
+              "polizei",
+              "rentner",
+              "ermittelt",
+              "wegen",
+              "kriminalpolizei"
+            ],
+            "amounts_mentioned": [],
+            "top_headlines": [
+              "🌱💡 Zukunft gestalten: Wirtschaft. Innovation. Klimaschutz. – Mit Franziska Brantner! 🌍✨ Am 1.März lade ich Dich…",
+              "Schwarz-Gruppe übernimmt ehemaliges Landliebe-Werk in Heilbronn….",
+              "Contact Software wird Mitglied im IPAI - IT&Production"
+            ],
+            "source_profile": {
+              "n_posts": 12,
+              "n_sources": 12,
+              "n_unique_titles": 12,
+              "media_types": {
+                "Pictures": 1,
+                "Other": 1,
+                "News": 8,
+                "Social Network": 1,
+                "YouTube Video": 1
+              },
+              "top_source": "www.instagram.com",
+              "top_source_share": 0.08,
+              "likely_syndication": false
+            },
+            "topic_share": 0.42,
+            "off_topic_suspect": false,
+            "event_type_scores": {
+              "Partnership / membership": 12.0,
+              "Planning / route / feasibility": 0.5,
+              "Visualisation / design": 1,
+              "Cost / funding": 0.5,
+              "Construction / milestone": 3,
+              "Safety / incident": 6.0,
+              "Personnel": 5,
+              "Event / summit": 1,
+              "Protest / public participation": 1.0
+            },
+            "curated_events": [],
+            "external_candidates": [],
+            "evidence_mention_ids": [
+              "13206303,244310",
+              "15965945,147",
+              "26063122,1205284",
+              "26063269,90679",
+              "26862,120986",
+              "29247724,133002",
+              "29247881,287070",
+              "29249552,326246",
+              "29316251,36865605",
+              "29316253,37883260"
+            ],
+            "effects": {
+              "baseline_posts_per_day": 1.45,
+              "decay_days": 1,
+              "decay_note": null,
+              "persistence": "faded",
+              "avg_posts_per_day_days_7_to_21": 1.6,
+              "sentiment_14d_before": 1.58,
+              "sentiment_14d_after": 1.17,
+              "sentiment_n_before_after": [
+                12,
+                6
+              ],
+              "sentiment_missing_before_after": [
+                8,
+                13
+              ],
+              "tone_before": {
+                "counts": {
+                  "Positive": 7,
+                  "Neutral": 5,
+                  "Negative": 0
+                },
+                "shares": {
+                  "Positive": 0.5833,
+                  "Neutral": 0.4167,
+                  "Negative": 0.0
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": 0.3195,
+                    "high": 0.8067
+                  },
+                  "Neutral": {
+                    "low": 0.1933,
+                    "high": 0.6805
+                  },
+                  "Negative": {
+                    "low": 0.0,
+                    "high": 0.2425
+                  }
+                },
+                "classified": 12,
+                "unclassified": 8,
+                "stories": 20,
+                "balance": 0.5833,
+                "balance_low": 0.2798,
+                "balance_high": 0.8868,
+                "balance_se": 0.1549,
+                "mean": 1.58,
+                "n": 12,
+                "n_missing": 8
+              },
+              "tone_after": {
+                "counts": {
+                  "Positive": 1,
+                  "Neutral": 5,
+                  "Negative": 0
+                },
+                "shares": {
+                  "Positive": 0.1667,
+                  "Neutral": 0.8333,
+                  "Negative": 0.0
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": 0.0301,
+                    "high": 0.5635
+                  },
+                  "Neutral": {
+                    "low": 0.4365,
+                    "high": 0.9699
+                  },
+                  "Negative": {
+                    "low": 0.0,
+                    "high": 0.3903
+                  }
+                },
+                "classified": 6,
+                "unclassified": 13,
+                "stories": 19,
+                "balance": 0.1667,
+                "balance_low": -0.1904,
+                "balance_high": 0.5237,
+                "balance_se": 0.1822,
+                "mean": 1.17,
+                "n": 6,
+                "n_missing": 13
+              }
+            }
+          }
+        },
+        {
+          "date": "2026-05-27",
+          "post_count": 9,
+          "baseline_posts_per_day": 0.76,
+          "relative_to_baseline": 11.9,
+          "significance": 3.9,
+          "excess_posts": 12.4,
+          "prominence": 9.0,
+          "avg_sentiment": 1.6,
+          "tone_n": 5,
+          "tone_missing": 3,
+          "crawler_window": {
+            "start": "2026-05-24",
+            "end": "2026-05-29"
+          },
+          "sample_titles": [
+            "Wir sind Souverän! – Digitale Souveränität und unsere Verantwortung als Bürger und Informatiker in der Gesellschaft |…",
+            "Procter & Gamble wird Mitglied der KI-Plattform IPAI"
+          ],
+          "rank": 3,
+          "tier": "major",
+          "crawled": true,
+          "context": {
+            "event_type": "Partnership / membership",
+            "event_type_secondary": null,
+            "summary": "",
+            "confidence": "high",
+            "confidence_points": 6,
+            "method": "rule-based",
+            "top_terms": [
+              "plattform",
+              "procter",
+              "gamble",
+              "security",
+              "zusammenarbeit",
+              "vorausschauend"
+            ],
+            "amounts_mentioned": [
+              "5,4 millionen"
+            ],
+            "top_headlines": [
+              "Procter & Gamble wird Mitglied der KI-Plattform IPAI",
+              "Wir sind Souverän! – Digitale Souveränität und unsere Verantwortung als Bürger und Informatiker in der Gesellschaft |…",
+              "Der Facebook-Kommentar „Pinocchio kommt nach Heilbronn“ hat für Schlagzeilen gesorgt. Gemeint war damit Bundeskanzler…"
+            ],
+            "source_profile": {
+              "n_posts": 17,
+              "n_sources": 15,
+              "n_unique_titles": 16,
+              "media_types": {
+                "Other": 3,
+                "Pictures": 2,
+                "News": 10,
+                "YouTube Video": 2
+              },
+              "top_source": "www.instagram.com",
+              "top_source_share": 0.12,
+              "likely_syndication": false
+            },
+            "topic_share": 0.65,
+            "off_topic_suspect": false,
+            "event_type_scores": {
+              "Event / summit": 1,
+              "Political decision": 0.5,
+              "Construction / milestone": 3,
+              "Partnership / membership": 31.5,
+              "Personnel": 3.0,
+              "Cost / funding": 9,
+              "Visualisation / design": 1,
+              "Planning / route / feasibility": 2
+            },
+            "curated_events": [],
+            "external_candidates": [
+              {
+                "title": "Künstliche Intelligenz - Procter & Gamble schließt sich KI-Plattform IPAI in Heilbronn an",
+                "source": "Lebensmittelpraxis.de",
+                "published": "Thu, 28 May 2026 07:00:00 GMT",
+                "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPYm9kRHFCMFFRU0FRaHk3QzNrRmw0bDRldGlEeVlTeDVwTVNtNUpnX3ktaTlhX2c2cDg1ZlRfTHpTZ2NEaWNlY1h2cHl3Vmx3XzctQzBBdDVPQl9oekRxcUJSWm1iaHdiWG1rNG1WdHZJY1NfWXJ5SVVYTHYzamRtUFNEdHM0RUNjcHBacFRpSHVqYW9ScFUyVGVwalhrcUxjci1RaWNiaVhrVjM1SXVXc0VweVluSmhZWjhSb09NYTVzXzRGMU9BUl9hMG16WnoyX1lpWEpxellwOV9WVUtj?oc=5",
+                "match_score": 6
+              },
+              {
+                "title": "Procter & Gamble wird Mitglied der KI-Innovationsplattform IPAI",
+                "source": "ZWP online",
+                "published": "Wed, 27 May 2026 07:00:00 GMT",
+                "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQM1pteUNobERFbjlJMEtLREZFN21CNGN6Z3Q1eDl6Y0RRbzZaa21BLUFRX09zS0g2OXdjbl9ZRHRGa2JmZUNxRDNOODIwSHJLUGVHTEVia0xmeWkzOHJaeGowYWstNzF4Y29WenpSYWlhbHhMQzBfSUx5OGhLSmREY3VhUFNzbWtMT2h0YkF2S0xXNmd4U0wyOEJlME1oMk9xaEp6Sl96YXJ6eG1tQU83WnlkbWtsdGc?oc=5",
+                "match_score": 5
+              }
+            ],
+            "evidence_mention_ids": [
+              "10239226,118",
+              "11542466,37550",
+              "12298329,227193",
+              "154972,14025",
+              "16542559,1068",
+              "17712358,289971",
+              "22659021,29829",
+              "24612987,97800",
+              "26449075,96551",
+              "28288125,169801"
+            ],
+            "effects": {
+              "baseline_posts_per_day": 0.74,
+              "decay_days": 4,
+              "decay_note": null,
+              "persistence": "stayed high",
+              "avg_posts_per_day_days_7_to_21": 1.6,
+              "sentiment_14d_before": 1.22,
+              "sentiment_14d_after": 1.45,
+              "sentiment_n_before_after": [
+                9,
+                11
+              ],
+              "sentiment_missing_before_after": [
+                6,
+                8
+              ],
+              "tone_before": {
+                "counts": {
+                  "Positive": 2,
+                  "Neutral": 7,
+                  "Negative": 0
+                },
+                "shares": {
+                  "Positive": 0.2222,
+                  "Neutral": 0.7778,
+                  "Negative": 0.0
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": 0.0632,
+                    "high": 0.5474
+                  },
+                  "Neutral": {
+                    "low": 0.4526,
+                    "high": 0.9368
+                  },
+                  "Negative": {
+                    "low": 0.0,
+                    "high": 0.2992
+                  }
+                },
+                "classified": 9,
+                "unclassified": 6,
+                "stories": 15,
+                "balance": 0.2222,
+                "balance_low": -0.0799,
+                "balance_high": 0.5243,
+                "balance_se": 0.1541,
+                "mean": 1.22,
+                "n": 9,
+                "n_missing": 6
+              },
+              "tone_after": {
+                "counts": {
+                  "Positive": 5,
+                  "Neutral": 6,
+                  "Negative": 0
+                },
+                "shares": {
+                  "Positive": 0.4545,
+                  "Neutral": 0.5455,
+                  "Negative": 0.0
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": 0.2127,
+                    "high": 0.7199
+                  },
+                  "Neutral": {
+                    "low": 0.2801,
+                    "high": 0.7873
+                  },
+                  "Negative": {
+                    "low": 0.0,
+                    "high": 0.2588
+                  }
+                },
+                "classified": 11,
+                "unclassified": 8,
+                "stories": 19,
+                "balance": 0.4545,
+                "balance_low": 0.1409,
+                "balance_high": 0.7681,
+                "balance_se": 0.16,
+                "mean": 1.45,
+                "n": 11,
+                "n_missing": 8
+              }
+            }
+          }
+        }
+      ],
+      "change_points": [
+        {
+          "date": "2025-05-12",
+          "avg_posts_before": 0.64,
+          "avg_posts_after": 1.35,
+          "avg_sentiment_before": 1.42,
+          "avg_sentiment_after": 1.46,
+          "tone_n_before": 81,
+          "tone_n_after": 413,
+          "tone_missing_before": 45,
+          "tone_missing_after": 271,
+          "context": {
+            "event_type": "Media coverage (no clear trigger)",
+            "event_type_secondary": null,
+            "summary": "Note: many posts look like reprints of the same story",
+            "confidence": "low",
+            "confidence_points": 2,
+            "method": "rule-based",
+            "top_terms": [
+              "wichtigsten",
+              "robert",
+              "künstlicheintelligenz",
+              "bildung",
+              "eigenen",
+              "neben"
+            ],
+            "amounts_mentioned": [],
+            "top_headlines": [
+              "Dass sich Heilbronn gerade sehr dynamisch entwickelt, ist kein Geheimnis. Dabei ist der Bau eines Innovationsparks für…",
+              "🤖KI zum Anfassen. 📚Lernen im eigenen Tempo. Beim KI Salon Experimentierlab 2.0 in den @ipai_hn Spaces Heilbronn haben…",
+              "KIrche trifft KI. Heute hat Bischof Dr. Klaus Krämer mit einer Delegation der Diözese das IPAI (Innovation Park…"
+            ],
+            "source_profile": {
+              "n_posts": 5,
+              "n_sources": 3,
+              "n_unique_titles": 5,
+              "media_types": {
+                "Pictures": 3,
+                "Other": 1,
+                "News": 1
+              },
+              "top_source": "www.instagram.com",
+              "top_source_share": 0.6,
+              "likely_syndication": true
+            },
+            "topic_share": 0.8,
+            "off_topic_suspect": false,
+            "event_type_scores": {
+              "Visualisation / design": 2.0,
+              "Planning / route / feasibility": 1
+            },
+            "curated_events": [],
+            "external_candidates": [],
+            "evidence_mention_ids": [
+              "17712358,270462",
+              "17712358,270534",
+              "17712358,270625",
+              "23565437,1069",
+              "24612926,2537"
+            ]
+          }
+        }
+      ],
+      "project_context": {
+        "display_name": "IPAI Campus (Innovation Park Artificial Intelligence)",
+        "city": "Heilbronn",
+        "stage": "Construction / development (comparison project)",
+        "official_site_scans": [
+          {
+            "source_url": "https://ip.ai",
+            "page_title": "IPAI",
+            "meta_description": "",
+            "matching_headlines": [
+              "Mit zielgerichteten Angeboten unterstützt IPAI Unternehmen und Institutionen dabei, von der KI-Revolution zu profitieren.",
+              "Werde Teil der IPAI Community!",
+              "Erfahre mehr über den IPAI CAMPUS",
+              "170 Organisationen, 10 Millionen Euro für Robotik: IPAI Experience Day (IXD) demonstriert den Fortschritt von Europas Plattform für angewandte KI",
+              "Tag der offenen Baustelle bei Europas größtem KI-Zentrum"
+            ],
+            "status": "ok"
+          }
+        ],
+        "latest_news": [
+          {
+            "title": "Wie Audi KI im IPAI Heilbronn in die Produktion bringt",
+            "source": "AutomotiveIT",
+            "published": "Thu, 08 Oct 2026 07:00:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxON2NNWjFMd05UQ2xtQWI2dVJkbnhYanBOdmxhV2Fmbk5tS0ZscDhGeEJZOUtEVlZ0YjN5QWZWbm1YMmRYeWFtaTBqNkZEbWZsYVNSSm1CZlVpbmJyRUZqZ01PckVkMnhrSks4SnB2b0RjQlJXc3JFcHVhNG9VbDI0el94UU1ONmVFZ3B1VnYybzd5X3Mycy1DQ2g5aEZKLTlNZE4yMzF0YzI1UQ?oc=5"
+          },
+          {
+            "title": "Blick hinter die Ipai-Kulissen: Woran die Firmen dort arbeiten",
+            "source": "Stimme",
+            "published": "Thu, 22 Oct 2026 07:00:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPbVRvd2dNMERNQjdPVjgwOHFpY3NQRXpuZWNyR1dUZ0tPd3dpUWFhT0paZGQxQTRIU3piSVV3UVhqaE1JNjBPQ1VValBEeEJFYXJWTkZSb0preVRrVUVSMVVPNWVWSkVvYWlGaVBkbkV0VkFMMEp4OVpVREl4dEFrSlZoR2hYeWFmMnFYV2JnZHp1ZFFQbjdQeTdYUlplRWY1aVp4M2p6N05zazNkUkhMUTBvaWZjN2RDZjhhNHhB?oc=5"
+          },
+          {
+            "title": "Künstliche Intelligenz: Schaeffler tritt KI-Innovationsplattform IPAI in Heilbronn bei",
+            "source": "Schaeffler Deutschland",
+            "published": "Wed, 13 May 2026 12:46:59 GMT",
+            "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOaU1EZTF6NGRqcFU4LU9sdUMzVUhTbW41a0RMSmt3U1k4ZGhzc2FOc21PTmRzRzhPWkZ4REVzN0E4NzdBRnpyemFZNktFX3NSbldnSFQ0clJWWktUZzN4QWlFa2VfQkYzbi1nMktzczZjcUlQWUV6M3V4WmVfb0lublZ2bjhzdmJHaW9Fb2pJdnU0VlZqbXpmZkx0S1RRQ2xNWW53?oc=5"
+          },
+          {
+            "title": "Im Video: Exklusiver Blick in Heilbronner Ipai-Baustelle",
+            "source": "Stimme",
+            "published": "Thu, 11 Jun 2026 07:00:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxONUNoeDR4M1UwTzdTR0w2dy1GazRIU09uUWY4VnlXTkQ5RVpwN2I4aUJmSGMxN2VONV8wd2l5aWdkeXRJR21vWVhvOWprN0VpcC00bWlzS0RXTXRaN0toSE9nVGNEUzRJcG9vaXdaS3ptZjRlakRNNkpuT2hmd3daNXk5VmJZNWl5cmRfNno1WUZrS3Z6UE5JZ0F0YWZKQlc0QzBQSHh0Wl8tV3RIZ004NHN4RFJ0QWFRWTRhNWtUX2N1d3d5R3huZV9aUjdEYjFUOUhJcUdvU2U4TU0?oc=5"
+          }
+        ],
+        "curated_events": []
+      }
+    },
+    {
+      "project": "Paris_Cable_C1",
+      "total_posts": 449,
+      "date_range": "2024-11-07 to 2026-10-26",
+      "peak_selection": {
+        "max_major_peaks": 8,
+        "min_spacing_days": 44,
+        "n_major": 2,
+        "n_significant_peaks": 3,
+        "dispersion": 1.557,
+        "false_alarm_budget": 0.5
+      },
+      "peaks": [
+        {
+          "date": "2025-09-24",
+          "post_count": 8,
+          "baseline_posts_per_day": 0.33,
+          "relative_to_baseline": 24.0,
+          "significance": 4.2,
+          "excess_posts": 17.9,
+          "prominence": 8.0,
+          "avg_sentiment": 1.86,
+          "tone_n": 7,
+          "tone_missing": 1,
+          "crawler_window": {
+            "start": "2025-09-21",
+            "end": "2025-09-26"
+          },
+          "sample_titles": [
+            "Le plus grand téléphérique urbain d'Europe bientôt en Île-de-France !",
+            "C’est officiel : Câble C1, le premier téléphérique d’Île-de-France ouvrira le 13 décembre"
+          ],
+          "rank": 3,
+          "tier": "minor",
+          "crawled": true,
+          "context": {
+            "event_type": "Opening / start of service",
+            "event_type_secondary": null,
+            "summary": "",
+            "confidence": "high",
+            "confidence_points": 7,
+            "method": "rule-based",
+            "top_terms": [
+              "valérie",
+              "pécresse",
+              "présidente",
+              "annoncé",
+              "urbaines",
+              "relier"
+            ],
+            "amounts_mentioned": [
+              "1,60 euro"
+            ],
+            "top_headlines": [
+              "C’est officiel, le premier téléphérique urbain d’Île-de-France ouvrira ses cabines au public le…",
+              "Val-de-Marne : La date d’inauguration du plus grand téléphérique urbain d’Europe est connue",
+              "Le premier téléphérique d'Île-de-France sera inauguré le 13 décembre 2025"
+            ],
+            "source_profile": {
+              "n_posts": 20,
+              "n_sources": 16,
+              "n_unique_titles": 20,
+              "media_types": {
+                "Other": 5,
+                "News": 10,
+                "YouTube Video": 4,
+                "Microblog": 1
+              },
+              "top_source": "www.youtube.com",
+              "top_source_share": 0.2,
+              "likely_syndication": false
+            },
+            "topic_share": 0.75,
+            "off_topic_suspect": false,
+            "event_type_scores": {
+              "Opening / start of service": 15.5,
+              "Construction / milestone": 2,
+              "Safety / incident": 1,
+              "Planning / route / feasibility": 1.5
+            },
+            "curated_events": [],
+            "external_candidates": [
+              {
+                "title": "Câble C1 : on connaît enfin la date d'inauguration du premier téléphérique d'Île-de-France",
+                "source": "Actu.fr",
+                "published": "Tue, 23 Sep 2025 07:00:00 GMT",
+                "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPanJKdmhCRzdoaklZUEFJbWtPOV9CRG5DY2hzZmNobi1rRHFpVjh0azBVdGZzc0syMDZsQzBObFdqcWZ2RlZIRjZLY1pHM0I3N3JvallZdmpibmxpTm9kcXhGOUZyZG5sV1JhN3djSmwtU01KVEZNY19mTHhLQ3Y0Y2RVOXBJNVpoVW1xU1daSTBBZ1dMYlREZXNRZzZKRTRjdElaWE9pa3oxQjNKaTc5RFZTeTFFd0VPX0dmbjBiYVA4UVdG?oc=5",
+                "match_score": 3
+              },
+              {
+                "title": "«Ça va révolutionner la vie des gens» : le Câble C1, premier téléphérique d’Île-de-France, inauguré ce samedi",
+                "source": "Le Figaro",
+                "published": "Tue, 23 Sep 2025 07:00:00 GMT",
+                "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPTUJjRFFaTXduYlIycF9BOXRQQWZ1Z0RIN1M0S1BGQUNWaVRyd2xVNDlLd29XMmU4R3hmMEtUa1A1RjcxcGVucDNkcF9pWjlqZ1FKb2ZVNEhqQlJxTDhQTXpGTWdvNGYwSlVjLXdKcE5sbXZTRlEtT3ZENmdTR1hnaVJXRU1PWkFmZXhYTlZ6NkdIeFFvWi1KdEt3WDJCdGtSOUFxVUNRTVhyQi1xbERzQWdTdktldXVVNXhkNllUMUF3REJxYzQtNGRFTDlXV1FaZHR6U09yOVBuRHBSYkRDalByRWtPcGs?oc=5",
+                "match_score": 3
+              }
+            ],
+            "evidence_mention_ids": [
+              "10093864,8949",
+              "12851404,320344",
+              "12851429,930273",
+              "12851436,987800",
+              "13971473,53805",
+              "17290166,1218",
+              "22659134,243524",
+              "26487255,10494",
+              "26487255,10510",
+              "27569796,6321"
+            ],
+            "effects": {
+              "baseline_posts_per_day": 0.32,
+              "decay_days": 3,
+              "decay_note": null,
+              "persistence": "stayed high",
+              "avg_posts_per_day_days_7_to_21": 1.2,
+              "sentiment_14d_before": 1.75,
+              "sentiment_14d_after": 0.48,
+              "sentiment_n_before_after": [
+                4,
+                25
+              ],
+              "sentiment_missing_before_after": [
+                0,
+                2
+              ],
+              "tone_before": {
+                "counts": {
+                  "Positive": 3,
+                  "Neutral": 1,
+                  "Negative": 0
+                },
+                "shares": {
+                  "Positive": 0.75,
+                  "Neutral": 0.25,
+                  "Negative": 0.0
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": 0.3006,
+                    "high": 0.9544
+                  },
+                  "Neutral": {
+                    "low": 0.0456,
+                    "high": 0.6994
+                  },
+                  "Negative": {
+                    "low": 0.0,
+                    "high": 0.4899
+                  }
+                },
+                "classified": 4,
+                "unclassified": 0,
+                "stories": 4,
+                "balance": 0.75,
+                "balance_low": 0.2021,
+                "balance_high": 1.0,
+                "balance_se": 0.2795,
+                "mean": 1.75,
+                "n": 4,
+                "n_missing": 0
+              },
+              "tone_after": {
+                "counts": {
+                  "Positive": 5,
+                  "Neutral": 2,
+                  "Negative": 18
+                },
+                "shares": {
+                  "Positive": 0.2,
+                  "Neutral": 0.08,
+                  "Negative": 0.72
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": 0.0886,
+                    "high": 0.3913
+                  },
+                  "Neutral": {
+                    "low": 0.0222,
+                    "high": 0.2497
+                  },
+                  "Negative": {
+                    "low": 0.5242,
+                    "high": 0.8572
+                  }
+                },
+                "classified": 25,
+                "unclassified": 2,
+                "stories": 27,
+                "balance": -0.52,
+                "balance_low": -0.8305,
+                "balance_high": -0.2095,
+                "balance_se": 0.1584,
+                "mean": 0.48,
+                "n": 25,
+                "n_missing": 2
+              }
+            }
+          }
+        },
+        {
+          "date": "2025-10-01",
+          "post_count": 12,
+          "baseline_posts_per_day": 0.42,
+          "relative_to_baseline": 28.4,
+          "significance": 5.3,
+          "excess_posts": 23.6,
+          "prominence": 12.0,
+          "avg_sentiment": 0.55,
+          "tone_n": 11,
+          "tone_missing": 1,
+          "crawler_window": {
+            "start": "2025-09-28",
+            "end": "2025-10-03"
+          },
+          "sample_titles": [
+            "\"Je préfère croiser un ours en forêt qu'un homme\": vers un téléphérique réservé aux femmes à Créteil?",
+            "Val-de-Marne : Des cabines non mixtes envisagées pour le nouveau téléphérique"
+          ],
+          "rank": 2,
+          "tier": "major",
+          "crawled": true,
+          "context": {
+            "event_type": "Safety / incident",
+            "event_type_secondary": null,
+            "summary": "",
+            "confidence": "high",
+            "confidence_points": 6,
+            "method": "rule-based",
+            "top_terms": [
+              "femmes",
+              "agressions",
+              "députée",
+              "nadège",
+              "abomangoli",
+              "sexuelles"
+            ],
+            "amounts_mentioned": [
+              "4,6 million"
+            ],
+            "top_headlines": [
+              "Pécresse répond aux critiques sur son téléphérique flambant neuf, accusé d’être un « nid à agressions sexuelles »",
+              "\"Nid à agressions sexuelles\" : une députée propose des cabines \"en non-mixité\" pour le C1 dans le Val-de-Marne",
+              "\"Je préfère croiser un ours en forêt qu'un homme\": vers un téléphérique réservé aux femmes à Créteil?"
+            ],
+            "source_profile": {
+              "n_posts": 26,
+              "n_sources": 21,
+              "n_unique_titles": 24,
+              "media_types": {
+                "News": 18,
+                "Other": 7,
+                "YouTube Video": 1
+              },
+              "top_source": "rmc.bfmtv.com",
+              "top_source_share": 0.23,
+              "likely_syndication": false
+            },
+            "topic_share": 0.42,
+            "off_topic_suspect": false,
+            "event_type_scores": {
+              "Planning / route / feasibility": 1.5,
+              "Opening / start of service": 3,
+              "Safety / incident": 66,
+              "Cost / funding": 2.5
+            },
+            "curated_events": [],
+            "external_candidates": [
+              {
+                "title": "\"Nid à agressions sexuelles\" : une députée propose des cabines \"en non-mixité\" pour le C1 dans le Val-de-Marne",
+                "source": "Actu.fr",
+                "published": "Tue, 30 Sep 2025 07:00:00 GMT",
+                "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOTkhabFJralhyYUZYLTVWekwxZnBNVndVQjlfRFNnX3JGdWVOLWZlSUtFNUV1em1FTkxuUEVZSE5YTld6c0doY2RZZi1scjlzemV6R3pkdC1PeTRVX0lzOGp6TmJ2SjFROXpnNnJTeFQtbjdWVVp3VElURE82ZEV6RXpvSXU5M2xTWGllaGxpS1dwYXlfWG9pblZ6SlY4c18zc3JULXNBZGRaQ1gyU2pIWVBZR1l6WEQxeDQySUY3dXhfS1Fqc0FwNVVaU3ZNN0JLTlBxaTB2X01aRUR3X01CS1dSRnlpOVhWRjAzdWhvNU5oTjIz?oc=5",
+                "match_score": 10
+              },
+              {
+                "title": "\"Je préfère croiser un ours en forêt qu'un homme\": vers un téléphérique réservé aux femmes à Créteil?",
+                "source": "RMC",
+                "published": "Wed, 01 Oct 2025 07:00:00 GMT",
+                "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNMWpVYUJNd3g3Ukh6NXR3aklNRzJyWllyWThUVlRjRkh3SHd5YmdheGlsWVJrYTNFbVJNQWllUUFNRnlERjc1VllCeWpUY2RNU3V1QVQxVy0wZ09yQWVLNmpHTkNJRU9Mb2NycHoxUWdVc1VYbW5FWjZaeDhtZllqaTk4MWoySFl1STNROWJTMWFNSko0ZVprWU1md2ZXUVBjT3YzMjAtV3Ruc3FsWTg3aGtfNzRKbDJiMUlEMkVwd2hYNHBtM0llTXRRX1k3N29LYXRINGExY1d0MmViZllDTER1R0NLdThtZHVUVFU5WkpFUkJhSks5NUxzQ2tITzg?oc=5",
+                "match_score": 7
+              }
+            ],
+            "evidence_mention_ids": [
+              "12851209,106472",
+              "12851378,151263",
+              "12851378,151433",
+              "12851404,321828",
+              "12851429,933021",
+              "12851429,933103",
+              "12851429,933529",
+              "13977574,3721",
+              "16692192,550667",
+              "17669656,579"
+            ],
+            "effects": {
+              "baseline_posts_per_day": 0.97,
+              "decay_days": 2,
+              "decay_note": null,
+              "persistence": "faded",
+              "avg_posts_per_day_days_7_to_21": 0.4,
+              "sentiment_14d_before": 1.94,
+              "sentiment_14d_after": 1.0,
+              "sentiment_n_before_after": [
+                18,
+                3
+              ],
+              "sentiment_missing_before_after": [
+                2,
+                0
+              ],
+              "tone_before": {
+                "counts": {
+                  "Positive": 17,
+                  "Neutral": 1,
+                  "Negative": 0
+                },
+                "shares": {
+                  "Positive": 0.9444,
+                  "Neutral": 0.0556,
+                  "Negative": 0.0
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": 0.7424,
+                    "high": 0.9901
+                  },
+                  "Neutral": {
+                    "low": 0.0099,
+                    "high": 0.2576
+                  },
+                  "Negative": {
+                    "low": 0.0,
+                    "high": 0.1759
+                  }
+                },
+                "classified": 18,
+                "unclassified": 2,
+                "stories": 20,
+                "balance": 0.9444,
+                "balance_low": 0.7652,
+                "balance_high": 1.0,
+                "balance_se": 0.0914,
+                "mean": 1.94,
+                "n": 18,
+                "n_missing": 2
+              },
+              "tone_after": {
+                "counts": {
+                  "Positive": 1,
+                  "Neutral": 1,
+                  "Negative": 1
+                },
+                "shares": {
+                  "Positive": 0.3333,
+                  "Neutral": 0.3333,
+                  "Negative": 0.3333
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": 0.0615,
+                    "high": 0.7923
+                  },
+                  "Neutral": {
+                    "low": 0.0615,
+                    "high": 0.7923
+                  },
+                  "Negative": {
+                    "low": 0.0615,
+                    "high": 0.7923
+                  }
+                },
+                "classified": 3,
+                "unclassified": 0,
+                "stories": 3,
+                "balance": 0.0,
+                "balance_low": -0.7544,
+                "balance_high": 0.7544,
+                "balance_se": 0.3849,
+                "mean": 1.0,
+                "n": 3,
+                "n_missing": 0
+              }
+            }
+          }
+        },
+        {
+          "date": "2025-12-13",
+          "post_count": 45,
+          "baseline_posts_per_day": 0.91,
+          "relative_to_baseline": 49.4,
+          "significance": 11.0,
+          "excess_posts": 95.4,
+          "prominence": 45.0,
+          "avg_sentiment": 1.89,
+          "tone_n": 35,
+          "tone_missing": 7,
+          "crawler_window": {
+            "start": "2025-12-10",
+            "end": "2025-12-15"
+          },
+          "sample_titles": [
+            "Ouverture du câble C1 entre Créteil et Villeneuve-Saint-Georges",
+            "Essayons de rattraper le coup en commentaire, comme ça ils comprendront peut-être pourquoi on passe plus de temps sur…"
+          ],
+          "rank": 1,
+          "tier": "major",
+          "crawled": true,
+          "context": {
+            "event_type": "Opening / start of service",
+            "event_type_secondary": null,
+            "summary": "",
+            "confidence": "high",
+            "confidence_points": 7,
+            "method": "rule-based",
+            "top_terms": [
+              "inauguré",
+              "europe",
+              "communes",
+              "inauguration"
+            ],
+            "amounts_mentioned": [
+              "138 million",
+              "138 millions d’euros",
+              "138 millions d'euros"
+            ],
+            "top_headlines": [
+              "Inauguration du premier téléphérique urbain en Ile-de-France",
+              "Erste Schwebe-Seilbahn in Paris eröffnet",
+              "\"C'est une révolution pour les habitants\": BFMTV à bord du plus grand téléphérique d'Europe"
+            ],
+            "source_profile": {
+              "n_posts": 101,
+              "n_sources": 63,
+              "n_unique_titles": 92,
+              "media_types": {
+                "Other": 28,
+                "Blog": 2,
+                "YouTube Comments": 2,
+                "News": 52,
+                "Pictures": 1,
+                "Social Network": 1,
+                "YouTube Video": 10,
+                "Microblog": 5
+              },
+              "top_source": "www.youtube.com",
+              "top_source_share": 0.12,
+              "likely_syndication": false
+            },
+            "topic_share": 0.75,
+            "off_topic_suspect": false,
+            "event_type_scores": {
+              "Opening / start of service": 127.0,
+              "Planning / route / feasibility": 10.0,
+              "Service disruption / closure": 6.0,
+              "Construction / milestone": 4,
+              "Visualisation / design": 3.0,
+              "Event / summit": 0.5,
+              "Cost / funding": 5.0,
+              "Safety / incident": 4,
+              "Personnel": 2
+            },
+            "curated_events": [],
+            "external_candidates": [
+              {
+                "title": "Le plus grand téléphérique d'Europe, qui relie Villeneuve-Saint-Georges à Créteil, inauguré ce samedi en Île-de-France",
+                "source": "BFM",
+                "published": "Sat, 13 Dec 2025 08:00:00 GMT",
+                "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxOc0dKdE5WeGZlUFc0VWJhdkR0alJiUV9sakhEVTJUU2pXdlIzZGZuem80aC1Id05kbEN3VzZMWDZwaTI0NFhZZVBPQ09Yc3M0akxQc2tfZmhlTmFKRkpFMzYzVmhtalNTeU5sSEhrVkhncjZoREtrNjkwMGY3WTE5WDMySEhtcWxVLVJBYTlkcVZVN2FfUktBZXVkdnJOOG00UmNldnUwT0Y1REU0TnJvWFpER0xUOVNlZk1SU1lTU2lFd3dheXZXR0VqMmtkR1Z2RGVNVG9FT29KR1UxYlg3UnlHUFlrMGtxQ2ZubWtjRkpFU3o3M0tnNEhGVHRLR3o4Ukcw?oc=5",
+                "match_score": 6
+              },
+              {
+                "title": "Câble C1 en Île-de-France : on a testé le plus long téléphérique d'Europe lors de son entrée en service ce samedi (vidéo)",
+                "source": "CNews",
+                "published": "Sat, 13 Dec 2025 08:00:00 GMT",
+                "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPMWZ2RVBWbGNUZjBfQVhZVnIxY05qWkFrZ0FlblRNQVhsOGFUS1MyVGE1Nk1hMnhucTA2Umg3eUNyclZITFZHc2I3MmhVNXBVbW5EcTl1VDMyMm55YjlFN0VrU1hPNUlJc3dCV3JnUGtVZW9lOWtKcnFCMnZseGV2NHE0ckY0WVVNNUNTV3h6VE5aeGM5cEduN3VJVWR4N2lKWFZFWWZReFh3SGUwdEVxWFBqek5SbnPSAbwBQVVfeXFMT2k4SzMwb3lKNUtnVm8tTDcxZldjbjRWN0RXOG5kV0FfcnVPZGdmc0hwcnM1U1dwSFFGZDdHUkNWdEVVbUJuU0hYQURvQ2lrT2VZc0pvR1lEMHVXNl9WVDNRZWtBSjVCalo1YjV2bHN5UElmX3NiSlFHX3JZWXJfb1FwbDVBQ0lkQkF3YU44OUdLclAwRjk2ckJlWTZINUFpOEN6dnJqemJ4a2hlSUdPdjFRWkp1UFhhZjVDaGM?oc=5",
+                "match_score": 3
+              }
+            ],
+            "evidence_mention_ids": [
+              "10097635,9857",
+              "1059253,551",
+              "11277542,673760074",
+              "11277555,674411972",
+              "1141329,50001672",
+              "11426176,143839",
+              "11434221,2400",
+              "11434287,77026",
+              "11557337,60313",
+              "11639250,3119699"
+            ],
+            "effects": {
+              "baseline_posts_per_day": 1.35,
+              "decay_days": 5,
+              "decay_note": null,
+              "persistence": "faded",
+              "avg_posts_per_day_days_7_to_21": 0.73,
+              "sentiment_14d_before": 1.73,
+              "sentiment_14d_after": 1.44,
+              "sentiment_n_before_after": [
+                15,
+                18
+              ],
+              "sentiment_missing_before_after": [
+                4,
+                5
+              ],
+              "tone_before": {
+                "counts": {
+                  "Positive": 11,
+                  "Neutral": 4,
+                  "Negative": 0
+                },
+                "shares": {
+                  "Positive": 0.7333,
+                  "Neutral": 0.2667,
+                  "Negative": 0.0
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": 0.4805,
+                    "high": 0.891
+                  },
+                  "Neutral": {
+                    "low": 0.109,
+                    "high": 0.5195
+                  },
+                  "Negative": {
+                    "low": 0.0,
+                    "high": 0.2039
+                  }
+                },
+                "classified": 15,
+                "unclassified": 4,
+                "stories": 19,
+                "balance": 0.7333,
+                "balance_low": 0.4767,
+                "balance_high": 0.9899,
+                "balance_se": 0.1309,
+                "mean": 1.73,
+                "n": 15,
+                "n_missing": 4
+              },
+              "tone_after": {
+                "counts": {
+                  "Positive": 8,
+                  "Neutral": 10,
+                  "Negative": 0
+                },
+                "shares": {
+                  "Positive": 0.4444,
+                  "Neutral": 0.5556,
+                  "Negative": 0.0
+                },
+                "intervals": {
+                  "Positive": {
+                    "low": 0.2456,
+                    "high": 0.6628
+                  },
+                  "Neutral": {
+                    "low": 0.3372,
+                    "high": 0.7544
+                  },
+                  "Negative": {
+                    "low": 0.0,
+                    "high": 0.1759
+                  }
+                },
+                "classified": 18,
+                "unclassified": 5,
+                "stories": 23,
+                "balance": 0.4444,
+                "balance_low": 0.2041,
+                "balance_high": 0.6848,
+                "balance_se": 0.1226,
+                "mean": 1.44,
+                "n": 18,
+                "n_missing": 5
+              }
+            }
+          }
+        }
+      ],
+      "change_points": [
+        {
+          "date": "2025-09-15",
+          "avg_posts_before": 0.21,
+          "avg_posts_after": 1.19,
+          "avg_sentiment_before": 1.62,
+          "avg_sentiment_after": 1.31,
+          "tone_n_before": 55,
+          "tone_n_after": 80,
+          "tone_missing_before": 9,
+          "tone_missing_after": 9,
+          "context": {
+            "event_type": "Opening / start of service",
+            "event_type_secondary": null,
+            "summary": "Check: posts barely mention the project in the title or opening (possibly off-topic)",
+            "confidence": "low",
+            "confidence_points": 1,
+            "method": "rule-based",
+            "top_terms": [
+              "écologique",
+              "latine",
+              "inaugurer",
+              "années",
+              "amérique",
+              "francophone"
+            ],
+            "amounts_mentioned": [
+              "152 million",
+              "152 millions d’euros",
+              "1,8 million"
+            ],
+            "top_headlines": [
+              "Pourquoi le téléphérique s’installe dans les grandes villes",
+              "Madagascar inaugure le plus long téléphérique d’Afrique et du monde francophone",
+              "\"Moins cher que de creuser un tunnel\" : cette solution écolo et silencieuse sera-t-elle le métro de demain ?"
+            ],
+            "source_profile": {
+              "n_posts": 4,
+              "n_sources": 4,
+              "n_unique_titles": 4,
+              "media_types": {
+                "Other": 4
+              },
+              "top_source": "www.ville-rail-transports.com",
+              "top_source_share": 0.25,
+              "likely_syndication": false
+            },
+            "topic_share": 0.0,
+            "off_topic_suspect": true,
+            "event_type_scores": {
+              "Construction / milestone": 2,
+              "Opening / start of service": 4
+            },
+            "curated_events": [],
+            "external_candidates": [],
+            "evidence_mention_ids": [
+              "25554193,924",
+              "27081526,18",
+              "29153086,67967",
+              "7249023,56448"
+            ]
+          }
+        },
+        {
+          "date": "2025-12-03",
+          "avg_posts_before": 1.19,
+          "avg_posts_after": 6.27,
+          "avg_sentiment_before": 1.31,
+          "avg_sentiment_after": 1.73,
+          "tone_n_before": 80,
+          "tone_n_after": 109,
+          "tone_missing_before": 9,
+          "tone_missing_after": 22,
+          "context": {
+            "event_type": "Opening / start of service",
+            "event_type_secondary": "Visualisation / design",
+            "summary": "",
+            "confidence": "high",
+            "confidence_points": 7,
+            "method": "rule-based",
+            "top_terms": [
+              "département",
+              "sortiraparis",
+              "sortir",
+              "quatre",
+              "positif",
+              "photos"
+            ],
+            "amounts_mentioned": [
+              "110 millionen euro"
+            ],
+            "top_headlines": [
+              "Verkehrsentlastung: Pariser gondeln bald über ihre Stadt – mit Österreichs Hilfe",
+              "Inauguration du premier téléphérique d'Île-de-France : des animations gratuites au programme",
+              "Premier téléphérique d’Île-de-France: s’inaugure à Créteil avec animations gratuites"
+            ],
+            "source_profile": {
+              "n_posts": 8,
+              "n_sources": 5,
+              "n_unique_titles": 8,
+              "media_types": {
+                "News": 7,
+                "Forums": 1
+              },
+              "top_source": "www.sortiraparis.com",
+              "top_source_share": 0.38,
+              "likely_syndication": false
+            },
+            "topic_share": 0.75,
+            "off_topic_suspect": false,
+            "event_type_scores": {
+              "Planning / route / feasibility": 1.0,
+              "Opening / start of service": 11.5,
+              "Visualisation / design": 8,
+              "Cost / funding": 4,
+              "Service disruption / closure": 8,
+              "Safety / incident": 1
+            },
+            "curated_events": [],
+            "external_candidates": [
+              {
+                "title": "Premier téléphérique d’Île-de-France: s’inaugure à Créteil avec animations gratuites",
+                "source": "Paris Select Book",
+                "published": "Sat, 06 Dec 2025 08:00:00 GMT",
+                "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNR19IV2tnSWpwT0E0Z2s2d1lxOVpHNmxPSmVoQlp1d0J0MmxsdjYxTU8yTnozMXp2cE9JcGVGV09SeU44cnhlZkFvUjBkYkRVYXN6MmJKVnFYbFdwZ0dxcVVEVzloTzV0UEVYdXhfaVJEbE4zUjY5WkxMT3doOVVaTzhJcTBKUG5pcE9hR25HSWxVakJ6UjZBdzkxbDJlWkpSUGFEbTVPWE1lMF9abjJqbndFbFZ3Zlo2b0lGdzBVamhEbFk?oc=5",
+                "match_score": 5
+              }
+            ],
+            "evidence_mention_ids": [
+              "12527980,141066",
+              "29316251,30843836",
+              "29316251,31091338",
+              "29316254,32620069",
+              "29316254,32774379",
+              "9251801,445967",
+              "9672814,1108515",
+              "9672814,1109968"
+            ]
+          }
+        },
+        {
+          "date": "2025-12-25",
+          "avg_posts_before": 6.27,
+          "avg_posts_after": 1.17,
+          "avg_sentiment_before": 1.73,
+          "avg_sentiment_after": 1.5,
+          "tone_n_before": 109,
+          "tone_n_after": 22,
+          "tone_missing_before": 22,
+          "tone_missing_after": 5,
+          "context": {
+            "event_type": "Service disruption / closure",
+            "event_type_secondary": null,
+            "summary": "Check: posts barely mention the project in the title or opening (possibly off-topic)",
+            "confidence": "low",
+            "confidence_points": 3,
+            "method": "rule-based",
+            "top_terms": [
+              "après"
+            ],
+            "amounts_mentioned": [],
+            "top_headlines": [
+              "À Toulouse, l’extension du téléphérique à l’étude - ladepeche.fr",
+              "Sud Radio Média",
+              "« Méfiez-vous des fake news » : non, le téléphérique de Créteil n’est pas tombé en panne pendant deux heures et aucune…"
+            ],
+            "source_profile": {
+              "n_posts": 3,
+              "n_sources": 3,
+              "n_unique_titles": 3,
+              "media_types": {
+                "News": 3
+              },
+              "top_source": "www.ladepeche.fr",
+              "top_source_share": 0.33,
+              "likely_syndication": false
+            },
+            "topic_share": 0.33,
+            "off_topic_suspect": true,
+            "event_type_scores": {
+              "Planning / route / feasibility": 1.5,
+              "Opening / start of service": 1,
+              "Service disruption / closure": 3
+            },
+            "curated_events": [],
+            "external_candidates": [
+              {
+                "title": "« Méfiez-vous des fake news » : non, le téléphérique de Créteil n’est pas tombé en panne pendant deux heures",
+                "source": "Le Parisien",
+                "published": "Sun, 28 Dec 2025 08:00:00 GMT",
+                "url": "https://news.google.com/rss/articles/CBMi4gJBVV95cUxPYWpoRzU0LV9jUUt0TDc4V2tmMDFVeDN5aUpsZ3FPRV9LZUlCXzVlc0tQX0ptMmI5TzlPcndDXzR3TTFUTk43a2h1UFh6dGw3Y2R3amVUcTVzNXNSRUdUc29IMzl1bmZldXQwb25QZjhMb2U4RG1NNFB0SnFReGtXdldaS19SWGZSSGNXMjk1SjI5WEpRb3dwaVdPd3cwNFZ4Mkl3a0xpRzlfV1pkZ1M4LXdpTUJQTzM2dDB0bXoxNC15U0dnazdWX3Q1UFl2eHZCQWZMTDV0cjVTY2tWOFVDSnh0XzBZQ0F4SnFQZy1vWjMxa2hxTkFHRFNBLUdzcmRWZDZDaHBBS2NxSWVaM2RGNEJpR0hVNU4zdW1YRGROa1M3VWVnUjAwd2lheWpoZjZPeUdrcXpuMUY5X2FsMFpYcEk0c0g0dnlkWXZQby1Mb0J1N1RYaktIRjdQcWIwSllRU0E?oc=5",
+                "match_score": 5
+              }
+            ],
+            "evidence_mention_ids": [
+              "12851598,1156469",
+              "23623865,68994",
+              "28878857,160225"
+            ]
+          }
+        },
+        {
+          "date": "2026-01-17",
+          "avg_posts_before": 1.17,
+          "avg_posts_after": 0.43,
+          "avg_sentiment_before": 1.5,
+          "avg_sentiment_after": 1.34,
+          "tone_n_before": 22,
+          "tone_n_after": 88,
+          "tone_missing_before": 5,
+          "tone_missing_after": 31,
+          "context": {
+            "event_type": "Service disruption / closure",
+            "event_type_secondary": null,
+            "summary": "",
+            "confidence": "high",
+            "confidence_points": 7,
+            "method": "rule-based",
+            "top_terms": [
+              "suivantes",
+              "serait",
+              "moyenne",
+              "interrompu",
+              "succès",
+              "pratique"
+            ],
+            "amounts_mentioned": [],
+            "top_headlines": [
+              "Il faudrait installer un téléphérique entre les deux gares suivantes : Gare de Lyon et Gare d’Austerlitz ! Comme cela…",
+              "Téléphérique : le trafic interrompu pendant plusieurs heures sur une partie du câble C1",
+              "Entre mode de transport et attraction touristique : quel premier bilan pour le téléphérique C1 ?"
+            ],
+            "source_profile": {
+              "n_posts": 7,
+              "n_sources": 6,
+              "n_unique_titles": 7,
+              "media_types": {
+                "YouTube Comments": 1,
+                "News": 5,
+                "YouTube Video": 1
+              },
+              "top_source": "www.youtube.com",
+              "top_source_share": 0.29,
+              "likely_syndication": false
+            },
+            "topic_share": 0.86,
+            "off_topic_suspect": false,
+            "event_type_scores": {
+              "Service disruption / closure": 8.5,
+              "Visualisation / design": 2.0,
+              "Planning / route / feasibility": 0.5,
+              "Opening / start of service": 1,
+              "Cost / funding": 1
+            },
+            "curated_events": [],
+            "external_candidates": [
+              {
+                "title": "Câble C1 : le téléphérique en partie interrompu plusieurs heures dans le Val-de-Marne",
+                "source": "Actu.fr",
+                "published": "Thu, 15 Jan 2026 08:00:00 GMT",
+                "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOOXNOMTYwaW11T0puVzAzaWhIN3VBMVZYTll2UlZubU9jei0zVGlILWFvYkhDNHJacGEyRndvVHZOOVFpbnFPdXZZeXg4OTNNYWphTWFyQmNUcmRyWkFkNGM0LVNmMVVRc0NpY1VhUlVqSHNidWdtQzNNYmxTd0lxd1liTl9LM21TV1hrVjR5VW5Ga295N1hQbjVxYjhFcnV2ZUlpbDZWSXVvTHlJYlFBOU52dmdCQTVMU3ozZnR3?oc=5",
+                "match_score": 5
+              }
+            ],
+            "evidence_mention_ids": [
+              "11277534,650600393",
+              "28878857,163234",
+              "29155761,46283",
+              "29316251,34184471",
+              "29316251,34381488",
+              "6544001,93147",
+              "9672814,1128688"
+            ]
+          }
+        }
+      ],
+      "project_context": {
+        "display_name": "Câble C1 Île-de-France (Créteil – Villeneuve-Saint-Georges)",
+        "city": "Paris / Val-de-Marne",
+        "stage": "Construction / operation (reference project)",
+        "official_site_scans": [
+          {
+            "source_url": "https://www.iledefrance-mobilites.fr",
+            "page_title": "| Île-de-France Mobilités",
+            "meta_description": "",
+            "matching_headlines": [],
+            "status": "ok"
+          }
+        ],
+        "latest_news": [
+          {
+            "title": "Val-de-Marne : pourquoi le Câble C1 est-il en partie fermé depuis quatre jours ?",
+            "source": "Le Parisien",
+            "published": "Mon, 09 Nov 2026 12:50:29 GMT",
+            "url": "https://news.google.com/rss/articles/CBMikwJBVV95cUxQSlpUUzlVOG9HdUZ5RUg5MzB3aXl4LWFNQkl5VnQ1blo4MXNzX1pqRHZMaGNNME0yNlZ6VzFaQUxCNy02eWhVYmlhdzZVajNHak5Ob3o2cVZVM1pwXzVPeFlsbUliYzJ4S2pvZW1ZU3RudkRwOTRPc2xncVZUenBBM3ZBQW94WjNOQTA1T3l1YzdCTHY2QWlHaU56aGc1V1dqMFd1N0VXTDhETE5mYzY5WWNaSFFBTWxDZDNwdVNIaU9odE9QRmpJVy1zYW9leGVuTl9sY0FOaDBLZ0lWWlc4d1plY1B0N0x1UF9lS1hFM25iYmNSNzVyeFVqLTZGZXg4c2FPbFctYnNmNmpGdWxkYkloWQ?oc=5"
+          },
+          {
+            "title": "\"Amazing !\" : le téléphérique de Créteil, succès inattendu auprès des touristes étrangers",
+            "source": "franceinfo",
+            "published": "Sun, 19 Jul 2026 07:00:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNS29jUnh4bFhCZ1VxanVoSmpaZ0FEd2R0X0RDa014N0trLU1HMFhKemVfMzBPX0gyRkZkZHp2eVVBX0I3enZDeTJxa281TlR6VGd0TzQ5d0V0Y2N6cllJczgtSGNLN1FWdlBFUjIwMDhDVnEtNUd5SFIzY09kOG9Hb2dlOXY0ZHcwZktjT29weDVPMktFaFQydi1RMGlzYUFLajlXWVFpclhhRjZXUjFSdHBWSWRqM3kycnJONTBLdTR4bXo5a2V6bEFHbFJPaWlGQ2xINmlvMG9TeUJFd1NqanBKNA?oc=5"
+          },
+          {
+            "title": "Câble C1 : quand un téléphérique devient une star des réseaux… et du quotidien !",
+            "source": "Val de Marne Le Département",
+            "published": "Thu, 23 Jul 2026 07:00:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNT0tYeGZSdGY0ZGYtbkZFSkxQYmhhM3AyczNINjdaSXQ2NFJVb1N0LThoZF9hQk5sNzVsSTJmeE54b3M0bktObWFDLUhybnhUX3lSUG93YUh3c3FCYmQxN0pldlUxSkFKZHdYY1JwNW55TXVac19WNWpIUW5Fd3pLYUxod2RoSmJVMmpKenR3emZKQ21OY3BjZG8zZTduZkt5YkFhV1BpTjhFWlJFb3hVc0ZVbzYwcHBhbTgxNTR6aVVBZzdSVUp5R0pBa2xVLXc?oc=5"
+          },
+          {
+            "title": "On a testé le téléphérique C1, un voyage contemplatif pour désenclaver le Val-de-Marne",
+            "source": "Télérama",
+            "published": "Sat, 23 May 2026 07:00:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNbzBqTXllOHFVVGhoSmRrYzdTbUwxTDltRUVQMFRzYlRleFdrc2RQM2R2M0lJV050amYwa0FUNGwtN0Q5a19aYWdyZ1hnelZHVDZLMGx3VS1KbHlpcDVTeFRXTURyakZxREhRWFRPWHVpSFR6Rm50VWNnQ3JKREI2QXZXMHhxUUx1LUFhZk56YzBEU256Q1FsU08zV29LdDRrZWc4SHhqdHdRenZmZlpBMFA4ZzBoc2ZpT2hZQnM0eGxUb2ROX3MxYkItSzdjS1dJNGc?oc=5"
+          }
+        ],
+        "curated_events": []
+      }
+    }
+  ]
+}

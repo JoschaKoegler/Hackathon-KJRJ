@@ -1,0 +1,24 @@
+{
+  "used_by": "02_laufzeit/kuratierte_themen.py (sheet_for_city) via 03_dashboard.py",
+  "Heilbronn_Seilbahn": {
+    "meta": {
+      "titel": "Misunderstandings",
+      "projekt": "Seilbahn Heilbronn",
+      "stand": "2026-11-14"
+    },
+    "stichpunkte": [
+      {
+        "titel": "Nicht das Klinikbudget",
+        "text": "Bis 90 % Land und Bund. Stadt mind. 15,7 Mio. €"
+      },
+      {
+        "titel": "Kein Privatprojekt",
+        "text": "Öffentlich finanziert, Tarif wie Bus und Bahn"
+      },
+      {
+        "titel": "Betrieb offen",
+        "text": "Kosten pro Jahr noch nicht beziffert"
+      }
+    ]
+  }
+}

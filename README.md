@@ -1,176 +1,74 @@
 # Riding the Sentiment
 
-Prototype for the Heilbronn Future City hackathon. The question is how people talk about the planned urban cable car, how that compares with Bonn, Paris Câble C1, and the IPAI campus, and which moments move the debate.
+Öffentliche Debatte zu Seilbahn Heilbronn im Vergleich mit Bonn, Paris Câble C1 und IPAI-Campus.
 
-The challenge brief sits next to this repository: `../readme Seilbahn_Challenge.docx`. The raw export sits there too, because it is too large for git: `../FSI_Heilbronn_Medienbeiträge (1).json`.
+Roh-Export (zu groß für Git): `../FSI_Heilbronn_Medienbeiträge (1).json`.
 
-## Layout
+## Stufen
+
+`01_vorverarbeitung/` schreibt `00_data/` (Batch). `02_laufzeit/` liest `00_data/` und bewertet nicht neu. `03_dashboard.py` ist die HTTP-Seite.
 
 ```
-dashboard.py                         page only. start this.
-analysis/                            what the page computes
-  config.py                          cities, channels, circle source, trend
-  prepare.py                         text, city, channel
-  stance.py                          vendor tone and text stance
-  terms.py                           word-cloud terms
-  curated.py                         themes, hopes, and fears from step 05
-  summary.py                         timeline, circles, trend, peak markers
-pipeline/                            batch steps, in order
-  01_filter_posts.py                 date, near-duplicate, one project
-  project_definitions.json           topic terms and context terms
-  briefs/                            project name, place, description
-  assigned/                          model output, same post format
-  assign_projects.py                 uses assigned/ when that file exists
-  02_detect_peaks.py                 peaks and change points
-  03_attach_events.py                news around each peak
-  05_themen_hopes_fears.py           themes, hopes, and fears around the cable-car mention
-  themen/                            search patterns per project
-  themen_hopes_fears_<project>.json  assignments the page reads for that project
-  annahmen_und_fakten_<project>.json official costs, and assumption next to fact
-data/
-  01_filtered/posts.json             kept posts. one project each
-  01_filtered/audit.json             filter log
-  02_peaks/peaks.json                peaks and change points
-  02_peaks/events.json               crawler output. not produced yet
-  rejected/                          dropped posts, by reason
-  exports/                           inspection copies from the explore notebook
-notebooks/
-  walk_through_dashboard.ipynb       same numbers as the page
-  explore_language_and_channels.ipynb
+01_vorverarbeitung/
+  01_filtern.py              Roh-Export + 00_data/definitions.json
+       └─ projekt_overlay.py assigned/, briefs/
+                             → 00_data/posts.json
+                             → unused_data.json (alle verworfenen Beiträge)
+  02_sentiment_analyse.py    Passage 0/1/2 → tone_score, tone_cue, tone_gap, story_key, circle
+  03_stance_analyse.py       support/oppose/mixed → stance
+  04_peak_erkennung.py       Tageszählung gegen lokale Baseline → peaks.json
+  05_trendbrueche.py         Binary Segmentation → change_points in peaks.json
+  06_peak_kontext.py         orchestriert den Kontext → 00_data/context.json
+       06_begriffe.py        auffällige Begriffe (Log-Odds)
+       06_ereignistyp.py     Ereignistyp aus Mustern
+       06_externe_suche.py   Google News / Projektseite
+       06_nachwirkung.py     Abklingen und Ton davor/danach
+  07_themen_zuordnung.py     kuratierte Regex → 00_data/themes.json
+  08_token_fallback.py       Token- und Claim-Listen → terms, categories, arguments
+
+02_laufzeit/
+  config.py                  Pfade und Schalter
+  beitraege.py               laden, Stadt/Kanal/Datum, gespeicherte Felder
+  fenster.py                 Anteile, Wilson, Balance, Story-Kollaps
+  kuratierte_themen.py       Anteile aus themes.json, Faktenblatt
+  auswertung.py              Fenster, Trend, Peak-Marker, HTTP-Daten
+
+03_dashboard.py              HTTP: /, /assets/*, /api/summary, /api/posts
+00_data/                     posts, definitions, context, themes, facts
+00_logo/                     Logo, ausgeliefert unter /assets/
 ```
 
-`data/exports/` is not an input. The page never reads it. A fresh run of the explore notebook overwrites it.
+| Datei | Geschrieben von | Gelesen von |
+| --- | --- | --- |
+| `00_data/posts.json` | Filter, dann Sentiment, Stance, Token-Fallback | Laufzeit, Peaks, Trendbrüche, Kontext, Themen |
+| `00_data/definitions.json` | von Hand | Filter und Sentiment |
+| `01_vorverarbeitung/peaks.json` | Peak-Erkennung, dann Trendbrüche | Peak-Kontext |
+| `00_data/context.json` | Peak-Kontext | `auswertung.py` |
+| `01_vorverarbeitung/themen/<projekt>.json` | von Hand | nur die kuratierte Themen-Zuordnung |
+| `00_data/themes.json` | kuratierte Themen-Zuordnung | `kuratierte_themen.py` |
+| `00_data/facts.json` | von Hand | `kuratierte_themen.py` |
 
-## Run
+Pfade stehen einmal in `02_laufzeit/config.py`.
+
+## Start
 
 ```bash
 pip install -r requirements.txt
-python pipeline/01_filter_posts.py    # writes pipeline/clean_data.json, then applies assigned/
-python pipeline/02_detect_peaks.py
-python pipeline/03_attach_events.py   # needs network; writes projects_with_context.json
-python pipeline/05_themen_hopes_fears.py
-python dashboard.py                   # http://127.0.0.1:8765
+python 03_dashboard.py
 ```
 
-The page reads `pipeline/clean_data.json` on startup. Peak lines come from `pipeline/projects_with_context.json` when that file exists, otherwise from `pipeline/detected_events.json`. For a project with `pipeline/themen_hopes_fears_<project>.json`, the Themes and Hopes & fears views read that file and keep only the posts in the current city, channel, and date window. Restart the page after a new pipeline run.
+http://127.0.0.1:8765 — nach Änderung an `00_data/` oder `config.py` neu starten.
 
-Step 05 only needs `clean_data.json` and `themen/<project>.json`. It does not depend on peak detection. Without a rules file it stops and says so. Another project is `python pipeline/05_themen_hopes_fears.py --projekt <project_key>` after adding `themen/<project_key>.json`.
+## Daten neu aufbereiten
 
-## Data flow
-
-```mermaid
-flowchart LR
-  form["New project: name, place, description"] --> model["Model, placeholder"]
-  raw["Raw export"] --> model
-  model --> assigned["assigned/project.json"]
-  raw --> filter["01 Filter and assign one project"]
-  rules["project_definitions.json"] --> filter
-  assigned --> merge["Replace that project"]
-  filter --> merge
-  merge --> posts["pipeline/clean_data.json"]
-  posts --> prepare["Prepare, stance, terms"]
-  prepare --> page["Dashboard"]
-  posts --> themes["05 Themes, hopes, fears"]
-  themes --> page
-  posts --> peaks["02 Peaks and change points"]
-  peaks --> crawl["03 Attach events"]
-  crawl --> page
-  peaks --> page
+```bash
+python 01_vorverarbeitung/01_filtern.py
+python 01_vorverarbeitung/02_sentiment_analyse.py
+python 01_vorverarbeitung/03_stance_analyse.py
+python 01_vorverarbeitung/08_token_fallback.py
+python 01_vorverarbeitung/04_peak_erkennung.py
+python 01_vorverarbeitung/05_trendbrueche.py
+python 01_vorverarbeitung/06_peak_kontext.py    # Netzwerk für die externe Suche
+python 01_vorverarbeitung/07_themen_zuordnung.py
+python 03_dashboard.py
 ```
-
-`briefs/<id>.json` is the form the UI does not have yet: project name, place, and description. `assign_projects.py` is the model call. It does not call a model yet. If `assigned/<id>.json` exists, those posts replace the regex hits for that id. The file uses the same fields as `clean_data.json`, including `matched_projects` and `also_mentions`. Projects without an assigned file stay on the regex rules.
-
-Heilbronn cable car is the first assigned file: 210 posts in `assigned/Heilbronn_Seilbahn.json`. Bonn, Paris, and IPAI still come from the regex filter. Run `python pipeline/assign_projects.py` to apply the assigned files to an existing `clean_data.json` without reading the raw export again. A full `python pipeline/01_filter_posts.py` applies them at the end. Then rerun peak detection and the event step, because those files still describe the previous Heilbronn set until they are rebuilt.
-
-One kept post has exactly one project. The page then cuts that table by city, channel, and date. Peak markers are counted on every kept post of a project. They do not follow the News / Social switch. A marker can sit on a quiet day in one channel because the spike was in the other.
-
-## Methods in use
-
-| Step | Method | Where |
-| --- | --- | --- |
-| Keep a post | Valid ISO date, then near-duplicate, then project | `pipeline/01_filter_posts.py` |
-| Near-duplicate | Simhash bands, then title similarity 0.90 with the same 150-character prefix, or full-text similarity 0.95 | same file |
-| One project | At least one topic hit and one context hit. Highest sum wins. A tie keeps the earlier project in the JSON | `project_definitions.json` |
-| Channel | Domain and media type. News, Social, or Other web | `analysis/prepare.py` |
-| Circles | Vendor `sentiment`: 1 support, 0 neutral, -1 opposition. `-99` stays outside | `analysis/stance.py`, switch in `config.py` |
-| Text stance | German and French phrase patterns. Support, oppose, mixed, or no clear stance. The vendor number does not enter | `analysis/stance.py` |
-| Terms | Tokens of four letters or more from the full prepared text, stop words and project names removed, once per post | `analysis/terms.py` |
-| Trend | Support minus opposition, divided by classified posts, against the previous window of the same length. Flat under 2 points. Hidden under 8 classified posts | `analysis/summary.py` |
-| Peaks | Daily counts, `scipy.signal.find_peaks`, prominence `max(2, 1.5 × std)`, at least 7 days apart. Window is 3 days before and 2 days after | `pipeline/02_detect_peaks.py` |
-| Change points | Binary segmentation on z-scored daily counts, penalty 12, segments of at least 7 days | same file |
-| Events | Google News RSS with `after:` / `before:`, headline must match the project regex, one wider window if the first is empty. Official homepages for page context | `pipeline/03_attach_events.py` |
-| Themes, hopes, fears | Passages within 400 characters of the project mention (`topic_regex` in the rules file). A short post is read whole. Hopes and fears need a stated judgement, not a bare mention. One post counts once per item and can match several. Heilbronn, Bonn, Paris, and IPAI each have a rules file | `pipeline/05_themen_hopes_fears.py`, `analysis/curated.py` |
-| Stance on the page | Phrase patterns, counted per post, with a Wilson interval. Separate from the tone circles | `analysis/reading.py`, `analysis/stance.py` |
-| Compare | Same date window and channel for four projects. Phase is a project fact in `config.py`. A probe pattern is searched in every project before a concern is called specific | `analysis/reading.py` |
-| Month lines | Counts per month for the two leading hopes, two leading fears, and stance phrases. A content line needs at least 5 posts. The lines cover the whole project and channel | `analysis/reading.py` |
-
-The page draws a peak only when that day has at least 4 posts. The crawler uses the same floor. Smaller spikes stay in `peaks.json`.
-
-## What the kept set looks like
-
-Regenerated from the current `posts.json` on 14 Nov 2026.
-
-| | Posts |
-| --- | ---: |
-| Kept | 2226 |
-| No project match | 36831 |
-| Near-duplicate | 304 |
-| Invalid date | 0 |
-
-Kept posts run from 2024-10-20 to 2026-10-26. Projects: IPAI campus 1188, Paris Câble C1 514, Bonn cable car 307, Heilbronn cable car 217.
-
-| Channel | Posts | On the page |
-| --- | ---: | --- |
-| News | 1144 | yes |
-| Social | 486 | yes |
-| Other web | 596 | no button, so these posts are hidden |
-
-Vendor tone on the kept posts: positive 1390, neutral 570, negative 55, missing 211. The circles use this field today.
-
-Text stance on the same posts: no clear stance 2157, support 27, oppose 32, mixed 10. Set `STANCE_SOURCE = "text"` in `analysis/config.py` to put that classification into the circles. Most posts still have no clear phrase, and IPAI has none, so the circles would stay thin.
-
-Peaks and change points, all kept posts:
-
-| Project | Posts | Peaks | Change points |
-| --- | ---: | ---: | ---: |
-| Heilbronn cable car | 217 | 19 | 3 |
-| IPAI campus | 1188 | 26 | 3 |
-| Bonn cable car | 307 | 32 | 0 |
-| Paris Câble C1 | 514 | 14 | 4 |
-
-## Challenge versus this repository
-
-| Brief | Already here | Still open |
-| --- | --- | --- |
-| 1 Explore topics, arguments, stance | Curated themes, hopes, and fears for all four projects. Tone circles and a separate stance bar. Channel counts on each bar. Spott is a marker on Luftnummer and Schikane | Most posts still have no stance phrase. That is shown as Undecided, not filled in |
-| 2 Compare cities and project stages | Same data for Bonn, Paris, and IPAI in the project filter and peak file | Compare view removed from the dashboard; no resident survey of Heilbronn in the export |
-| 3 Track time and triggering events | Daily timeline, peak colour by cause, open ring when volume fell back, € when a sum is named, month lines for hopes, fears, and stance | The month lines are the whole selection, not only the shaded window |
-| 4 Interactive dashboard | Tone, Hopes & fears, Misunderstandings. Timeline, peak context, and the post list | Restart the page after a pipeline run |
-
-## Who does what
-
-The data path is in place: `posts.json`, then `analysis/`, then `peaks.json` or `events.json`. **Dashboard and UI are a separate track** (Jürgen and Katrin): layout, wiring, and how the page tells the story. The table below is everything else that turns the brief into a prototype.
-
-| Who | Piece | Leads to |
-| --- | --- | --- |
-| Katrin | Studies on acceptance, next to similar projects | The comparison the city asked for, beyond our own posts |
-| Jürgen | Peak detection | The days the timeline should explain |
-| Jürgen | Crawler: attach a public event to each peak | Why a spike happened, and whether the debate stayed there |
-| Joscha | Model for a variable buzzword search | Project assignment that is not stuck to the four regex lists |
-| Joscha | Model keywords inside a selection | Arguments in the evaluation, not only the ten most frequent tokens |
-| Rafael | This flow, and examples where a step is wrong | A path the others can extend without a second copy of the posts |
-| Rafael | Text stance: support / mixed / oppose, separate from vendor tone | Stance that means attitude toward the project, not vendor tone alone |
-
-**For the dashboard track:** `analysis/summary.py` exposes `summarize()`, peak markers from `peaks.json` / `events.json`, and config in `analysis/config.py`. No duplicate data prep in the UI layer.
-
-## Decisions worth taking before the next layer
-
-The Heilbronn button sums the cable car and the IPAI campus. The brief asks to compare them. Give IPAI its own button by mapping `IPAI_Campus` to a new id in `CITY_BY_PROJECT` and adding that id to `CITY_BUTTONS`.
-
-The circles are vendor tone. The brief says a negative sentence is not automatically opposition to the project. The text-stance column is already on every post and in the post list. It is not what the circles show.
-
-A peak is any day that rises `1.5 × std` above its surroundings, and the floor is 2 posts. On a quiet series that flags days which are not a public reaction. Bonn's list includes cruise offers and unrelated video titles that still matched `seilbahn` plus a Bonn context term. Raise `PROMINENCE_FACTOR` or the 4-post floor once a few peaks have been checked by hand.
-
-Other web is 596 kept posts with no button. They are in the file and absent from both channel views.
-
-`data/exports/` was written by an earlier notebook run. Its Heilbronn count was 241. The pipeline now keeps 217. Treat the export folders as scratch.
